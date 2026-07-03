@@ -268,7 +268,7 @@ p { margin: 0; }
   width: 100%;
   aspect-ratio: 16 / 9;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 14px;
   border: 1px solid var(--line);
   background: #000;
