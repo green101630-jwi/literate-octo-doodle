@@ -4,18 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Won Ik Jang | Robotics Portfolio</title>
-  <meta name="description" content="Portfolio of Won Ik Jang focused on robot learning, robotic manipulation, VLA, and embedded systems." />
+  <meta
+    name="description"
+    content="Portfolio of Won Ik Jang focused on dual-arm OMX sim-real teleoperation, robot learning, ACT-based behavior cloning, and hardware mapping experiments."
+  />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <header class="site-header">
     <nav class="nav">
       <a class="logo" href="#top">Won Ik Jang</a>
       <div class="nav-links">
         <a href="#omx">OMX Project</a>
-        <a href="#interests">Research Interests</a>
-        <a href="#projects">Other Projects</a>
-        <a href="#cv">CV</a>
+        <a href="#pipeline">Pipeline</a>
+        <a href="#demos">Demos</a>
+        <a href="#act">ACT BC</a>
+        <a href="#hardware">Hardware Mapping</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -31,18 +36,21 @@
             Undergraduate student at Kyung Hee University interested in robotic manipulation,
             imitation learning, reinforcement learning, and VLA-based robot intelligence.
           </p>
+
           <div class="hero-actions">
             <a class="button primary" href="#omx">View OMX Project</a>
-            <a class="button secondary" href="#cv">View CV</a>
+            <a class="button secondary" href="#materials">Demo / Code</a>
             <a class="button secondary" href="https://github.com/green101630-jwi">GitHub</a>
           </div>
         </div>
+
         <aside class="hero-card">
           <p class="card-label">Current Focus</p>
-          <h2>Building robot learning pipelines from demonstrations to deployment.</h2>
+          <h2>Dual-arm OMX sim-real robot learning pipeline.</h2>
           <p>
-            Main emphasis: OpenManipulator-X, behavior cloning, demonstration collection,
-            IsaacSim/IsaacLab experiments, and sim-real mapping.
+            Main work includes real teleoperation, episode recording and replay,
+            IsaacSim/IsaacLab validation, demonstration dataset construction,
+            ACT-based behavior cloning, and hardware mapping experiments in progress.
           </p>
         </aside>
       </div>
@@ -63,8 +71,8 @@
           <strong>Robot Learning and Manipulation</strong>
         </div>
         <div class="fact">
-          <span>Target Direction</span>
-          <strong>VLA and Embodied AI Research</strong>
+          <span>Research Direction</span>
+          <strong>VLA and Embodied AI</strong>
         </div>
       </div>
     </section>
@@ -73,77 +81,366 @@
       <div class="section-heading split">
         <div>
           <p class="eyebrow">Featured Project</p>
-          <h2>OMX Pick-and-Place Robot Learning</h2>
+          <h2>Dual-arm OMX Sim-to-Real Robot Learning Pipeline</h2>
         </div>
         <span class="status-pill">In Progress</span>
       </div>
 
       <p class="section-intro">
-        This project focuses on building a robot learning pipeline for OpenManipulator-X based
-        pick-and-place tasks. The current work covers demonstration collection, dataset formatting,
-        behavior cloning experiments, IsaacSim/IsaacLab validation, and sim-real hardware mapping.
+        This project builds a sim-real robot learning pipeline for a dual-arm
+        OpenManipulator-X system. The pipeline connects real teleoperation with
+        IsaacSim/IsaacLab simulation, records /pair1 and /pair2 joint trajectories
+        as reusable episodes, organizes teleoperation and scripted demonstrations
+        into learning-ready datasets, and applies ACT-based behavior cloning with
+        phase/image ablation experiments. Hardware mapping experiments are currently
+        in progress.
       </p>
 
       <div class="timeline">
         <article>
           <span>01</span>
-          <h3>Demonstration Collection</h3>
-          <p>Teleoperation and script-based demonstrations for pick-and-place style manipulation tasks.</p>
+          <h3>Real Teleoperation</h3>
+          <p>
+            Dual-arm OMX teleoperation data collection through ROS2 /pair1 and
+            /pair2 joint states.
+          </p>
         </article>
+
         <article>
           <span>02</span>
-          <h3>Dataset Formatting</h3>
-          <p>Joint trajectories and demonstrations organized into HDF5/NPZ and robomimic-style formats.</p>
+          <h3>Recording and Replay</h3>
+          <p>
+            Episode-level joint trajectory storage and replay for reusable
+            demonstration data.
+          </p>
         </article>
+
         <article>
           <span>03</span>
-          <h3>Behavior Cloning</h3>
-          <p>BC training candidates prepared using collected demonstrations and manipulation task observations.</p>
+          <h3>Simulation Validation</h3>
+          <p>
+            IsaacSim/IsaacLab replay, grasp behavior comparison, and physics/contact
+            setting analysis.
+          </p>
         </article>
+
         <article>
           <span>04</span>
-          <h3>Sim-Real Mapping</h3>
-          <p>Analysis of IsaacSim/IsaacLab contact behavior and real-to-sim gripper representation differences.</p>
+          <h3>ACT-based BC</h3>
+          <p>
+            Behavior cloning setup using qpos, image observations, phase information,
+            action chunks, and normalization statistics.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="pipeline" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">System Pipeline</p>
+        <h2>From Real Teleoperation to Policy Rollout</h2>
+      </div>
+
+      <div class="timeline">
+        <article>
+          <span>01</span>
+          <h3>Real Dual-arm OMX</h3>
+          <p>
+            Real robot teleoperation is used to collect dual-arm joint state
+            trajectories.
+          </p>
+        </article>
+
+        <article>
+          <span>02</span>
+          <h3>ROS2 Recording</h3>
+          <p>
+            /pair1 and /pair2 joint states are saved by episode and replayed for
+            validation.
+          </p>
+        </article>
+
+        <article>
+          <span>03</span>
+          <h3>Dataset Formatting</h3>
+          <p>
+            Teleop and scripted demonstrations are organized into HDF5/NPZ and
+            robomimic-style formats.
+          </p>
+        </article>
+
+        <article>
+          <span>04</span>
+          <h3>Policy Learning</h3>
+          <p>
+            ACT-based behavior cloning is tested with phase and image observation
+            ablations.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="teleop-system" class="section">
+      <div class="section-heading split">
+        <div>
+          <p class="eyebrow">Module 1</p>
+          <h2>Sim-real Teleoperation System</h2>
+        </div>
+        <span class="status-pill">Built</span>
+      </div>
+
+      <p class="section-intro">
+        Built a sim-real teleoperation pipeline that links real dual-arm OMX
+        teleoperation motion with simulated robots in IsaacSim and IsaacLab.
+        Joint states from ROS2 /pair1 and /pair2 are recorded by episode and
+        replayed for simulation validation.
+      </p>
+
+      <div class="two-col detail-grid">
+        <article class="card">
+          <h3>Implemented Components</h3>
+          <ul class="clean-list">
+            <li>ROS2-based recording/replay structure for dual-arm joint trajectories.</li>
+            <li>Episode-level storage of /pair1 and /pair2 joint states.</li>
+            <li>Replay pipeline for connecting real teleoperation motion to simulation robots.</li>
+            <li>Approximately 1,377 joint trajectory samples confirmed from real teleoperation episodes.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Simulation Analysis</h3>
+          <ul class="clean-list">
+            <li>Cube grasping was feasible in IsaacSim.</li>
+            <li>Grasp behavior was unstable in IsaacLab, requiring physics/contact setting analysis.</li>
+            <li>Real OMX gripper uses a 1-joint command.</li>
+            <li>Simulation gripper uses a 2-joint representation, requiring gripper mapping analysis.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="demos" class="section">
+      <div class="section-heading split">
+        <div>
+          <p class="eyebrow">Module 2</p>
+          <h2>Teleop and Scripted Demonstration Collection</h2>
+        </div>
+        <span class="status-pill">Built</span>
+      </div>
+
+      <p class="section-intro">
+        Built a demonstration collection pipeline using both real robot teleoperation
+        and scripted trajectory generation. Teleoperation demonstrations were organized
+        into HDF5/NPZ and robomimic-style dataset formats, and approximately 94
+        demonstrations were reviewed as behavior cloning candidates.
+      </p>
+
+      <div class="two-col detail-grid">
+        <article class="card">
+          <h3>Teleop Demonstration Task</h3>
+          <ul class="clean-list">
+            <li>Task: two cubes are placed into cups, with each arm handling one cube.</li>
+            <li>Data source: real dual-arm OMX teleoperation.</li>
+            <li>Dataset format: HDF5/NPZ and robomimic-style demonstration structure.</li>
+            <li>Approximately 94 teleoperation demonstrations reviewed as BC training candidates.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Scripted Demonstration Task</h3>
+          <ul class="clean-list">
+            <li>Task: place the yellow cube on top of the green cube.</li>
+            <li>Task phases: approach, grasp, lift, place, and retreat.</li>
+            <li>Script generation: phase-wise waypoints, inverse kinematics, and minimum-jerk trajectory.</li>
+            <li>Validation points: end-effector definition, gripper link position, grasp pose, and object randomization.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="act" class="section">
+      <div class="section-heading split">
+        <div>
+          <p class="eyebrow">Module 3</p>
+          <h2>ACT-based Behavior Cloning and Ablation Study</h2>
+        </div>
+        <span class="status-pill">Experimenting</span>
+      </div>
+
+      <p class="section-intro">
+        Analyzed the ACT/ALOHA behavior cloning structure, where qpos and image
+        observations are used to predict future action chunks through a Transformer-based
+        policy. The collected OMX demonstrations were adapted into an ACT-style training
+        pipeline by organizing qpos, action targets, episode length, action chunks,
+        normalization statistics, and rollout conditions.
+      </p>
+
+      <div class="timeline">
+        <article>
+          <span>01</span>
+          <h3>ACT Structure</h3>
+          <p>Transformer-based behavior cloning for future action chunk prediction.</p>
+        </article>
+
+        <article>
+          <span>02</span>
+          <h3>Dataset Statistics</h3>
+          <p>dataset_stats.pkl based qpos/action normalization and inference-time denormalization.</p>
+        </article>
+
+        <article>
+          <span>03</span>
+          <h3>Phase Ablation</h3>
+          <p>Comparison between policies with and without task phase conditioning.</p>
+        </article>
+
+        <article>
+          <span>04</span>
+          <h3>Image Ablation</h3>
+          <p>Comparison between single-camera image input and joint/qpos-only input.</p>
         </article>
       </div>
 
       <div class="two-col detail-grid">
         <article class="card">
-          <h3>My Role</h3>
+          <h3>Ablation Conditions</h3>
           <ul class="clean-list">
-            <li>Built ROS2-based joint trajectory recording and replay structure.</li>
-            <li>Organized teleoperation demonstrations for BC training candidates.</li>
-            <li>Analyzed grasp instability differences between IsaacSim and IsaacLab.</li>
-            <li>Investigated 1-joint real gripper command versus 2-joint simulation gripper representation.</li>
-            <li>Prepared the software pipeline for later real-hardware deployment.</li>
+            <li>With phase input versus without phase input.</li>
+            <li>With one camera image versus without image observation.</li>
+            <li>Joint/qpos-only policy comparison.</li>
+            <li>Policy rollout comparison across input conditions.</li>
           </ul>
         </article>
+
         <article class="card">
-          <h3>Technical Stack</h3>
-          <div class="skills small-skills">
-            <span>OpenManipulator-X</span>
-            <span>ROS2</span>
-            <span>IsaacSim</span>
-            <span>IsaacLab</span>
-            <span>Python</span>
-            <span>PyTorch</span>
-            <span>robomimic-style dataset</span>
-            <span>Behavior Cloning</span>
-          </div>
+          <h3>Learning Pipeline Checks</h3>
+          <ul class="clean-list">
+            <li>qpos/action target formatting.</li>
+            <li>Episode length and action chunk consistency.</li>
+            <li>Normalization and denormalization flow.</li>
+            <li>Simulation rollout evaluation setup.</li>
+          </ul>
         </article>
+      </div>
+    </section>
+
+    <section id="hardware" class="section">
+      <div class="section-heading split">
+        <div>
+          <p class="eyebrow">Module 4</p>
+          <h2>Trained Policy Hardware Mapping</h2>
+        </div>
+        <span class="status-pill">Experiments In Progress</span>
+      </div>
+
+      <p class="section-intro">
+        Hardware mapping experiments are currently in progress. The current focus is
+        to align simulation observations with real robot observations and to check
+        whether trained policy outputs can be transferred to the real OMX setup in a
+        stable and consistent manner.
+      </p>
+
+      <div class="two-col detail-grid">
+        <article class="card">
+          <h3>Mapping Items Under Test</h3>
+          <ul class="clean-list">
+            <li>qpos, phase, and image input consistency between simulation and real hardware.</li>
+            <li>Joint order, action scaling, joint limits, and command frequency checks.</li>
+            <li>2-joint simulation gripper representation to 1-joint real gripper command conversion.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Stepwise Validation</h3>
+          <ul class="clean-list">
+            <li>Pair1/pair2 follower controller execution checks.</li>
+            <li>FollowJointTrajectory action server verification.</li>
+            <li>First-point test before long-horizon rollout.</li>
+            <li>Short-horizon rollout tests before full real-world evaluation.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Technical Challenges</p>
+        <h2>Key Issues Analyzed</h2>
+      </div>
+
+      <div class="grid four">
+        <article class="card">
+          <h3>IsaacSim vs IsaacLab</h3>
+          <p>Grasping is possible in IsaacSim, while unstable grasp behavior appears in IsaacLab.</p>
+        </article>
+
+        <article class="card">
+          <h3>Gripper Mismatch</h3>
+          <p>Real 1-joint gripper command differs from the simulated 2-joint gripper representation.</p>
+        </article>
+
+        <article class="card">
+          <h3>Observation Consistency</h3>
+          <p>qpos, phase, image input, scaling, and frequency must remain consistent across simulation and real hardware.</p>
+        </article>
+
+        <article class="card">
+          <h3>Hardware Safety</h3>
+          <p>First-point and short-horizon tests are required before long-horizon real robot rollout.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="status" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Current Status</p>
+        <h2>Results and Current Progress</h2>
+      </div>
+
+      <div class="two-col detail-grid">
+        <article class="card">
+          <h3>Completed or Confirmed</h3>
+          <ul class="clean-list">
+            <li>Dual-arm OMX sim-real teleoperation pipeline built.</li>
+            <li>Episode-level /pair1 and /pair2 recording/replay structure implemented.</li>
+            <li>Approximately 1,377 real teleoperation joint trajectory samples confirmed.</li>
+            <li>Approximately 94 teleoperation demonstrations reviewed as BC candidates.</li>
+            <li>Scripted demo generation with waypoints, IK, and minimum-jerk trajectory implemented.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>In Progress</h3>
+          <ul class="clean-list">
+            <li>ACT-based BC policy rollout comparison by phase input and image input.</li>
+            <li>IsaacLab grasp stability improvement through physics/contact analysis.</li>
+            <li>Real hardware observation pipeline alignment.</li>
+            <li>Policy-to-controller mapping and staged hardware safety tests.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="materials" class="section">
+      <div class="section-heading split">
+        <div>
+          <p class="eyebrow">Demo and Code</p>
+          <h2>Materials</h2>
+        </div>
       </div>
 
       <div class="media-grid">
         <article class="placeholder-card">
           <p class="card-label">Demo Video</p>
           <h3>Video link will be added here.</h3>
-          <p>Recommended format: YouTube unlisted demo or Google Drive shared video.</p>
+          <p>Planned videos: real teleoperation, simulation replay, scripted demo, and policy rollout.</p>
           <a class="button secondary disabled" href="#">Coming Soon</a>
         </article>
+
         <article class="placeholder-card">
-          <p class="card-label">Code</p>
+          <p class="card-label">Code Repository</p>
           <h3>Repository link will be added here.</h3>
-          <p>Recommended format: README, setup guide, scripts, and result notes.</p>
+          <p>Planned contents: recording/replay scripts, dataset conversion, ACT preparation, and hardware mapping scripts.</p>
           <a class="button secondary disabled" href="#">Coming Soon</a>
         </article>
       </div>
@@ -154,19 +451,23 @@
         <p class="eyebrow">Research Direction</p>
         <h2>Research Interests</h2>
       </div>
+
       <div class="grid four">
         <article class="card">
           <h3>Robot Learning</h3>
           <p>Imitation learning, behavior cloning, reinforcement learning, and policy deployment.</p>
         </article>
+
         <article class="card">
           <h3>Vision-Language-Action</h3>
           <p>Connecting perception, language-conditioned reasoning, and robot actions.</p>
         </article>
+
         <article class="card">
           <h3>Robotic Manipulation</h3>
           <p>Pick-and-place tasks, arm control, grasping, and manipulation pipelines.</p>
         </article>
+
         <article class="card">
           <h3>Sim-to-Real Systems</h3>
           <p>Simulation validation, contact behavior analysis, and hardware mapping.</p>
@@ -179,43 +480,47 @@
         <p class="eyebrow">Additional Work</p>
         <h2>Other Projects</h2>
       </div>
+
       <div class="project-list">
         <article class="project">
           <div>
             <h3>ACT-Based Imitation Learning Study</h3>
             <p>
-              Study and implementation practice using Action Chunking with Transformers for robotic
-              manipulation tasks such as cube transfer and insertion-style demonstrations.
+              Study and implementation practice using Action Chunking with Transformers
+              for robotic manipulation tasks.
             </p>
           </div>
           <span class="tag">Imitation Learning</span>
         </article>
+
         <article class="project">
           <div>
             <h3>STM32 Embedded Control Practice</h3>
             <p>
-              Embedded system implementations using STM32F103RB, including UART, I2C, ADC, PWM,
-              CLCD output, joystick input, timer input capture, and sensor integration.
+              Embedded system implementations using STM32F103RB, including UART, I2C,
+              ADC, PWM, CLCD output, joystick input, timer input capture, and sensor integration.
             </p>
           </div>
           <span class="tag">Embedded</span>
         </article>
+
         <article class="project">
           <div>
             <h3>EMG and Force Measurement Device</h3>
             <p>
-              Biomedical engineering device project involving EMG signal acquisition, force measurement,
-              analog circuits, soldering, and GUI-based signal visualization.
+              Biomedical engineering device project involving EMG signal acquisition,
+              force measurement, analog circuits, soldering, and GUI-based signal visualization.
             </p>
           </div>
           <span class="tag">Biomedical</span>
         </article>
+
         <article class="project">
           <div>
             <h3>Biomedical Data Analysis and Figure Preparation</h3>
             <p>
-              Research support experience involving biomedical data processing, statistical analysis,
-              and publication-oriented figure preparation.
+              Research support experience involving biomedical data processing,
+              statistical analysis, and publication-oriented figure preparation.
             </p>
           </div>
           <span class="tag">Data Analysis</span>
@@ -231,9 +536,10 @@
         </div>
         <a class="button secondary disabled" href="#">PDF Coming Soon</a>
       </div>
+
       <p class="section-intro">
-        The CV section will include education, research experience, projects, awards, technical skills,
-        and selected coursework. A PDF link will be added after the final CV file is uploaded.
+        The CV section will include education, research experience, projects, awards,
+        technical skills, and selected coursework. A PDF link will be added after the final CV file is uploaded.
       </p>
     </section>
 
@@ -242,6 +548,7 @@
         <p class="eyebrow">Contact</p>
         <h2>Contact</h2>
       </div>
+
       <p>Email: <a href="mailto:green101630@gmail.com">green101630@gmail.com</a></p>
       <p>GitHub: <a href="https://github.com/green101630-jwi">green101630-jwi</a></p>
     </section>
