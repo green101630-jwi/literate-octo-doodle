@@ -181,43 +181,55 @@
     </section>
 
     <section id="teleop-system" class="section">
-      <div class="section-heading split">
-        <div>
-          <p class="eyebrow">Module 1</p>
-          <h2>Sim-real Teleoperation System</h2>
-        </div>
-        <span class="status-pill">Built</span>
-      </div>
+  <div class="section-heading split">
+    <div>
+      <p class="eyebrow">Module 1</p>
+      <h2>Sim-real Teleoperation System</h2>
+    </div>
+    <span class="status-pill">Built</span>
+  </div>
 
-      <p class="section-intro">
-        Built a sim-real teleoperation pipeline that links real dual-arm OMX
-        teleoperation motion with simulated robots in IsaacSim and IsaacLab.
-        Joint states from ROS2 /pair1 and /pair2 are recorded by episode and
-        replayed for simulation validation.
+  <p class="section-intro">
+    Built a sim-real teleoperation pipeline that links real dual-arm OMX
+    teleoperation motion with simulated robots in IsaacSim and IsaacLab.
+    Joint states from ROS2 /pair1 and /pair2 are recorded by episode and
+    replayed for simulation validation.
+  </p>
+
+  <div class="video-grid single-video">
+    <article class="video-card">
+      <h3>Sim-real Teleoperation System Demo</h3>
+      <p>
+        Real dual-arm OMX teleoperation motion connected to the simulation robot.
       </p>
 
-      <div class="two-col detail-grid">
-        <article class="card">
-          <h3>Implemented Components</h3>
-          <ul class="clean-list">
-            <li>ROS2-based recording/replay structure for dual-arm joint trajectories.</li>
-            <li>Episode-level storage of /pair1 and /pair2 joint states.</li>
-            <li>Replay pipeline for connecting real teleoperation motion to simulation robots.</li>
-            <li>Approximately 1,377 joint trajectory samples confirmed from real teleoperation episodes.</li>
-          </ul>
-        </article>
+      <video controls preload="metadata">
+        <source src="assets/videos/Sim_Real_Teleop_sys.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </article>
+  </div>
 
-        <article class="card">
-          <h3>Simulation Analysis</h3>
-          <ul class="clean-list">
-            <li>Cube grasping was feasible in IsaacSim.</li>
-            <li>Grasp behavior was unstable in IsaacLab, requiring physics/contact setting analysis.</li>
-            <li>Real OMX gripper uses a 1-joint command.</li>
-            <li>Simulation gripper uses a 2-joint representation, requiring gripper mapping analysis.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+  <div class="two-col detail-grid">
+    <article class="card">
+      <h3>Implemented Components</h3>
+      <ul class="clean-list">
+        <li>ROS2-based recording/replay structure for dual-arm joint trajectories.</li>
+        <li>Episode-level storage of /pair1 and /pair2 joint states.</li>
+        <li>Approximately 1,377 joint trajectory samples confirmed from real teleoperation episodes.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h3>Simulation Analysis</h3>
+      <ul class="clean-list">
+        <li>Cube grasping was feasible in IsaacSim.</li>
+        <li>Grasp behavior was unstable in IsaacLab, requiring physics/contact setting analysis.</li>
+        <li>Real OMX gripper uses a 1-joint command, while simulation uses a 2-joint gripper representation.</li>
+      </ul>
+    </article>
+  </div>
+</section>
 
     <section id="demos" class="section">
       <div class="section-heading split">
