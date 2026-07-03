@@ -297,70 +297,135 @@
 </section>
 
     <section id="act" class="section">
-      <div class="section-heading split">
-        <div>
-          <p class="eyebrow">Module 3</p>
-          <h2>ACT-based Behavior Cloning and Ablation Study</h2>
-        </div>
-        <span class="status-pill">Experimenting</span>
-      </div>
+  <div class="section-heading split">
+    <div>
+      <p class="eyebrow">Module 3</p>
+      <h2>ACT-based Behavior Cloning and Ablation Study</h2>
+    </div>
+    <span class="status-pill">Experimenting</span>
+  </div>
 
-      <p class="section-intro">
-        Analyzed the ACT/ALOHA behavior cloning structure, where qpos and image
-        observations are used to predict future action chunks through a Transformer-based
-        policy. The collected OMX demonstrations were adapted into an ACT-style training
-        pipeline by organizing qpos, action targets, episode length, action chunks,
-        normalization statistics, and rollout conditions.
+  <p class="section-intro">
+    Analyzed the ACT/ALOHA behavior cloning structure, where qpos and image
+    observations are used to predict future action chunks through a Transformer-based
+    policy. The collected OMX demonstrations were adapted into an ACT-style training
+    pipeline by organizing qpos, action targets, episode length, action chunks,
+    normalization statistics, and rollout conditions.
+  </p>
+
+  <div class="timeline">
+    <article>
+      <span>01</span>
+      <h3>ACT Structure</h3>
+      <p>Transformer-based behavior cloning for future action chunk prediction.</p>
+    </article>
+
+    <article>
+      <span>02</span>
+      <h3>Dataset Statistics</h3>
+      <p>dataset_stats.pkl based qpos/action normalization and inference-time denormalization.</p>
+    </article>
+
+    <article>
+      <span>03</span>
+      <h3>Phase Ablation</h3>
+      <p>Comparison between policies with and without task phase conditioning.</p>
+    </article>
+
+    <article>
+      <span>04</span>
+      <h3>Image Ablation</h3>
+      <p>Comparison between single-camera image input and joint/qpos-only input.</p>
+    </article>
+  </div>
+
+  <div class="video-grid">
+    <article class="video-card">
+      <h3>No Image + Phase + Temporal On</h3>
+      <p>
+        Rollout result using qpos and phase information without image observation,
+        with temporal setting enabled.
       </p>
 
-      <div class="timeline">
-        <article>
-          <span>01</span>
-          <h3>ACT Structure</h3>
-          <p>Transformer-based behavior cloning for future action chunk prediction.</p>
-        </article>
+      <video controls preload="metadata">
+        <source src="assets/videos/no_image_phase_temporal_on.webm" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
+    </article>
 
-        <article>
-          <span>02</span>
-          <h3>Dataset Statistics</h3>
-          <p>dataset_stats.pkl based qpos/action normalization and inference-time denormalization.</p>
-        </article>
+    <article class="video-card">
+      <h3>No Image + Phase + Temporal Off</h3>
+      <p>
+        Rollout result using qpos and phase information without image observation,
+        with temporal setting disabled.
+      </p>
 
-        <article>
-          <span>03</span>
-          <h3>Phase Ablation</h3>
-          <p>Comparison between policies with and without task phase conditioning.</p>
-        </article>
+      <video controls preload="metadata">
+        <source src="assets/videos/no_image_phase_temporal_off.webm" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
+    </article>
 
-        <article>
-          <span>04</span>
-          <h3>Image Ablation</h3>
-          <p>Comparison between single-camera image input and joint/qpos-only input.</p>
-        </article>
+    <article class="video-card">
+      <h3>Image + Phase + Temporal On</h3>
+      <p>
+        Rollout result using camera image, qpos, and phase information,
+        with temporal setting enabled.
+      </p>
+
+      <video controls preload="metadata">
+        <source src="assets/videos/image_phase_temporal_on.webm" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
+    </article>
+
+    <article class="video-card">
+      <h3>Image + Phase + Temporal Off</h3>
+      <p>
+        Rollout result using camera image, qpos, and phase information,
+        with temporal setting disabled.
+      </p>
+
+      <video controls preload="metadata">
+        <source src="assets/videos/image_phase_temporal_off.webm" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
+    </article>
+
+    <article class="video-card pending-card">
+      <h3>Image + No Phase + Temporal</h3>
+      <p>
+        This condition is currently training and will be added after the rollout
+        result is available.
+      </p>
+      <div class="pending-box">
+        Training in progress
       </div>
+    </article>
+  </div>
 
-      <div class="two-col detail-grid">
-        <article class="card">
-          <h3>Ablation Conditions</h3>
-          <ul class="clean-list">
-            <li>With phase input versus without phase input.</li>
-            <li>With one camera image versus without image observation.</li>
-            <li>Joint/qpos-only policy comparison.</li>
-            <li>Policy rollout comparison across input conditions.</li>
-          </ul>
-        </article>
+  <div class="two-col detail-grid">
+    <article class="card">
+      <h3>Ablation Conditions</h3>
+      <ul class="clean-list">
+        <li>Image input versus no image input.</li>
+        <li>Phase input versus no phase input.</li>
+        <li>Temporal setting on versus off.</li>
+        <li>Policy rollout comparison across observation settings.</li>
+      </ul>
+    </article>
 
-        <article class="card">
-          <h3>Learning Pipeline Checks</h3>
-          <ul class="clean-list">
-            <li>qpos/action target formatting.</li>
-            <li>Episode length and action chunk consistency.</li>
-            <li>Normalization and denormalization flow.</li>
-            <li>Simulation rollout evaluation setup.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+    <article class="card">
+      <h3>Learning Pipeline Checks</h3>
+      <ul class="clean-list">
+        <li>qpos/action target formatting.</li>
+        <li>Episode length and action chunk consistency.</li>
+        <li>Normalization and denormalization flow.</li>
+        <li>Simulation rollout evaluation setup.</li>
+      </ul>
+    </article>
+  </div>
+</section>
 
     <section id="hardware" class="section">
       <div class="section-heading split">
