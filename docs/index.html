@@ -231,44 +231,70 @@
   </div>
 </section>
 
-    <section id="demos" class="section">
-      <div class="section-heading split">
-        <div>
-          <p class="eyebrow">Module 2</p>
-          <h2>Teleop and Scripted Demonstration Collection</h2>
-        </div>
-        <span class="status-pill">Built</span>
-      </div>
+<section id="demos" class="section">
+  <div class="section-heading split">
+    <div>
+      <p class="eyebrow">Module 2</p>
+      <h2>Teleop and Scripted Demonstration Collection</h2>
+    </div>
+    <span class="status-pill">Built</span>
+  </div>
 
-      <p class="section-intro">
-        Built a demonstration collection pipeline using both real robot teleoperation
-        and scripted trajectory generation. Teleoperation demonstrations were organized
-        into HDF5/NPZ and robomimic-style dataset formats, and approximately 94
-        demonstrations were reviewed as behavior cloning candidates.
+  <p class="section-intro">
+    Built a demonstration collection pipeline using both real robot teleoperation
+    and scripted trajectory generation. Teleoperation demonstrations were organized
+    into HDF5/NPZ and robomimic-style dataset formats, and approximately 94
+    demonstrations were reviewed as behavior cloning candidates.
+  </p>
+
+  <div class="two-col detail-grid">
+    <article class="card">
+      <h3>Teleop Demonstration Task</h3>
+      <ul class="clean-list">
+        <li>Task: two cubes are placed into cups, with each arm handling one cube.</li>
+        <li>Data source: real dual-arm OMX teleoperation.</li>
+        <li>Dataset format: HDF5/NPZ and robomimic-style demonstration structure.</li>
+        <li>Approximately 94 teleoperation demonstrations reviewed as BC training candidates.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h3>Scripted Demonstration Task</h3>
+      <ul class="clean-list">
+        <li>Task: place the yellow cube on top of the green cube.</li>
+        <li>Task phases: approach, grasp, lift, place, and retreat.</li>
+        <li>Script generation: phase-wise waypoints, inverse kinematics, and minimum-jerk trajectory.</li>
+        <li>Validation points: end-effector definition, gripper link position, grasp pose, and object randomization.</li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="video-grid">
+    <article class="video-card">
+      <h3>Teleop Demo: Cubes to Cups</h3>
+      <p>
+        Real dual-arm OMX teleoperation demo where each arm places one cube into a cup.
       </p>
 
-      <div class="two-col detail-grid">
-        <article class="card">
-          <h3>Teleop Demonstration Task</h3>
-          <ul class="clean-list">
-            <li>Task: two cubes are placed into cups, with each arm handling one cube.</li>
-            <li>Data source: real dual-arm OMX teleoperation.</li>
-            <li>Dataset format: HDF5/NPZ and robomimic-style demonstration structure.</li>
-            <li>Approximately 94 teleoperation demonstrations reviewed as BC training candidates.</li>
-          </ul>
-        </article>
+      <video controls preload="metadata">
+        <source src="assets/videos/teleop_demo_cup.webm" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
+    </article>
 
-        <article class="card">
-          <h3>Scripted Demonstration Task</h3>
-          <ul class="clean-list">
-            <li>Task: place the yellow cube on top of the green cube.</li>
-            <li>Task phases: approach, grasp, lift, place, and retreat.</li>
-            <li>Script generation: phase-wise waypoints, inverse kinematics, and minimum-jerk trajectory.</li>
-            <li>Validation points: end-effector definition, gripper link position, grasp pose, and object randomization.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+    <article class="video-card">
+      <h3>Scripted Demo: Yellow on Green</h3>
+      <p>
+        Scripted demonstration for placing the yellow cube on top of the green cube.
+      </p>
+
+      <video controls preload="metadata">
+        <source src="assets/videos/script_demo_yellow_on_green.webm" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
+    </article>
+  </div>
+</section>
 
     <section id="act" class="section">
       <div class="section-heading split">
