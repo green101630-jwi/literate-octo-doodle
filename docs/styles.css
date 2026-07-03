@@ -240,8 +240,8 @@ p { margin: 0; }
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 22px;
+  margin-bottom: 4px;
 }
 
 .video-grid.single-video {
@@ -269,6 +269,7 @@ p { margin: 0; }
   border-radius: 14px;
   border: 1px solid var(--line);
   background: #000;
+  display: block;
 }
 
 @media (max-width: 780px) {
