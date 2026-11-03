@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-portfolio-page="research-details">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,26 +9,31 @@
   <meta property="og:description" content="Building and evaluating dual-arm imitation learning systems, from demonstrations to real robots.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://green101630-jwi.github.io/literate-octo-doodle/assets/media/dual-arm-workspace.jpg">
-  <title>Won Ik Jang | Robot Learning, Data to Deployment</title>
+  <title data-title-en="Research Details | Won Ik Jang" data-title-ko="연구 상세 | 장원익">Research Details | Won Ik Jang</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="research-detail-unified.css">
   <script src="script.js" defer></script>
+  <script src="portfolio.js" defer></script>
+  <script src="research-detail-i18n.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="wordmark" href="./" aria-label="Won Ik Jang, home">Won Ik Jang<span class="wordmark-dot" aria-hidden="true"></span></a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">☰</span></button>
-      <nav id="main-nav" aria-label="Main navigation">
-        <a href="research/">Research overview</a><a href="research/#policy-videos">Policy videos</a><a href="#results">Results</a><a href="#demonstrations">Demonstrations</a><a href="#deployment">Deployment</a><a href="#about">About</a>
-        <a class="nav-cv" href="assets/WonIkJang_CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
-      </nav>
-    </div>
-  </header>
-  <main id="main">
+<a class="skip" href="#main"><span data-locale="en">Skip to content</span><span data-locale="ko">본문으로 건너뛰기</span></a>
+<header class="topbar"><div class="wrap nav-row">
+<a class="brand" href="./" aria-label="Won Ik Jang homepage">Won Ik Jang<span class="brand-dot">.</span></a>
+<button type="button" class="mobile-menu" data-menu-toggle aria-controls="site-nav" aria-expanded="false">Menu <span aria-hidden="true">☰</span></button>
+<nav class="primary-nav" id="site-nav" data-site-nav aria-label="Main navigation">
+<a href="./"><span data-locale="en">Home</span><span data-locale="ko">홈</span></a>
+<a href="research/" aria-current="page"><span data-locale="en">Research</span><span data-locale="ko">연구</span></a>
+<a href="projects/"><span data-locale="en">Projects</span><span data-locale="ko">프로젝트</span></a>
+<a href="about/"><span data-locale="en">About</span><span data-locale="ko">소개</span></a>
+<a class="nav-cv" target="_blank" rel="noopener" href="assets/WonIkJang_CV.pdf">CV ↗</a>
+<div class="language-switch" role="group" aria-label="Language"><button type="button" data-language="en" aria-pressed="true">EN</button><button type="button" data-language="ko" aria-pressed="false">한국어</button></div>
+</nav></div></header>
+<main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-copy">
+          <nav class="detail-context" aria-label="Breadcrumb"><a href="research/"><span data-locale="en">Research</span><span data-locale="ko">연구</span></a><span class="divider-mark" aria-hidden="true">/</span><span data-locale="en">Detailed research report</span><span data-locale="ko">연구 상세 보고서</span></nav>
           <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Robotics · Imitation learning · Real systems</p>
           <h1 id="hero-title">Robot learning,<br>from demonstrations<br>to <span>deployment.</span></h1>
           <p class="hero-description">I build dual-arm learning systems that connect digital twins, demonstration data, and physical robots. My work spans <strong>ACT, Diffusion Policy, and a temporal-context extension of ACT.</strong></p>
@@ -150,7 +155,11 @@
 
     <section class="section section-tint" id="about" aria-labelledby="about-title"><div class="container about-grid"><div><p class="eyebrow">About / Additional work</p><h2 id="about-title">Robot learning,<br>with a systems background.</h2><p class="about-intro">I am an undergraduate student at Kyung Hee University, working across Biomedical Engineering and Electronic Engineering. My interests include visual manipulation, imitation learning, reinforcement learning, and embodied intelligence.</p><p>Further experiments include Mamba-2 temporal encoders and MAT/PPO action-chunk learning. My earlier work also spans embedded control, biomedical instrumentation, and data analysis.</p><a class="button button-primary" href="assets/WonIkJang_CV.pdf" target="_blank" rel="noopener">Download CV <span aria-hidden="true">↗</span></a></div><div class="other-projects"><article><span class="mini-label">Embedded systems</span><h3>STM32 control & sensor integration</h3><p>UART, I2C, ADC, PWM, timer input capture, CLCD output, joystick input, and sensor interfaces.</p></article><article><span class="mini-label">Biomedical instrumentation</span><h3>EMG & force measurement</h3><p>Signal acquisition, analog circuits, force measurement, soldering, and GUI-based signal visualization.</p></article><article><span class="mini-label">Research support</span><h3>Biomedical data analysis</h3><p>Data processing, statistical analysis, and publication-oriented figure preparation.</p></article></div></div></section>
   </main>
-  <footer class="site-footer" id="contact"><div class="container footer-main"><div><p class="eyebrow">Let's connect</p><h2>Interested in learning<br>that reaches the robot.</h2></div><div class="footer-links"><a href="mailto:green101630@gmail.com">green101630@gmail.com <span aria-hidden="true">↗</span></a><a href="https://github.com/green101630-jwi" target="_blank" rel="noopener">GitHub / green101630-jwi <span aria-hidden="true">↗</span></a><a href="assets/WonIkJang_CV.pdf" target="_blank" rel="noopener">Curriculum vitae <span aria-hidden="true">↗</span></a></div></div><div class="container footer-bottom"><span>© 2026 Won Ik Jang</span><span>Research update · 03 Nov 2026</span><a href="#top">Back to top ↑</a></div></footer>
+<footer class="footer"><div class="wrap footer-grid">
+<div><a class="brand" href="./">Won Ik Jang<span class="brand-dot">.</span></a>
+<p><span data-locale="en">Robot learning, robot control, and real-world manipulation.</span><span data-locale="ko">로봇 학습과 제어, 그리고 실제 로봇 조작 연구.</span></p></div>
+<div class="footer-right"><a href="research/"><span data-locale="en">Research overview</span><span data-locale="ko">연구 개요</span> ↗</a><a href="mailto:green101630@gmail.com">Email ↗</a><a target="_blank" rel="noopener" href="https://github.com/green101630-jwi">GitHub ↗</a><a href="assets/WonIkJang_CV.pdf" target="_blank" rel="noopener">CV ↗</a></div>
+</div><div class="wrap footer-bottom"><span>© 2026 Won Ik Jang</span><span><span data-locale="en">Kyung Hee University · Academic portfolio</span><span data-locale="ko">경희대학교 · 대학원 진학용 연구 포트폴리오</span></span><a href="#top"><span data-locale="en">Back to top</span><span data-locale="ko">맨 위로</span> ↑</a></div></footer>
   <dialog class="chart-dialog" id="chart-dialog" aria-labelledby="chart-dialog-title"><div class="dialog-header"><h2 id="chart-dialog-title">Research figure</h2><button id="chart-dialog-close" type="button" aria-label="Close expanded figure">Close ×</button></div><img id="chart-dialog-image" src="assets/charts/visual-act-tc-e5000.svg" alt=""><a id="chart-download" href="assets/charts/visual-act-tc-e5000.svg" download>Download SVG ↓</a></dialog>
 </body>
 </html>
