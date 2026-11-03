@@ -1,1 +1,13 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Research details | Won Ik Jang</title><meta http-equiv="refresh" content="0;url=../../research-details.html"><script>location.replace(new URL("../../research-details.html"+location.hash,location.href));</script></head><body><p>Detailed research report: <a href="../../research-details.html">Open report</a></p></body></html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Research | Won Ik Jang</title>
+<meta http-equiv="refresh" content="0;url=../">
+<script>
+(() => {
+  const map = {pipeline:"systems-implementation",policies:"act-baseline","tc-act":"tc-act",demonstrations:"demo-footage",deployment:"deployment-context","real-camera":"camera-observations",results:"results"};
+  const requested = location.hash.replace(/^#/, "");
+  const destination = map[requested] || "research-index";
+  location.replace(new URL("../#" + destination, location.href));
+})();
+</script></head>
+<body><p>Research details now open inside <a href="../#research-index">the Research page</a>.</p></body></html>
