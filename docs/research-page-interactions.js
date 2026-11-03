@@ -9,6 +9,13 @@
       catch { return; }
       const target = document.getElementById(id);
       if (!target) return;
+      // Video cards can be hidden by the Sim/Real filter. Show the required group
+      // before scrolling to an in-page video-slot anchor.
+      const videoGroup = target.closest("[data-policy-environment]");
+      if (videoGroup?.hidden) {
+        const filterButton = document.querySelector('[data-policy-filter="' + videoGroup.dataset.policyEnvironment + '"]');
+        filterButton?.click();
+      }
       const disclosure = target.matches("details") ? target :
         target.closest("details") || target.querySelector(":scope > details.research-disclosure");
       if (disclosure && !disclosure.open) {
