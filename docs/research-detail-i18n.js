@@ -709,7 +709,7 @@
   ],
   [
     "Compile the FP32 U-Net with",
-    "FP32 U-Net을"
+    "FP32 U-Net에"
   ],
   [
     "reduce-overhead",
@@ -717,7 +717,7 @@
   ],
   [
     ", retain the 10-step denoising budget, and warm up the runtime before execution.",
-    "디노이징 10단계를 유지하며 실행 전 워밍업합니다."
+    " 옵션을 적용해 컴파일하고, 디노이징 10단계를 유지하며 실행 전 워밍업합니다."
   ],
   [
     "CONTROL TIMING",
