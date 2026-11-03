@@ -2,8 +2,8 @@
   "schema_version": 1,
   "media_url_base": "manifest",
   "description": {
-    "en": "Reserved policy-video slots. Empty entries do not indicate completed experiments.",
-    "ko": "정책 영상 등록 공간입니다. 빈 항목은 실험 완료 여부를 뜻하지 않습니다."
+    "en": "Selected successful simulation rollouts and reserved real-robot video slots. Empty entries do not indicate completed experiments.",
+    "ko": "선별한 시뮬레이션 성공 롤아웃과 실로봇 영상 등록 공간입니다. 빈 항목은 실험 완료 여부를 뜻하지 않습니다."
   },
   "slots": [
     {
@@ -11,20 +11,58 @@
       "environment": "sim",
       "policy": "act",
       "task": "basket",
-      "src": null,
-      "poster": null,
-      "caption": null,
-      "experiment": null
+      "src": "policy-videos/sim-act-basket-14d-success.mp4",
+      "poster": "policy-videos/sim-act-basket-14d-success.jpg",
+      "caption": {
+        "en": "Selected successful rollout · 14D joints + RGB.",
+        "ko": "선별한 성공 롤아웃 · 14D 관절 + RGB."
+      },
+      "experiment": {
+        "date": "2026-10-21",
+        "model": "ACT · CVAE · E5000",
+        "dataset": "Teleop30 + Mimic300",
+        "condition": {
+          "en": "Basket · XY ±4 cm resets",
+          "ko": "Basket · XY ±4 cm 초기 배치"
+        },
+        "observation": {
+          "en": "14D joints + RGB",
+          "ko": "14D 관절 + RGB"
+        },
+        "seed": {
+          "en": "Train 0 · eval 2026 · rollout 2",
+          "ko": "학습 0 · 평가 2026 · 롤아웃 2"
+        }
+      }
     },
     {
       "id": "video-sim-tc-act-basket",
       "environment": "sim",
       "policy": "tc-act",
       "task": "basket",
-      "src": null,
-      "poster": null,
-      "caption": null,
-      "experiment": null
+      "src": "policy-videos/sim-tc-act-basket-14d-success.mp4",
+      "poster": "policy-videos/sim-tc-act-basket-14d-success.jpg",
+      "caption": {
+        "en": "Selected successful rollout · 14D joints + RGB.",
+        "ko": "선별한 성공 롤아웃 · 14D 관절 + RGB."
+      },
+      "experiment": {
+        "date": "2026-10-21",
+        "model": "TC-ACT · CVAE · E5000",
+        "dataset": "Teleop30 + Mimic300",
+        "condition": {
+          "en": "Basket · XY ±4 cm resets",
+          "ko": "Basket · XY ±4 cm 초기 배치"
+        },
+        "observation": {
+          "en": "14D joints + RGB + sampled history",
+          "ko": "14D 관절 + RGB + 표본화한 이력"
+        },
+        "seed": {
+          "en": "Train 0 · eval 2026 · rollout 2",
+          "ko": "학습 0 · 평가 2026 · 롤아웃 2"
+        }
+      }
     },
     {
       "id": "video-sim-diffusion-basket",
@@ -41,20 +79,58 @@
       "environment": "sim",
       "policy": "act",
       "task": "handover",
-      "src": null,
-      "poster": null,
-      "caption": null,
-      "experiment": null
+      "src": "policy-videos/sim-act-handover-14d-success.mp4",
+      "poster": "policy-videos/sim-act-handover-14d-success.jpg",
+      "caption": {
+        "en": "Selected successful rollout · 14D joints + RGB.",
+        "ko": "선별한 성공 롤아웃 · 14D 관절 + RGB."
+      },
+      "experiment": {
+        "date": "2026-10-15",
+        "model": "ACT · CVAE · E2000 / best 1294",
+        "dataset": "Teleop25 + Mimic50",
+        "condition": {
+          "en": "Tube handover · XY ±2 cm resets",
+          "ko": "원통 Handover · XY ±2 cm 초기 배치"
+        },
+        "observation": {
+          "en": "14D joints + RGB",
+          "ko": "14D 관절 + RGB"
+        },
+        "seed": {
+          "en": "Train 0 · eval 2026 · rollout 0",
+          "ko": "학습 0 · 평가 2026 · 롤아웃 0"
+        }
+      }
     },
     {
       "id": "video-sim-tc-act-handover",
       "environment": "sim",
       "policy": "tc-act",
       "task": "handover",
-      "src": null,
-      "poster": null,
-      "caption": null,
-      "experiment": null
+      "src": "policy-videos/sim-tc-act-handover-14d-success.mp4",
+      "poster": "policy-videos/sim-tc-act-handover-14d-success.jpg",
+      "caption": {
+        "en": "Selected successful rollout · 14D joints + RGB and history.",
+        "ko": "선별한 성공 롤아웃 · 14D 관절 + RGB·이력."
+      },
+      "experiment": {
+        "date": "2026-11-04",
+        "model": "TC-ACT · CVAE · E5000",
+        "dataset": "Teleop30 + Mimic300",
+        "condition": {
+          "en": "Tube handover · XY ±2 cm resets · new recording",
+          "ko": "원통 Handover · XY ±2 cm 초기 배치 · 신규 촬영"
+        },
+        "observation": {
+          "en": "14D joints + RGB + sampled history",
+          "ko": "14D 관절 + RGB + 표본화한 이력"
+        },
+        "seed": {
+          "en": "Train 0 · eval 2027 · rollout 0",
+          "ko": "학습 0 · 평가 2027 · 롤아웃 0"
+        }
+      }
     },
     {
       "id": "video-sim-diffusion-handover",

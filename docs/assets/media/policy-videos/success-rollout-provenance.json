@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "published_date_kst": "2026-11-04",
+  "selection": "Successful rollouts from policies trained with 14D joint-state observations; RGB is additional for visual policies. Only verified successes are included.",
+  "shared_camera": {
+    "camera_name": "front_rgb_cam",
+    "camera_position": [
+      -0.33,
+      -0.45,
+      0.65
+    ],
+    "camera_target": [
+      -0.33,
+      0.32,
+      0.03
+    ],
+    "horizontal_fov_deg": 55.0,
+    "width": 640,
+    "height": 360,
+    "aspect_ratio": 1.7777777777777777,
+    "update_period": 0.0
+  },
+  "recording": "Front RGB sensor frames at 10 fps, not a separate viewport. Full recorded trajectories retain original timing and frame counts; browser-compatible H.264 transcode.",
+  "clips": [
+    {
+      "id": "video-sim-act-basket",
+      "src": "policy-videos/sim-act-basket-14d-success.mp4",
+      "sha256": "d5aa147895b66827aa32cf19b5306ba77466e6e03e82adc47d79cf30f5d97afc",
+      "source_sha256": "1c33ad8750c07dedbd63f405523153eb3b872ebff51c5df2ae283d831c8b0764",
+      "source_filename": "rollout_0002_success.mp4",
+      "checkpoint_run": "20261020_013657_basket_t30_m300_act_cvae_pair_e5000_seed0_k63SxB",
+      "checkpoint_file": "paper_act_last.pt",
+      "state_observation_dim": 14,
+      "phase_enabled": false,
+      "rgb_input": true,
+      "evaluation_file": "act_cvae_rand4cm_seed2026_n250.json",
+      "evaluation_task_id": "double-put-black-green-table-basket-rand-cubes-4cm-Play-v0",
+      "evaluation_seed": 2026,
+      "rollout_id": 2,
+      "success": true,
+      "completion_step": 419,
+      "success_trace_final_predicate": true,
+      "frames": 84,
+      "fps": 10,
+      "duration_seconds": 8.4,
+      "camera": {
+        "camera_name": "front_rgb_cam",
+        "camera_position": [
+          -0.33,
+          -0.45,
+          0.65
+        ],
+        "camera_target": [
+          -0.33,
+          0.32,
+          0.03
+        ],
+        "horizontal_fov_deg": 55.0,
+        "width": 640,
+        "height": 360,
+        "aspect_ratio": 1.7777777777777777,
+        "update_period": 0.0
+      }
+    },
+    {
+      "id": "video-sim-tc-act-basket",
+      "src": "policy-videos/sim-tc-act-basket-14d-success.mp4",
+      "sha256": "387f3d59f5d72cc3a66c21d3e493da0c6cec761c9c58a307d946a2de0fbff285",
+      "source_sha256": "d43c4f72442cf6887ad69089177d6028c72addb40cfcc6d5de6a29e620416744",
+      "source_filename": "rollout_0002_success.mp4",
+      "checkpoint_run": "09_18_basket_t30_m300_visual_tc_act_14d_cvae_e5000_amp_seed0_gpu_rerun1",
+      "checkpoint_file": "visual_tc_act_last.pt",
+      "state_observation_dim": 14,
+      "phase_enabled": false,
+      "rgb_input": true,
+      "evaluation_file": "tc_act_cvae_rand4cm_seed2026_n250.json",
+      "evaluation_task_id": "double-put-black-green-table-basket-rand-cubes-4cm-Play-v0",
+      "evaluation_seed": 2026,
+      "rollout_id": 2,
+      "success": true,
+      "completion_step": 457,
+      "success_trace_final_predicate": true,
+      "frames": 92,
+      "fps": 10,
+      "duration_seconds": 9.2,
+      "camera": {
+        "camera_name": "front_rgb_cam",
+        "camera_position": [
+          -0.33,
+          -0.45,
+          0.65
+        ],
+        "camera_target": [
+          -0.33,
+          0.32,
+          0.03
+        ],
+        "horizontal_fov_deg": 55.0,
+        "width": 640,
+        "height": 360,
+        "aspect_ratio": 1.7777777777777777,
+        "update_period": 0.0
+      }
+    },
+    {
+      "id": "video-sim-act-handover",
+      "src": "policy-videos/sim-act-handover-14d-success.mp4",
+      "sha256": "3abfc36756d84b5b01d1f95cc8db27ee4283867e034448f2d295926683016bb3",
+      "source_sha256": "a98882bbde98ca3075ad57ac834eedc9fc5cb699a18b95d2b632c34493c60526",
+      "source_filename": "rollout_0000_success.mp4",
+      "checkpoint_run": "20261014_023834_remaining_basket_handover_paper_act_e2000_aMKgGX",
+      "checkpoint_file": "paper_act_best.pt",
+      "state_observation_dim": 14,
+      "phase_enabled": false,
+      "rgb_input": true,
+      "evaluation_file": "handover_seed0_frozen_best_seed2026_n250.json",
+      "evaluation_task_id": "handover-20gon-30-mimic-stable-v5-success-only-v0",
+      "evaluation_seed": 2026,
+      "rollout_id": 0,
+      "success": true,
+      "completion_step": 329,
+      "stable_success_steps": 25,
+      "frames": 66,
+      "fps": 10,
+      "duration_seconds": 6.6,
+      "camera": {
+        "camera_name": "front_rgb_cam",
+        "camera_position": [
+          -0.33,
+          -0.45,
+          0.65
+        ],
+        "camera_target": [
+          -0.33,
+          0.32,
+          0.03
+        ],
+        "horizontal_fov_deg": 55.0,
+        "width": 640,
+        "height": 360,
+        "aspect_ratio": 1.7777777777777777,
+        "update_period": 0.0
+      }
+    },
+    {
+      "id": "video-sim-tc-act-handover",
+      "src": "policy-videos/sim-tc-act-handover-14d-success.mp4",
+      "sha256": "e43f98ca2c407f08fa401665ae8a40e8ec07518c115ef89adcd84c6ec062fe9c",
+      "source_sha256": "832acded4c8405220b3ba84013ffd934d5888e90509d5c0e5ee533a582b087fd",
+      "source_filename": "rollout_0000_success.mp4",
+      "checkpoint_run": "09_22_handover_t30_m300_visual_tc_act_14d_cvae_e5000_amp_seed0",
+      "checkpoint_file": "visual_tc_act_last.pt",
+      "checkpoint_sha256": "9574836c7661b0fa1640edbd81dd089575c731034f23c52dfe2c6938982ab605",
+      "state_observation_dim": 14,
+      "phase_enabled": false,
+      "rgb_input": true,
+      "evaluation_file": "tc_handover14_seed2027_capture.json",
+      "evaluation_task_id": "handover-20gon-30-mimic-stable-v5-success-only-v0",
+      "evaluation_seed": 2027,
+      "rollout_id": 0,
+      "success": true,
+      "completion_step": 283,
+      "stable_success_steps": 25,
+      "success_callback": "_stable_handover_success: 25 consecutive goal-and-velocity conditions; trace success_predicate is already debounced",
+      "eval_amp": true,
+      "new_recording_date_kst": "2026-11-04",
+      "recording_wrapper_sha256": "771788d56858de559c9cbac8d00f84870077cd5618c51ebf8bd74b922e107909",
+      "recording_evaluator_sha256": "637484e6c69f46aacff49b7f6da16ae5c154f6ab9a4eed691d69e74c9adc731d",
+      "frames": 57,
+      "fps": 10,
+      "duration_seconds": 5.7,
+      "camera": {
+        "camera_name": "front_rgb_cam",
+        "camera_position": [
+          -0.33,
+          -0.45,
+          0.65
+        ],
+        "camera_target": [
+          -0.33,
+          0.32,
+          0.03
+        ],
+        "horizontal_fov_deg": 55.0,
+        "width": 640,
+        "height": 360,
+        "aspect_ratio": 1.7777777777777777,
+        "update_period": 0.0
+      },
+      "encoding": "640x360 source scaled to 480x270; original 57 frames / 5.7 seconds retained",
+      "trace_sha256": "94fb3edc7558bf3de51613e6e05291ed76f9ffec626b2b338a51187ad47df595",
+      "evaluation_sha256": "714d552966e8d8b944cadd4579f9a059847723130635cfe68ff618e5cd3fd6f9",
+      "raw_final25_verified": true,
+      "raw_final25_step_range": [
+        259,
+        283
+      ],
+      "raw_final25_linear_speed_max_m_s": 0.0016711704665794969,
+      "raw_final25_angular_speed_max_rad_s": 0.03545866161584854
+    }
+  ]
+}
