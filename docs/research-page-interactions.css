@@ -2,6 +2,9 @@
 #research-index, #systems-implementation, #act-baseline, #demo-footage, #deployment-context,
 #camera-observations, #research-practice {scroll-margin-top:98px}
 .research-inline-details {margin-top:30px}
+/* Alternate sections wrap their overview content in a child .wrap; detail panels outside that wrapper must align with it. */
+section.alternate > details.research-inline-details {width:min(1180px,calc(100% - 68px));margin:30px auto 0}
+
 .research-inline-details .research-disclosure {margin-top:0}
 .research-inline-details .disclosure-body > :last-child {margin-bottom:0}
 .research-inline-details .disclosure-body h4 {margin:22px 0 10px;font-size:1rem;color:var(--ink)}
@@ -36,3 +39,5 @@ button.research-zoom:focus-visible {outline:3px solid #ffad4a;outline-offset:4px
 .research-figure-modal img {display:block;width:100%;height:auto;max-height:calc(92vh - 72px);object-fit:contain;box-sizing:border-box;background:white}
 @media(max-width:960px){.research-steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:700px){.research-steps{grid-template-columns:1fr}.research-media-grid{grid-template-columns:1fr}.research-media-grid.single{grid-template-columns:1fr}.research-figure-modal-head{padding:12px 14px}.research-figure-modal-head strong{font-size:.8rem}.research-figure-modal-close{font-size:.78rem}}
+
+@media(max-width:700px){section.alternate > details.research-inline-details{width:min(1180px,calc(100% - 36px))}}
