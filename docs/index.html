@@ -1,662 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Won Ik Jang | Robotics Portfolio</title>
-  <meta
-    name="description"
-    content="Portfolio of Won Ik Jang focused on dual-arm OMX sim-real teleoperation, robot learning, ACT-based behavior cloning, and hardware mapping experiments."
-  />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Won Ik Jang's robotics portfolio: dual-arm digital twins, ACT and Diffusion Policy, temporal-context learning, demonstration generation, and real-time visual robot deployment.">
+  <meta name="theme-color" content="#f5f7fb">
+  <meta property="og:title" content="Won Ik Jang — Robot Learning, Data to Deployment">
+  <meta property="og:description" content="Building and evaluating dual-arm imitation learning systems, from demonstrations to real robots.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://green101630-jwi.github.io/literate-octo-doodle/assets/media/dual-arm-workspace.jpg">
+  <title>Won Ik Jang | Robot Learning, Data to Deployment</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <nav class="nav">
-      <a class="logo" href="#top">Won Ik Jang</a>
-      <div class="nav-links">
-        <a href="#omx">OMX Project</a>
-        <a href="#pipeline">Pipeline</a>
-        <a href="#demos">Demos</a>
-        <a href="#act">ACT BC</a>
-        <a href="#hardware">Hardware Mapping</a>
-        <a href="#cv">CV</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
+    <div class="container header-inner">
+      <a class="wordmark" href="#top" aria-label="Won Ik Jang, home">Won Ik Jang<span class="wordmark-dot" aria-hidden="true"></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">☰</span></button>
+      <nav id="main-nav" aria-label="Main navigation">
+        <a href="#research">Research</a><a href="#results">Results</a><a href="#demonstrations">Demonstrations</a><a href="#deployment">Deployment</a><a href="#about">About</a>
+        <a class="nav-cv" href="assets/WonIkJang_CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
   </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <p class="eyebrow">Robotics · Robot Learning · Vision-Language-Action</p>
-          <h1>Won Ik Jang</h1>
-          <p class="hero-text">
-            Undergraduate student at Kyung Hee University interested in robotic manipulation,
-            imitation learning, reinforcement learning, and VLA-based robot intelligence.
-          </p>
-
-          <div class="hero-actions">
-            <a class="button primary" href="#omx">View OMX Project</a>
-            <a class="button secondary" href="assets/WonIkJang_CV.pdf">Download CV</a>
-            <a class="button secondary" href="https://github.com/green101630-jwi">GitHub</a>
-          </div>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Robotics · Imitation learning · Real systems</p>
+          <h1 id="hero-title">Robot learning,<br>from demonstrations<br>to <span>deployment.</span></h1>
+          <p class="hero-description">I build dual-arm learning systems that connect digital twins, demonstration data, and physical robots. My work spans <strong>ACT, Diffusion Policy, and a temporal-context extension of ACT.</strong></p>
+          <div class="hero-actions"><a class="button button-primary" href="#research">Explore the work <span aria-hidden="true">↓</span></a><a class="button button-quiet" href="#results">See the results <span aria-hidden="true">↗</span></a></div>
+          <p class="hero-byline">Won Ik Jang <span>·</span> Kyung Hee University <span>·</span> Biomedical / Electronic Engineering</p>
         </div>
-
-        <aside class="hero-card">
-          <p class="card-label">Current Focus</p>
-          <h2>Vision-conditioned robot learning toward VLA-based manipulation.</h2>
-          <p>I am currently focusing on vision-conditioned robot learning for manipulation.
-            My recent work compares ACT-based behavior cloning policies with and without image
-            observations using a dual-arm OMX system. Based on this pipeline, I am studying recent
-            VLA and world-model-based robot learning papers as the next step toward language-guided
-            robot manipulation.
-          </p>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section compact">
-      <div class="fact-grid">
-        <div class="fact">
-          <span>Affiliation</span>
-          <strong>Kyung Hee University</strong>
-        </div>
-        <div class="fact">
-          <span>Major</span>
-          <strong>Biomedical Engineering / Electronic Engineering</strong>
-        </div>
-        <div class="fact">
-          <span>Primary Area</span>
-          <strong>Robot Learning and Manipulation</strong>
-        </div>
-        <div class="fact">
-          <span>Research Direction</span>
-          <strong>VLA and Embodied AI</strong>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="cv" class="section cv-section">
-      <div class="section-heading split">
-        <div>
-          <p class="eyebrow">CV</p>
-          <h2>Curriculum Vitae</h2>
-        </div>
-        <a class="button secondary" href="assets/WonIkJang_CV.pdf">Download CV</a>
-      </div>
-
-      <p class="section-intro">
-        My CV summarizes my education, robotics projects, research experience,
-        technical skills, awards, training, certifications, and selected coursework.
-      </p>
-    </section>
-
-    <section id="omx" class="section featured">
-      <div class="section-heading split">
-        <div>
-          <p class="eyebrow">Featured Project</p>
-          <h2>Dual-arm OMX Sim-to-Real Robot Learning Pipeline</h2>
-        </div>
-        <span class="status-pill">In Progress</span>
-      </div>
-
-      <p class="section-intro">
-        This project builds a sim-real robot learning pipeline for a dual-arm
-        OpenManipulator-X system. The pipeline connects real teleoperation with
-        IsaacSim/IsaacLab simulation, records /pair1 and /pair2 joint trajectories
-        as reusable episodes, organizes teleoperation and scripted demonstrations
-        into learning-ready datasets, and applies ACT-based behavior cloning with
-        phase/image ablation experiments. Hardware mapping experiments are currently
-        in progress.
-      </p>
-
-      <div class="timeline">
-        <article>
-          <span>01</span>
-          <h3>Real Teleoperation</h3>
-          <p>
-            Dual-arm OMX teleoperation data collection through ROS2 /pair1 and
-            /pair2 joint states.
-          </p>
-        </article>
-
-        <article>
-          <span>02</span>
-          <h3>Recording and Replay</h3>
-          <p>
-            Episode-level joint trajectory storage and replay for reusable
-            demonstration data.
-          </p>
-        </article>
-
-        <article>
-          <span>03</span>
-          <h3>Simulation Validation</h3>
-          <p>
-            IsaacSim/IsaacLab replay, grasp behavior comparison, and physics/contact
-            setting analysis.
-          </p>
-        </article>
-
-        <article>
-          <span>04</span>
-          <h3>ACT-based BC</h3>
-          <p>
-            Behavior cloning setup using qpos, image observations, phase information,
-            action chunks, and normalization statistics.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section id="pipeline" class="section">
-      <div class="section-heading">
-        <p class="eyebrow">System Pipeline</p>
-        <h2>From Real Teleoperation to Policy Rollout</h2>
-      </div>
-
-      <div class="timeline">
-        <article>
-          <span>01</span>
-          <h3>Real Dual-arm OMX</h3>
-          <p>
-            Real robot teleoperation is used to collect dual-arm joint state
-            trajectories.
-          </p>
-        </article>
-
-        <article>
-          <span>02</span>
-          <h3>ROS2 Recording</h3>
-          <p>
-            /pair1 and /pair2 joint states are saved by episode and replayed for
-            validation.
-          </p>
-        </article>
-
-        <article>
-          <span>03</span>
-          <h3>Dataset Formatting</h3>
-          <p>
-            Teleop and scripted demonstrations are organized into HDF5/NPZ and
-            robomimic-style formats.
-          </p>
-        </article>
-
-        <article>
-          <span>04</span>
-          <h3>Policy Learning</h3>
-          <p>
-            ACT-based behavior cloning is tested with phase and image observation
-            ablations.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section id="teleop-system" class="section">
-  <div class="section-heading split">
-    <div>
-      <p class="eyebrow">Module 1</p>
-      <h2>Sim-real Teleoperation System</h2>
-    </div>
-    <span class="status-pill">Built</span>
-  </div>
-
-  <p class="section-intro">
-    Built a sim-real teleoperation pipeline that links real dual-arm OMX
-    teleoperation motion with simulated robots in IsaacSim and IsaacLab.
-    Joint states from ROS2 /pair1 and /pair2 are recorded by episode and
-    replayed for simulation validation.
-  </p>
-
-  <div class="video-grid single-video">
-    <article class="video-card">
-      <h3>Sim-real Teleoperation System Demo</h3>
-      <p>
-        Real dual-arm OMX teleoperation motion connected to the simulation robot.
-      </p>
-
-      <video controls preload="metadata">
-        <source src="assets/videos/Sim_Real_Teleop_sys.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </article>
-  </div>
-
-  <div class="two-col detail-grid">
-    <article class="card">
-      <h3>Implemented Components</h3>
-      <ul class="clean-list">
-        <li>ROS2-based recording/replay structure for dual-arm joint trajectories.</li>
-        <li>Episode-level storage of /pair1 and /pair2 joint states.</li>
-        <li>Approximately 1,377 joint trajectory samples confirmed from real teleoperation episodes.</li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3>Simulation Analysis</h3>
-      <ul class="clean-list">
-        <li>Cube grasping was feasible in IsaacSim.</li>
-        <li>Grasp behavior was unstable in IsaacLab, requiring physics/contact setting analysis.</li>
-        <li>Real OMX gripper uses a 1-joint command, while simulation uses a 2-joint gripper representation.</li>
-      </ul>
-    </article>
-  </div>
-</section>
-
-<section id="demos" class="section">
-  <div class="section-heading split">
-    <div>
-      <p class="eyebrow">Module 2</p>
-      <h2>Teleop and Scripted Demonstration Collection</h2>
-    </div>
-    <span class="status-pill">Built</span>
-  </div>
-
-  <p class="section-intro">
-    Built a demonstration collection pipeline using both real robot teleoperation
-    and scripted trajectory generation. Teleoperation demonstrations were organized
-    into HDF5/NPZ and robomimic-style dataset formats, and approximately 94
-    demonstrations were reviewed as behavior cloning candidates.
-  </p>
-
-  <div class="two-col detail-grid">
-    <article class="card">
-      <h3>Teleop Demonstration Task</h3>
-      <ul class="clean-list">
-        <li>Task: two cubes are placed into cups, with each arm handling one cube.</li>
-        <li>Data source: real dual-arm OMX teleoperation.</li>
-        <li>Dataset format: HDF5/NPZ and robomimic-style demonstration structure.</li>
-        <li>Approximately 94 teleoperation demonstrations reviewed as BC training candidates.</li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3>Scripted Demonstration Task</h3>
-      <ul class="clean-list">
-        <li>Task: place the yellow cube on top of the green cube.</li>
-        <li>Task phases: approach, grasp, lift, place, and retreat.</li>
-        <li>Script generation: phase-wise waypoints, inverse kinematics, and minimum-jerk trajectory.</li>
-        <li>Validation points: end-effector definition, gripper link position, grasp pose, and object randomization.</li>
-      </ul>
-    </article>
-  </div>
-
-  <div class="video-grid">
-    <article class="video-card">
-      <h3>Teleop Demo: Cubes to Cups</h3>
-      <p>
-        Real dual-arm OMX teleoperation demo where each arm places one cube into a cup.
-      </p>
-
-      <video controls preload="metadata">
-        <source src="assets/videos/teleop_demo_cup.webm" type="video/webm">
-        Your browser does not support the video tag.
-      </video>
-    </article>
-
-    <article class="video-card">
-      <h3>Scripted Demo: Yellow on Green</h3>
-      <p>
-        Scripted demonstration for placing the yellow cube on top of the green cube.
-      </p>
-
-      <video controls preload="metadata">
-        <source src="assets/videos/script_demo_yellow_on_green.webm" type="video/webm">
-        Your browser does not support the video tag.
-      </video>
-    </article>
-  </div>
-</section>
-
-    <section id="act" class="section">
-  <div class="section-heading split">
-    <div>
-      <p class="eyebrow">Module 3</p>
-      <h2>ACT-based Behavior Cloning and Ablation Study</h2>
-    </div>
-    <span class="status-pill">Experimenting</span>
-  </div>
-
-  <p class="section-intro">
-    Analyzed the ACT/ALOHA behavior cloning structure, where qpos and image
-    observations are used to predict future action chunks through a Transformer-based
-    policy. The collected OMX demonstrations were adapted into an ACT-style training
-    pipeline by organizing qpos, action targets, episode length, action chunks,
-    normalization statistics, and rollout conditions.
-  </p>
-
-  <div class="timeline">
-    <article>
-      <span>01</span>
-      <h3>ACT Structure</h3>
-      <p>Transformer-based behavior cloning for future action chunk prediction.</p>
-    </article>
-
-    <article>
-      <span>02</span>
-      <h3>Dataset Statistics</h3>
-      <p>dataset_stats.pkl based qpos/action normalization and inference-time denormalization.</p>
-    </article>
-
-    <article>
-      <span>03</span>
-      <h3>Phase Ablation</h3>
-      <p>Comparison between policies with and without task phase conditioning.</p>
-    </article>
-
-    <article>
-      <span>04</span>
-      <h3>Image Ablation</h3>
-      <p>Comparison between single-camera image input and joint/qpos-only input.</p>
-    </article>
-  </div>
-
-  <div class="video-grid">
-    <article class="video-card">
-      <h3>No Image + Phase + Temporal On</h3>
-      <p>
-        Rollout result using qpos and phase information without image observation,
-        with temporal setting enabled.
-      </p>
-
-      <video controls preload="metadata">
-        <source src="assets/videos/no_image_phase_temporal_on.webm" type="video/webm">
-        Your browser does not support the video tag.
-      </video>
-    </article>
-
-    <article class="video-card">
-      <h3>No Image + Phase + Temporal Off</h3>
-      <p>
-        Rollout result using qpos and phase information without image observation,
-        with temporal setting disabled.
-      </p>
-
-      <video controls preload="metadata">
-        <source src="assets/videos/no_image_phase_temporal_off_fixed.webm" type="video/webm">
-        Your browser does not support the video tag.
-      </video>
-    </article>
-
-    <article class="video-card">
-      <h3>Image + Phase + Temporal On</h3>
-      <p>
-        Rollout result using camera image, qpos, and phase information,
-        with temporal setting enabled.
-      </p>
-
-      <video controls preload="metadata">
-        <source src="assets/videos/image_phase_temporal_on.webm" type="video/webm">
-        Your browser does not support the video tag.
-      </video>
-    </article>
-
-    <article class="video-card">
-      <h3>Image + Phase + Temporal Off</h3>
-      <p>
-        Rollout result using camera image, qpos, and phase information,
-        with temporal setting disabled.
-      </p>
-
-      <video controls preload="metadata">
-        <source src="assets/videos/image_phase_temporal_off.webm" type="video/webm">
-        Your browser does not support the video tag.
-      </video>
-    </article>
-
-    <article class="video-card pending-card">
-      <h3>Image + No Phase + Temporal</h3>
-      <p>
-        This condition is currently training and will be added after the rollout
-        result is available.
-      </p>
-      <div class="pending-box">
-        Training in progress
-      </div>
-    </article>
-  </div>
-
-  <div class="two-col detail-grid">
-    <article class="card">
-      <h3>Ablation Conditions</h3>
-      <ul class="clean-list">
-        <li>Image input versus no image input.</li>
-        <li>Phase input versus no phase input.</li>
-        <li>Temporal setting on versus off.</li>
-        <li>Policy rollout comparison across observation settings.</li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3>Learning Pipeline Checks</h3>
-      <ul class="clean-list">
-        <li>qpos/action target formatting.</li>
-        <li>Episode length and action chunk consistency.</li>
-        <li>Normalization and denormalization flow.</li>
-        <li>Simulation rollout evaluation setup.</li>
-      </ul>
-    </article>
-  </div>
-</section>
-
-    <section id="hardware" class="section">
-      <div class="section-heading split">
-        <div>
-          <p class="eyebrow">Module 4</p>
-          <h2>Trained Policy Hardware Mapping</h2>
-        </div>
-        <span class="status-pill">Experiments In Progress</span>
-      </div>
-
-      <p class="section-intro">
-        Hardware mapping experiments are currently in progress. The current focus is
-        to align simulation observations with real robot observations and to check
-        whether trained policy outputs can be transferred to the real OMX setup in a
-        stable and consistent manner.
-      </p>
-
-      <div class="video-grid single-video">
-        <article class="video-card">
-          <h3>Hardware Mapping Test: Goal Cup</h3>
-          <p>
-            Real dual-arm OMX hardware test for goal-cup positioning during
-            policy-to-controller mapping and staged real-world validation.
-          </p>
-
-          <video
-            class="portrait-video"
-            controls
-            preload="metadata"
-            style="width: min(100%, 420px); aspect-ratio: 9 / 16; height: auto; object-fit: contain; margin: 0 auto; display: block; background: #000;"
-          >
-            <source src="assets/videos/Hardware_goal_cup.webm" type="video/webm">
-            Your browser does not support the video tag.
+        <figure class="hero-visual">
+          <div class="visual-topline"><span class="status-dot" aria-hidden="true"></span> THE DUAL-ARM PLATFORM <span class="mono">OMX / ROS 2</span></div>
+          <video controls muted playsinline preload="metadata" poster="assets/media/dual-arm-workspace.jpg" aria-label="Real dual-arm teleoperation linked to the digital twin">
+            <source src="assets/media/dual-arm-teleoperation.mp4" type="video/mp4">
+            <a href="assets/media/dual-arm-teleoperation.mp4">Download the system demonstration</a>.
           </video>
-        </article>
+          <figcaption><span class="caption-index">01 / SYSTEM</span><span>Real teleoperation, recorded trajectories, and a simulation twin.</span></figcaption>
+        </figure>
       </div>
-
-      <div class="two-col detail-grid">
-        <article class="card">
-          <h3>Mapping Items Under Test</h3>
-          <ul class="clean-list">
-            <li>qpos, phase, and image input consistency between simulation and real hardware.</li>
-            <li>Joint order, action scaling, joint limits, and command frequency checks.</li>
-            <li>2-joint simulation gripper representation to 1-joint real gripper command conversion.</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h3>Stepwise Validation</h3>
-          <ul class="clean-list">
-            <li>Pair1/pair2 follower controller execution checks.</li>
-            <li>FollowJointTrajectory action server verification.</li>
-            <li>First-point test before long-horizon rollout.</li>
-            <li>Short-horizon rollout tests before full real-world evaluation.</li>
-          </ul>
-        </article>
+      <div class="container hero-facts" aria-label="Research scope">
+        <div><strong>2</strong><span>policy families<br><b>ACT + Diffusion</b></span></div>
+        <div><strong>4</strong><span>demonstration sources<br><b>Human + generated data</b></span></div>
+        <div><strong>50<span class="unit"> Hz</span></strong><span>physical robot commands<br><b>Independent ACT loops</b></span></div>
+        <div><strong class="fact-words">Basket<br>Handover</strong><span>primary benchmarks<br><b>Bimanual manipulation</b></span></div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Technical Challenges</p>
-        <h2>Key Issues Analyzed</h2>
-      </div>
-
-      <div class="grid four">
-        <article class="card">
-          <h3>IsaacSim vs IsaacLab</h3>
-          <p>Grasping is possible in IsaacSim, while unstable grasp behavior appears in IsaacLab.</p>
-        </article>
-
-        <article class="card">
-          <h3>Gripper Mismatch</h3>
-          <p>Real 1-joint gripper command differs from the simulated 2-joint gripper representation.</p>
-        </article>
-
-        <article class="card">
-          <h3>Observation Consistency</h3>
-          <p>qpos, phase, image input, scaling, and frequency must remain consistent across simulation and real hardware.</p>
-        </article>
-
-        <article class="card">
-          <h3>Hardware Safety</h3>
-          <p>First-point and short-horizon tests are required before long-horizon real robot rollout.</p>
-        </article>
+    <section class="section research-map" id="research" aria-labelledby="research-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">The research, connected</p><h2 id="research-title">One system. Six lines of work.</h2></div><p>Building the platform made it possible to study the data, change the policies, and take the resulting behavior back to the robot.</p></div>
+        <div class="project-index">
+          <a href="#pipeline"><span>01</span><strong>Digital twin & pipeline</strong><small>Connect the complete learning loop</small><b aria-hidden="true">↗</b></a>
+          <a href="#policies"><span>02</span><strong>ACT & Diffusion Policy</strong><small>Adapt, train, and evaluate two families</small><b aria-hidden="true">↗</b></a>
+          <a href="#tc-act"><span>03</span><strong>Temporal-context ACT</strong><small>Extend ACT with state and visual history</small><b aria-hidden="true">↗</b></a>
+          <a href="#demonstrations"><span>04</span><strong>Demonstration research</strong><small>Generate and learn from four sources</small><b aria-hidden="true">↗</b></a>
+          <a href="#deployment"><span>05</span><strong>Real-time deployment</strong><small>Measure and reduce inference delay</small><b aria-hidden="true">↗</b></a>
+          <a href="#real-camera"><span>06</span><strong>Real-camera policies</strong><small>Bring visual learning onto hardware</small><b aria-hidden="true">↗</b></a>
+        </div>
       </div>
     </section>
 
-    <section id="status" class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Current Status</p>
-        <h2>Results and Current Progress</h2>
-      </div>
-
-      <div class="two-col detail-grid">
-        <article class="card">
-          <h3>Completed or Confirmed</h3>
-          <ul class="clean-list">
-            <li>Dual-arm OMX sim-real teleoperation pipeline built.</li>
-            <li>Episode-level /pair1 and /pair2 recording/replay structure implemented.</li>
-            <li>Approximately 1,377 real teleoperation joint trajectory samples confirmed.</li>
-            <li>Approximately 94 teleoperation demonstrations reviewed as BC candidates.</li>
-            <li>Scripted demo generation with waypoints, IK, and minimum-jerk trajectory implemented.</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h3>In Progress</h3>
-          <ul class="clean-list">
-            <li>ACT-based BC policy rollout comparison by phase input and image input.</li>
-            <li>IsaacLab grasp stability improvement through physics/contact analysis.</li>
-            <li>Real hardware observation pipeline alignment.</li>
-            <li>Policy-to-controller mapping and staged hardware safety tests.</li>
-          </ul>
-        </article>
+    <section class="section section-tint" id="pipeline" aria-labelledby="pipeline-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">01 / Systems foundation</p><h2 id="pipeline-title">A twin, a dataset,<br>and a route back to hardware.</h2></div><p>I connected the OMX robot assets and manipulation tasks to ROS 2 teleoperation, episode recording, policy training, and rollout evaluation.</p></div>
+        <ol class="pipeline-flow" aria-label="Robot learning pipeline">
+          <li><span>01</span><strong>Teleoperate</strong><small>Dual leader–follower robots<br>ROS 2 joint streams</small></li>
+          <li><span>02</span><strong>Build the data</strong><small>Record, align, and replay<br>Teleop + generated episodes</small></li>
+          <li><span>03</span><strong>Learn policies</strong><small>ACT · Diffusion · TC-ACT<br>Shared action contracts</small></li>
+          <li><span>04</span><strong>Evaluate</strong><small>Matched resets & task success<br>Generalization & failure analysis</small></li>
+          <li><span>05</span><strong>Deploy</strong><small>GPU inference → TCP → ROS 2<br>Camera & joint feedback</small></li>
+        </ol>
+        <div class="foundation-grid">
+          <figure class="image-figure"><img src="assets/media/dual-arm-workspace.jpg" alt="The actual dual-arm OMX teleoperation platform and simulation setup" width="1280" height="540" loading="lazy"><figcaption>Actual system footage. The twin supports task development, demonstration replay, and policy evaluation.</figcaption></figure>
+          <div class="contribution-list"><p class="mini-label">What I built</p><div><span>01</span><p><strong>Robot and task integration.</strong> Dual-arm assets, grippers, contacts, resets, and success conditions for manipulation tasks.</p></div><div><span>02</span><p><strong>A consistent data interface.</strong> Joint order, action scaling, normalization, timestamps, and HDF5 episode formats.</p></div><div><span>03</span><p><strong>Simulation-to-hardware interfaces.</strong> Pair mapping, physical gripper conversion, policy servers, and ROS 2 execution.</p></div></div>
+        </div>
       </div>
     </section>
 
-    <section id="interests" class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Research Direction</p>
-        <h2>Research Interests</h2>
-      </div>
-
-      <div class="grid four">
-        <article class="card">
-          <h3>Robot Learning</h3>
-          <p>Imitation learning, behavior cloning, reinforcement learning, and policy deployment.</p>
-        </article>
-
-        <article class="card">
-          <h3>Vision-Language-Action</h3>
-          <p>Connecting perception, language-conditioned reasoning, and robot actions.</p>
-        </article>
-
-        <article class="card">
-          <h3>Robotic Manipulation</h3>
-          <p>Pick-and-place tasks, arm control, grasping, and manipulation pipelines.</p>
-        </article>
-
-        <article class="card">
-          <h3>Sim-to-Real Systems</h3>
-          <p>Simulation validation, contact behavior analysis, and hardware mapping.</p>
-        </article>
+    <section class="section" id="policies" aria-labelledby="policies-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">02 / Policy learning</p><h2 id="policies-title">ACT and Diffusion.<br>Different ways to generate action.</h2></div><p>I adapted both policy families to bimanual demonstrations, managed their observation and action interfaces, and examined success alongside inference cost.</p></div>
+        <div class="policy-pair"><article class="policy-summary act-accent"><span class="mini-label">ACT</span><h3>Predict an action chunk.</h3><p>Transformer-based behavior cloning, a CVAE training path, and temporal aggregation of overlapping predictions.</p><div class="tag-row"><span>Action chunking</span><span>CVAE</span><span>Temporal aggregation</span></div></article><article class="policy-summary diffusion-accent"><span class="mini-label">DIFFUSION POLICY</span><h3>Denoise an action trajectory.</h3><p>A conditional U-Net and DDIM inference, with a measurable trade-off between denoising budget, latency, and task success.</p><div class="tag-row"><span>Conditional U-Net</span><span>DDIM</span><span>Inference budget</span></div></article></div>
+        <figure class="chart-panel">
+          <div class="chart-header"><div><p class="mini-label">A measured inference trade-off</p><h3>More denoising steps changed task success.</h3></div><button class="chart-expand" data-chart="assets/charts/diffusion-steps.svg" data-title="Diffusion denoising budget" type="button">Expand <span aria-hidden="true">↗</span></button></div>
+          <img class="chart-image" src="assets/charts/diffusion-steps.svg" alt="Diffusion success rates: 4 denoising steps 24.8 percent, 10 steps 78.8 percent, 10 steps with compile 75.2 percent" width="1200" height="727" loading="lazy">
+          <figcaption><strong>Fixed-layout simulation · 250 rollouts per condition.</strong> The same 34D no-cube Diffusion checkpoint, evaluation seed 2026. The compiled condition retains 10 denoising steps.</figcaption>
+          <details class="method-note"><summary>Model and experiment details</summary><p>Teleop30, train27 / validation3; 34D observations, 14D actions, chunk50; 60,000 training updates. These are the earlier Diffusion34 experiments. Other deployed checkpoints use separate observation, normalization, and timing contracts.</p><table class="data-table"><caption class="sr-only">Diffusion denoising evaluation data</caption><thead><tr><th>Inference</th><th>Success</th><th>Rollouts</th></tr></thead><tbody><tr><td>4 steps</td><td>24.8%</td><td>250</td></tr><tr><td>10 steps</td><td>78.8%</td><td>250</td></tr><tr><td>10 steps + compile</td><td>75.2%</td><td>250</td></tr></tbody></table></details>
+        </figure>
       </div>
     </section>
 
-    <section id="projects" class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Additional Work</p>
-        <h2>Other Projects</h2>
-      </div>
-
-      <div class="project-list">
-        <article class="project">
-          <div>
-            <h3>ACT-Based Imitation Learning Study</h3>
-            <p>
-              Study and implementation practice using Action Chunking with Transformers
-              for robotic manipulation tasks.
-            </p>
-          </div>
-          <span class="tag">Imitation Learning</span>
-        </article>
-
-        <article class="project">
-          <div>
-            <h3>STM32 Embedded Control Practice</h3>
-            <p>
-              Embedded system implementations using STM32F103RB, including UART, I2C,
-              ADC, PWM, CLCD output, joystick input, timer input capture, and sensor integration.
-            </p>
-          </div>
-          <span class="tag">Embedded</span>
-        </article>
-
-        <article class="project">
-          <div>
-            <h3>EMG and Force Measurement Device</h3>
-            <p>
-              Biomedical engineering device project involving EMG signal acquisition,
-              force measurement, analog circuits, soldering, and GUI-based signal visualization.
-            </p>
-          </div>
-          <span class="tag">Biomedical</span>
-        </article>
-
-        <article class="project">
-          <div>
-            <h3>Biomedical Data Analysis and Figure Preparation</h3>
-            <p>
-              Research support experience involving biomedical data processing,
-              statistical analysis, and publication-oriented figure preparation.
-            </p>
-          </div>
-          <span class="tag">Data Analysis</span>
-        </article>
+    <section class="section section-tint" id="tc-act" aria-labelledby="tc-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">03 / My ACT extension</p><h2 id="tc-title">Giving ACT<br><span class="text-teal">a temporal context.</span></h2></div><p>TC-ACT summarizes causal joint and image history into a context token. I studied where that history helps, how the modalities interact, and how performance changes beyond the training reset range.</p></div>
+        <div class="architecture-panel"><div class="architecture-current"><span class="mini-label">CURRENT OBSERVATION</span><strong>Joint state + RGB</strong><small>Current state and spatial image tokens</small></div><div class="architecture-history"><span class="mini-label">CAUSAL HISTORY</span><strong>Past states + images</strong><small>Temporal encoder → learned <b>[TC]</b> token</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-policy"><span class="mini-label">ACT POLICY</span><strong>State + vision + [TC]</strong><small>Predict the future action chunk</small></div></div>
+        <p class="architecture-note">Experiments include state-only, image-only, and combined history; CVAE and phase ablations; and auxiliary future-state prediction in selected versions. Future values are training targets only.</p>
+        <div class="results-anchor" id="results"></div>
+        <div class="tab-list" role="tablist" aria-label="TC-ACT evaluation charts"><button id="tab-comparison" role="tab" aria-selected="true" aria-controls="panel-comparison" tabindex="0" data-tab="comparison">ACT vs TC-ACT</button><button id="tab-generalization" role="tab" aria-selected="false" aria-controls="panel-generalization" tabindex="-1" data-tab="generalization">Position generalization</button></div>
+        <div id="panel-comparison" class="tab-panel" role="tabpanel" aria-labelledby="tab-comparison">
+          <figure class="chart-panel chart-panel-tab"><div class="chart-header"><div><p class="mini-label">Visual policies · E5000</p><h3>History helped Handover; task context mattered.</h3></div><button class="chart-expand" data-chart="assets/charts/visual-act-tc-e5000.svg" data-title="Visual ACT versus TC-ACT, E5000" type="button">Expand <span aria-hidden="true">↗</span></button></div><img class="chart-image" src="assets/charts/visual-act-tc-e5000.svg" alt="Basket ACT 96 percent and TC-ACT 89.04 percent; Handover ACT 74.08 percent and TC-ACT 84.08 percent" width="1200" height="727" loading="lazy"><figcaption><strong>1,250 paired-reset evaluations per model and task.</strong> Five evaluation seeds × 250 rollouts; one trained seed. Basket and Handover show different effects of temporal context.</figcaption><details class="method-note"><summary>Evaluation setup and exact values</summary><p>Teleop30 + Mimic300 visual policies; epoch5000, frozen ResNet18 features, temporal aggregation. The five seeds vary evaluation resets. They are not five separately trained policies.</p><table class="data-table"><caption class="sr-only">E5000 visual policy success rates</caption><thead><tr><th>Task</th><th>ACT</th><th>TC-ACT</th><th>TC − ACT</th></tr></thead><tbody><tr><td>Basket</td><td>96.00%</td><td>89.04%</td><td>−6.96 pp</td></tr><tr><td>Handover</td><td>74.08%</td><td>84.08%</td><td>+10.00 pp</td></tr></tbody></table></details></figure>
+        </div>
+        <div id="panel-generalization" class="tab-panel" role="tabpanel" aria-labelledby="tab-generalization">
+          <figure class="chart-panel chart-panel-tab"><div class="chart-header"><div><p class="mini-label">Spatial robustness · E6000</p><h3>Test the policy beyond its training placements.</h3></div><button class="chart-expand" data-chart="assets/charts/spatial-generalization-e6000.svg" data-title="Spatial generalization, E6000" type="button">Expand <span aria-hidden="true">↗</span></button></div><img class="chart-image" src="assets/charts/spatial-generalization-e6000.svg" alt="Success curves for ACT and TC-ACT over XY half-ranges 2 through 6 centimeters for Basket and Handover; TC-ACT retains a Handover advantage while ACT leads on Basket" width="1200" height="727" loading="lazy"><figcaption><strong>25,000 simulation evaluations across the plotted conditions.</strong> Basic collider, AMP-off evaluation, E6000. Each model/task/range has 5 evaluation seeds × 250 rollouts. XY half-range is per axis, not a radial distance.</figcaption><details class="method-note"><summary>Read the evaluation protocol</summary><p>ACT and TC-ACT share initial placements within each pair. Both use training seed0. These E6000 policies, geometry, and numerical settings form a separate experiment from the E5000 comparison above and later convex-decomposition runs.</p><a class="text-link" href="assets/data/spatial-generalization-e6000.csv" download>Download the plotted values <span aria-hidden="true">↓</span></a></details></figure>
+        </div>
+        <figure class="video-panel paired-video"><div class="chart-header"><div><p class="mini-label">Look at a failure, too</p><h3>The same placement can expose different behavior.</h3></div><span class="pill">Illustrative rollout</span></div><video controls playsinline preload="none" poster="assets/media/act-tc-basket-paired-diagnostic.jpg" aria-label="Side-by-side ACT success and TC-ACT failure on one matched Basket reset"><source src="assets/media/act-tc-basket-paired-diagnostic.mp4" type="video/mp4"><a href="assets/media/act-tc-basket-paired-diagnostic.mp4">Download the paired example</a>.</video><figcaption><strong>Basket · ±4cm · 21 Oct 2026.</strong> An illustrative ACT-success / TC-ACT-failure pair with identical initial cube positions. This diagnostic run is separate from the aggregate chart protocols.</figcaption></figure>
       </div>
     </section>
 
-    <section id="contact" class="section contact">
-      <div class="section-heading">
-        <p class="eyebrow">Contact</p>
-        <h2>Contact</h2>
+    <section class="section" id="demonstrations" aria-labelledby="demos-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">04 / Demonstration research</p><h2 id="demos-title">Four sources.<br>Different data, different behavior.</h2></div><p>I studied how demonstrations are generated, aligned, selected, and mixed—and how those choices affect a learned manipulation policy.</p></div>
+        <div class="demo-sources"><article><span class="source-symbol">T</span><p class="mini-label">Human demonstrations</p><h3>Teleoperation</h3><p>Record operator strategies and real joint trajectories. Establish a task-specific learning baseline.</p></article><article><span class="source-symbol">M</span><p class="mini-label">Retargeted trajectories</p><h3>Mimic augmentation</h3><p>Segment subtasks, retarget around objects, and broaden placement coverage while tracking source lineage.</p></article><article><span class="source-symbol">S</span><p class="mini-label">Programmatic collection</p><h3>Code-scripted</h3><p>Generate contact-rich simulation demonstrations with IK, grasp phases, clearances, and smooth returns.</p></article><article><span class="source-symbol">R</span><p class="mini-label">Policy-generated data</p><h3>Successful rollouts</h3><p>Filter successful executions and retrain. Test how additional teacher-generated data changes performance.</p></article></div>
+        <div class="quality-strip"><div><strong>660</strong><span>source episodes audited</span></div><div><strong>150</strong><span>aligned release episodes<br>75 Basket + 75 Handover</span></div><p><strong>Data quality is part of the experiment.</strong><br>RGB/state/action alignment, stable endings, source IDs, and train/validation splits are recorded alongside the learning results.</p></div>
+        <div class="demo-video-grid"><figure class="video-panel"><video controls playsinline preload="none" poster="assets/media/teleop-cubes-to-cups.jpg" aria-label="Recorded dual-arm teleoperation demonstration placing cubes into cups"><source src="assets/videos/teleop_demo_cup.webm" type="video/webm"><a href="assets/videos/teleop_demo_cup.webm">Download the teleoperation demonstration</a>.</video><figcaption><span class="caption-index">TELEOP</span>Human-driven, dual-arm cubes-to-cups collection.</figcaption></figure><figure class="video-panel"><video controls playsinline preload="none" poster="assets/media/scripted-yellow-on-green.jpg" aria-label="Code-scripted Yellow-on-Green simulation demonstration"><source src="assets/media/scripted-yellow-on-green.mp4" type="video/mp4"><a href="assets/media/scripted-yellow-on-green.mp4">Download the scripted demonstration</a>.</video><figcaption><span class="caption-index">CODE-SCRIPTED / SIMULATION</span>Object-relative grasp, place, release, and retreat.</figcaption></figure></div>
+        <div class="data-findings"><div><p class="mini-label">A collection-to-learning example</p><h3>Scripted Basket demonstrations</h3><p><strong>100 exported from 135 attempts.</strong> All 100 selected episodes reached final success in RGB replay. A subsequent ACT CVAE experiment recorded <strong>221/250 = 88.4%</strong>.</p><p class="small-note">Collection attempt rate, selected-demo replay, and learned-policy success are three separate measurements.</p></div><div><p class="mini-label">Mixing human and generated data</p><h3>Track the training budget, too.</h3><p>Low-dimensional ACT Teleop-only at 60k updates averaged <strong>92.8%</strong> over three training seeds. The C5 mixed condition at 200k averaged <strong>98.53%</strong>.</p><p class="small-note">Different update budgets: these numbers describe separate conditions, rather than isolating the effect of augmentation.</p></div></div>
+        <figure class="chart-panel"><div class="chart-header"><div><p class="mini-label">A useful negative result</p><h3>Adding successful policy rollouts needed careful controls.</h3></div><button class="chart-expand" data-chart="assets/charts/success-rollout-controls.svg" data-title="Successful-rollout retraining controls" type="button">Expand <span aria-hidden="true">↗</span></button></div><img class="chart-image" src="assets/charts/success-rollout-controls.svg" alt="Expert-only training achieves 56 and 57.2 percent across two training seeds; adding 50 self-success episodes achieves 22.4 and 14.4 percent under an approximately matched update budget" width="1200" height="727" loading="lazy"><figcaption><strong>Two training seeds · 250 evaluations per condition and seed.</strong> Expert50 versus Expert50 + Self50 at an approximately matched update budget. This result motivated closer checks of data source, normalization, and teacher-generated selection.</figcaption><details class="method-note"><summary>What this comparison controls</summary><p>The six-control study uses approximately 14,000 optimizer updates per condition, a fixed evaluation seed2026, and a final checkpoint. Normalization was fitted on the original Mimic50 and held fixed across conditions; student policies were trained from scratch. Successful rollouts come from a policy trained on related expert data. The full four-source × two-policy experiment matrix is not complete.</p></details></figure>
       </div>
-
-      <p>Email: <a href="mailto:green101630@gmail.com">green101630@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/green101630-jwi">green101630-jwi</a></p>
     </section>
+
+    <section class="section deployment-section" id="deployment" aria-labelledby="deployment-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">05 / Real-time systems</p><h2 id="deployment-title">Close the timing gap.<br>Keep the robot loop moving.</h2></div><p>I profiled inference and communication, optimized the Diffusion denoiser, and separated ACT policy queries from hardware command timing.</p></div>
+        <div class="deployment-overview"><div><span class="mini-label">MODEL EXECUTION</span><h3>Optimize the expensive path.</h3><p>Compile the FP32 U-Net with <code>reduce-overhead</code>, retain the 10-step denoising budget, and warm up the runtime before execution.</p></div><div><span class="mini-label">CONTROL TIMING</span><h3>Give commands their own clock.</h3><p>Independent ACT policy and command loops, TCP interfaces, explicit normalization, and consistent arm/gripper mapping.</p></div><div><span class="mini-label">PORTABLE RUNTIME</span><h3>Carry the model, preserve the behavior.</h3><p>Minimal PyTorch ACT/Diffusion inference packages, reference-output comparisons, reset semantics, and a separate ROS 2 bridge.</p></div></div>
+        <figure class="chart-panel"><div class="chart-header"><div><p class="mini-label">Earlier Diffusion34 deployment</p><h3>Denoiser latency before and after compilation.</h3></div><button class="chart-expand" data-chart="assets/charts/diffusion-latency.svg" data-title="Diffusion latency measurements" type="button">Expand <span aria-hidden="true">↗</span></button></div><img class="chart-image" src="assets/charts/diffusion-latency.svg" alt="Diffusion inference p99 improves from 35.7 to 11.33 milliseconds; a separate real-feedback shadow measurement reports p99 of 13.37 milliseconds" width="1200" height="727" loading="lazy"><figcaption><strong>August deployment measurements.</strong> Model benchmark p99: 35.7 → 11.33ms. A separate 40-second real-feedback shadow recorded 50.00Hz policy / 100.02Hz commands and p99 13.37ms. Benchmark and shadow measure different execution paths.</figcaption><details class="method-note"><summary>Measurement and model scope</summary><p>Values are preserved in the August experiment presentation. The model is the earlier 34D Diffusion policy; later Task2 checkpoints and RTX3070 timing experiments have separate contracts and results. Their measurements are not pooled here.</p></details></figure>
+        <div class="physical-result"><div class="physical-result-main"><p class="mini-label">October / Task2 ACT on hardware</p><h3><span>5</span> consecutive physical successes.</h3><p>Operator-observed, fixed-layout handover trials. A detailed timing log is retained for the final 796-step run.</p></div><dl><div><dt>Command interval · median</dt><dd>19.98 <span>ms</span></dd></div><div><dt>Policy round-trip · median</dt><dd>6.6 <span>ms</span></dd></div><div><dt>Independent clocks</dt><dd>50 / 50 <span>Hz</span></dd></div></dl></div>
+        <p class="scope-line">This Task2 ACT policy uses joint and fixed-environment observations. Its hardware result is a separate experiment from the real-camera Visual TC-ACT study below.</p>
+        <div class="deployment-media"><figure class="video-panel"><video controls playsinline preload="none" poster="assets/media/hardware-cup-mapping.jpg" aria-label="Earlier hardware mapping test on the physical dual-arm OMX"><source src="assets/media/hardware-cup-mapping.mp4" type="video/mp4"><a href="assets/media/hardware-cup-mapping.mp4">Download the hardware mapping test</a>.</video><figcaption><span class="caption-index">EARLIER HARDWARE MAPPING TEST</span>Physical arm and gripper mapping. Separate from the October Task2 trials.</figcaption></figure><aside class="planned-video"><span class="planned-symbol" aria-hidden="true">▷</span><span class="mini-label">Footage to add</span><h3>Task2 ACT · full handover</h3><p>A continuous physical trial showing the two arms, the handover platform, and final basket placement.</p><details><summary>Suggested recording</summary><p>Keep the full workspace visible from the closed-gripper start to task completion. Add the trial date and a small policy/command-rate overlay. Link the clip to its corresponding timing trace.</p></details></aside></div>
+      </div>
+    </section>
+
+    <section class="section section-tint" id="real-camera" aria-labelledby="camera-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">06 / Visual policies on hardware</p><h2 id="camera-title">From camera frames<br>to physical execution.</h2></div><p>I collected real-camera demonstrations and deployed Visual TC-ACT using live RGB and joint observations. The study compares joint-only 14D inputs with 17D inputs that add phase features.</p></div>
+        <div class="camera-flow" aria-label="Real-camera execution path"><span><b>30 FPS</b>Camera thread</span><i aria-hidden="true">→</i><span><b>Latest frame</b>Aligned RGB + joints</span><i aria-hidden="true">→</i><span><b>Visual TC-ACT</b>State & image history</span><i aria-hidden="true">→</i><span><b>ROS 2</b>Dual-arm commands</span></div>
+        <div class="camera-tech"><p><strong>Reduce waiting.</strong> Separate camera acquisition, keep the latest frame, and warm up GPU inference.</p><p><strong>Match learning and execution.</strong> Reuse image preprocessing, history features, joint conventions, and episode reset behavior.</p></div>
+        <figure class="chart-panel"><div class="chart-header"><div><p class="mini-label">Physical experiments · training seed0</p><h3>Observation design changed real behavior.</h3></div><button class="chart-expand" data-chart="assets/charts/real-camera-phase-ablation.svg" data-title="Real-camera 14D and 17D experiments" type="button">Expand <span aria-hidden="true">↗</span></button></div><img class="chart-image" src="assets/charts/real-camera-phase-ablation.svg" alt="Operator-observed real-camera trials: Basket14D 21 of25, Basket17D0 of25, Handover14D23 of25, Handover17D20 of25" width="1200" height="727" loading="lazy"><figcaption><strong>25 operator-observed trials per condition · one training seed.</strong> Results are preserved in experiment notes, presentations, and success/failure footage. The trial-level raw log mapping remains to be consolidated.</figcaption><details class="method-note"><summary>Observation and dataset details</summary><p>Real-camera clean30 datasets; 24 training / 6 validation demonstrations per task. 14D uses joint observations; 17D adds three phase features. Historical image and joint information is maintained by the Visual TC-ACT policy.</p><table class="data-table"><caption class="sr-only">Physical real-camera trial counts</caption><thead><tr><th>Task</th><th>14D joints</th><th>17D joints + phase</th></tr></thead><tbody><tr><td>Basket</td><td>21/25 · 84%</td><td>0/25 · 0%</td></tr><tr><td>Handover</td><td>23/25 · 92%</td><td>20/25 · 80%</td></tr></tbody></table></details></figure>
+        <div class="vision-media"><figure class="image-figure"><img src="assets/media/hardware-workspace.jpg" alt="Actual dual-arm OMX hardware workspace used for manipulation and mapping experiments" width="1080" height="1080" loading="lazy"><figcaption>The physical OMX workspace. This still is from the earlier hardware mapping demonstration.</figcaption></figure><aside class="planned-video"><span class="planned-symbol" aria-hidden="true">▷</span><span class="mini-label">Footage to add</span><h3>Visual TC-ACT · camera + robot</h3><p>Show the model's camera view alongside a full physical trial, including representative successes and failures.</p><details><summary>Suggested recording</summary><p>Use synchronized views: camera input, both arms, and model/task/seed labels. Keep 14D and 17D conditions clearly separated. Add trial IDs so each clip can be traced to the reported counts.</p></details></aside></div>
+      </div>
+    </section>
+
+    <section class="section evidence-section" id="evidence" aria-labelledby="evidence-title"><div class="container"><div class="section-heading"><div><p class="eyebrow">How the work is evaluated</p><h2 id="evidence-title">Keep the experiment<br>attached to the result.</h2></div><p>Success rates, timing measurements, and demonstration counts have different meanings. Each figure carries its task, model version, sampling conditions, and evidence scope.</p></div><div class="evidence-grid"><article><span>01</span><h3>Matched comparisons</h3><p>Same initial placements within policy pairs. Training seeds and evaluation seeds are reported separately.</p></article><article><span>02</span><h3>Data provenance</h3><p>Source episode IDs, aligned RGB/state/action fields, splits, quality filtering, and normalization conventions.</p></article><article><span>03</span><h3>Failures included</h3><p>Wider reset ranges, failed rollouts, unsuccessful retraining conditions, and task-dependent temporal effects.</p></article></div><div class="evidence-links"><a class="text-link" href="assets/charts/evidence-data.json" target="_blank" rel="noopener">Chart data & conditions ↗</a><a class="text-link" href="assets/charts/sources.txt" target="_blank" rel="noopener">Research source notes ↗</a><a class="text-link" href="https://github.com/green101630-jwi/literate-octo-doodle" target="_blank" rel="noopener">Website source ↗</a></div></div></section>
+
+    <section class="section section-tint" id="about" aria-labelledby="about-title"><div class="container about-grid"><div><p class="eyebrow">About / Additional work</p><h2 id="about-title">Robot learning,<br>with a systems background.</h2><p class="about-intro">I am an undergraduate student at Kyung Hee University, working across Biomedical Engineering and Electronic Engineering. My interests include visual manipulation, imitation learning, reinforcement learning, and embodied intelligence.</p><p>Further experiments include Mamba-2 temporal encoders and MAT/PPO action-chunk learning. My earlier work also spans embedded control, biomedical instrumentation, and data analysis.</p><a class="button button-primary" href="assets/WonIkJang_CV.pdf" target="_blank" rel="noopener">Download CV <span aria-hidden="true">↗</span></a></div><div class="other-projects"><article><span class="mini-label">Embedded systems</span><h3>STM32 control & sensor integration</h3><p>UART, I2C, ADC, PWM, timer input capture, CLCD output, joystick input, and sensor interfaces.</p></article><article><span class="mini-label">Biomedical instrumentation</span><h3>EMG & force measurement</h3><p>Signal acquisition, analog circuits, force measurement, soldering, and GUI-based signal visualization.</p></article><article><span class="mini-label">Research support</span><h3>Biomedical data analysis</h3><p>Data processing, statistical analysis, and publication-oriented figure preparation.</p></article></div></div></section>
   </main>
-
-  <footer class="footer">
-    <p>© 2026 Won Ik Jang. Built with GitHub Pages.</p>
-  </footer>
+  <footer class="site-footer" id="contact"><div class="container footer-main"><div><p class="eyebrow">Let's connect</p><h2>Interested in learning<br>that reaches the robot.</h2></div><div class="footer-links"><a href="mailto:green101630@gmail.com">green101630@gmail.com <span aria-hidden="true">↗</span></a><a href="https://github.com/green101630-jwi" target="_blank" rel="noopener">GitHub / green101630-jwi <span aria-hidden="true">↗</span></a><a href="assets/WonIkJang_CV.pdf" target="_blank" rel="noopener">Curriculum vitae <span aria-hidden="true">↗</span></a></div></div><div class="container footer-bottom"><span>© 2026 Won Ik Jang</span><span>Research update · 03 Nov 2026</span><a href="#top">Back to top ↑</a></div></footer>
+  <dialog class="chart-dialog" id="chart-dialog" aria-labelledby="chart-dialog-title"><div class="dialog-header"><h2 id="chart-dialog-title">Research figure</h2><button id="chart-dialog-close" type="button" aria-label="Close expanded figure">Close ×</button></div><img id="chart-dialog-image" src="assets/charts/visual-act-tc-e5000.svg" alt=""><a id="chart-download" href="assets/charts/visual-act-tc-e5000.svg" download>Download SVG ↓</a></dialog>
 </body>
 </html>

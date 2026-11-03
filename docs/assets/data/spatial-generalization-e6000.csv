@@ -1,0 +1,11 @@
+experiment,task,xy_half_range_cm,act_success_pct,tc_success_pct,tc_minus_act_pp,eval_seeds,rollouts_per_model
+visual frozen-resnet E6000 basic collider AMP-off,basket,2,93.68,92.96,-0.72,5,1250
+visual frozen-resnet E6000 basic collider AMP-off,basket,3,85.84,80.48,-5.36,5,1250
+visual frozen-resnet E6000 basic collider AMP-off,basket,4,62.64,52.96,-9.68,5,1250
+visual frozen-resnet E6000 basic collider AMP-off,basket,5,36.96,26.16,-10.8,5,1250
+visual frozen-resnet E6000 basic collider AMP-off,basket,6,20.96,11.44,-9.52,5,1250
+visual frozen-resnet E6000 basic collider AMP-off,handover,2,74.32,82.72,8.4,5,1250
+visual frozen-resnet E6000 basic collider AMP-off,handover,3,66.96,73.92,6.96,5,1250
+visual frozen-resnet E6000 basic collider AMP-off,handover,4,55.04,64.56,9.52,5,1250
+visual frozen-resnet E6000 basic collider AMP-off,handover,5,41.68,54.48,12.8,5,1250
+visual frozen-resnet E6000 basic collider AMP-off,handover,6,31.44,45.6,14.16,5,1250

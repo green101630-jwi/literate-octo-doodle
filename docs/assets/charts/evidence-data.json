@@ -1,0 +1,1082 @@
+{
+  "schema_version": 1,
+  "created": "2026-11-03",
+  "scope": "Existing experimental evidence only. No new training, policy inference, or hardware execution.",
+  "uncertainty": "No confidence intervals inferred. Evaluation-seed and training-seed repetition are distinguished.",
+  "charts": {
+    "visual-act-tc-e5000": {
+      "epoch": 5000,
+      "training_seed": 0,
+      "evaluation_seeds": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "rollouts_per_evaluation_seed": 250,
+      "rollouts_per_model_task": 1250,
+      "paired_initial_positions": true,
+      "rows": [
+        {
+          "task": "Basket",
+          "model": "ACT",
+          "successes": 1200,
+          "trials": 1250,
+          "success_pct": 96.0,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 246,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 243,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 233,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 240,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 238,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Basket",
+          "model": "TC-ACT",
+          "successes": 1113,
+          "trials": 1250,
+          "success_pct": 89.04,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 232,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 221,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 228,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 217,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 215,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Handover",
+          "model": "ACT",
+          "successes": 926,
+          "trials": 1250,
+          "success_pct": 74.08,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 179,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 179,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 199,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 191,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 178,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Handover",
+          "model": "TC-ACT",
+          "successes": 1051,
+          "trials": 1250,
+          "success_pct": 84.08,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 212,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 216,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 196,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 207,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 220,
+              "trials": 250
+            }
+          ]
+        }
+      ]
+    },
+    "spatial-generalization-e6000": {
+      "epoch": 6000,
+      "training_seed": 0,
+      "collider": "baseline task collider",
+      "amp": false,
+      "evaluation_seeds": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "rollouts_per_evaluation_seed": 250,
+      "rollouts_per_model_task_range": 1250,
+      "paired_initial_positions": true,
+      "rows": [
+        {
+          "task": "Basket",
+          "xy_half_range_cm": 2,
+          "model": "ACT",
+          "successes": 1171,
+          "trials": 1250,
+          "success_pct": 93.68,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 241,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 230,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 230,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 233,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 237,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Basket",
+          "xy_half_range_cm": 2,
+          "model": "TC-ACT",
+          "successes": 1162,
+          "trials": 1250,
+          "success_pct": 92.96,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 235,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 232,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 228,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 231,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 236,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Handover",
+          "xy_half_range_cm": 2,
+          "model": "ACT",
+          "successes": 929,
+          "trials": 1250,
+          "success_pct": 74.32,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 192,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 179,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 185,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 190,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 183,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Handover",
+          "xy_half_range_cm": 2,
+          "model": "TC-ACT",
+          "successes": 1034,
+          "trials": 1250,
+          "success_pct": 82.72,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 208,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 203,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 209,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 212,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 202,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Basket",
+          "xy_half_range_cm": 4,
+          "model": "ACT",
+          "successes": 783,
+          "trials": 1250,
+          "success_pct": 62.64,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 160,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 164,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 151,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 163,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 145,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Basket",
+          "xy_half_range_cm": 4,
+          "model": "TC-ACT",
+          "successes": 662,
+          "trials": 1250,
+          "success_pct": 52.96,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 142,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 146,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 126,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 130,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 118,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Handover",
+          "xy_half_range_cm": 4,
+          "model": "ACT",
+          "successes": 688,
+          "trials": 1250,
+          "success_pct": 55.04,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 142,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 132,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 144,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 140,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 130,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Handover",
+          "xy_half_range_cm": 4,
+          "model": "TC-ACT",
+          "successes": 807,
+          "trials": 1250,
+          "success_pct": 64.56,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 171,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 165,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 149,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 164,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 158,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Basket",
+          "xy_half_range_cm": 6,
+          "model": "ACT",
+          "successes": 262,
+          "trials": 1250,
+          "success_pct": 20.96,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 58,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 59,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 40,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 50,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 55,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Basket",
+          "xy_half_range_cm": 6,
+          "model": "TC-ACT",
+          "successes": 143,
+          "trials": 1250,
+          "success_pct": 11.44,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 30,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 33,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 20,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 30,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 30,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Handover",
+          "xy_half_range_cm": 6,
+          "model": "ACT",
+          "successes": 393,
+          "trials": 1250,
+          "success_pct": 31.44,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 75,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 95,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 73,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 74,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 76,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Handover",
+          "xy_half_range_cm": 6,
+          "model": "TC-ACT",
+          "successes": 570,
+          "trials": 1250,
+          "success_pct": 45.6,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 126,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 116,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 106,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 114,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 108,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Basket",
+          "xy_half_range_cm": 3,
+          "model": "ACT",
+          "successes": 1073,
+          "trials": 1250,
+          "success_pct": 85.84,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 216,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 212,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 208,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 220,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 217,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Basket",
+          "xy_half_range_cm": 3,
+          "model": "TC-ACT",
+          "successes": 1006,
+          "trials": 1250,
+          "success_pct": 80.48,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 214,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 209,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 187,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 202,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 194,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Handover",
+          "xy_half_range_cm": 3,
+          "model": "ACT",
+          "successes": 837,
+          "trials": 1250,
+          "success_pct": 66.96,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 165,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 166,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 176,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 156,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 174,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Handover",
+          "xy_half_range_cm": 3,
+          "model": "TC-ACT",
+          "successes": 924,
+          "trials": 1250,
+          "success_pct": 73.92,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 188,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 196,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 179,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 177,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 184,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Basket",
+          "xy_half_range_cm": 5,
+          "model": "ACT",
+          "successes": 462,
+          "trials": 1250,
+          "success_pct": 36.96,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 104,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 102,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 82,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 85,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 89,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Basket",
+          "xy_half_range_cm": 5,
+          "model": "TC-ACT",
+          "successes": 327,
+          "trials": 1250,
+          "success_pct": 26.16,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 70,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 73,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 58,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 62,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 64,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Handover",
+          "xy_half_range_cm": 5,
+          "model": "ACT",
+          "successes": 521,
+          "trials": 1250,
+          "success_pct": 41.68,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 104,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 109,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 103,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 102,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 103,
+              "trials": 250
+            }
+          ]
+        },
+        {
+          "task": "Handover",
+          "xy_half_range_cm": 5,
+          "model": "TC-ACT",
+          "successes": 681,
+          "trials": 1250,
+          "success_pct": 54.48,
+          "per_evaluation_seed": [
+            {
+              "seed": 2026,
+              "successes": 136,
+              "trials": 250
+            },
+            {
+              "seed": 2027,
+              "successes": 147,
+              "trials": 250
+            },
+            {
+              "seed": 2028,
+              "successes": 142,
+              "trials": 250
+            },
+            {
+              "seed": 2029,
+              "successes": 123,
+              "trials": 250
+            },
+            {
+              "seed": 2030,
+              "successes": 133,
+              "trials": 250
+            }
+          ]
+        }
+      ]
+    },
+    "diffusion-steps": {
+      "model": "Diffusion34",
+      "observation_dim": 34,
+      "drop_cube": true,
+      "action_dim": 14,
+      "chunk_length": 50,
+      "training_seed": 0,
+      "evaluation_seed": 2026,
+      "task": "fixed cube placement",
+      "temporal_aggregation": true,
+      "rows": [
+        {
+          "condition": "4 steps",
+          "denoising_steps": 4,
+          "compile_mode": null,
+          "successes": 62,
+          "trials": 250,
+          "success_pct": 24.8
+        },
+        {
+          "condition": "10 steps",
+          "denoising_steps": 10,
+          "compile_mode": null,
+          "successes": 197,
+          "trials": 250,
+          "success_pct": 78.8
+        },
+        {
+          "condition": "10 steps + compiled U-Net",
+          "denoising_steps": 10,
+          "compile_mode": "reduce-overhead",
+          "successes": 188,
+          "trials": 250,
+          "success_pct": 75.2
+        }
+      ]
+    },
+    "diffusion-latency": {
+      "generation": "August 2026 Diffusion34",
+      "source_type": "presentation-reported measurements",
+      "raw_benchmark_json_available": false,
+      "benchmark": {
+        "metric": "p99 U-Net inference latency",
+        "rows": [
+          {
+            "condition": "Eager FP32",
+            "milliseconds": 35.7
+          },
+          {
+            "condition": "Compiled FP32",
+            "milliseconds": 11.33
+          }
+        ]
+      },
+      "real_feedback_shadow": {
+        "metric": "p99 policy request latency",
+        "milliseconds": 13.37,
+        "duration_seconds": 40,
+        "policy_hz": 50,
+        "control_hz": 100,
+        "physical_motion": false
+      },
+      "comparability": "U-Net benchmark and real-feedback shadow are separate measurement contexts."
+    },
+    "real-camera-phase-ablation": {
+      "model": "Visual TC-ACT",
+      "training_seed": 0,
+      "source_type": "user-observed physical trial totals",
+      "per_trial_ledger_available": false,
+      "configurations": {
+        "14D": "joint positions; no phase",
+        "17D": "joint positions plus phase"
+      },
+      "rows": [
+        {
+          "task": "Basket",
+          "observation": "14D",
+          "successes": 21,
+          "trials": 25,
+          "success_pct": 84
+        },
+        {
+          "task": "Basket",
+          "observation": "17D",
+          "successes": 0,
+          "trials": 25,
+          "success_pct": 0
+        },
+        {
+          "task": "Handover",
+          "observation": "14D",
+          "successes": 23,
+          "trials": 25,
+          "success_pct": 92
+        },
+        {
+          "task": "Handover",
+          "observation": "17D",
+          "successes": 20,
+          "trials": 25,
+          "success_pct": 80
+        }
+      ]
+    },
+    "success-rollout-controls": {
+      "task": "Basket",
+      "evaluation_seed": 2026,
+      "training_seeds": [
+        0,
+        1
+      ],
+      "expert_data": "50 Mimic expert demonstrations",
+      "self_data": "50 successful policy rollouts",
+      "rows": [
+        {
+          "training_seed": 0,
+          "condition": "Expert 50",
+          "successes": 140,
+          "trials": 250,
+          "success_pct": 56.0,
+          "optimizer_updates": 14000
+        },
+        {
+          "training_seed": 0,
+          "condition": "Expert 50 + self-success 50",
+          "successes": 56,
+          "trials": 250,
+          "success_pct": 22.4,
+          "optimizer_updates": 14001
+        },
+        {
+          "training_seed": 1,
+          "condition": "Expert 50",
+          "successes": 143,
+          "trials": 250,
+          "success_pct": 57.2,
+          "optimizer_updates": 14000
+        },
+        {
+          "training_seed": 1,
+          "condition": "Expert 50 + self-success 50",
+          "successes": 36,
+          "trials": 250,
+          "success_pct": 14.4,
+          "optimizer_updates": 14001
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "e5000-summary",
+      "document": "summary_5seeds.json",
+      "sha256": "8dbfe6aaef31bad4fa9385ea1536a08811077586d559c04f2f0cd32861bd3cd4",
+      "note": "Preserved simulator evaluation summary; training seed 0. Evaluation seed 2026 reused an earlier paired evaluation."
+    },
+    {
+      "id": "e6000-2_4_6-summary",
+      "document": "summary_5seeds_e6000.json",
+      "sha256": "82f776f65d015f878fdacc1505dd4661017ffe5b90981387359fdc36b6bcea85",
+      "note": "Baseline task collider, AMP off; five evaluation seeds, not five training seeds."
+    },
+    {
+      "id": "e6000-3_5-summary",
+      "document": "summary_5seeds_e6000.json",
+      "sha256": "8a9f03e21e74cf3b20a80eb72cadc3af5de0fb21157ef0afa06b10e749e8a39d",
+      "note": "Baseline task collider, AMP off; five evaluation seeds, not five training seeds."
+    },
+    {
+      "id": "diffusion-demo6_cube_fixed_step4_temporal",
+      "document": "eval_250_demo6_cube_fixed_step4_temporal.json",
+      "sha256": "e7f7f7fabcc7a2f2e926ad0bd573b5408eafc71094d0107e4f2877644e96ef8f",
+      "note": "Preserved simulator rollout JSON; fixed cube task, not physical hardware trials."
+    },
+    {
+      "id": "diffusion-demo6_cube_fixed_step10_temporal",
+      "document": "eval_250_demo6_cube_fixed_step10_temporal.json",
+      "sha256": "c390d796aeaf3dfdbad2f53b6a1f5f3121e2bb8b1fd4d970e01151689c68994f",
+      "note": "Preserved simulator rollout JSON; fixed cube task, not physical hardware trials."
+    },
+    {
+      "id": "diffusion-demo6_fixed_compile_reduce_temporal",
+      "document": "eval_250_demo6_fixed_compile_reduce_temporal.json",
+      "sha256": "f7189efe0c6107edc7f378701364a7f50d54d81f740b1797122f4e7680a2ebb3",
+      "note": "Preserved simulator rollout JSON; fixed cube task, not physical hardware trials."
+    },
+    {
+      "id": "deployment-audit",
+      "document": "inference_delay_real_camera_review.json",
+      "sha256": "5a43fbefe4f7106006129cdb7a4c57ab644825f6b610a0590106a0623ccbe57b",
+      "note": "Preserved code, notes, and presentation slide review. Original latency benchmark/shadow JSON was not located."
+    },
+    {
+      "id": "real-camera-notes",
+      "document": "September deployment notes, lines 214–218",
+      "sha256_excerpt": "9239a71e6ab5b8d9d66e871349e1dda99737d7c6672f2386513f010d55b61088",
+      "note": "User-observed physical success/attempt totals; complete trial-level ledger unavailable."
+    },
+    {
+      "id": "success-rollout-control-summary",
+      "document": "comparison_summary.json",
+      "sha256": "a291e3b0e47072c1dc62bc4ae7f92f775f08a05c360560f27627362b0efc126a",
+      "note": "Preserved comparison summary; ~14,000 optimizer updates per run, evaluation seed 2026 and 250 rollouts per model."
+    }
+  ]
+}

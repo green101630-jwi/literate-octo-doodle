@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "created": "2026-11-03",
+  "data": "evidence-data.json",
+  "generator": "generate_charts.py",
+  "palette": {
+    "ACT": "#377cf6",
+    "TC-ACT": "#16a08c",
+    "Diffusion": "#9b73e8"
+  },
+  "uncertainty": "No inferred confidence intervals or significance claims.",
+  "charts": [
+    {
+      "id": "visual-act-tc-e5000",
+      "title": "Visual ACT and TC-ACT at epoch 5000",
+      "alt": "Basket: ACT 96.00%, TC-ACT 89.04%. Handover: ACT 74.08%, TC-ACT 84.08%. Each value uses 1,250 simulated rollouts across five evaluation seeds, with training seed 0.",
+      "assets": {
+        "svg": {
+          "file": "visual-act-tc-e5000.svg",
+          "sha256": "61a79200eecc2e298693abad4ca250384f4e56a228e607455eee6e2e783cf811",
+          "bytes": 8643
+        },
+        "png": {
+          "file": "visual-act-tc-e5000.png",
+          "sha256": "e0b4986fa982c7ad5e19a043a0811216cfb701290ee5536903159efeac97646a",
+          "bytes": 135260
+        }
+      },
+      "sources": [
+        "e5000-summary"
+      ],
+      "notes": [
+        "5 evaluation seeds, not 5 training seeds.",
+        "Seed 2026 reused an earlier paired evaluation."
+      ]
+    },
+    {
+      "id": "spatial-generalization-e6000",
+      "title": "Spatial generalization at epoch 6000",
+      "alt": "Two panels show ACT and TC-ACT success rates over XY half-ranges from ±2 to ±6 cm. ACT leads in Basket; TC-ACT leads in Handover. Baseline collider, AMP off, training seed 0 and five evaluation seeds, 1,250 rollouts per point.",
+      "assets": {
+        "svg": {
+          "file": "spatial-generalization-e6000.svg",
+          "sha256": "3770b9e245bc4ce0ae8f5bcf4211ecdbf9ce9afdd8e29c8958b3071229d940c5",
+          "bytes": 22490
+        },
+        "png": {
+          "file": "spatial-generalization-e6000.png",
+          "sha256": "8d989f53d9612413b65558dc819d149b31af15375d1691660c329461e74a5f92",
+          "bytes": 237119
+        }
+      },
+      "sources": [
+        "e6000-2_4_6-summary",
+        "e6000-3_5-summary"
+      ],
+      "notes": [
+        "XY half-range is not a radius.",
+        "Do not merge with convex-decomposition/AMP-on evaluations."
+      ]
+    },
+    {
+      "id": "diffusion-steps",
+      "title": "Diffusion denoising-step comparison",
+      "alt": "Fixed-placement simulated success: 4 denoising steps 62/250 (24.8%), 10 steps 197/250 (78.8%), 10 steps with compiled U-Net 188/250 (75.2%).",
+      "assets": {
+        "svg": {
+          "file": "diffusion-steps.svg",
+          "sha256": "71a31c7eeb22b899da97b7624f52c9e4d9140ffd2e7df0e61000448f1d929a3d",
+          "bytes": 8170
+        },
+        "png": {
+          "file": "diffusion-steps.png",
+          "sha256": "b3e49bb32b80e6259e2e539c9296f95b5510df23ba835b445c30d1862939049a",
+          "bytes": 162077
+        }
+      },
+      "sources": [
+        "diffusion-demo6_cube_fixed_step4_temporal",
+        "diffusion-demo6_cube_fixed_step10_temporal",
+        "diffusion-demo6_fixed_compile_reduce_temporal"
+      ],
+      "notes": [
+        "Simulator results, not hardware trials.",
+        "A fixed-placement task does not establish random-placement generalization."
+      ]
+    },
+    {
+      "id": "diffusion-latency",
+      "title": "Diffusion34 latency measurements",
+      "alt": "Presentation-reported p99 U-Net inference latency: eager FP32 35.7 ms, compiled FP32 11.33 ms. A separate 40-second no-motion real-feedback shadow recorded p99 policy request latency 13.37 ms. The panels have different measurement scopes; dashed line is the 20 ms policy period.",
+      "assets": {
+        "svg": {
+          "file": "diffusion-latency.svg",
+          "sha256": "3853716944e16d1e252421e775fc35efdc8b3bdb5ce0fc58f469ddc89c529530",
+          "bytes": 12032
+        },
+        "png": {
+          "file": "diffusion-latency.png",
+          "sha256": "0f290d9491007d19aec4758027c42c19eb10c0f3caff44a87a38d6bb4a1c197c",
+          "bytes": 214815
+        }
+      },
+      "sources": [
+        "deployment-audit"
+      ],
+      "notes": [
+        "Presentation-level evidence; original latency JSON was not located.",
+        "Benchmark, real-feedback shadow, and physical task success are distinct."
+      ]
+    },
+    {
+      "id": "real-camera-phase-ablation",
+      "title": "Real-camera phase-input comparison",
+      "alt": "User-observed physical trials, seed-0 models: Basket joint-only 14D 21/25 (84%), 17D with phase 0/25 (0%); Handover 14D 23/25 (92%), 17D 20/25 (80%). Complete trial-level raw ledger unavailable.",
+      "assets": {
+        "svg": {
+          "file": "real-camera-phase-ablation.svg",
+          "sha256": "9112fadc4e119f940eb3706c8b11f4d43ea81d391ee74f685b3ff75dda08b3a6",
+          "bytes": 9165
+        },
+        "png": {
+          "file": "real-camera-phase-ablation.png",
+          "sha256": "e617b103a3588c969c4a7e4f60d473323e48ce0955587cafed64fb6053cab562",
+          "bytes": 174578
+        }
+      },
+      "sources": [
+        "real-camera-notes",
+        "deployment-audit"
+      ],
+      "notes": [
+        "User-observed counts, not simulator evaluation.",
+        "Seed-1/2 results excluded because denominators were not confirmed."
+      ]
+    },
+    {
+      "id": "success-rollout-controls",
+      "title": "Successful self-rollout data control experiment",
+      "alt": "Basket simulation with approximately 14,000 training updates: expert50 scores 56.0% and 57.2% for training seeds 0 and 1; expert50 plus self-success50 scores 22.4% and 14.4%. Each model was evaluated on 250 rollouts at evaluation seed 2026.",
+      "assets": {
+        "svg": {
+          "file": "success-rollout-controls.svg",
+          "sha256": "4f09a678baccc2f960d2d003e3767e37f7db0d34ae82e7d6283267eea1af66c0",
+          "bytes": 9282
+        },
+        "png": {
+          "file": "success-rollout-controls.png",
+          "sha256": "04597d3c6140f36a6ebb0a1dc974f3291a946e786aaec1bab10ddccd5f6c0688",
+          "bytes": 183936
+        }
+      },
+      "sources": [
+        "success-rollout-control-summary"
+      ],
+      "notes": [
+        "A negative result under this protocol, not a universal claim about self-generated data.",
+        "Two training seeds; no confidence intervals inferred."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+Portfolio figure sources — existing evidence, reviewed 2026-11-03
+
+All six charts are drawn from preserved experimental records. No new training,
+policy inference, simulator run, or physical robot trial was performed to make
+these figures. Full chart values, sample counts, conditions, and source hashes
+are in evidence-data.json; accessible descriptions are in chart-manifest.json.
+
+visual-act-tc-e5000.svg / .png
+Visual ACT and TC-ACT at epoch 5000. Source: preserved summary_5seeds.json,
+ACT-vs-TC evaluation dated 2026-10-23. Five evaluation seeds (2026–2030),
+250 paired rollouts each, 1,250 per model and task. Training seed 0.
+Evaluation seed 2026 reused an earlier paired evaluation. These are simulator
+results from one trained checkpoint per method/task, not five training runs.
+
+spatial-generalization-e6000.svg / .png
+Source: two preserved summary_5seeds_e6000.json files covering XY half-ranges
+2/4/6 cm and 3/5 cm. Every value was cross-checked against the audit CSV.
+Baseline task collider; AMP off; epoch 6000; training seed 0. Five evaluation
+seeds, 250 paired rollouts per seed, 1,250 per model/task/range. Half-range is
+not radius. Precision-collider / AMP-on results are excluded.
+
+diffusion-steps.svg / .png
+Source: preserved fixed-placement rollout JSON for the Diffusion34 no-cube
+observation model. The same trained checkpoint was evaluated with 4 denoising
+steps, 10 steps, and 10 steps plus a compiled U-Net. Evaluation seed 2026,
+250 simulator rollouts per setting, temporal aggregation enabled. The plots
+show task success, not measured inference latency or physical success.
+
+diffusion-latency.svg / .png
+Source: preserved deployment review of the August 2026 presentation and code.
+The presentation reports p99 U-Net inference latency of 35.7 ms eager FP32
+and 11.33 ms compiled FP32. A separate 40-second real-joint-feedback shadow
+reports 13.37 ms p99 policy request latency, with 50 Hz policy / 100 Hz control.
+The shadow involved no physical motion. Benchmark and shadow are displayed in
+separate panels because they measure different scopes. Original benchmark
+and shadow JSON were not located; these are presentation-reported values.
+The 20 ms dashed reference marks a 50 Hz policy period.
+
+real-camera-phase-ablation.svg / .png
+Source: September deployment notes, lines 214–218, corroborated by the saved
+September presentation review. Visual TC-ACT training seed 0. The values are
+user-observed physical success/attempt totals: Basket14D 21/25; Basket17D 0/25;
+Handover14D 23/25; Handover17D 20/25. 14D uses joint positions; 17D adds phase.
+A complete trial-level ledger and model-hash mapping are unavailable. These
+counts are not a reconstructed trial log. Unconfirmed seed-1/2 totals are omitted.
+
+success-rollout-controls.svg / .png
+Source: preserved comparison_summary.json, Basket Mimic50 six-control study
+dated 2026-10-17. Expert means 50 Mimic demonstrations. Expert-only runs used
+14,000 optimizer updates; expert50 plus self-success50 used 14,001. Two
+training seeds, 250 simulator rollouts per model at evaluation seed 2026.
+The negative result applies to this protocol and does not establish that all
+self-generated demonstrations reduce performance.
+
+All success-rate axes run from 0% to 100%; latency axes start at 0 ms.
+No confidence intervals or significance claims were inferred. Evaluation-seed
+repetition and training-seed repetition are explicitly distinguished.
+Figures were generated with Matplotlib from the public evidence-data.json.
+SVG provides editable vectors/text; PNG is 2376 × 1440 pixels for sharing.

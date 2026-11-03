@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns2="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" width="950.4pt" height="576pt" viewBox="0 0 950.4 576" version="1.1" role="img" aria-labelledby="diffusion-latency-title diffusion-latency-desc">
+ <title id="diffusion-latency-title">Diffusion34 latency measurements</title><desc id="diffusion-latency-desc">Presentation-reported p99 U-Net inference latency: eager FP32 35.7 ms, compiled FP32 11.33 ms. A separate 40-second no-motion real-feedback shadow recorded p99 policy request latency 13.37 ms. The panels have different measurement scopes; dashed line is the 20 ms policy period.</desc><metadata>
+  <rdf:RDF>
+   <ns2:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    <dc:date>2026-11-03T12:05:47.879208</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <ns2:Agent>
+      <dc:title>Matplotlib v3.10.3, https://matplotlib.org/</dc:title>
+     </ns2:Agent>
+    </dc:creator>
+   </ns2:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 576  L 950.4 576  L 950.4 0  L 0 0  z " style="fill: #ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 95.04 420.48  L 532.224 420.48  L 532.224 167.04  L 95.04 167.04  z " style="fill: #ffffff" />
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1" />
+     <g id="text_1">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #52647a" x="214.272" y="441.877656" transform="rotate(-0 214.272 441.877656)">Eager FP32</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2" />
+     <g id="text_2">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #52647a" x="412.992" y="441.877656" transform="rotate(-0 412.992 441.877656)">Compiled FP32</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_3">
+      <path d="M 95.04 420.48  L 532.224 420.48  " clip-path="url(#p9e1bf8cdb6)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_4" />
+     <g id="text_3">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52647a" x="85.04" y="425.798906" transform="rotate(-0 85.04 425.798906)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_5">
+      <path d="M 95.04 357.12  L 532.224 357.12  " clip-path="url(#p9e1bf8cdb6)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_6" />
+     <g id="text_4">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52647a" x="85.04" y="362.438906" transform="rotate(-0 85.04 362.438906)">10</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_7">
+      <path d="M 95.04 293.76  L 532.224 293.76  " clip-path="url(#p9e1bf8cdb6)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_8" />
+     <g id="text_5">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52647a" x="85.04" y="299.078906" transform="rotate(-0 85.04 299.078906)">20</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_9">
+      <path d="M 95.04 230.4  L 532.224 230.4  " clip-path="url(#p9e1bf8cdb6)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_10" />
+     <g id="text_6">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52647a" x="85.04" y="235.718906" transform="rotate(-0 85.04 235.718906)">30</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_11">
+      <path d="M 95.04 167.04  L 532.224 167.04  " clip-path="url(#p9e1bf8cdb6)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_12" />
+     <g id="text_7">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52647a" x="85.04" y="172.358906" transform="rotate(-0 85.04 172.358906)">40</text>
+     </g>
+    </g>
+    <g id="text_8">
+     <text style="font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #182c43" x="50.8975" y="293.76" transform="rotate(-90 50.8975 293.76)">p99 latency (ms)</text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 160.6176 420.48  L 267.9264 420.48  L 267.9264 194.2848  L 160.6176 194.2848  z " clip-path="url(#p9e1bf8cdb6)" style="fill: #c6b0f2" />
+   </g>
+   <g id="patch_4">
+    <path d="M 359.3376 420.48  L 466.6464 420.48  L 466.6464 348.69312  L 359.3376 348.69312  z " clip-path="url(#p9e1bf8cdb6)" style="fill: #9b73e8" />
+   </g>
+   <g id="line2d_13">
+    <path d="M 95.04 293.76  L 532.224 293.76  " clip-path="url(#p9e1bf8cdb6)" style="fill: none; stroke-dasharray: 6.4,4.8; stroke-dashoffset: 0; stroke: #8b9bad; stroke-width: 1.6" />
+   </g>
+   <g id="patch_5">
+    <path d="M 95.04 420.48  L 532.224 420.48  " style="fill: none; stroke: #c8d2df; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square" />
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 18px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #182c43" x="214.272" y="187.9488" transform="rotate(-0 214.272 187.9488)">35.7 ms</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 18px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #182c43" x="412.992" y="342.35712" transform="rotate(-0 412.992 342.35712)">11.33 ms</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 19px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #182c43" x="313.632" y="145.04" transform="rotate(-0 313.632 145.04)">U-Net inference benchmark</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_6">
+    <path d="M 684.288 420.48  L 902.88 420.48  L 902.88 167.04  L 684.288 167.04  z " style="fill: #ffffff" />
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_3">
+     <g id="line2d_14" />
+     <g id="text_12">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #52647a" x="793.584" y="441.877656" transform="rotate(-0 793.584 441.877656)">Policy request</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_6">
+     <g id="line2d_15">
+      <path d="M 684.288 420.48  L 902.88 420.48  " clip-path="url(#peae4193d83)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_16" />
+     <g id="text_13">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52647a" x="674.288" y="425.798906" transform="rotate(-0 674.288 425.798906)">0</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_17">
+      <path d="M 684.288 357.12  L 902.88 357.12  " clip-path="url(#peae4193d83)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_18" />
+     <g id="text_14">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52647a" x="674.288" y="362.438906" transform="rotate(-0 674.288 362.438906)">10</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_19">
+      <path d="M 684.288 293.76  L 902.88 293.76  " clip-path="url(#peae4193d83)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_20" />
+     <g id="text_15">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52647a" x="674.288" y="299.078906" transform="rotate(-0 674.288 299.078906)">20</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_21">
+      <path d="M 684.288 230.4  L 902.88 230.4  " clip-path="url(#peae4193d83)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_22" />
+     <g id="text_16">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52647a" x="674.288" y="235.718906" transform="rotate(-0 674.288 235.718906)">30</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_23">
+      <path d="M 684.288 167.04  L 902.88 167.04  " clip-path="url(#peae4193d83)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_24" />
+     <g id="text_17">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52647a" x="674.288" y="172.358906" transform="rotate(-0 674.288 172.358906)">40</text>
+     </g>
+    </g>
+    <g id="text_18">
+     <text style="font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #182c43" x="640.1455" y="293.76" transform="rotate(-90 640.1455 293.76)">p99 latency (ms)</text>
+    </g>
+   </g>
+   <g id="patch_7">
+    <path d="M 749.8656 420.48  L 837.3024 420.48  L 837.3024 335.76768  L 749.8656 335.76768  z " clip-path="url(#peae4193d83)" style="fill: #16a08c" />
+   </g>
+   <g id="line2d_25">
+    <path d="M 684.288 293.76  L 902.88 293.76  " clip-path="url(#peae4193d83)" style="fill: none; stroke-dasharray: 6.4,4.8; stroke-dashoffset: 0; stroke: #8b9bad; stroke-width: 1.6" />
+   </g>
+   <g id="patch_8">
+    <path d="M 684.288 420.48  L 902.88 420.48  " style="fill: none; stroke: #c8d2df; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square" />
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 18px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #182c43" x="793.584" y="329.2416" transform="rotate(-0 793.584 329.2416)">13.37 ms</text>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #182c43" x="793.584" y="145.04" transform="rotate(-0 793.584 145.04)">Real-feedback shadow</text>
+   </g>
+  </g>
+  <g id="text_21">
+   <text style="font-weight: 700; font-size: 25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #182c43" x="71.28" y="47.796094" transform="rotate(-0 71.28 47.796094)">Reducing Diffusion34 inference latency</text>
+  </g>
+  <g id="text_22">
+   <text style="font-size: 14.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #52647a" x="71.28" y="76.681734" transform="rotate(-0 71.28 76.681734)">August 2026 deployment  ·  presentation-reported p99 measurements</text>
+  </g>
+  <g id="text_23">
+   <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #52647a" x="95.04" y="112.32" transform="rotate(-0 95.04 112.32)">Model computation only</text>
+  </g>
+  <g id="text_24">
+   <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #52647a" x="684.288" y="112.32" transform="rotate(-0 684.288 112.32)">40 s  ·  no motion</text>
+  </g>
+  <g id="text_25">
+   <text style="font-size: 12.3px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #52647a" x="95.04" y="478.08" transform="rotate(-0 95.04 478.08)">Dashed reference: 20 ms policy period (50 Hz). Panels use different measurement scopes.</text>
+  </g>
+  <g id="text_26">
+   <text style="font-size: 12.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #52647a" x="71.28" y="533.430094" transform="rotate(-0 71.28 533.430094)">Shadow run: real joint feedback, 50 Hz policy / 100 Hz control. This is not a physical success test.</text>
+  </g>
+  <g id="text_27">
+   <text style="font-size: 12.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #52647a" x="71.28" y="551.862094" transform="rotate(-0 71.28 551.862094)">Values preserved in the deployment presentation review; original benchmark/shadow JSON unavailable.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p9e1bf8cdb6">
+   <rect x="95.04" y="167.04" width="437.184" height="253.44" />
+  </clipPath>
+  <clipPath id="peae4193d83">
+   <rect x="684.288" y="167.04" width="218.592" height="253.44" />
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns2="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" width="950.4pt" height="576pt" viewBox="0 0 950.4 576" version="1.1" role="img" aria-labelledby="real-camera-phase-ablation-title real-camera-phase-ablation-desc">
+ <title id="real-camera-phase-ablation-title">Real-camera phase-input comparison</title><desc id="real-camera-phase-ablation-desc">User-observed physical trials, seed-0 models: Basket joint-only 14D 21/25 (84%), 17D with phase 0/25 (0%); Handover 14D 23/25 (92%), 17D 20/25 (80%). Complete trial-level raw ledger unavailable.</desc><metadata>
+  <rdf:RDF>
+   <ns2:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    <dc:date>2026-11-03T12:05:48.068167</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <ns2:Agent>
+      <dc:title>Matplotlib v3.10.3, https://matplotlib.org/</dc:title>
+     </ns2:Agent>
+    </dc:creator>
+   </ns2:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 576  L 950.4 576  L 950.4 0  L 0 0  z " style="fill: #ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 114.048 432  L 883.872 432  L 883.872 149.76  L 114.048 149.76  z " style="fill: #ffffff" />
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1" />
+     <g id="text_1">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #52647a" x="324" y="453.397656" transform="rotate(-0 324 453.397656)">Basket</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2" />
+     <g id="text_2">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #52647a" x="673.92" y="453.397656" transform="rotate(-0 673.92 453.397656)">Handover</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_3">
+      <path d="M 114.048 432  L 883.872 432  " clip-path="url(#pe51146e336)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_4" />
+     <g id="text_3">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52647a" x="104.048" y="437.318906" transform="rotate(-0 104.048 437.318906)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_5">
+      <path d="M 114.048 375.552  L 883.872 375.552  " clip-path="url(#pe51146e336)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_6" />
+     <g id="text_4">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52647a" x="104.048" y="380.870906" transform="rotate(-0 104.048 380.870906)">20</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_7">
+      <path d="M 114.048 319.104  L 883.872 319.104  " clip-path="url(#pe51146e336)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_8" />
+     <g id="text_5">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52647a" x="104.048" y="324.422906" transform="rotate(-0 104.048 324.422906)">40</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_9">
+      <path d="M 114.048 262.656  L 883.872 262.656  " clip-path="url(#pe51146e336)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_10" />
+     <g id="text_6">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52647a" x="104.048" y="267.974906" transform="rotate(-0 104.048 267.974906)">60</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_11">
+      <path d="M 114.048 206.208  L 883.872 206.208  " clip-path="url(#pe51146e336)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_12" />
+     <g id="text_7">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52647a" x="104.048" y="211.526906" transform="rotate(-0 104.048 211.526906)">80</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_13">
+      <path d="M 114.048 149.76  L 883.872 149.76  " clip-path="url(#pe51146e336)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_14" />
+     <g id="text_8">
+      <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #52647a" x="104.048" y="155.078906" transform="rotate(-0 104.048 155.078906)">100</text>
+     </g>
+    </g>
+    <g id="text_9">
+     <text style="font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #182c43" x="60.998" y="290.88" transform="rotate(-90 60.998 290.88)">Success rate (%)</text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 219.024 432  L 324 432  L 324 194.9184  L 219.024 194.9184  z " clip-path="url(#pe51146e336)" style="fill: #16a08c" />
+   </g>
+   <g id="patch_4">
+    <path d="M 568.944 432  L 673.92 432  L 673.92 172.3392  L 568.944 172.3392  z " clip-path="url(#pe51146e336)" style="fill: #16a08c" />
+   </g>
+   <g id="patch_5">
+    <path d="M 324 432  L 428.976 432  L 428.976 432  L 324 432  z " clip-path="url(#pe51146e336)" style="fill: #78bfb1" />
+   </g>
+   <g id="patch_6">
+    <path d="M 673.92 432  L 778.896 432  L 778.896 206.208  L 673.92 206.208  z " clip-path="url(#pe51146e336)" style="fill: #78bfb1" />
+   </g>
+   <g id="patch_7">
+    <path d="M 114.048 432  L 883.872 432  " style="fill: none; stroke: #c8d2df; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square" />
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; fill: #182c43" transform="translate(252.36325 164.512535)">84%</text>
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; fill: #182c43" transform="translate(240.7545 184.25266)">21 / 25</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; fill: #ffffff" transform="translate(602.28325 195.7863)">92%</text>
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; fill: #ffffff" transform="translate(590.6745 215.526425)">23 / 25</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; fill: #182c43" transform="translate(362.9055 401.594135)">0%</text>
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; fill: #182c43" transform="translate(351.29675 421.33426)">0 / 25</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; fill: #182c43" transform="translate(707.25925 175.802135)">80%</text>
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; fill: #182c43" transform="translate(695.6505 195.54226)">20 / 25</text>
+   </g>
+  </g>
+  <g id="text_14">
+   <text style="font-weight: 700; font-size: 25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #182c43" x="71.28" y="47.796094" transform="rotate(-0 71.28 47.796094)">Real-camera TC-ACT: joint input with and without phase</text>
+  </g>
+  <g id="text_15">
+   <text style="font-size: 14.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #52647a" x="71.28" y="76.681734" transform="rotate(-0 71.28 76.681734)">Physical trials  ·  training seed 0  ·  user-observed success / attempt totals</text>
+  </g>
+  <g id="text_16">
+   <text style="font-size: 12.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #52647a" x="71.28" y="533.430094" transform="rotate(-0 71.28 533.430094)">25 physical attempts per task/configuration, recorded in September deployment notes.</text>
+  </g>
+  <g id="text_17">
+   <text style="font-size: 12.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #52647a" x="71.28" y="551.862094" transform="rotate(-0 71.28 551.862094)">User-observed totals; a complete trial-level ledger and model-hash mapping are unavailable.</text>
+  </g>
+  <g id="legend_1">
+   <g id="patch_8">
+    <path d="M 525.915375 117.125812  L 553.915375 117.125812  L 553.915375 107.325812  L 525.915375 107.325812  z " style="fill: #16a08c" />
+   </g>
+   <g id="text_18">
+    <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #182c43" x="565.115375" y="117.125812" transform="rotate(-0 565.115375 117.125812)">14D: joints only</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 702.938812 117.125812  L 730.938812 117.125812  L 730.938812 107.325812  L 702.938812 107.325812  z " style="fill: #78bfb1" />
+   </g>
+   <g id="text_19">
+    <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #182c43" x="742.138812" y="117.125812" transform="rotate(-0 742.138812 117.125812)">17D: joints + phase</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pe51146e336">
+   <rect x="114.048" y="149.76" width="769.824" height="282.24" />
+  </clipPath>
+ </defs>
+</svg>

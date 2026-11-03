@@ -1,0 +1,118 @@
+{
+  "updated": "2026-11-03",
+  "videos": [
+    {
+      "src": "assets/media/dual-arm-teleoperation.mp4",
+      "poster": "assets/media/dual-arm-teleoperation.jpg",
+      "title": "Real robot and simulation teleoperation",
+      "task": "Dual-arm teleoperation",
+      "domain": "real and simulation",
+      "what_it_proves": "A recorded operator-controlled teleoperation session links the physical dual-arm setup and Isaac simulation. This is a system demonstration, not an autonomous policy success-rate test.",
+      "origin": "existing site video, browser-compatible H.264 transcode",
+      "bytes": 3314948,
+      "sha256": "7e06987fa77e21ffc6ca2821a134509de2a546784f759a27d3210f9a260ff368",
+      "width": 1280,
+      "height": 720,
+      "duration_seconds": 12.3,
+      "codec": "h264",
+      "audio": false,
+      "sim_or_real": "real and simulation",
+      "existing_new": "existing recording, compatible transcode",
+      "faststart_verified": true
+    },
+    {
+      "src": "assets/media/act-tc-basket-paired-diagnostic.mp4",
+      "poster": "assets/media/act-tc-basket-paired-diagnostic.jpg",
+      "title": "Matched basket diagnostic: ACT success, TC-ACT failure",
+      "task": "Basket placement, ±4 cm evaluation",
+      "domain": "simulation",
+      "what_it_proves": "One matched-reset example from 21 October 2026. Both policies start at identical cube XY coordinates; ACT succeeds and TC-ACT fails. A single example does not estimate success rates.",
+      "origin": "new presentation of two complete existing diagnostic recordings",
+      "protocol": {
+        "date": "2026-10-21",
+        "evaluation_seed": 2026,
+        "rollout_id": 0,
+        "evaluation_half_range_cm": 4,
+        "matched_initial_xy_verified": true,
+        "act_recorded_success": true,
+        "tc_act_recorded_success": false
+      },
+      "editing": "Original 10 fps and full recorded trajectories preserved. Labels and side-by-side layout added. ACT completes at 8.5 s; its final frame is held until the TC clip ends at 14.2 s. No failure removed.",
+      "results_note": "This ±4 cm diagnostic is separate from the later five-seed main evaluation.",
+      "bytes": 479756,
+      "sha256": "60222f274affab7336fc3d78b29b8d1d6a1b7a23de292ff67325a9e9a283933d",
+      "width": 960,
+      "height": 302,
+      "duration_seconds": 14.2,
+      "codec": "h264",
+      "audio": false,
+      "sim_or_real": "simulation",
+      "existing_new": "new comparative presentation",
+      "faststart_verified": true
+    },
+    {
+      "src": "assets/media/hardware-cup-mapping.mp4",
+      "poster": "assets/media/hardware-cup-mapping.jpg",
+      "title": "Hardware cup mapping test",
+      "task": "Cube-to-cup hardware mapping",
+      "domain": "real",
+      "what_it_proves": "An existing recorded physical robot mapping test with a cup and cubes. The recording alone does not identify the policy checkpoint or establish repeated success.",
+      "origin": "existing site video, browser-compatible H.264 transcode",
+      "bytes": 4041118,
+      "sha256": "99ab8ad2b6b1e7427c2665da606fc4f27c26422e84d6123512ae47936424e00d",
+      "width": 608,
+      "height": 1080,
+      "duration_seconds": 26.761,
+      "codec": "h264",
+      "audio": false,
+      "sim_or_real": "real",
+      "existing_new": "existing recording, compatible transcode",
+      "faststart_verified": true
+    },
+    {
+      "src": "assets/media/scripted-yellow-on-green.mp4",
+      "poster": "assets/media/scripted-yellow-on-green.jpg",
+      "title": "Yellow-on-green scripted demonstration",
+      "task": "Yellow-on-green stacking",
+      "domain": "simulation",
+      "what_it_proves": "An existing recorded simulator scripted trajectory. It is an illustrative demonstration, not footage of the later 50-run benchmark.",
+      "origin": "existing site video, browser-compatible H.264 transcode",
+      "bytes": 454551,
+      "sha256": "a4da03820189b25e54c5e8722b4225f09f3f379588256378834e5eee4154a913",
+      "width": 816,
+      "height": 482,
+      "duration_seconds": 17.65,
+      "codec": "h264",
+      "audio": false,
+      "sim_or_real": "simulation",
+      "existing_new": "existing recording, compatible transcode",
+      "faststart_verified": true
+    }
+  ],
+  "stills": [
+    {
+      "src": "assets/media/dual-arm-workspace.jpg",
+      "title": "Dual-arm teleoperation workspace",
+      "domain": "real and simulation",
+      "origin": "actual frame from the existing system video",
+      "editing": "Frame at 2 s; upper workspace crop and resize. No generated content. No faces retained.",
+      "bytes": 142015
+    },
+    {
+      "src": "assets/media/hardware-workspace.jpg",
+      "title": "Physical dual-arm manipulation workspace",
+      "domain": "real",
+      "origin": "actual frame from the existing hardware cup test",
+      "editing": "Frame at 8 s; crop around robot arms and tabletop. No generated content.",
+      "bytes": 131877
+    },
+    {
+      "src": "assets/media/teleop-cubes-to-cups.jpg",
+      "title": "Cubes-to-cups teleoperation poster",
+      "origin": "Frame at one second of the existing teleop_demo_cup.webm recording",
+      "what_it_proves": "A preview of the existing teleoperation demonstration; not a policy success-rate result.",
+      "bytes": 13595,
+      "sha256": "a4570227478260accf51ffe47fcf877efcaf358571e364f92da87df6a9f2f60f"
+    }
+  ]
+}

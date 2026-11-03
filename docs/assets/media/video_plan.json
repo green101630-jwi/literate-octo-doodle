@@ -1,0 +1,22 @@
+{
+  "footage_to_add": [
+    {
+      "project": "Real-camera Visual TC-ACT",
+      "status": "Footage to add",
+      "shot": "A fixed full-workspace camera view of one complete successful trial and one complete failed trial, with on-screen model (14D/17D), task, seed, trial ID and date; show the physical tube/box and both arms continuously.",
+      "reason": "The previously inventoried September success/failure files are currently unavailable on the disconnected USB volume; no accessible T7 copy was found. Existing hardware cup footage must not be relabeled as this policy."
+    },
+    {
+      "project": "Task 2 completed hardware deployment",
+      "status": "Footage to add",
+      "shot": "A continuous full Task 2 hardware rollout from initial pose through transfer, final placement, release and stable stop, with checkpoint identifier and trial number matching the saved control log.",
+      "reason": "A deployment runbook and logs exist, but no accessible video was verified for that exact completed policy."
+    },
+    {
+      "project": "Latest scripted basket demonstration",
+      "status": "Footage to add",
+      "shot": "One complete physics-contact basket demonstration from approach to grasp, placement, release and retreat; include a failure example separately and identify fixed/random reset and collector version.",
+      "reason": "Accessible scripted-data policy evaluation videos show learned policies, not the scripted collector itself; they were not relabeled."
+    }
+  ]
+}
