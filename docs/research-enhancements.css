@@ -3,6 +3,16 @@
 .research-nav a{border:1px solid var(--line);border-radius:7px;background:#fff;padding:8px 12px;color:var(--teal-deep);font-size:.78rem;font-weight:700}
 .research-nav a:hover{background:var(--soft)}
 .research-intro{max-width:850px;color:var(--muted);line-height:1.85}
+.research-section-title{font-size:clamp(1.75rem,2.7vw,2.35rem);line-height:1.2;margin-bottom:12px}
+.research-section-number{color:var(--teal-deep);white-space:nowrap}
+.split-panel>div>.research-section-subtitle,.research-section-subtitle{font-size:1.15rem;font-weight:650;line-height:1.5;color:var(--muted);margin-bottom:20px}
+.pipeline-steps{font-size:.93rem;line-height:1.65;margin:24px 0}
+.pipeline-steps li+li{margin-top:10px}
+.pipeline-steps li::marker{color:var(--teal-deep);font-weight:750}
+.pipeline-steps strong{color:var(--ink);font-weight:700}
+#policies>.wrap>.research-grid>.research-card{display:flex;flex-direction:column}
+#policies>.wrap>.research-grid>.research-card>.inline-link{margin-top:auto;padding-top:12px}
+#policies #act-baseline{margin-top:25px}
 .research-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px}
 .research-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
 .research-grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}

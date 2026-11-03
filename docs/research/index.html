@@ -24,16 +24,22 @@
 <main id="main">
 <section class="subhero wrap">
 <p class="eyebrow">RESEARCH / ROBOT LEARNING</p>
-<h1><span data-locale="en">From demonstrations to real-world robot control.</span><span data-locale="ko">시연 데이터에서 실제 로봇 제어까지</span></h1>
+<h1><span data-locale="en">From demonstrations<br>to real-world robot control.</span><span data-locale="ko">시연 데이터에서<br>실제 로봇 제어까지</span></h1>
 <p class="sublead"><span data-locale="en">I study how policy structure, demonstration data, and execution timing affect bimanual manipulation. My work connects model extensions and controlled experiments to a dual-arm OpenMANIPULATOR-X system.</span><span data-locale="ko">정책 구조, 시연 데이터, 실행 주기가 양팔 조작에 어떤 영향을 주는지 연구합니다. 모델 확장과 통제 실험을 양팔 OpenMANIPULATOR-X 시스템에 연결합니다.</span></p>
 <div class="subhero-actions"><a class="btn primary" href="#research-index"><span data-locale="en">Explore research topics ↓</span><span data-locale="ko">연구 항목 살펴보기 ↓</span></a><a class="btn subtle" href="#policy-videos"><span data-locale="en">Sim / Real video matrix ↓</span><span data-locale="ko">Sim / Real 영상 비교표 ↓</span></a></div>
 <nav class="research-nav" id="research-index" aria-label="Research sections"><a href="#systems"><span data-locale="en">System</span><span data-locale="ko">시스템</span></a><a href="#policies"><span data-locale="en">Policies</span><span data-locale="ko">정책 모델</span></a><a href="#demonstrations"><span data-locale="en">Demonstrations</span><span data-locale="ko">시연 데이터</span></a><a href="#results"><span data-locale="en">Evaluation</span><span data-locale="ko">평가</span></a><a href="#deployment"><span data-locale="en">Deployment</span><span data-locale="ko">실로봇 배포</span></a><a href="#policy-videos"><span data-locale="en">Videos</span><span data-locale="ko">영상</span></a></nav>
 </section>
 <section class="section wrap" id="systems">
-<div class="split-panel"><div><p class="eyebrow">01 / SYSTEMS FOUNDATION</p>
-<h2><span data-locale="en">A complete experimental pipeline</span><span data-locale="ko">전체 실험 파이프라인</span></h2>
+<div class="split-panel"><div><h2 class="research-section-title"><span class="research-section-number">01 /</span> <span data-locale="en">Systems Foundation</span><span data-locale="ko">시스템 기반 구축</span></h2>
+<p class="research-section-subtitle"><span data-locale="en">A complete experimental pipeline</span><span data-locale="ko">전체 실험 파이프라인</span></p>
 <p><span data-locale="en">I built the interfaces between the robot assets and manipulation tasks, ROS 2 leader/follower teleoperation, aligned demonstration datasets, policy training, and rollout evaluation. The digital twin supports task development and replay; hardware execution has its own observation and control contracts.</span><span data-locale="ko">로봇 자산과 조작 태스크, ROS 2 리더·팔로워 텔레오퍼레이션, 정렬된 시연 데이터셋, 정책 학습과 롤아웃 평가를 연결했습니다. 디지털 트윈은 태스크 개발과 재생에 활용하고, 실로봇 실행에는 관측·제어 규약을 별도로 맞췄습니다.</span></p>
-<ol class="simple-steps"><li><span data-locale="en">Digital twin & ROS 2 teleoperation</span><span data-locale="ko">디지털 트윈 및 ROS 2 텔레오퍼레이션</span></li><li><span data-locale="en">Collect, align, generate & audit demonstrations</span><span data-locale="ko">시연 수집·정렬·생성·품질 점검</span></li><li><span data-locale="en">Train ACT, TC-ACT & Diffusion policies</span><span data-locale="ko">ACT·TC-ACT·Diffusion 정책 학습</span></li><li><span data-locale="en">Evaluate task success, resets & distribution shifts</span><span data-locale="ko">작업 성공·초기조건·분포 변화 평가</span></li><li><span data-locale="en">Integrate cameras, policy inference & physical control</span><span data-locale="ko">카메라·정책 추론·실물 제어 연결</span></li></ol>
+<ol class="simple-steps pipeline-steps">
+<li><strong><span data-locale="en">Digital twin</span><span data-locale="ko">디지털 트윈</span></strong> — ROS 2</li>
+<li><strong><span data-locale="en">Demonstration collection</span><span data-locale="ko">시연 데이터 수집</span></strong> — <span data-locale="en">Teleoperation, Mimic & code-scripted demos</span><span data-locale="ko">텔레오퍼레이션·Mimic·코드 스크립트 시연</span></li>
+<li><strong><span data-locale="en">Policy training</span><span data-locale="ko">정책 학습</span></strong> — ACT, TC-ACT & Diffusion Policy</li>
+<li><strong><span data-locale="en">Evaluation</span><span data-locale="ko">성능 평가</span></strong> — <span data-locale="en">Task success</span><span data-locale="ko">태스크 성공률</span></li>
+<li><strong><span data-locale="en">Real-robot deployment</span><span data-locale="ko">실로봇 배포</span></strong> — <span data-locale="en">Cameras, inference & control</span><span data-locale="ko">카메라·추론·제어 연결</span></li>
+</ol>
 <a class="inline-link" href="#systems-implementation"><span data-locale="en">System architecture and implementation ↓</span><span data-locale="ko">시스템 구조와 구현 상세 ↓</span></a>
 </div><img src="../assets/media/dual-arm-workspace.jpg" alt="Actual dual-arm OMX teleoperation and simulation workspace" loading="lazy"></div>
 <div class="research-grid">
@@ -43,11 +49,11 @@
 </div>
 <details class="research-disclosure research-inline-details" id="systems-implementation"><summary><span data-locale="en">System architecture and implementation</span><span data-locale="ko">시스템 구조 및 구현 상세</span></summary><div class="disclosure-body"><p><span data-locale="en">The ROS 2 leader/follower setup connects recording, aligned HDF5 episodes, policy training, matched rollout evaluation, and hardware control with consistent joint/gripper action contracts.</span><span data-locale="ko">ROS 2 리더·팔로워 구성은 데이터 기록, 정렬된 HDF5 에피소드, 정책 학습, 동일 조건 평가, 실물 제어를 일관된 관절·그리퍼 행동 규약으로 연결합니다.</span></p>
 <ol class="research-steps">
-<li><b>01</b><strong><span data-locale="en">Teleoperate</span><span data-locale="ko">원격조작</span></strong><p>ROS 2 · Leader/Follower</p></li>
-<li><b>02</b><strong><span data-locale="en">Record</span><span data-locale="ko">데이터 기록</span></strong><p>RGB · State · Action · HDF5</p></li>
-<li><b>03</b><strong><span data-locale="en">Train</span><span data-locale="ko">정책 학습</span></strong><p>ACT · TC-ACT · Diffusion</p></li>
-<li><b>04</b><strong><span data-locale="en">Evaluate</span><span data-locale="ko">평가</span></strong><p><span data-locale="en">Matched resets</span><span data-locale="ko">동일 초기조건 평가</span></p></li>
-<li><b>05</b><strong><span data-locale="en">Deploy</span><span data-locale="ko">실물 실행</span></strong><p>GPU → TCP → ROS 2 → OMX</p></li>
+<li><b>01</b><strong><span data-locale="en">Digital twin</span><span data-locale="ko">디지털 트윈</span></strong><p>ROS 2 · OpenMANIPULATOR-X</p></li>
+<li><b>02</b><strong><span data-locale="en">Collect demonstrations</span><span data-locale="ko">시연 데이터 수집</span></strong><p><span data-locale="en">Teleoperation · Mimic · Code-scripted</span><span data-locale="ko">텔레오퍼레이션 · Mimic · 코드 스크립트</span></p></li>
+<li><b>03</b><strong><span data-locale="en">Train policies</span><span data-locale="ko">정책 학습</span></strong><p>ACT · TC-ACT · Diffusion Policy</p></li>
+<li><b>04</b><strong><span data-locale="en">Evaluate</span><span data-locale="ko">성능 평가</span></strong><p><span data-locale="en">Task success · Matched resets</span><span data-locale="ko">태스크 성공률 · 동일 초기조건</span></p></li>
+<li><b>05</b><strong><span data-locale="en">Deploy on real robots</span><span data-locale="ko">실로봇 배포</span></strong><p>GPU → TCP → ROS 2 → OMX</p></li>
 </ol>
 <ul class="research-detail-list">
 <li><span data-locale="en">Joint order, timestamp alignment, normalization and HDF5 episode format are kept consistent during recording and training.</span><span data-locale="ko">관절 순서, 타임스탬프, 정규화, HDF5 에피소드 형식을 기록 및 학습 과정에서 일관되게 유지합니다.</span></li>
@@ -60,8 +66,8 @@
 </div></details>
 </section>
 <section class="section alternate" id="policies"><div class="wrap">
-<p class="eyebrow">02 / IMITATION LEARNING POLICIES</p>
-<h2><span data-locale="en">Three policies, distinct implementation contributions</span><span data-locale="ko">세 정책 모델과 각각의 구현 기여</span></h2>
+<h2 class="research-section-title"><span class="research-section-number">02 /</span> <span data-locale="en">Imitation Learning Policies</span><span data-locale="ko">모방학습 정책 모델</span></h2>
+<p class="research-section-subtitle"><span data-locale="en">Three policies, distinct implementation contributions</span><span data-locale="ko">세 정책 모델과 각각의 구현 기여</span></p>
 <p class="research-intro"><span data-locale="en">ACT and Diffusion Policy provide two action-generation families. TC-ACT is the ACT extension implemented in this project. Behavior cloning describes the supervised learning approach; it is distinct from the policy architecture.</span><span data-locale="ko">ACT와 Diffusion Policy는 서로 다른 행동 생성 계열이며, TC-ACT는 이 프로젝트에서 구현한 ACT 확장입니다. 행동 복제는 지도 방식의 모방학습 방법을 가리키며 정책 구조 자체와 구분합니다.</span></p>
 <div class="research-grid">
 <article class="research-card"><span class="research-label">ACT / BASELINE</span><h3><span data-locale="en">Action chunks from current observations</span><span data-locale="ko">현재 관측에서 행동 청크 예측</span></h3><p><span data-locale="en">Adapted Transformer-based ACT to the bimanual tasks: CVAE training, ResNet18 image features in visual versions, joint observations, action normalization, and temporal aggregation. Low-dimensional and visual checkpoints use different inputs.</span><span data-locale="ko">Transformer 기반 ACT를 양팔 태스크에 적용했습니다. CVAE 학습, 시각 버전의 ResNet18 특징, 관절 관측, 행동 정규화와 temporal aggregation을 연결했으며 저차원·영상 체크포인트의 입력 구성을 구분했습니다.</span></p><a class="inline-link" href="#act-baseline"><span data-locale="en">Baseline details ↓</span><span data-locale="ko">기준 정책 상세 ↓</span></a></article>
@@ -77,7 +83,7 @@
 <div class="figure-heading"><div><h3><span data-locale="en">A measured inference trade-off</span><span data-locale="ko">측정된 추론 비용과 성능의 관계</span></h3></div><button type="button" class="inline-link research-zoom" data-research-figure="../assets/charts/diffusion-steps.svg" aria-haspopup="dialog" aria-controls="research-figure-modal"><span data-locale="en">Expand here ⤢</span><span data-locale="ko">여기서 확대 ⤢</span></button></div>
 <img src="../assets/charts/diffusion-steps.svg" alt="Diffusion success: 4 steps 24.8 percent, 10 steps 78.8 percent, compiled 10 steps 75.2 percent" data-alt-en="Diffusion success: 4 steps 24.8 percent, 10 steps 78.8 percent, compiled 10 steps 75.2 percent" data-alt-ko="Diffusion 성공률: 4단계 24.8%, 10단계 78.8%, 컴파일한 10단계 75.2%" width="1200" height="727" loading="lazy">
 <figcaption><span data-locale="en">Earlier 34D no-cube Diffusion; the same checkpoint, fixed layout, evaluation seed2026, 250 rollouts per condition. Teleop30, train27/validation3, 14D actions, chunk50, 60k updates. These are not a matched ACT/TC-ACT comparison.</span><span data-locale="ko">이전 34D no-cube Diffusion의 같은 체크포인트·고정 배치·평가 시드2026, 조건별 250회입니다. Teleop30, 학습27/검증3, 14D 행동, chunk50, 60k update이며 ACT·TC-ACT와 동일 조건의 비교가 아닙니다.</span></figcaption></figure></div></details>
-</div></div>
+</div>
 <details class="research-disclosure research-inline-details" id="act-baseline"><summary><span data-locale="en">ACT baseline — architecture and training</span><span data-locale="ko">ACT 기준 정책 — 구조와 학습</span></summary><div class="disclosure-body"><p><span data-locale="en">ACT predicts future action chunks using current observations. Visual versions use frozen ResNet18 image features, joints, CVAE training, and temporal aggregation. TC-ACT additionally encodes sampled observation history.</span><span data-locale="ko">ACT는 현재 관측으로 미래 행동 청크를 예측합니다. 시각 버전에서는 고정 ResNet18, 관절 입력, CVAE 학습, 시간적 집계를 사용하고 TC-ACT에는 표본화된 과거 관측 인코더를 추가합니다.</span></p>
 <ul class="research-detail-list">
 <li><span data-locale="en">ACT uses a Transformer policy with a CVAE training path, action normalization, and temporal aggregation of overlapping chunk predictions.</span><span data-locale="ko">ACT는 Transformer 정책, CVAE 학습 경로, 행동 정규화 및 중첩된 행동 청크 예측의 시간적 집계를 사용합니다.</span></li>
@@ -86,6 +92,7 @@
 </ul>
 <div class="research-links"><a class="inline-link" href="#tc-act"><span data-locale="en">TC-ACT model details ↓</span><span data-locale="ko">TC-ACT 모델 상세 ↓</span></a><a class="inline-link" href="#results"><span data-locale="en">ACT/TC-ACT evaluation ↓</span><span data-locale="ko">ACT/TC-ACT 평가 ↓</span></a></div>
 </div></details>
+</div>
 </section>
 <section class="section wrap" id="demonstrations">
 <p class="eyebrow">03 / DEMONSTRATION RESEARCH</p>
