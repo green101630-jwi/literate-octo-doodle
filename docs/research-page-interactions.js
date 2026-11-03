@@ -9,7 +9,8 @@
       catch { return; }
       const target = document.getElementById(id);
       if (!target) return;
-      const disclosure = target.matches("details") ? target : target.closest("details");
+      const disclosure = target.matches("details") ? target :
+        target.closest("details") || target.querySelector(":scope > details.research-disclosure");
       if (disclosure && !disclosure.open) {
         disclosure.open = true;
         requestAnimationFrame(() => target.scrollIntoView({block:"start",behavior:"auto"}));
