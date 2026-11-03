@@ -1,0 +1,79 @@
+/* Unified academic-portfolio treatment for the legacy in-depth research report.
+   The original report graphics, tables, chart dialog, and experiment sections
+   continue to use styles.css. This file only aligns the visual shell. */
+:root {
+  --ink:#152635;--muted:#546578;--blue:#006b63;--blue-dark:#00574f;
+  --teal:#008579;--teal-deep:#006b63;--purple:#6c7099;
+  --paper:#f7f9fb;--pale-blue:#eef5f5;--pale-teal:#edf7f4;
+  --line:#dbe4e9;--line-strong:#cbd9dd;--radius:17px;
+}
+html { scroll-padding-top:92px; }
+body { background:var(--paper); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif; }
+a:hover { color:var(--teal-deep); }
+a:focus-visible,button:focus-visible { outline:3px solid #ffad4a; outline-offset:4px; }
+.wrap { width:min(1180px,calc(100% - 68px)); margin:0 auto; }
+.skip { position:absolute; top:-100px; left:12px; z-index:500; background:var(--ink); color:#fff; padding:10px; }
+.skip:focus { top:8px; }
+[data-locale="ko"] { display:none; }
+html[lang="ko"] [data-locale="en"] { display:none; }
+html[lang="ko"] [data-locale="ko"] { display:revert; }
+/* Identical navigation pattern and dimensions to Home, Research, Projects and About. */
+.topbar { position:sticky;top:0;background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(16px);z-index:40; }
+.nav-row { height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative; }
+.brand { font-weight:800;letter-spacing:-.05em;font-size:1.3rem;white-space:nowrap;text-decoration:none; }
+.brand-dot { color:var(--teal); }
+.primary-nav { display:flex;align-items:center;gap:26px; }
+.primary-nav>a { font-size:.83rem;font-weight:700;color:#536577;text-decoration:none;transition:color .2s;white-space:nowrap; }
+.primary-nav>a:hover,.primary-nav>a[aria-current="page"] { color:var(--teal-deep); }
+.primary-nav .nav-cv { padding:8px 13px;border:1px solid var(--line);border-radius:7px;color:var(--ink); }
+.language-switch { display:flex;align-items:center;border:1px solid var(--line);border-radius:8px;padding:3px;gap:2px;background:#f4f7f8; }
+.language-switch button { border:0;background:none;padding:5px 8px;border-radius:5px;font-size:.72rem;color:#627488;font-weight:700;cursor:pointer; }
+.language-switch button[aria-pressed="true"] { background:var(--ink);color:#fff; }
+.mobile-menu { display:none;border:1px solid var(--line);border-radius:8px;padding:7px 12px;background:#fff;cursor:pointer;color:var(--ink); }
+/* Main report: preserve full research content while matching the portfolio palette. */
+.hero { background:var(--paper);padding-block:76px 0; }
+.hero-copy h1 { max-width:680px; }
+.hero-copy h1 span,.hero-copy h1 em { color:var(--teal-deep); }
+.hero-description { color:var(--muted); }
+.eyebrow,.kicker,.section-number,.mini-label { color:var(--teal-deep); }
+.section { background:#fff; }
+.section.section-tint { background:#f1f6f6; }
+.section-heading h2 { letter-spacing:-.045em; }
+.button-primary,.button.primary { background:var(--teal-deep);border-color:var(--teal-deep); }
+.button-primary:hover,.button.primary:hover { background:#00574f;border-color:#00574f; }
+.project-index a:hover,.text-link:hover { color:var(--teal-deep); }
+.hero-visual video,.hero-visual img { border-radius:14px; }
+.chart-panel,.policy-card,.evidence-grid>article { border-color:var(--line);border-radius:14px; }
+.research-map { background:#fff; }
+.detail-context { display:flex;gap:9px;align-items:center;margin:0 0 18px;color:var(--muted);font-size:.78rem;font-weight:700; }
+.detail-context a { text-decoration:none;color:var(--teal-deep); }
+.detail-context .divider-mark { color:#a8b7bf; }
+.detail-return { margin:26px 0 0; }
+.detail-return a { color:var(--teal-deep);font-size:.85rem;font-weight:750; }
+/* Footer matches the other pages rather than keeping the older separate identity. */
+.footer { background:#0e202c;color:#fff;padding:42px 0 22px; }
+.footer-grid { display:flex;justify-content:space-between;gap:25px; }
+.footer .brand { font-size:1.2rem;color:#fff; }
+.footer p { color:#aabcc8;font-size:.8rem;margin-top:9px; }
+.footer-right { display:flex;align-items:start;gap:24px;font-size:.8rem;font-weight:700; }
+.footer-right a { text-decoration:none;color:#fff; }
+.footer-right a:hover { text-decoration:underline;color:#fff; }
+.footer-bottom { display:flex;justify-content:space-between;gap:20px;border-top:1px solid #304452;padding-top:20px;margin-top:32px;color:#aabcc8;font-size:.72rem; }
+/* Keep wide tables/figures readable, and don't collide with the sticky header. */
+section[id] { scroll-margin-top:92px; }
+.chart-panel img,.image-figure img { max-width:100%; }
+@media(max-width:900px) { .primary-nav{gap:14px} }
+@media(max-width:700px) {
+ .wrap{width:min(100% - 36px,1180px)}
+ .nav-row{height:68px}
+ .mobile-menu{display:block}
+ .primary-nav{display:none;position:absolute;top:67px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:18px;box-shadow:0 18px 24px rgba(10,23,36,.1);align-items:stretch;flex-direction:column;gap:13px;z-index:41}
+ .primary-nav.open{display:flex}
+ .primary-nav>a{padding:7px}
+ .primary-nav .nav-cv{align-self:start}
+ .language-switch{align-self:start}
+ .hero{padding-top:42px}
+ .footer-grid,.footer-bottom{flex-direction:column}
+ .footer-right{flex-wrap:wrap}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
