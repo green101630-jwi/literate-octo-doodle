@@ -41,6 +41,7 @@
 <li><strong><span data-locale="en">Real-robot deployment</span><span data-locale="ko">실로봇 배포</span></strong> — <span data-locale="en">Cameras, inference & control</span><span data-locale="ko">카메라·추론·제어 연결</span></li>
 </ol>
 <a class="inline-link" href="#systems-implementation"><span data-locale="en">System architecture and implementation ↓</span><span data-locale="ko">시스템 구조와 구현 상세 ↓</span></a>
+<a class="inline-link omx-guide-jump" href="#omx-teleoperation-guide"><span data-locale="en">Open full OMX implementation guide ↓</span><span data-locale="ko">OMX 전체 구현 가이드 보기 ↓</span></a>
 </div><img src="../assets/media/dual-arm-workspace.jpg" alt="Actual dual-arm OMX teleoperation and simulation workspace" loading="lazy"></div>
 <div class="research-grid">
 <article class="research-card"><span class="research-label">ROBOT & TASKS</span><h3><span data-locale="en">Build a testbed</span><span data-locale="ko">실험 환경 구축</span></h3><p><span data-locale="en">Dual-arm assets, joint and gripper mapping, contacts, resets, and Basket / Handover success conditions.</span><span data-locale="ko">양팔 자산, 관절·그리퍼 매핑, 접촉·초기화 처리와 Basket·Handover 성공 조건을 구성했습니다.</span></p></article>
@@ -64,6 +65,17 @@
 <figcaption><strong><span data-locale="en">Dual-arm teleoperation and simulation</span><span data-locale="ko">양팔 원격조작과 시뮬레이션</span></strong><span data-locale="en">Recorded hardware-to-simulation system demonstration; not a measured policy-success trial.</span><span data-locale="ko">실물-시뮬레이션 시스템 시연 자료이며 정책 성공률 평가 영상과는 별개입니다.</span></figcaption>
 </figure></div>
 </div></details>
+
+<details class="research-disclosure research-inline-details omx-guide-disclosure" id="omx-teleoperation-guide">
+<summary><span data-locale="en">OMX Teleoperation &amp; Learning Guide — Full implementation guide</span><span data-locale="ko">OMX 원격조작 및 로봇 학습 — 전체 구현 가이드 펼쳐보기</span></summary>
+<div class="disclosure-body omx-guide-body">
+<p class="research-detail-lead"><span data-locale="en">A step-by-step technical reference covering the two-arm OpenMANIPULATOR-X setup, ROS 2 and Docker communication, Isaac Sim synchronization, demonstration collection, HDF5 recording, and learning workflows.</span><span data-locale="ko">양팔 OpenMANIPULATOR-X 구성부터 ROS 2·Docker 통신, Isaac Sim 동기화, 시연 데이터 및 HDF5 기록, 로봇 학습까지의 실행 과정을 정리한 기술 문서입니다.</span></p>
+<div class="omx-guide-frame">
+<iframe src="omx-teleoperation-learning-guide.html" title="OMX Teleoperation &amp; Learning Guide — 양팔 로봇 구축 및 학습 가이드" loading="lazy"></iframe>
+</div>
+<p class="omx-guide-note"><span data-locale="en">The commands and absolute paths document a specific laboratory environment. Verify device names, ROS 2 topics, software versions, and paths against the current system before running them. Scroll inside the guide to read its 12 sections.</span><span data-locale="ko">명령어와 절대 경로는 특정 실험실 환경 기준입니다. 실제 실행 전 장치 이름, ROS 2 토픽, 소프트웨어 버전과 경로를 확인해야 합니다. 가이드 안에서 스크롤하면 12개 항목을 볼 수 있습니다.</span></p>
+</div>
+</details>
 </section>
 <section class="section alternate" id="policies"><div class="wrap">
 <h2 class="research-section-title"><span class="research-section-number">02 /</span> <span data-locale="en">Imitation Learning Policies</span><span data-locale="ko">모방학습 정책 모델</span></h2>
