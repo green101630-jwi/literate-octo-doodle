@@ -15,4 +15,8 @@
 .other-project-item:last-child{border-bottom:0}
 .other-project-index{color:var(--teal-deep);font-size:.79rem;font-weight:800;line-height:1.8}
 .other-project-item h3{font-size:1.17rem;font-weight:650;line-height:1.55;letter-spacing:-.02em;margin:0;word-break:keep-all;overflow-wrap:anywhere}
+.other-project-item .other-project-link{color:inherit;text-decoration:none;transition:color .15s ease}
+.other-project-item .other-project-link::after{content:" ↗";color:var(--teal-deep);font-size:.85em}
+.other-project-item .other-project-link:hover,.other-project-item .other-project-link:focus-visible{color:var(--teal-deep);text-decoration:underline;text-underline-offset:4px}
+
 @media(max-width:700px){.other-project-item{grid-template-columns:27px minmax(0,1fr);gap:12px;padding:20px 18px}.other-project-item h3{font-size:1.04rem}}
