@@ -1,0 +1,29 @@
+/* Policy-video slots share the academic portfolio palette and locale styles. */
+.policy-video-gallery .policy-video-intro{max-width:790px;color:var(--muted);line-height:1.8}
+.policy-video-gallery .policy-video-note{max-width:790px;margin:16px 0 0;font-size:.82rem;color:var(--muted)}
+.policy-video-gallery .policy-video-filters{display:flex;flex-wrap:wrap;gap:7px;margin:27px 0 0}
+.policy-video-gallery .policy-video-filters button{border:1px solid var(--line);border-radius:7px;padding:7px 15px;background:var(--white);color:var(--muted);font-size:.79rem;font-weight:700;cursor:pointer}
+.policy-video-gallery .policy-video-filters button:hover{border-color:var(--teal);color:var(--teal-deep)}
+.policy-video-gallery .policy-video-filters button[aria-pressed="true"]{border-color:var(--teal-deep);background:var(--teal-deep);color:var(--white)}
+.policy-video-gallery .policy-video-group{margin-top:36px}
+.policy-video-gallery .policy-video-group-heading{display:flex;align-items:baseline;gap:13px;margin-bottom:17px}
+.policy-video-gallery .policy-video-group-heading h3{margin:0;font-size:1.5rem}
+.policy-video-gallery .policy-video-group-code{font-size:.67rem;font-weight:800;letter-spacing:.12em;color:var(--teal-deep)}
+.policy-video-gallery .policy-video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.policy-video-gallery .policy-video-card{min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:var(--white);scroll-margin-top:100px}
+.policy-video-gallery .policy-video-frame{width:100%;aspect-ratio:16/9;display:grid;place-items:center;background:var(--soft);border-bottom:1px solid var(--line);overflow:hidden}
+.policy-video-gallery .policy-video-placeholder{padding:20px;text-align:center;max-width:100%;color:var(--muted)}
+.policy-video-gallery .policy-video-placeholder p{margin:9px 0 0;font-size:.86rem;font-weight:600}
+.policy-video-gallery .policy-video-placeholder-label{font-size:.65rem;font-weight:700;letter-spacing:.07em;color:var(--teal-deep);overflow-wrap:anywhere}
+.policy-video-gallery .policy-video-frame video{width:100%;height:100%;max-height:100%;object-fit:contain;background:var(--ink)}
+.policy-video-gallery .policy-video-card-body{padding:17px 19px 19px}
+.policy-video-gallery .policy-video-card-body h4{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:0;font-size:1rem;line-height:1.4;letter-spacing:-.02em;color:var(--ink)}
+.policy-video-gallery .policy-video-task{font-size:.78rem;font-weight:600;color:var(--muted)}
+.policy-video-gallery .policy-video-caption{font-size:.81rem;line-height:1.7;margin:12px 0 0;color:var(--muted);overflow-wrap:anywhere}
+.policy-video-gallery .policy-video-metadata{display:grid;grid-template-columns:auto minmax(0,1fr);gap:5px 12px;margin:13px 0 0;border-top:1px solid var(--line);padding-top:11px;font-size:.72rem;line-height:1.65;color:var(--muted)}
+.policy-video-gallery .policy-video-metadata dt{font-weight:700;color:var(--ink)}
+.policy-video-gallery .policy-video-metadata dd{margin:0;overflow-wrap:anywhere}
+.policy-video-gallery [hidden]{display:none!important}
+.policy-video-gallery .policy-video-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:1000px){.policy-video-gallery .policy-video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.policy-video-gallery .policy-video-grid{grid-template-columns:minmax(0,1fr)}.policy-video-gallery .policy-video-group{margin-top:29px}.policy-video-gallery .policy-video-group-heading h3{font-size:1.3rem}.policy-video-gallery .policy-video-card-body{padding:16px 18px}.policy-video-gallery .policy-video-filters button{min-height:40px}}

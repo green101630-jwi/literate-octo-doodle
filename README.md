@@ -6,16 +6,33 @@ Personal research portfolio covering dual-arm digital twins, ACT and Diffusion P
 
 ## Active website
 
-GitHub Pages serves **`docs/`**. The root `index.html` is an older technical guide; `portfolio/` is an archived draft. Edit `docs/` for the public homepage.
+GitHub Pages serves **`docs/`**. The public portfolio has four English/Korean pages: **Home, Research, Projects, and About**. The research overview links to the existing **English technical report**, which retains its detailed figures, methods, and demonstration videos.
+
+| Page | Source | Purpose |
+| --- | --- | --- |
+| [Home](https://green101630-jwi.github.io/literate-octo-doodle/) | `docs/index.html` | Academic introduction and selected research |
+| [Research](https://green101630-jwi.github.io/literate-octo-doodle/research/) | `docs/research/index.html` | Research overview and policy video gallery |
+| [Projects](https://green101630-jwi.github.io/literate-octo-doodle/projects/) | `docs/projects/index.html` | Additional robotics, embedded, and biomedical projects |
+| [About](https://green101630-jwi.github.io/literate-octo-doodle/about/) | `docs/about/index.html` | Background, academic information, and contact |
+| [Technical report](https://green101630-jwi.github.io/literate-octo-doodle/research/details/) | `docs/research-details.html` | English experiment details, charts, and existing footage; `docs/research/details/index.html` redirects here |
+
+The repository-root `index.html` is an older technical guide; `portfolio/` is an archived draft. Edit `docs/` for the published website.
 
 ```text
 docs/
-  index.html                  Six connected research projects
-  styles.css                  Responsive portfolio layout
-  script.js                   Accessible tabs, chart viewer, and navigation
+  index.html                  Bilingual Home
+  research/index.html         Bilingual Research and policy video gallery
+  projects/index.html         Bilingual Projects
+  about/index.html            Bilingual About
+  portfolio.css / .js         Shared overview layout, language, and navigation
+  research-details.html       Existing English technical report
+  research/details/index.html Report redirect preserving section anchors
+  styles.css / script.js      Technical report layout, tabs, and chart viewer
+  policy-videos.css / .js     Policy video gallery presentation and loading
   assets/charts/               SVG + PNG figures, data, and source notes
   assets/data/                 Downloadable evaluation tables
-  assets/media/                H.264 demonstrations, posters, and video plan
+  assets/media/                Existing demonstrations, posters, and manifests
+    policy-videos.json        Twelve policy video slots, initially empty
   assets/videos/               Earlier site recordings
   assets/WonIkJang_CV.pdf      Existing CV
 ```
@@ -34,14 +51,27 @@ Open `http://localhost:8765`. Serve the directory rather than opening it through
 
 The **Deploy Pages Static** GitHub Actions workflow uploads `docs/`. It runs when changes to the website are pushed to `main` and can also be started manually. GitHub Pages must use **GitHub Actions** as its source, as configured for the existing deployment.
 
+## Adding policy videos
+
+The [policy video gallery](https://green101630-jwi.github.io/literate-octo-doodle/research/#policy-videos) is configured in `docs/assets/media/policy-videos.json` and rendered by `docs/policy-videos.js` with `docs/policy-videos.css`.
+
+It provides **12 slots: simulation / real × ACT / TC-ACT / Diffusion × Basket / Handover**. All slots initially have `src: null` and `poster: null`. An empty slot reserves space for future footage; it does **not** claim that a model was trained, an experiment was completed, or a task succeeded. Existing Home and technical-report media remain separate.
+
+To add a recording:
+
+1. Add the actual video and a representative poster frame under `docs/assets/media/`, then fill the matching slot's `src` and `poster` in the manifest.
+2. Record the model/checkpoint version, observation inputs, recording date, initial placement, observed success or failure, and the applicable evaluation protocol. Keep simulation and physical recordings distinct.
+3. Keep the recording's evidence scope explicit. A selected success or failure is an example, not a success-rate estimate; aggregate rates require their trial counts and conditions. Do not reuse older footage under another policy's label.
+4. Preview the gallery through the local HTTP server. Confirm its media URLs load, the poster matches the video, and the caption identifies the correct experiment.
+
 ## Updating evidence
 
 - Chart values and protocol descriptions are in `docs/assets/charts/evidence-data.json`.
 - Regenerate figures with `python3 docs/assets/charts/generate_charts.py` in an environment with Matplotlib. Matplotlib is only needed for figure authoring, not for the website.
-- Figures distinguish training seeds from evaluation seeds, simulation from hardware, and benchmark latency from feedback-shadow timing.
+- Figures distinguish training seeds from evaluation seeds, simulation from hardware, and benchmark latency from feedback-shadow timing. Keep each TC-ACT version's history sampling and loss formulation attached to its results.
 - Physical trial results are labeled as operator-observed; the final Task2 timing trace and real-camera trial records have different evidence scopes.
 - `docs/assets/media/media_manifest.json` records the footage's purpose and presentation edits.
-- `docs/assets/media/video_plan.json` lists proposed footage. Two clearly marked slots on the homepage are ready for continuous Task2 and synchronized real-camera recordings.
+- `docs/assets/media/video_plan.json` lists proposed footage for the existing technical report, including its Task2 and real-camera placeholders. The Research gallery's 12 empty policy slots are maintained separately in `policy-videos.json`.
 
 Existing CV, academic information, STM32, EMG/force-measurement, and biomedical data-analysis content are retained.
 

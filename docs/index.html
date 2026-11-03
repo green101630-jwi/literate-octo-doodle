@@ -11,6 +11,7 @@
 <meta property="og:image" content="https://green101630-jwi.github.io/literate-octo-doodle/assets/media/dual-arm-workspace.jpg">
 <title data-title-en="Won Ik Jang | Robot Learning & Control" data-title-ko="장원익 | 로봇 학습 및 제어">Won Ik Jang | Robot Learning & Control</title>
 <link rel="stylesheet" href="portfolio.css">
+<link rel="stylesheet" href="research-enhancements.css">
 <script src="portfolio.js" defer></script>
 </head>
 <body>
@@ -44,7 +45,7 @@
 <div class="feature-research">
 <div class="feature-visual"><img src="assets/media/hardware-workspace.jpg" alt="Physical dual-arm OMX robotics workspace" loading="lazy"><div class="photo-note">OPENMANIPULATOR-X / REAL HARDWARE</div></div>
 <div class="feature-description"><p class="eyebrow"><span data-locale="en">FEATURED RESEARCH</span><span data-locale="ko">대표 연구</span></p><h3><span data-locale="en">Dual-arm Robot Learning</span><span data-locale="ko">양팔 로봇 학습</span></h3>
-<p><span data-locale="en">A complete pipeline for bimanual manipulation: ROS 2 teleoperation, demonstration collection, Isaac Sim / Isaac Lab, behavior cloning, and physical evaluation.</span><span data-locale="ko">ROS 2 텔레오퍼레이션부터 시연 데이터 수집, Isaac Sim·Isaac Lab, 모방학습, 실로봇 평가까지 연결한 양팔 로봇 시스템입니다.</span></p>
+<p><span data-locale="en">A complete bimanual-learning pipeline: digital twins and ROS 2 teleoperation, four demonstration sources, ACT / TC-ACT / Diffusion policies, controlled evaluation, and physical execution.</span><span data-locale="ko">디지털 트윈과 ROS 2 텔레오퍼레이션, 네 가지 시연 출처, ACT·TC-ACT·Diffusion 정책, 통제 평가와 실로봇 실행을 연결한 양팔 학습 파이프라인입니다.</span></p>
 <ul class="keyword-list"><li>ACT & TC-ACT</li><li>Diffusion Policy</li><li>Visual learning</li><li>Real-time execution</li></ul>
 <a class="text-link" href="research/"><span data-locale="en">See research overview</span><span data-locale="ko">연구 개요 보기</span><span aria-hidden="true"> ↗</span></a>
 </div></div>
@@ -52,7 +53,10 @@
 <a href="research/#tc-act" class="info-card"><span class="index">01 / MODEL DESIGN</span><h3>ACT & TC-ACT</h3><p><span data-locale="en">Architecture extensions and controlled comparisons of temporal context, images, and actions.</span><span data-locale="ko">시간적 문맥·영상·행동을 비교하며 정책 구조를 확장하고 검증했습니다.</span></p><span class="card-arrow" aria-hidden="true">↗</span></a>
 <a href="research/#diffusion" class="info-card"><span class="index">02 / POLICY OPTIMIZATION</span><h3>Diffusion Policy</h3><p><span data-locale="en">Learning action trajectories while reducing inference costs for execution.</span><span data-locale="ko">연속 행동 궤적을 학습하고 실로봇 실행을 위한 추론 비용을 최적화했습니다.</span></p><span class="card-arrow" aria-hidden="true">↗</span></a>
 <a href="research/#systems" class="info-card"><span class="index">03 / HARDWARE</span><h3>Sim-to-Real</h3><p><span data-locale="en">Integrating data, robot middleware, simulation, and physical deployment.</span><span data-locale="ko">데이터·미들웨어·시뮬레이션·실로봇 배포를 하나의 파이프라인으로 연결했습니다.</span></p><span class="card-arrow" aria-hidden="true">↗</span></a>
-</div></section>
+<a href="research/#demonstrations" class="info-card"><span class="index">04 / DEMONSTRATION RESEARCH</span><h3><span data-locale="en">Four demonstration sources</span><span data-locale="ko">네 가지 시연 데이터</span></h3><p><span data-locale="en">Teleoperation, Mimic augmentation, scripted collection, and successful-rollout retraining—with data quality and training-budget controls.</span><span data-locale="ko">Teleop·Mimic 증강·코드 생성·성공 롤아웃 재학습을 데이터 품질과 학습 예산 통제와 함께 분석했습니다.</span></p><span class="card-arrow" aria-hidden="true">↗</span></a>
+<a href="research/#results" class="info-card"><span class="index">05 / EXPERIMENTAL EVALUATION</span><h3><span data-locale="en">Task success & generalization</span><span data-locale="ko">성공률과 공간 일반화</span></h3><p><span data-locale="en">Paired-reset ACT / TC-ACT evaluations, task-dependent outcomes, and separate spatial-generalization experiments.</span><span data-locale="ko">동일 초기조건 ACT·TC-ACT 비교, 태스크별 성능 차이와 별도의 공간 일반화 실험을 제시합니다.</span></p><span class="card-arrow" aria-hidden="true">↗</span></a>
+<a href="research/#real-camera" class="info-card"><span class="index">06 / VISUAL DEPLOYMENT</span><h3><span data-locale="en">Real-camera policies</span><span data-locale="ko">실카메라 기반 정책</span></h3><p><span data-locale="en">Aligned live RGB and joint observations, history handling, and operator-observed physical trials with explicit model conditions.</span><span data-locale="ko">실시간 RGB·관절 관측 정렬과 이력 처리를 구현하고 모델 조건을 구분해 실물 관찰 실험을 기록했습니다.</span></p><span class="card-arrow" aria-hidden="true">↗</span></a>
+</div><div class="home-research-note"><p><strong><span data-locale="en">A dedicated policy-video matrix.</span><span data-locale="ko">정책 영상 전용 비교 공간.</span></strong> <span data-locale="en">Sim / Real × ACT / TC-ACT / Diffusion × Basket / Handover. Twelve labeled slots are ready for upcoming footage.</span><span data-locale="ko">Sim / Real × ACT / TC-ACT / Diffusion × Basket / Handover, 총 12개 칸에 앞으로 영상을 정리합니다.</span></p><a class="inline-link" href="research/#policy-videos"><span data-locale="en">View video slots ↗</span><span data-locale="ko">영상 공간 보기 ↗</span></a></div></section>
 <section class="section alternate"><div class="wrap">
 <div class="section-head"><div><p class="eyebrow">02 / SELECTED PROJECTS</p><h2><span data-locale="en">Projects beyond the learning pipeline.</span><span data-locale="ko">로봇 학습 외의 주요 제작 프로젝트</span></h2></div><a class="inline-link" href="projects/"><span data-locale="en">View projects</span><span data-locale="ko">전체 프로젝트 보기</span><span aria-hidden="true"> ↗</span></a></div>
 <div class="card-grid two">

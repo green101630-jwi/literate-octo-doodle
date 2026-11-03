@@ -529,14 +529,14 @@ body.dialog-open { overflow: hidden; }
 .scope-line { margin: -11px 0 28px; max-width: 1000px; font-size: .76rem; color: var(--muted); }
 .deployment-media { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 22px; align-items: stretch; }
 .deployment-media .video-panel video { height: 380px; object-fit: contain; }
-.planned-video { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 32px; border: 1px dashed #bfcde0; border-radius: 11px; background: #f5f8fd; }
+:is(.planned-video, .video-directory-card) { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 32px; border: 1px dashed #bfcde0; border-radius: 11px; background: #f5f8fd; }
 .planned-symbol { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; margin-bottom: 24px; border: 1px solid var(--line-strong); border-radius: 50%; color: #71839d; font-size: 1.15rem; }
-.planned-video .mini-label { font-size: .66rem; color: #72839a; }
-.planned-video h3 { margin-bottom: 14px; font-size: 1.25rem; }
-.planned-video > p { color: var(--muted); font-size: .88rem; line-height: 1.8; }
-.planned-video details { margin-top: 16px; color: var(--muted); font-size: .78rem; }
-.planned-video summary { color: var(--blue); cursor: pointer; font-weight: 620; }
-.planned-video details p { margin-top: 12px; }
+:is(.planned-video, .video-directory-card) .mini-label { font-size: .66rem; color: #72839a; }
+:is(.planned-video, .video-directory-card) h3 { margin-bottom: 14px; font-size: 1.25rem; }
+:is(.planned-video, .video-directory-card) > p { color: var(--muted); font-size: .88rem; line-height: 1.8; }
+:is(.planned-video, .video-directory-card) details { margin-top: 16px; color: var(--muted); font-size: .78rem; }
+:is(.planned-video, .video-directory-card) summary { color: var(--blue); cursor: pointer; font-weight: 620; }
+:is(.planned-video, .video-directory-card) details p { margin-top: 12px; }
 .camera-flow { display: grid; grid-template-columns: 1fr 18px 1fr 18px 1fr 18px 1fr; gap: 10px; align-items: center; padding: 18px; border: 1px solid #d9d0ea; border-radius: 10px; background: var(--white); }
 .camera-flow > span { display: block; text-align: center; padding: 13px 8px; border: 0; background: transparent; color: var(--muted); font-size: .74rem; }
 .camera-flow b { display: block; margin-bottom: 5px; color: var(--ink); font-size: .9rem; }
@@ -619,9 +619,9 @@ body.dialog-open { overflow: hidden; }
   .architecture-current, .architecture-history, .architecture-policy { padding: 18px 16px; }
   .demo-video-grid, .deployment-media { grid-template-columns: 1fr 1fr; gap: 16px; }
   .deployment-media .video-panel video { height: 340px; }
-  .planned-video { padding: 25px; }
-  .planned-video h3 { font-size: 1.1rem; }
-  .planned-video > p { font-size: .81rem; }
+  :is(.planned-video, .video-directory-card) { padding: 25px; }
+  :is(.planned-video, .video-directory-card) h3 { font-size: 1.1rem; }
+  :is(.planned-video, .video-directory-card) > p { font-size: .81rem; }
   .data-findings { grid-template-columns: 1fr; gap: 24px; }
   .physical-result .physical-result-main h3 { max-width: none; font-size: 1.45rem; }
   .physical-result dl { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
@@ -701,10 +701,10 @@ body.dialog-open { overflow: hidden; }
   .physical-result dd > span { font-size: .71rem; }
   .scope-line { font-size: .7rem; }
   .deployment-media .video-panel video { height: 390px; }
-  .planned-video { padding: 26px; min-height: 290px; }
+  :is(.planned-video, .video-directory-card) { padding: 26px; min-height: 290px; }
   .planned-symbol { width: 36px; height: 36px; margin-bottom: 20px; }
-  .planned-video h3 { font-size: 1.1rem; }
-  .planned-video > p { font-size: .82rem; }
+  :is(.planned-video, .video-directory-card) h3 { font-size: 1.1rem; }
+  :is(.planned-video, .video-directory-card) > p { font-size: .82rem; }
   .camera-flow { grid-template-columns: minmax(0, 1fr) 16px minmax(0, 1fr); gap: 8px; padding: 14px; }
   .camera-flow > span { padding: 10px 6px; font-size: .69rem; }
   .camera-flow b { font-size: .82rem; }

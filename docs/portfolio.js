@@ -7,6 +7,7 @@ function applyLanguage(language,persist){
   const value=language==="ko"?"ko":"en";
   document.documentElement.lang=value;
   document.documentElement.dataset.language=value;
+  document.querySelectorAll("[data-alt-en][data-alt-ko]").forEach(node=>{node.alt=node.dataset[value==="ko"?"altKo":"altEn"]});
   if(titleNode) document.title=titleNode.dataset[value==="ko"?"titleKo":"titleEn"] || titleNode.textContent;
   languageButtons.forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.language===value)));
   if(persist){try{localStorage.setItem(KEY,value)}catch(_){}}

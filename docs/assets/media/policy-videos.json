@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "media_url_base": "manifest",
+  "description": {
+    "en": "Reserved policy-video slots. Empty entries do not indicate completed experiments.",
+    "ko": "정책 영상 등록 공간입니다. 빈 항목은 실험 완료 여부를 뜻하지 않습니다."
+  },
+  "slots": [
+    {
+      "id": "video-sim-act-basket",
+      "environment": "sim",
+      "policy": "act",
+      "task": "basket",
+      "src": null,
+      "poster": null,
+      "caption": null,
+      "experiment": null
+    },
+    {
+      "id": "video-sim-tc-act-basket",
+      "environment": "sim",
+      "policy": "tc-act",
+      "task": "basket",
+      "src": null,
+      "poster": null,
+      "caption": null,
+      "experiment": null
+    },
+    {
+      "id": "video-sim-diffusion-basket",
+      "environment": "sim",
+      "policy": "diffusion",
+      "task": "basket",
+      "src": null,
+      "poster": null,
+      "caption": null,
+      "experiment": null
+    },
+    {
+      "id": "video-sim-act-handover",
+      "environment": "sim",
+      "policy": "act",
+      "task": "handover",
+      "src": null,
+      "poster": null,
+      "caption": null,
+      "experiment": null
+    },
+    {
+      "id": "video-sim-tc-act-handover",
+      "environment": "sim",
+      "policy": "tc-act",
+      "task": "handover",
+      "src": null,
+      "poster": null,
+      "caption": null,
+      "experiment": null
+    },
+    {
+      "id": "video-sim-diffusion-handover",
+      "environment": "sim",
+      "policy": "diffusion",
+      "task": "handover",
+      "src": null,
+      "poster": null,
+      "caption": null,
+      "experiment": null
+    },
+    {
+      "id": "video-real-act-basket",
+      "environment": "real",
+      "policy": "act",
+      "task": "basket",
+      "src": null,
+      "poster": null,
+      "caption": null,
+      "experiment": null
+    },
+    {
+      "id": "video-real-tc-act-basket",
+      "environment": "real",
+      "policy": "tc-act",
+      "task": "basket",
+      "src": null,
+      "poster": null,
+      "caption": null,
+      "experiment": null
+    },
+    {
+      "id": "video-real-diffusion-basket",
+      "environment": "real",
+      "policy": "diffusion",
+      "task": "basket",
+      "src": null,
+      "poster": null,
+      "caption": null,
+      "experiment": null
+    },
+    {
+      "id": "video-real-act-handover",
+      "environment": "real",
+      "policy": "act",
+      "task": "handover",
+      "src": null,
+      "poster": null,
+      "caption": null,
+      "experiment": null
+    },
+    {
+      "id": "video-real-tc-act-handover",
+      "environment": "real",
+      "policy": "tc-act",
+      "task": "handover",
+      "src": null,
+      "poster": null,
+      "caption": null,
+      "experiment": null
+    },
+    {
+      "id": "video-real-diffusion-handover",
+      "environment": "real",
+      "policy": "diffusion",
+      "task": "handover",
+      "src": null,
+      "poster": null,
+      "caption": null,
+      "experiment": null
+    }
+  ]
+}
