@@ -60,6 +60,17 @@
         "height": 360,
         "aspect_ratio": 1.7777777777777777,
         "update_period": 0.0
+      },
+      "displayed_success_metric": {
+        "successes": 172,
+        "trials": 250,
+        "rate_percent": 68.8,
+        "scope": "original_video_evaluation_run",
+        "source_file": "act_cvae_rand4cm_seed2026_n250.json",
+        "source_sha256": "8a7c353fa37055463f0ecc7ce74bc0272f850d09d243a2664ab092109240f56d",
+        "evaluation_seeds": [
+          2026
+        ]
       }
     },
     {
@@ -100,6 +111,17 @@
         "height": 360,
         "aspect_ratio": 1.7777777777777777,
         "update_period": 0.0
+      },
+      "displayed_success_metric": {
+        "successes": 107,
+        "trials": 250,
+        "rate_percent": 42.8,
+        "scope": "original_video_evaluation_run",
+        "source_file": "tc_act_cvae_rand4cm_seed2026_n250.json",
+        "source_sha256": "d63c42af15d6bd100726393a7f805987018e1779b27d7e98de814301caa56f61",
+        "evaluation_seeds": [
+          2026
+        ]
       }
     },
     {
@@ -140,6 +162,17 @@
         "height": 360,
         "aspect_ratio": 1.7777777777777777,
         "update_period": 0.0
+      },
+      "displayed_success_metric": {
+        "successes": 212,
+        "trials": 250,
+        "rate_percent": 84.8,
+        "scope": "original_video_evaluation_run",
+        "source_file": "handover_seed0_frozen_best_seed2026_n250.json",
+        "source_sha256": "214d42d43bb0621fb7a4619cbdb7859aa362ec0eb7718095df22d6e2f17a1eae",
+        "evaluation_seeds": [
+          2026
+        ]
       }
     },
     {
@@ -196,7 +229,25 @@
         283
       ],
       "raw_final25_linear_speed_max_m_s": 0.0016711704665794969,
-      "raw_final25_angular_speed_max_rad_s": 0.03545866161584854
+      "raw_final25_angular_speed_max_rad_s": 0.03545866161584854,
+      "displayed_success_metric": {
+        "successes": 1051,
+        "trials": 1250,
+        "rate_percent": 84.08,
+        "scope": "same_checkpoint_reference_benchmark_video_recorded_separately",
+        "source_file": "summary_5seeds.json",
+        "source_sha256": "8dbfe6aaef31bad4fa9385ea1536a08811077586d559c04f2f0cd32861bd3cd4",
+        "evaluation_seeds": [
+          2026,
+          2027,
+          2028,
+          2029,
+          2030
+        ],
+        "rollouts_per_seed": 250,
+        "num_envs": 8,
+        "capture_sample_included_in_rate": false
+      }
     }
   ]
 }

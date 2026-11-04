@@ -18,7 +18,6 @@
         "ko": "선별한 성공 롤아웃 · 14D 관절 + RGB."
       },
       "experiment": {
-        "date": "2026-10-21",
         "model": "ACT · CVAE · E5000",
         "dataset": "Teleop30 + Mimic300",
         "condition": {
@@ -30,9 +29,10 @@
           "ko": "14D 관절 + RGB"
         },
         "seed": {
-          "en": "Train 0 · eval 2026 · rollout 2",
-          "ko": "학습 0 · 평가 2026 · 롤아웃 2"
-        }
+          "en": "Train 0 · eval 2026",
+          "ko": "학습 0 · 평가 2026"
+        },
+        "success_rate": "68.8% (172/250)"
       }
     },
     {
@@ -47,7 +47,6 @@
         "ko": "선별한 성공 롤아웃 · 14D 관절 + RGB."
       },
       "experiment": {
-        "date": "2026-10-21",
         "model": "TC-ACT · CVAE · E5000",
         "dataset": "Teleop30 + Mimic300",
         "condition": {
@@ -59,9 +58,10 @@
           "ko": "14D 관절 + RGB + 표본화한 이력"
         },
         "seed": {
-          "en": "Train 0 · eval 2026 · rollout 2",
-          "ko": "학습 0 · 평가 2026 · 롤아웃 2"
-        }
+          "en": "Train 0 · eval 2026",
+          "ko": "학습 0 · 평가 2026"
+        },
+        "success_rate": "42.8% (107/250)"
       }
     },
     {
@@ -86,7 +86,6 @@
         "ko": "선별한 성공 롤아웃 · 14D 관절 + RGB."
       },
       "experiment": {
-        "date": "2026-10-15",
         "model": "ACT · CVAE · E2000 / best 1294",
         "dataset": "Teleop25 + Mimic50",
         "condition": {
@@ -98,9 +97,10 @@
           "ko": "14D 관절 + RGB"
         },
         "seed": {
-          "en": "Train 0 · eval 2026 · rollout 0",
-          "ko": "학습 0 · 평가 2026 · 롤아웃 0"
-        }
+          "en": "Train 0 · eval 2026",
+          "ko": "학습 0 · 평가 2026"
+        },
+        "success_rate": "84.8% (212/250)"
       }
     },
     {
@@ -115,7 +115,6 @@
         "ko": "선별한 성공 롤아웃 · 14D 관절 + RGB·이력."
       },
       "experiment": {
-        "date": "2026-11-04",
         "model": "TC-ACT · CVAE · E5000",
         "dataset": "Teleop30 + Mimic300",
         "condition": {
@@ -127,8 +126,13 @@
           "ko": "14D 관절 + RGB + 표본화한 이력"
         },
         "seed": {
-          "en": "Train 0 · eval 2027 · rollout 0",
-          "ko": "학습 0 · 평가 2027 · 롤아웃 0"
+          "en": "Train 0 · clip eval 2027",
+          "ko": "학습 0 · 영상 평가 2027"
+        },
+        "success_rate": "84.08% (1,051/1,250)",
+        "notes": {
+          "en": "Same-checkpoint benchmark: 5 evaluation seeds × 250 trials. Video recorded separately.",
+          "ko": "동일 체크포인트의 평가 시드 5개 × 250회 결과입니다. 영상은 별도 촬영했습니다."
         }
       }
     },

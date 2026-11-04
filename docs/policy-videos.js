@@ -2,7 +2,7 @@
   "use strict";
 
   const fieldLabels = {
-    date: ["Date", "날짜"],
+    success_rate: ["Success rate", "성공률"],
     model: ["Model", "모델"],
     checkpoint: ["Checkpoint", "체크포인트"],
     dataset: ["Dataset", "데이터셋"],
@@ -121,6 +121,7 @@
         Object.entries(fieldLabels).forEach(([key, labels]) => {
           const description = document.createElement("dd");
           if (!appendLocalized(description, entry.experiment[key])) return;
+          if (key === "success_rate") description.classList.add("policy-video-success-rate");
           const term = document.createElement("dt");
           appendLocalized(term, { en: labels[0], ko: labels[1] });
           metadata.append(term, description);
