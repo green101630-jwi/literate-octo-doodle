@@ -75,25 +75,31 @@
     },
     {
       "id": "video-sim-tc-act-basket",
-      "src": "policy-videos/sim-tc-act-basket-14d-success.mp4",
-      "sha256": "387f3d59f5d72cc3a66c21d3e493da0c6cec761c9c58a307d946a2de0fbff285",
-      "source_sha256": "d43c4f72442cf6887ad69089177d6028c72addb40cfcc6d5de6a29e620416744",
+      "src": "policy-videos/sim-tc-act-basket-14d-seed2026-2cm-success.mp4",
+      "sha256": "97de535b9a859be583027020b2b22f23c31b0364faf2d7449c06514c5e539191",
+      "source_sha256": "036c9514b3d8e8b6d170c60954708eeca0ed0202f9396edf4be51ffa4ddd4102",
       "source_filename": "rollout_0002_success.mp4",
       "checkpoint_run": "09_18_basket_t30_m300_visual_tc_act_14d_cvae_e5000_amp_seed0_gpu_rerun1",
       "checkpoint_file": "visual_tc_act_last.pt",
+      "checkpoint_sha256": "a733550d22a50756f274d0ee42870ad63815347331f2cf2e70e6ac74ff8bd2cf",
       "state_observation_dim": 14,
       "phase_enabled": false,
       "rgb_input": true,
-      "evaluation_file": "tc_act_cvae_rand4cm_seed2026_n250.json",
-      "evaluation_task_id": "double-put-black-green-table-basket-rand-cubes-4cm-Play-v0",
+      "history_inputs": "sampled joint and image history",
+      "evaluation_file": "tc_basket_seed2026_capture.json",
+      "evaluation_sha256": "a711ba7d9f6338f3c03790e42a75f1e154f481f48ecf3ac086c99aa6c96eb35b",
+      "evaluation_task_id": "double-put-black-green-table-basket-rand-cubes-2cm-Play-v0",
       "evaluation_seed": 2026,
       "rollout_id": 2,
       "success": true,
-      "completion_step": 457,
+      "completion_step": 431,
+      "trace_sha256": "5f3742e3df5aa686f74b75d685477e8cad6b6415f0dece3afa10aa945fbed4b0",
       "success_trace_final_predicate": true,
-      "frames": 92,
+      "official_success_function": "task_double_put_black_green_table_basket.two_cubes_in_basket",
+      "all_trace_predicates_match_official_condition": true,
+      "frames": 87,
       "fps": 10,
-      "duration_seconds": 9.2,
+      "duration_seconds": 8.7,
       "camera": {
         "camera_name": "front_rgb_cam",
         "camera_position": [
@@ -112,32 +118,47 @@
         "aspect_ratio": 1.7777777777777777,
         "update_period": 0.0
       },
+      "new_recording_date_kst": "2026-11-04",
+      "eval_amp": true,
+      "temporal_aggregation": true,
+      "aggregation_decay": 0.01,
+      "num_envs": 8,
+      "horizon": 708,
+      "xy_reset_half_range_cm": 2,
+      "source_schedule_initial_positions_match": true,
+      "matched_original_initial_positions": {
+        "yellow_initial_xy_m": [
+          -0.14936864376068115,
+          0.38735222816467285
+        ],
+        "green_initial_xy_m": [
+          -0.37111151218414307,
+          0.49607396125793457
+        ]
+      },
+      "source_rollout_completion_step": 438,
+      "recording_scope": "Same checkpoint, seed, eight-environment first batch, full original position schedule, camera and inference settings; all initial cube XY values match exactly. The newly executed trajectories and completion steps can differ from the archived evaluation. This recording is not the archived rollout itself and its 8-rollout subset is not a replacement benchmark.",
+      "capture_sample": {
+        "successes": 5,
+        "trials": 8,
+        "purpose": "successful video capture; excluded from original 250-trial benchmark"
+      },
+      "recording_wrapper_sha256": "7dd08f85d181f2cd26382620017958f591d11df930a150750f7353210ef9bd5b",
+      "recording_evaluator_sha256": "bcb6fc0e8d3711841300e8713878913dbe801ba9693ac0388e375afaa3a59fc4",
       "displayed_success_metric": {
-        "successes": 246,
+        "successes": 221,
         "trials": 250,
-        "rate_percent": 98.4,
-        "scope": "different_checkpoint_reference_benchmark_original_video_retained",
-        "source_file": "basket14_cvae_mimic300_ablation/evaluation_last_fixed_2cm_seed2026_n250_amp_on/image_history_only.json",
-        "source_sha256": "e60aa23157a4c15f6789d1009898339a3bf0c4904f82fc79640ccd4223291a30",
+        "rate_percent": 88.4,
+        "scope": "single_evaluation_seed_same_model_and_protocol",
+        "source_file": "basket14_cvae_mimic300_ablation/evaluation_last_fixed_2cm_seed2026_n250_amp_on/state_image_history.json",
+        "source_sha256": "9f9327a1de0fa7a93a0913b123335340f004c7f2514601cfb6ba93766ba364d8",
         "evaluation_seeds": [
           2026
         ],
         "num_envs": 8,
-        "reference_checkpoint_run": "10_02_basket_t30_m300_visual_tc_act_14d_cvae_image_history_only_e5000_amp_seed0",
-        "reference_checkpoint_file": "visual_tc_act_last.pt",
-        "reference_observation": "14D current joints + current RGB + past RGB, no past joint inputs",
-        "reference_reset_half_range_cm": 2,
-        "reference_training_episodes": {
-          "teleop": 30,
-          "mimic": 300
-        },
-        "reference_epoch": 5000,
-        "reference_eval_amp": true,
-        "same_checkpoint_as_video": false,
-        "video_reset_half_range_cm": 4,
-        "video_observation": "14D current joints + RGB + sampled joint and image history",
-        "video_unchanged": true,
-        "disclosure": "The success-rate value qualifies 98.4% as a separate-model benchmark; the retained video has a generic selected-success caption. Benchmark model and reset conditions remain identified in the card."
+        "same_checkpoint_as_video": true,
+        "same_inference_and_reset_protocol_as_video": true,
+        "capture_sample_included_in_rate": false
       }
     },
     {
