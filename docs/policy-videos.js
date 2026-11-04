@@ -130,7 +130,7 @@
       }
     }
 
-    fetch(manifestURL.href, { credentials: "same-origin" })
+    fetch(manifestURL.href, { credentials: "same-origin", cache: "no-store" })
       .then((response) => response.ok ? response.json() : null)
       .then((manifest) => {
         if (!manifest || !Array.isArray(manifest.slots)) return;
