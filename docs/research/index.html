@@ -106,8 +106,8 @@
 </div>
 </section>
 <section class="section wrap" id="demonstrations">
-<p class="eyebrow">03 / DEMONSTRATION RESEARCH</p>
-<h2><span data-locale="en">How does the data change the learned behavior?</span><span data-locale="ko">데이터가 학습된 행동을 어떻게 바꾸는가?</span></h2>
+<h2 class="research-section-title"><span class="research-section-number">03 /</span> <span data-locale="en">Demonstration Research</span><span data-locale="ko">시연 데이터 연구</span></h2>
+<p class="research-section-subtitle"><span data-locale="en">How does the data change the learned behavior?</span><span data-locale="ko">데이터가 학습된 행동을 어떻게 바꾸는가?</span></p>
 <p class="research-intro"><span data-locale="en">I studied demonstration source, quality, mixture, and training budget alongside task success and placement generalization. The four generation routes are implemented, but they do not form a completed four-source × three-policy factorial benchmark.</span><span data-locale="ko">시연의 출처·품질·혼합비·학습 예산을 작업 성공률과 위치 일반화 성능에 연결해 분석했습니다. 네 가지 생성 경로를 구현했지만, 모든 출처와 세 정책의 조합을 평가한 완전한 교차 비교를 뜻하지는 않습니다.</span></p>
 <div class="research-grid four">
 <article class="research-card"><span class="research-label">01 / TELEOP</span><h3><span data-locale="en">Human demonstrations</span><span data-locale="ko">사람의 시연</span></h3><p><span data-locale="en">Capture operator strategies through leader/follower control and record aligned trajectories.</span><span data-locale="ko">리더·팔로워 제어로 사람의 조작 전략을 기록하고 시연 궤적을 정렬했습니다.</span></p></article>
@@ -137,8 +137,8 @@
 </div></details>
 </section>
 <section class="section alternate" id="results"><div class="wrap">
-<p class="eyebrow">04 / EVALUATION & GENERALIZATION</p>
-<h2><span data-locale="en">An ACT extension, with task-dependent results</span><span data-locale="ko">태스크에 따라 다른 ACT 확장 구성의 결과</span></h2>
+<h2 class="research-section-title"><span class="research-section-number">04 /</span> <span data-locale="en">Evaluation &amp; Generalization</span><span data-locale="ko">평가와 일반화</span></h2>
+<p class="research-section-subtitle"><span data-locale="en">An ACT extension, with task-dependent results</span><span data-locale="ko">태스크에 따라 다른 ACT 확장 구성의 결과</span></p>
 <p class="research-intro"><span data-locale="en">The E5000 visual-policy comparison uses Teleop30 + Mimic300, one training seed, and five evaluation seeds × 250 paired-reset rollouts: 1,250 trials per model and task. Both favorable and unfavorable outcomes are retained.</span><span data-locale="ko">E5000 시각 정책 비교는 Teleop30 + Mimic300, 학습 시드 1개, 평가 시드 5개 × 동일 초기조건 250회로 모델·태스크당 1,250회입니다. 개선된 결과와 악화된 결과를 모두 제시합니다.</span></p>
 <div class="result-metrics"><div><span>HANDOVER</span><strong>74.08% <i>→</i> 84.08%</strong><small>ACT → TC-ACT / +10.00 pp</small></div><div><span>BASKET</span><strong>96.00% <i>→</i> 89.04%</strong><small>ACT → TC-ACT / −6.96 pp</small></div></div>
 <figure class="research-figure">
@@ -155,8 +155,8 @@
 <article class="research-card"><span class="research-label">FAILURE ANALYSIS</span><h3><span data-locale="en">Use the failures</span><span data-locale="ko">실패에서 다음 가설 도출</span></h3><p><span data-locale="en">Examine task differences, history/phase settings, retraining degradation, and wider reset ranges to refine the next experiment.</span><span data-locale="ko">태스크별 차이, history·phase 설정, 재학습 성능 저하와 초기 위치 범위 확대를 분석하여 후속 실험 가설을 구체화했습니다.</span></p></article>
 </div></div></section>
 <section class="section wrap" id="deployment">
-<p class="eyebrow">05 / REAL-TIME DEPLOYMENT</p>
-<h2><span data-locale="en">From a learned policy to timed physical commands</span><span data-locale="ko">학습한 정책에서 주기를 지키는 실물 명령까지</span></h2>
+<h2 class="research-section-title"><span class="research-section-number">05 /</span> <span data-locale="en">Real-Time Deployment</span><span data-locale="ko">실시간 배포</span></h2>
+<p class="research-section-subtitle"><span data-locale="en">From a learned policy to timed physical commands</span><span data-locale="ko">학습한 정책에서 주기를 지키는 실물 명령까지</span></p>
 <p class="research-intro"><span data-locale="en">I measured inference and feedback latency, separated policy and command loops, and built a minimal PyTorch runtime with TCP / ROS 2 adapters. Joint order, gripper conversion, normalization, warm-up, limits, and episode resets are explicit deployment interfaces.</span><span data-locale="ko">추론·피드백 지연을 측정하고 정책·명령 루프를 분리했으며 TCP·ROS 2 어댑터와 최소 PyTorch 런타임을 구성했습니다. 관절 순서, 그리퍼 변환, 정규화, warm-up, 제한과 에피소드 초기화를 명시적으로 관리했습니다.</span></p>
 <div class="research-grid">
 <article class="research-card"><span class="research-label">AUGUST / DIFFUSION34</span><h3><span data-locale="en">Optimize the denoiser</span><span data-locale="ko">디노이저 최적화</span></h3><p><span data-locale="en">Applied torch.compile to the FP32 U-Net while retaining FP32 scheduler calculations. Model p99 fell from 35.7ms to 11.33ms in the recorded benchmark.</span><span data-locale="ko">FP32 U-Net에 torch.compile을 적용하고 scheduler의 FP32 계산을 유지했습니다. 기록된 모델 벤치마크의 p99는 35.7ms에서 11.33ms로 감소했습니다.</span></p></article>
