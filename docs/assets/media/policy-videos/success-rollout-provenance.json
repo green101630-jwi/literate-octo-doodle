@@ -113,15 +113,31 @@
         "update_period": 0.0
       },
       "displayed_success_metric": {
-        "successes": 107,
+        "successes": 246,
         "trials": 250,
-        "rate_percent": 42.8,
-        "scope": "original_video_evaluation_run",
-        "source_file": "tc_act_cvae_rand4cm_seed2026_n250.json",
-        "source_sha256": "d63c42af15d6bd100726393a7f805987018e1779b27d7e98de814301caa56f61",
+        "rate_percent": 98.4,
+        "scope": "different_checkpoint_reference_benchmark_original_video_retained",
+        "source_file": "basket14_cvae_mimic300_ablation/evaluation_last_fixed_2cm_seed2026_n250_amp_on/image_history_only.json",
+        "source_sha256": "e60aa23157a4c15f6789d1009898339a3bf0c4904f82fc79640ccd4223291a30",
         "evaluation_seeds": [
           2026
-        ]
+        ],
+        "num_envs": 8,
+        "reference_checkpoint_run": "10_02_basket_t30_m300_visual_tc_act_14d_cvae_image_history_only_e5000_amp_seed0",
+        "reference_checkpoint_file": "visual_tc_act_last.pt",
+        "reference_observation": "14D current joints + current RGB + past RGB, no past joint inputs",
+        "reference_reset_half_range_cm": 2,
+        "reference_training_episodes": {
+          "teleop": 30,
+          "mimic": 300
+        },
+        "reference_epoch": 5000,
+        "reference_eval_amp": true,
+        "same_checkpoint_as_video": false,
+        "video_reset_half_range_cm": 4,
+        "video_observation": "14D current joints + RGB + sampled joint and image history",
+        "video_unchanged": true,
+        "disclosure": "The visible caption, condition and notes distinguish the reference benchmark from the illustrative video."
       }
     },
     {
