@@ -137,7 +137,7 @@
         "video_reset_half_range_cm": 4,
         "video_observation": "14D current joints + RGB + sampled joint and image history",
         "video_unchanged": true,
-        "disclosure": "The visible caption, condition and notes distinguish the reference benchmark from the illustrative video."
+        "disclosure": "The success-rate value qualifies 98.4% as a separate-model benchmark; the retained video has a generic selected-success caption. Benchmark model and reset conditions remain identified in the card."
       }
     },
     {

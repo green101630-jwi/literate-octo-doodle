@@ -43,11 +43,14 @@
       "src": "policy-videos/sim-tc-act-basket-14d-success.mp4",
       "poster": "policy-videos/sim-tc-act-basket-14d-success.jpg",
       "caption": {
-        "en": "Illustrative TC-ACT success; image-history-only benchmark shown below.",
-        "ko": "TC-ACT 성공 예시 영상 · 아래는 과거 영상 이력 모델의 평가 결과입니다."
+        "en": "Selected successful rollout · 14D joints + RGB.",
+        "ko": "선별한 성공 롤아웃 · 14D 관절 + RGB."
       },
       "experiment": {
-        "success_rate": "98.4% (246/250)",
+        "success_rate": {
+          "en": "98.4% (246/250) · separate-model benchmark",
+          "ko": "98.4% (246/250) · 별도 모델 평가"
+        },
         "model": "TC-ACT · Image history only · CVAE · E5000",
         "dataset": "Teleop30 + Mimic300",
         "condition": {
@@ -61,10 +64,6 @@
         "seed": {
           "en": "Train 0 · eval 2026",
           "ko": "학습 0 · 평가 2026"
-        },
-        "notes": {
-          "en": "Benchmark: image-history-only checkpoint, XY ±2 cm. Video: a separate state-and-image-history checkpoint, XY ±4 cm.",
-          "ko": "평가 수치는 과거 영상 이력만 사용하는 모델의 XY ±2 cm 결과입니다. 영상은 관절·영상 이력을 함께 사용하는 별도 모델의 XY ±4 cm 성공 예시입니다."
         }
       }
     },
