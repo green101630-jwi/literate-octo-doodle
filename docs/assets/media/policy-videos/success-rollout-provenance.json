@@ -1,7 +1,8 @@
 {
   "schema_version": 1,
   "published_date_kst": "2026-11-04",
-  "selection": "Successful rollouts from policies trained with 14D joint-state observations; RGB is additional for visual policies. Only verified successes are included.",
+  "selection": "Successful ACT and TC-ACT rollouts; Basket E5000/seed2028 and Handover E5000/seed2030, XY ±2cm.",
+  "recording": "Same fixed front RGB camera. H.264 at480x270/10fps; complete recorded trajectory and original timing retained.",
   "shared_camera": {
     "camera_name": "front_rgb_cam",
     "camera_position": [
@@ -20,165 +21,304 @@
     "aspect_ratio": 1.7777777777777777,
     "update_period": 0.0
   },
-  "recording": "Front RGB sensor frames at 10 fps, not a separate viewport. Full recorded trajectories retain original timing and frame counts; browser-compatible H.264 transcode.",
   "clips": [
     {
       "id": "video-sim-act-basket",
-      "src": "policy-videos/sim-act-basket-14d-success.mp4",
-      "sha256": "d5aa147895b66827aa32cf19b5306ba77466e6e03e82adc47d79cf30f5d97afc",
-      "source_sha256": "1c33ad8750c07dedbd63f405523153eb3b872ebff51c5df2ae283d831c8b0764",
-      "source_filename": "rollout_0002_success.mp4",
+      "src": "policy-videos/sim-act-basket-14d-seed2028-2cm-success.mp4",
+      "sha256": "1d1b6655419f44759e2f6805571beac53042d8e539f8eccb31c872e560cc4f80",
+      "poster": "policy-videos/sim-act-basket-14d-seed2028-2cm-success.jpg",
+      "poster_sha256": "6bec266faf7fcec56e7bd34d5d30c0aa1fbf82e861c1141966bb775719bbb464",
+      "source_filename": "rollout_0000_success.mp4",
+      "source_sha256": "35ca02a77ed154253c23b8210d3d444faebd4e86b0253bef7f09323c79c74c14",
       "checkpoint_run": "20261020_013657_basket_t30_m300_act_cvae_pair_e5000_seed0_k63SxB",
       "checkpoint_file": "paper_act_last.pt",
+      "checkpoint_sha256": "d17c342fb5495a5a98b21f2b92925ccc5430b09f65f724c9502fefcdc7b3aac6",
+      "checkpoint_epoch": 5000,
+      "checkpoint_optimizer_updates": 165000,
       "state_observation_dim": 14,
       "phase_enabled": false,
       "rgb_input": true,
-      "evaluation_file": "act_cvae_rand4cm_seed2026_n250.json",
-      "evaluation_task_id": "double-put-black-green-table-basket-rand-cubes-4cm-Play-v0",
-      "evaluation_seed": 2026,
-      "rollout_id": 2,
-      "success": true,
-      "completion_step": 419,
-      "success_trace_final_predicate": true,
-      "frames": 84,
-      "fps": 10,
-      "duration_seconds": 8.4,
-      "camera": {
-        "camera_name": "front_rgb_cam",
-        "camera_position": [
-          -0.33,
-          -0.45,
-          0.65
-        ],
-        "camera_target": [
-          -0.33,
-          0.32,
-          0.03
-        ],
-        "horizontal_fov_deg": 55.0,
-        "width": 640,
-        "height": 360,
-        "aspect_ratio": 1.7777777777777777,
-        "update_period": 0.0
-      },
-      "displayed_success_metric": {
-        "successes": 172,
-        "trials": 250,
-        "rate_percent": 68.8,
-        "scope": "original_video_evaluation_run",
-        "source_file": "act_cvae_rand4cm_seed2026_n250.json",
-        "source_sha256": "8a7c353fa37055463f0ecc7ce74bc0272f850d09d243a2664ab092109240f56d",
-        "evaluation_seeds": [
-          2026
-        ]
-      }
-    },
-    {
-      "id": "video-sim-tc-act-basket",
-      "src": "policy-videos/sim-tc-act-basket-14d-seed2026-2cm-success.mp4",
-      "sha256": "97de535b9a859be583027020b2b22f23c31b0364faf2d7449c06514c5e539191",
-      "source_sha256": "036c9514b3d8e8b6d170c60954708eeca0ed0202f9396edf4be51ffa4ddd4102",
-      "source_filename": "rollout_0002_success.mp4",
-      "checkpoint_run": "09_18_basket_t30_m300_visual_tc_act_14d_cvae_e5000_amp_seed0_gpu_rerun1",
-      "checkpoint_file": "visual_tc_act_last.pt",
-      "checkpoint_sha256": "a733550d22a50756f274d0ee42870ad63815347331f2cf2e70e6ac74ff8bd2cf",
-      "state_observation_dim": 14,
-      "phase_enabled": false,
-      "rgb_input": true,
-      "history_inputs": "sampled joint and image history",
-      "evaluation_file": "tc_basket_seed2026_capture.json",
-      "evaluation_sha256": "a711ba7d9f6338f3c03790e42a75f1e154f481f48ecf3ac086c99aa6c96eb35b",
+      "evaluation_file": "basket_act_seed2028_capture.json",
+      "evaluation_sha256": "780afe203dbb70cf1ff33a043c6cf8a61ac0a8182bc6656addfa63ee3dbb7a3d",
       "evaluation_task_id": "double-put-black-green-table-basket-rand-cubes-2cm-Play-v0",
-      "evaluation_seed": 2026,
-      "rollout_id": 2,
-      "success": true,
-      "completion_step": 431,
-      "trace_sha256": "5f3742e3df5aa686f74b75d685477e8cad6b6415f0dece3afa10aa945fbed4b0",
-      "success_trace_final_predicate": true,
-      "official_success_function": "task_double_put_black_green_table_basket.two_cubes_in_basket",
-      "all_trace_predicates_match_official_condition": true,
-      "frames": 87,
-      "fps": 10,
-      "duration_seconds": 8.7,
-      "camera": {
-        "camera_name": "front_rgb_cam",
-        "camera_position": [
-          -0.33,
-          -0.45,
-          0.65
-        ],
-        "camera_target": [
-          -0.33,
-          0.32,
-          0.03
-        ],
-        "horizontal_fov_deg": 55.0,
-        "width": 640,
-        "height": 360,
-        "aspect_ratio": 1.7777777777777777,
-        "update_period": 0.0
-      },
-      "new_recording_date_kst": "2026-11-04",
-      "eval_amp": true,
-      "temporal_aggregation": true,
-      "aggregation_decay": 0.01,
+      "evaluation_seed": 2028,
+      "eval_amp": false,
+      "xy_reset_half_range_cm": 2,
       "num_envs": 8,
       "horizon": 708,
-      "xy_reset_half_range_cm": 2,
+      "temporal_aggregation": true,
+      "aggregation_decay": 0.01,
+      "rollout_id": 0,
+      "success": true,
+      "completion_step": 450,
+      "trace_sha256": "56d681032ec433206837ded3ff2d41f18c4c603e760b3a1ff69c9675a19970c2",
+      "success_trace_final_predicate": true,
       "source_schedule_initial_positions_match": true,
       "matched_original_initial_positions": {
         "yellow_initial_xy_m": [
-          -0.14936864376068115,
-          0.38735222816467285
+          -0.1523451805114746,
+          0.4136924743652344
         ],
         "green_initial_xy_m": [
-          -0.37111151218414307,
-          0.49607396125793457
+          -0.40335893630981445,
+          0.4849284887313843
         ]
       },
-      "source_rollout_completion_step": 438,
-      "recording_scope": "Same checkpoint, seed, eight-environment first batch, full original position schedule, camera and inference settings; all initial cube XY values match exactly. The newly executed trajectories and completion steps can differ from the archived evaluation. This recording is not the archived rollout itself and its 8-rollout subset is not a replacement benchmark.",
-      "capture_sample": {
-        "successes": 5,
-        "trials": 8,
-        "purpose": "successful video capture; excluded from original 250-trial benchmark"
-      },
-      "recording_wrapper_sha256": "7dd08f85d181f2cd26382620017958f591d11df930a150750f7353210ef9bd5b",
-      "recording_evaluator_sha256": "bcb6fc0e8d3711841300e8713878913dbe801ba9693ac0388e375afaa3a59fc4",
-      "displayed_success_metric": {
-        "successes": 221,
-        "trials": 250,
-        "rate_percent": 88.4,
-        "scope": "single_evaluation_seed_same_model_and_protocol",
-        "source_file": "basket14_cvae_mimic300_ablation/evaluation_last_fixed_2cm_seed2026_n250_amp_on/state_image_history.json",
-        "source_sha256": "9f9327a1de0fa7a93a0913b123335340f004c7f2514601cfb6ba93766ba364d8",
-        "evaluation_seeds": [
-          2026
+      "frames": 91,
+      "fps": 10,
+      "duration_seconds": 9.1,
+      "camera": {
+        "camera_name": "front_rgb_cam",
+        "camera_position": [
+          -0.33,
+          -0.45,
+          0.65
         ],
-        "num_envs": 8,
+        "camera_target": [
+          -0.33,
+          0.32,
+          0.03
+        ],
+        "horizontal_fov_deg": 55.0,
+        "width": 640,
+        "height": 360,
+        "aspect_ratio": 1.7777777777777777,
+        "update_period": 0.0
+      },
+      "capture_sample": {
+        "successes": 7,
+        "trials": 8,
+        "purpose": "Successful video selection; excluded from the benchmark rate"
+      },
+      "recording_scope": "New recording using the archived model and first-batch initial conditions, camera and inference settings. Trajectories can differ from the archived evaluation.",
+      "displayed_success_metric": {
+        "successes": 233,
+        "trials": 250,
+        "rate_percent": 93.2,
+        "evaluation_seeds": [
+          2028
+        ],
+        "source_file": "basket_act_e5000_seed2028_n250.json",
+        "source_sha256": "0be13b60eb369ea36337c11254ed1e56a8a7d88421b14378c6e9bd1dae9558b5",
+        "scope": "single_evaluation_seed_same_model_and_protocol",
         "same_checkpoint_as_video": true,
         "same_inference_and_reset_protocol_as_video": true,
         "capture_sample_included_in_rate": false
-      }
+      },
+      "all_trace_predicates_match_official_condition": true
     },
     {
-      "id": "video-sim-act-handover",
-      "src": "policy-videos/sim-act-handover-14d-success.mp4",
-      "sha256": "3abfc36756d84b5b01d1f95cc8db27ee4283867e034448f2d295926683016bb3",
-      "source_sha256": "a98882bbde98ca3075ad57ac834eedc9fc5cb699a18b95d2b632c34493c60526",
+      "id": "video-sim-tc-act-basket",
+      "src": "policy-videos/sim-tc-act-basket-14d-seed2028-2cm-success.mp4",
+      "sha256": "55eff093cee4f43c79fffddf84223cef8d0c198ff3cc09fe281ccb6370e1d0a1",
+      "poster": "policy-videos/sim-tc-act-basket-14d-seed2028-2cm-success.jpg",
+      "poster_sha256": "00a4387328bcddcd09f9d5cdb446dcf9a1108690ce9609545604ec2d51db3196",
       "source_filename": "rollout_0000_success.mp4",
-      "checkpoint_run": "20261014_023834_remaining_basket_handover_paper_act_e2000_aMKgGX",
-      "checkpoint_file": "paper_act_best.pt",
+      "source_sha256": "9230238c4307817b9d7e05aa2a0551bc103029d0cfd6ecf79e6486a386cfb416",
+      "checkpoint_run": "09_18_basket_t30_m300_visual_tc_act_14d_cvae_e5000_amp_seed0_gpu_rerun1",
+      "checkpoint_file": "visual_tc_act_last.pt",
+      "checkpoint_sha256": "a733550d22a50756f274d0ee42870ad63815347331f2cf2e70e6ac74ff8bd2cf",
+      "checkpoint_epoch": 5000,
+      "checkpoint_optimizer_updates": 165000,
       "state_observation_dim": 14,
       "phase_enabled": false,
       "rgb_input": true,
-      "evaluation_file": "handover_seed0_frozen_best_seed2026_n250.json",
-      "evaluation_task_id": "handover-20gon-30-mimic-stable-v5-success-only-v0",
-      "evaluation_seed": 2026,
+      "evaluation_file": "basket_tc_seed2028_capture.json",
+      "evaluation_sha256": "50c64afdccd62446dcba13bb48835003c398eb8fc3ad2da216be6b28bff5f194",
+      "evaluation_task_id": "double-put-black-green-table-basket-rand-cubes-2cm-Play-v0",
+      "evaluation_seed": 2028,
+      "eval_amp": false,
+      "xy_reset_half_range_cm": 2,
+      "num_envs": 8,
+      "horizon": 708,
+      "temporal_aggregation": true,
+      "aggregation_decay": 0.01,
       "rollout_id": 0,
       "success": true,
-      "completion_step": 329,
+      "completion_step": 453,
+      "trace_sha256": "d5170113cea3f03f6948d3b948a3910d0cbe41a3de751fb63124ddb0ab1f6a00",
+      "success_trace_final_predicate": true,
+      "source_schedule_initial_positions_match": true,
+      "matched_original_initial_positions": {
+        "yellow_initial_xy_m": [
+          -0.1523451805114746,
+          0.4136924743652344
+        ],
+        "green_initial_xy_m": [
+          -0.40335893630981445,
+          0.4849284887313843
+        ]
+      },
+      "frames": 91,
+      "fps": 10,
+      "duration_seconds": 9.1,
+      "camera": {
+        "camera_name": "front_rgb_cam",
+        "camera_position": [
+          -0.33,
+          -0.45,
+          0.65
+        ],
+        "camera_target": [
+          -0.33,
+          0.32,
+          0.03
+        ],
+        "horizontal_fov_deg": 55.0,
+        "width": 640,
+        "height": 360,
+        "aspect_ratio": 1.7777777777777777,
+        "update_period": 0.0
+      },
+      "capture_sample": {
+        "successes": 8,
+        "trials": 8,
+        "purpose": "Successful video selection; excluded from the benchmark rate"
+      },
+      "recording_scope": "New recording using the archived model and first-batch initial conditions, camera and inference settings. Trajectories can differ from the archived evaluation.",
+      "displayed_success_metric": {
+        "successes": 228,
+        "trials": 250,
+        "rate_percent": 91.2,
+        "evaluation_seeds": [
+          2028
+        ],
+        "source_file": "basket_tc_e5000_seed2028_n250.json",
+        "source_sha256": "e994558c45470383adff546c3ee5363efa1b6184e2b761e6a4a3fc21cc1389f2",
+        "scope": "single_evaluation_seed_same_model_and_protocol",
+        "same_checkpoint_as_video": true,
+        "same_inference_and_reset_protocol_as_video": true,
+        "capture_sample_included_in_rate": false
+      },
+      "history_inputs": "sampled joint and image history",
+      "all_trace_predicates_match_official_condition": true
+    },
+    {
+      "id": "video-sim-act-handover",
+      "src": "policy-videos/sim-act-handover-14d-seed2030-2cm-success.mp4",
+      "sha256": "4d905c684b12bf91dde1ae37c6bf8e74783dc8e69abaefa44f92651641a291e8",
+      "poster": "policy-videos/sim-act-handover-14d-seed2030-2cm-success.jpg",
+      "poster_sha256": "72d1d2fe336348f09d7c2908fa61297fb06995d3e8c7f24d867d86e6ea9a328b",
+      "source_filename": "rollout_0000_success.mp4",
+      "source_sha256": "3f96394d4a6208a8fd227800ea1df2ec7a0361e7bd16a55a5c02f4990f364b35",
+      "checkpoint_run": "20261021_041729_handover_t30_m300_act_cvae_framewise_e5000_seed0_YZNuHS",
+      "checkpoint_file": "paper_act_last.pt",
+      "checkpoint_sha256": "cc5e9e349a5e69b02c07156fc917a6ed9a79eb828fd24f2f52a8c5dddda26c11",
+      "checkpoint_epoch": 5000,
+      "checkpoint_optimizer_updates": 165000,
+      "state_observation_dim": 14,
+      "phase_enabled": false,
+      "rgb_input": true,
+      "evaluation_file": "act_handover_seed2030_capture.json",
+      "evaluation_sha256": "134da181d69d1168288ed0e325b3ef07620398f2115e07b44143af3549cbc337",
+      "evaluation_task_id": "handover-20gon-30-mimic-stable-v5-success-only-v0",
+      "evaluation_seed": 2030,
+      "eval_amp": true,
+      "xy_reset_half_range_cm": 2,
+      "num_envs": 8,
+      "horizon": 500,
+      "temporal_aggregation": true,
+      "aggregation_decay": 0.01,
+      "rollout_id": 0,
+      "success": true,
+      "completion_step": 366,
+      "trace_sha256": "b9ca446984979d5f50906e044a81d4c1bacaacf7ce38f6733a0146cdaf415d82",
+      "success_trace_final_predicate": true,
+      "source_schedule_initial_positions_match": true,
+      "matched_original_initial_positions": {
+        "initial_tube_position": [
+          -0.1557602882385254,
+          0.4480885863304138,
+          -0.04538857191801071
+        ]
+      },
+      "frames": 74,
+      "fps": 10,
+      "duration_seconds": 7.4,
+      "camera": {
+        "camera_name": "front_rgb_cam",
+        "camera_position": [
+          -0.33,
+          -0.45,
+          0.65
+        ],
+        "camera_target": [
+          -0.33,
+          0.32,
+          0.03
+        ],
+        "horizontal_fov_deg": 55.0,
+        "width": 640,
+        "height": 360,
+        "aspect_ratio": 1.7777777777777777,
+        "update_period": 0.0
+      },
+      "capture_sample": {
+        "successes": 4,
+        "trials": 8,
+        "purpose": "Successful video selection; excluded from the benchmark rate"
+      },
+      "recording_scope": "New recording using the archived model and first-batch initial conditions, camera and inference settings. Trajectories can differ from the archived evaluation.",
+      "displayed_success_metric": {
+        "successes": 178,
+        "trials": 250,
+        "rate_percent": 71.2,
+        "evaluation_seeds": [
+          2030
+        ],
+        "source_file": "handover_act_e5000_seed2030_n250.json",
+        "source_sha256": "c8889b078ccb5f9f765b0a9ba15b6a64bc9f6a703b9cb5a59bfeedb926f9f616",
+        "scope": "single_evaluation_seed_same_model_and_protocol",
+        "same_checkpoint_as_video": true,
+        "same_inference_and_reset_protocol_as_video": true,
+        "capture_sample_included_in_rate": false
+      },
       "stable_success_steps": 25,
+      "raw_final25_verified": true,
+      "raw_final25_step_range": [
+        342,
+        366
+      ]
+    },
+    {
+      "id": "video-sim-tc-act-handover",
+      "src": "policy-videos/sim-tc-act-handover-14d-seed2030-2cm-success.mp4",
+      "sha256": "2e3ef76ee6d844b81edf31fd73a6fcaf40abbc211d5c6a31f86f70709f1bb21f",
+      "poster": "policy-videos/sim-tc-act-handover-14d-seed2030-2cm-success.jpg",
+      "poster_sha256": "76928e03e61c5d79fb8e6fa6da9a36195a8dfdc5c37158c264719b57dedfb5cb",
+      "source_filename": "rollout_0000_success.mp4",
+      "source_sha256": "ed6cc13fd1498f494b2ad90e157c1ee04850df49fc24e744a2c058ddc3727ca2",
+      "checkpoint_run": "09_22_handover_t30_m300_visual_tc_act_14d_cvae_e5000_amp_seed0",
+      "checkpoint_file": "visual_tc_act_last.pt",
+      "checkpoint_sha256": "9574836c7661b0fa1640edbd81dd089575c731034f23c52dfe2c6938982ab605",
+      "checkpoint_epoch": 5000,
+      "checkpoint_optimizer_updates": 165000,
+      "state_observation_dim": 14,
+      "phase_enabled": false,
+      "rgb_input": true,
+      "evaluation_file": "tc_handover_seed2030_capture.json",
+      "evaluation_sha256": "da3b0aff20856722160a375c7dc7cce49c2bb38d5b667cb312ebe85bdd4649b5",
+      "evaluation_task_id": "handover-20gon-30-mimic-stable-v5-success-only-v0",
+      "evaluation_seed": 2030,
+      "eval_amp": true,
+      "xy_reset_half_range_cm": 2,
+      "num_envs": 8,
+      "horizon": 500,
+      "temporal_aggregation": true,
+      "aggregation_decay": 0.01,
+      "rollout_id": 0,
+      "success": true,
+      "completion_step": 325,
+      "trace_sha256": "56a1a3ffae9eb5e91ce8bae29e877a8cbe11cbc1ddba529c362010ca70f2dee7",
+      "success_trace_final_predicate": true,
+      "source_schedule_initial_positions_match": true,
+      "matched_original_initial_positions": {
+        "initial_tube_position": [
+          -0.1557602882385254,
+          0.4480885863304138,
+          -0.04538857191801071
+        ]
+      },
       "frames": 66,
       "fps": 10,
       "duration_seconds": 6.6,
@@ -200,91 +340,33 @@
         "aspect_ratio": 1.7777777777777777,
         "update_period": 0.0
       },
-      "displayed_success_metric": {
-        "successes": 212,
-        "trials": 250,
-        "rate_percent": 84.8,
-        "scope": "original_video_evaluation_run",
-        "source_file": "handover_seed0_frozen_best_seed2026_n250.json",
-        "source_sha256": "214d42d43bb0621fb7a4619cbdb7859aa362ec0eb7718095df22d6e2f17a1eae",
-        "evaluation_seeds": [
-          2026
-        ]
-      }
-    },
-    {
-      "id": "video-sim-tc-act-handover",
-      "src": "policy-videos/sim-tc-act-handover-14d-success.mp4",
-      "sha256": "e43f98ca2c407f08fa401665ae8a40e8ec07518c115ef89adcd84c6ec062fe9c",
-      "source_sha256": "832acded4c8405220b3ba84013ffd934d5888e90509d5c0e5ee533a582b087fd",
-      "source_filename": "rollout_0000_success.mp4",
-      "checkpoint_run": "09_22_handover_t30_m300_visual_tc_act_14d_cvae_e5000_amp_seed0",
-      "checkpoint_file": "visual_tc_act_last.pt",
-      "checkpoint_sha256": "9574836c7661b0fa1640edbd81dd089575c731034f23c52dfe2c6938982ab605",
-      "state_observation_dim": 14,
-      "phase_enabled": false,
-      "rgb_input": true,
-      "evaluation_file": "tc_handover14_seed2027_capture.json",
-      "evaluation_task_id": "handover-20gon-30-mimic-stable-v5-success-only-v0",
-      "evaluation_seed": 2027,
-      "rollout_id": 0,
-      "success": true,
-      "completion_step": 283,
-      "stable_success_steps": 25,
-      "success_callback": "_stable_handover_success: 25 consecutive goal-and-velocity conditions; trace success_predicate is already debounced",
-      "eval_amp": true,
-      "new_recording_date_kst": "2026-11-04",
-      "recording_wrapper_sha256": "771788d56858de559c9cbac8d00f84870077cd5618c51ebf8bd74b922e107909",
-      "recording_evaluator_sha256": "637484e6c69f46aacff49b7f6da16ae5c154f6ab9a4eed691d69e74c9adc731d",
-      "frames": 57,
-      "fps": 10,
-      "duration_seconds": 5.7,
-      "camera": {
-        "camera_name": "front_rgb_cam",
-        "camera_position": [
-          -0.33,
-          -0.45,
-          0.65
-        ],
-        "camera_target": [
-          -0.33,
-          0.32,
-          0.03
-        ],
-        "horizontal_fov_deg": 55.0,
-        "width": 640,
-        "height": 360,
-        "aspect_ratio": 1.7777777777777777,
-        "update_period": 0.0
+      "capture_sample": {
+        "successes": 8,
+        "trials": 8,
+        "purpose": "Successful video selection; excluded from the benchmark rate"
       },
-      "encoding": "640x360 source scaled to 480x270; original 57 frames / 5.7 seconds retained",
-      "trace_sha256": "94fb3edc7558bf3de51613e6e05291ed76f9ffec626b2b338a51187ad47df595",
-      "evaluation_sha256": "714d552966e8d8b944cadd4579f9a059847723130635cfe68ff618e5cd3fd6f9",
-      "raw_final25_verified": true,
-      "raw_final25_step_range": [
-        259,
-        283
-      ],
-      "raw_final25_linear_speed_max_m_s": 0.0016711704665794969,
-      "raw_final25_angular_speed_max_rad_s": 0.03545866161584854,
+      "recording_scope": "New recording using the archived model and first-batch initial conditions, camera and inference settings. Trajectories can differ from the archived evaluation.",
       "displayed_success_metric": {
-        "successes": 1051,
-        "trials": 1250,
-        "rate_percent": 84.08,
-        "scope": "same_checkpoint_reference_benchmark_video_recorded_separately",
-        "source_file": "summary_5seeds.json",
-        "source_sha256": "8dbfe6aaef31bad4fa9385ea1536a08811077586d559c04f2f0cd32861bd3cd4",
+        "successes": 220,
+        "trials": 250,
+        "rate_percent": 88.0,
         "evaluation_seeds": [
-          2026,
-          2027,
-          2028,
-          2029,
           2030
         ],
-        "rollouts_per_seed": 250,
-        "num_envs": 8,
+        "source_file": "handover_tc_e5000_seed2030_n250.json",
+        "source_sha256": "219476816dcbe14f53d9cdec33168fac743feaa1f91b617bd3bdb7f2193a8b54",
+        "scope": "single_evaluation_seed_same_model_and_protocol",
+        "same_checkpoint_as_video": true,
+        "same_inference_and_reset_protocol_as_video": true,
         "capture_sample_included_in_rate": false
-      }
+      },
+      "history_inputs": "sampled joint and image history",
+      "stable_success_steps": 25,
+      "raw_final25_verified": true,
+      "raw_final25_step_range": [
+        301,
+        325
+      ]
     }
   ]
 }

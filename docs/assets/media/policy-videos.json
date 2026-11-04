@@ -11,28 +11,28 @@
       "environment": "sim",
       "policy": "act",
       "task": "basket",
-      "src": "policy-videos/sim-act-basket-14d-success.mp4",
-      "poster": "policy-videos/sim-act-basket-14d-success.jpg",
+      "src": "policy-videos/sim-act-basket-14d-seed2028-2cm-success.mp4",
+      "poster": "policy-videos/sim-act-basket-14d-seed2028-2cm-success.jpg",
       "caption": {
         "en": "Selected successful rollout · 14D joints + RGB.",
         "ko": "선별한 성공 롤아웃 · 14D 관절 + RGB."
       },
       "experiment": {
+        "success_rate": "93.2% (233/250)",
         "model": "ACT · CVAE · E5000",
         "dataset": "Teleop30 + Mimic300",
         "condition": {
-          "en": "Basket · XY ±4 cm resets",
-          "ko": "Basket · XY ±4 cm 초기 배치"
+          "en": "Basket · XY ±2 cm resets",
+          "ko": "Basket · XY ±2 cm 초기 배치"
         },
         "observation": {
           "en": "14D joints + RGB",
           "ko": "14D 관절 + RGB"
         },
         "seed": {
-          "en": "Train 0 · eval 2026",
-          "ko": "학습 0 · 평가 2026"
-        },
-        "success_rate": "68.8% (172/250)"
+          "en": "Train 0 · eval 2028",
+          "ko": "학습 0 · 평가 2028"
+        }
       }
     },
     {
@@ -40,27 +40,27 @@
       "environment": "sim",
       "policy": "tc-act",
       "task": "basket",
-      "src": "policy-videos/sim-tc-act-basket-14d-seed2026-2cm-success.mp4",
-      "poster": "policy-videos/sim-tc-act-basket-14d-seed2026-2cm-success.jpg",
+      "src": "policy-videos/sim-tc-act-basket-14d-seed2028-2cm-success.mp4",
+      "poster": "policy-videos/sim-tc-act-basket-14d-seed2028-2cm-success.jpg",
       "caption": {
         "en": "Selected successful rollout · 14D joints + RGB.",
         "ko": "선별한 성공 롤아웃 · 14D 관절 + RGB."
       },
       "experiment": {
-        "success_rate": "88.4% (221/250)",
+        "success_rate": "91.2% (228/250)",
         "model": "TC-ACT · CVAE · E5000",
         "dataset": "Teleop30 + Mimic300",
         "condition": {
-          "en": "Basket · XY ±2 cm randomized resets",
-          "ko": "Basket · XY ±2 cm 무작위 초기 배치"
+          "en": "Basket · XY ±2 cm resets",
+          "ko": "Basket · XY ±2 cm 초기 배치"
         },
         "observation": {
-          "en": "14D joints + RGB + joint/image history",
-          "ko": "14D 관절 + RGB + 관절·영상 이력"
+          "en": "14D joints + RGB + history",
+          "ko": "14D 관절 + RGB + 이력"
         },
         "seed": {
-          "en": "Train 0 · eval 2026 (one evaluation seed)",
-          "ko": "학습 0 · 평가 2026 (평가 시드 1개)"
+          "en": "Train 0 · eval 2028",
+          "ko": "학습 0 · 평가 2028"
         }
       }
     },
@@ -79,15 +79,16 @@
       "environment": "sim",
       "policy": "act",
       "task": "handover",
-      "src": "policy-videos/sim-act-handover-14d-success.mp4",
-      "poster": "policy-videos/sim-act-handover-14d-success.jpg",
+      "src": "policy-videos/sim-act-handover-14d-seed2030-2cm-success.mp4",
+      "poster": "policy-videos/sim-act-handover-14d-seed2030-2cm-success.jpg",
       "caption": {
         "en": "Selected successful rollout · 14D joints + RGB.",
         "ko": "선별한 성공 롤아웃 · 14D 관절 + RGB."
       },
       "experiment": {
-        "model": "ACT · CVAE · E2000 / best 1294",
-        "dataset": "Teleop25 + Mimic50",
+        "success_rate": "71.2% (178/250)",
+        "model": "ACT · CVAE · E5000",
+        "dataset": "Teleop30 + Mimic300",
         "condition": {
           "en": "Tube handover · XY ±2 cm resets",
           "ko": "원통 Handover · XY ±2 cm 초기 배치"
@@ -97,10 +98,9 @@
           "ko": "14D 관절 + RGB"
         },
         "seed": {
-          "en": "Train 0 · eval 2026",
-          "ko": "학습 0 · 평가 2026"
-        },
-        "success_rate": "84.8% (212/250)"
+          "en": "Train 0 · eval 2030",
+          "ko": "학습 0 · 평가 2030"
+        }
       }
     },
     {
@@ -108,31 +108,27 @@
       "environment": "sim",
       "policy": "tc-act",
       "task": "handover",
-      "src": "policy-videos/sim-tc-act-handover-14d-success.mp4",
-      "poster": "policy-videos/sim-tc-act-handover-14d-success.jpg",
+      "src": "policy-videos/sim-tc-act-handover-14d-seed2030-2cm-success.mp4",
+      "poster": "policy-videos/sim-tc-act-handover-14d-seed2030-2cm-success.jpg",
       "caption": {
-        "en": "Selected successful rollout · 14D joints + RGB and history.",
-        "ko": "선별한 성공 롤아웃 · 14D 관절 + RGB·이력."
+        "en": "Selected successful rollout · 14D joints + RGB.",
+        "ko": "선별한 성공 롤아웃 · 14D 관절 + RGB."
       },
       "experiment": {
+        "success_rate": "88.0% (220/250)",
         "model": "TC-ACT · CVAE · E5000",
         "dataset": "Teleop30 + Mimic300",
         "condition": {
-          "en": "Tube handover · XY ±2 cm resets · new recording",
-          "ko": "원통 Handover · XY ±2 cm 초기 배치 · 신규 촬영"
+          "en": "Tube handover · XY ±2 cm resets",
+          "ko": "원통 Handover · XY ±2 cm 초기 배치"
         },
         "observation": {
-          "en": "14D joints + RGB + sampled history",
-          "ko": "14D 관절 + RGB + 표본화한 이력"
+          "en": "14D joints + RGB + history",
+          "ko": "14D 관절 + RGB + 이력"
         },
         "seed": {
-          "en": "Train 0 · clip eval 2027",
-          "ko": "학습 0 · 영상 평가 2027"
-        },
-        "success_rate": "84.08% (1,051/1,250)",
-        "notes": {
-          "en": "Same-checkpoint benchmark: 5 evaluation seeds × 250 trials. Video recorded separately.",
-          "ko": "동일 체크포인트의 평가 시드 5개 × 250회 결과입니다. 영상은 별도 촬영했습니다."
+          "en": "Train 0 · eval 2030",
+          "ko": "학습 0 · 평가 2030"
         }
       }
     },
