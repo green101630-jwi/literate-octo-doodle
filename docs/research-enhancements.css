@@ -91,3 +91,39 @@
 /* Demonstration source labels and understated negative-result heading. */
 #demonstrations .featured-demonstration-label{font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:850;line-height:1.25;letter-spacing:-.015em;color:var(--ink);margin-bottom:12px}
 #demonstrations .research-figure h3.negative-result-minor-title{font-size:.7rem;line-height:1.3;font-weight:650;letter-spacing:0;margin-bottom:2px}
+
+
+/* Secondary result: shrink the complete figure, chart, and controls to a quarter
+   of the research content width on desktop; use a legible width on mobile. */
+#demonstrations .negative-result-mini{
+  width:25%;
+  max-width:300px;
+  min-width:0;
+  margin:18px 0 0;
+}
+#demonstrations .negative-result-mini .figure-heading{
+  display:block;
+  padding:10px 12px 4px;
+}
+#demonstrations .negative-result-mini .figure-heading h3{
+  font-size:.7rem;
+  line-height:1.35;
+  margin:0 0 5px;
+}
+#demonstrations .negative-result-mini .figure-heading .research-zoom{
+  display:inline-flex;
+  font-size:.69rem;
+  white-space:normal;
+  margin:0 0 4px;
+}
+#demonstrations .negative-result-mini>img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+@media(max-width:700px){
+  #demonstrations .negative-result-mini{
+    width:100%;
+    max-width:300px;
+  }
+}
