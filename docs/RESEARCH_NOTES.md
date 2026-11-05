@@ -83,7 +83,7 @@ Each clip is a selected successful E5000 rollout; its original single-seed rate 
 
 ## Demonstration research: measurement boundaries
 
-The Research overview's Scripted presentation now explains how the demonstrations are generated. The downstream policy measurements remain available in the collapsed follow-up details, with the collection, replay, and policy-evaluation scopes preserved below.
+The Research overview's Scripted presentation explains how the demonstrations are generated. The collection, replay, and downstream policy measurements are retained here and in the source data, with their separate scopes preserved below.
 
 ### Scripted generation implementation
 

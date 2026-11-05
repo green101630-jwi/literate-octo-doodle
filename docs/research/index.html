@@ -11,11 +11,11 @@
 <meta property="og:image" content="https://green101630-jwi.github.io/literate-octo-doodle/assets/media/dual-arm-workspace.jpg">
 <title data-title-en="Research | Won Ik Jang" data-title-ko="연구 | 장원익">Research | Won Ik Jang</title>
 <link rel="stylesheet" href="../portfolio.css">
-<link rel="stylesheet" href="../research-enhancements.css?v=20261105-e6000-comparison">
+<link rel="stylesheet" href="../research-enhancements.css?v=20261106-section-emphasis">
 <link rel="stylesheet" href="../research-page-interactions.css">
 <link rel="stylesheet" href="../policy-videos.css?v=20261104-paired-seeds">
 <script src="../portfolio.js" defer></script>
-<script src="../research-page-interactions.js" defer></script>
+<script src="../research-page-interactions.js?v=20261106-section-emphasis" defer></script>
 <script src="../demonstration-coverage.js?v=20261105-basket-coverage" defer></script>
 <script src="../policy-videos.js?v=20261104-paired-seeds" defer></script>
 </head>
@@ -77,7 +77,7 @@
 <p class="research-intro"><span data-locale="en">ACT and Diffusion Policy provide two action-generation families. TC-ACT is the ACT extension implemented in this project. Behavior cloning describes the supervised learning approach; it is distinct from the policy architecture.</span><span data-locale="ko">ACT와 Diffusion Policy는 서로 다른 행동 생성 계열이며, TC-ACT는 이 프로젝트에서 구현한 ACT 확장입니다. 행동 복제는 지도 방식의 모방학습 방법을 가리키며 정책 구조 자체와 구분합니다.</span></p>
 <div class="research-grid">
 <article class="research-card"><span class="research-label">ACT / BASELINE</span><h3><span data-locale="en">Action chunks from current observations</span><span data-locale="ko">현재 관측에서 행동 청크 예측</span></h3><p><span data-locale="en">Adapted Transformer-based ACT to the bimanual tasks: CVAE training, ResNet18 image features in visual versions, joint observations, action normalization, and temporal aggregation. Low-dimensional and visual checkpoints use different inputs.</span><span data-locale="ko">Transformer 기반 ACT를 양팔 태스크에 적용했습니다. CVAE 학습, 시각 버전의 ResNet18 특징, 관절 관측, 행동 정규화와 temporal aggregation을 연결했으며 저차원·영상 체크포인트의 입력 구성을 구분했습니다.</span></p></article>
-<article class="research-card"><span class="research-label">TC-ACT / MY EXTENSION</span><h3><span data-locale="en">Add causal temporal context</span><span data-locale="ko">인과적인 시간 문맥 경로 추가</span></h3><p><span data-locale="en">Extended ACT with sampled joint and image histories, a temporal encoder, and learned context tokens. Compared observation modalities, history use, CVAE/phase settings, and generalization across object placements.</span><span data-locale="ko">표본화한 과거 관절·영상, 시간 인코더와 학습 가능한 문맥 토큰을 ACT에 추가했습니다. 관측 모달리티, 이력 사용, CVAE·phase 설정 및 물체 초기 위치 변화에 대한 일반화를 비교했습니다.</span></p><a class="inline-link" href="#tc-act"><span data-locale="en">Architecture and model versions ↓</span><span data-locale="ko">구조와 모델 버전 ↓</span></a></article>
+<article class="research-card tc-act-extension-card"><span class="research-label tc-act-extension-label">TC-ACT / MY EXTENSION</span><h3><span data-locale="en">Add causal temporal context</span><span data-locale="ko">인과적인 시간 문맥 경로 추가</span></h3><p><span data-locale="en">Extended ACT with sampled joint and image histories, a temporal encoder, and learned context tokens. Compared observation modalities, history use, CVAE/phase settings, and generalization across object placements.</span><span data-locale="ko">표본화한 과거 관절·영상, 시간 인코더와 학습 가능한 문맥 토큰을 ACT에 추가했습니다. 관측 모달리티, 이력 사용, CVAE·phase 설정 및 물체 초기 위치 변화에 대한 일반화를 비교했습니다.</span></p><a class="inline-link" href="#tc-act"><span data-locale="en">Architecture and model versions ↓</span><span data-locale="ko">구조와 모델 버전 ↓</span></a></article>
 <article class="research-card"><span class="research-label">DIFFUSION POLICY</span><h3><span data-locale="en">Denoise an action sequence</span><span data-locale="ko">잡음 제거로 행동 시퀀스 생성</span></h3><p><span data-locale="en">Trained conditional 1D U-Net policies with FiLM and DDIM inference. Integrated observation/action adapters and measured how denoising steps and compilation change success and runtime.</span><span data-locale="ko">FiLM 조건부 1D U-Net과 DDIM 추론을 사용하는 정책을 학습했습니다. 관측·행동 어댑터를 연결하고 디노이징 단계와 컴파일이 성공률·실행 비용에 미치는 영향을 측정했습니다.</span></p></article>
 </div>
 <div id="tc-act" class="bottom-link">
@@ -118,7 +118,7 @@
 </div>
 
 <div class="demo-coverage-switcher" id="demonstration-coverage" data-demo-coverage>
-<div class="demo-coverage-heading"><span class="research-label"><span data-locale="en">MIMIC / PLACEMENT COVERAGE</span><span data-locale="ko">MIMIC / 초기 위치 분포</span></span><h3><span data-locale="en">Retarget the motion, compare placement coverage</span><span data-locale="ko">동작 재배치와 초기 위치 분포 비교</span></h3></div>
+<div class="demo-coverage-heading"><h3 class="demo-topic-heading" id="mimic-topic-title"><span data-locale="en">MIMIC / PLACEMENT COVERAGE</span><span data-locale="ko">MIMIC / 초기 위치 분포</span></h3><h4 class="demo-topic-subtitle"><span data-locale="en">Retarget the motion, compare placement coverage</span><span data-locale="ko">동작 재배치와 초기 위치 분포 비교</span></h4></div>
 <div class="demo-coverage-tabs" role="tablist" aria-label="Demonstration coverage by task" data-demo-coverage-tabs hidden>
 <button type="button" role="tab" id="coverage-tab-basket" data-demo-coverage-tab aria-controls="coverage-panel-basket" aria-selected="true" tabindex="0">Basket</button>
 <button type="button" role="tab" id="coverage-tab-handover" data-demo-coverage-tab aria-controls="coverage-panel-handover" aria-selected="false" tabindex="-1">Handover</button>
@@ -134,11 +134,11 @@
 <figcaption><span data-locale="en">75 recorded initial positions. The fixed Teleop layout produces overlapping source points; Mimic spreads the placements around it. Actual overlaps are preserved.</span><span data-locale="ko">기록된 초기 위치 75개입니다. 고정 배치에서 수집한 Teleop 점은 서로 겹치고, Mimic은 주변으로 위치를 확장합니다. 실제 중첩을 그대로 유지했습니다.</span></figcaption>
 </figure>
 </div>
-<details class="research-disclosure demo-conditions"><summary><span data-locale="en">Mimic implementation and coverage conditions</span><span data-locale="ko">Mimic 구현 및 분포 조건</span></summary><div class="disclosure-body"><p><span data-locale="en">I connected subtask segmentation, object-relative trajectory retargeting, physics replay, and source-episode lineage. Each task uses a specific aligned Teleop25 + Mimic50 release. Basket plots both objects separately: 75 points per object, 150 in total, centered on each object's Teleop mean. Handover plots 75 positions centered on the fixed Teleop layout. All positions are recorded initial XY values, shown in mm without artificial jitter.</span><span data-locale="ko">하위 작업 분할, 물체 기준 궤적 재배치, 물리 재생과 원본 시연 계보를 연결했습니다. 각 태스크의 특정 Teleop25 + Mimic50 정합 릴리스를 사용합니다. Basket은 두 물체를 따로 표시하며 물체마다 75개, 총 150개 위치를 각 Teleop 평균 기준으로 중심화했습니다. Handover는 고정 Teleop 배치를 기준으로 초기 위치 75개를 표시합니다. 모두 기록된 초기 XY 값이며 mm 단위로 인위적인 jitter 없이 그렸습니다.</span></p><p><span data-locale="en">These plots show dataset placement coverage. The visual E5000 policies below use a different Teleop30 + Mimic300 dataset.</span><span data-locale="ko">이 그림은 데이터셋의 초기 위치 분포를 보여줍니다. 아래 시각 E5000 정책의 Teleop30 + Mimic300 데이터와는 구분합니다.</span></p></div></details>
+<details class="research-disclosure demo-conditions"><summary><span data-locale="en">Mimic implementation and coverage conditions</span><span data-locale="ko">Mimic 구현 및 분포 조건</span></summary><div class="disclosure-body"><p><span data-locale="en">I connected subtask segmentation, object-relative trajectory retargeting, physics replay, and source-episode lineage. Each task uses a specific aligned Teleop25 + Mimic50 release. Basket plots both objects separately: 75 points per object, 150 in total, centered on each object's Teleop mean. Handover plots 75 positions centered on the fixed Teleop layout. All positions are recorded initial XY values, shown in mm without artificial jitter.</span><span data-locale="ko">하위 작업 분할, 물체 기준 궤적 재배치, 물리 재생과 원본 시연 계보를 연결했습니다. 각 태스크의 특정 Teleop25 + Mimic50 정합 릴리스를 사용합니다. Basket은 두 물체를 따로 표시하며 물체마다 75개, 총 150개 위치를 각 Teleop 평균 기준으로 중심화했습니다. Handover는 고정 Teleop 배치를 기준으로 초기 위치 75개를 표시합니다. 모두 기록된 초기 XY 값이며 mm 단위로 인위적인 jitter 없이 그렸습니다.</span></p></div></details>
 
 <article class="demo-research-panel" id="scripted-basket-study">
-<span class="research-label"><span data-locale="en">SCRIPTED / BASKET</span><span data-locale="ko">스크립트 시연 / BASKET</span></span>
-<h3><span data-locale="en">Scripted demonstration generation</span><span data-locale="ko">코드 기반 시연 자동 생성</span></h3>
+<h3 class="demo-topic-heading" id="scripted-topic-title"><span data-locale="en">SCRIPTED / BASKET</span><span data-locale="ko">스크립트 시연 / BASKET</span></h3>
+<h4 class="demo-topic-subtitle"><span data-locale="en">Scripted demonstration generation</span><span data-locale="ko">코드 기반 시연 자동 생성</span></h4>
 <p class="demo-brief"><span data-locale="en">The Basket collector reads object and basket poses from simulator state, plans staged motion, and executes it through physical contact to record successful demonstrations.</span><span data-locale="ko">Basket 수집기는 시뮬레이터 상태에서 물체·바구니 위치를 읽어 단계별 동작을 계획하고, 물리 접촉으로 실행해 성공한 시연을 기록합니다.</span></p>
 
 <div class="scripted-workflow" aria-labelledby="scripted-workflow-title">
@@ -171,35 +171,16 @@
 <div><dt><span data-locale="en">Grasp stability</span><span data-locale="ko">파지 안정화</span></dt><dd><span data-locale="en">Adjust gripper closing duration, grasp height and finger collision shapes, using convex decomposition for finger contact.</span><span data-locale="ko">그리퍼 닫힘 시간·파지 높이·손가락 충돌 형상을 조정하고, 손가락 접촉에 convex decomposition을 적용합니다.</span></dd></div>
 <div><dt><span data-locale="en">Recording &amp; replay</span><span data-locale="ko">기록과 재생</span></dt><dd><span data-locale="en">Retain successes during collection. Restore the initial state, then capture RGB before replaying each saved action. A separate check covers RGB / joint / action indexing, data formats, and final replay success.</span><span data-locale="ko">수집할 때 성공 시연을 선별합니다. 초기 상태를 복원한 뒤, 저장한 행동을 하나씩 재실행하기 직전에 RGB를 기록합니다. RGB·관절·행동 인덱스와 데이터 형식, 최종 재생 성공은 별도로 검증합니다.</span></dd></div>
 </dl>
-<dl class="scripted-collection-results">
-<div><dt><span data-locale="en">Collection</span><span data-locale="ko">시연 수집</span></dt><dd><strong>100 / 135</strong> <span data-locale="en">saved demonstrations / attempts</span><span data-locale="ko">저장한 시연 / 시도</span></dd></div>
-<div><dt><span data-locale="en">RGB replay</span><span data-locale="ko">RGB 재생</span></dt><dd><strong>100 / 100</strong> <span data-locale="en">retained demonstrations reached final success</span><span data-locale="ko">저장한 시연의 최종 성공 재확인</span></dd></div>
-</dl>
-<details class="research-disclosure demo-conditions scripted-learning-result"><summary><span data-locale="en">Subsequent ACT training</span><span data-locale="ko">후속 ACT 학습 결과</span></summary><div class="disclosure-body"><p><span data-locale="en">Scripted100 ACT reached 221/250 (88.4%) in a separate learned-policy evaluation. Existing close64 simulation study: 100 exported demonstrations, 80 / 20 training-validation split. ACT CVAE uses a frozen visual backbone, chunk50, E5000, and training seed0. Evaluation: seed2026, 250 rollouts, horizon1100, XY ±2cm, AMP off, temporal aggregation decay0.01. This is a separate dataset/model protocol from the visual E5000 paired ACT / TC-ACT comparison.</span><span data-locale="ko">별도의 학습 정책 평가에서 Scripted100 ACT는 221/250회(88.4%) 성공했습니다. 기존 close64 시뮬레이션 연구로, 내보낸 시연 100개를 학습80·검증20으로 분할했습니다. ACT CVAE는 고정된 시각 backbone, chunk50, E5000, 학습 seed0을 사용했습니다. 평가는 seed2026·250회·horizon1100·XY ±2cm·AMP off·temporal aggregation decay0.01입니다. 시각 E5000 ACT·TC-ACT 동일 초기조건 비교와는 데이터·모델 실험이 다릅니다.</span></p></div></details>
 </article>
 
-<article class="demo-research-panel" id="demonstration-alignment">
-<span class="research-label"><span data-locale="en">DATA QUALITY / A CONCRETE REPAIR</span><span data-locale="ko">데이터 품질 / 구체적인 정합 수정</span></span>
-<h3><span data-locale="en">Make the first image match the recorded state</span><span data-locale="ko">첫 영상과 기록된 상태를 일치시키기</span></h3>
-<p class="demo-brief"><span data-locale="en">In a Handover simulation episode, the first RGB frame disagreed with its recorded initial state. I re-rendered the recorded states to repair the visual observations.</span><span data-locale="ko">Handover 시뮬레이션의 한 에피소드에서 첫 RGB와 기록된 초기 상태의 불일치를 확인했습니다. 저장된 상태를 다시 렌더링해 시각 관측을 수정했습니다.</span></p>
-<ol class="demo-quality-flow">
-<li><span class="research-label"><span data-locale="en">BEFORE</span><span data-locale="ko">수정 전</span></span><strong><span data-locale="en">Mismatched first frame</span><span data-locale="ko">첫 프레임 불일치</span></strong><p><span data-locale="en">The initial visual observation described a different state.</span><span data-locale="ko">첫 영상이 기록된 초기 상태와 다른 장면을 가리켰습니다.</span></p></li>
-<li><span class="research-label"><span data-locale="en">REPAIR</span><span data-locale="ko">수정</span></span><strong><span data-locale="en">Re-render stored states</span><span data-locale="ko">저장된 상태 재렌더링</span></strong><p><span data-locale="en">Reconstruct simulation RGB from the recorded state sequence.</span><span data-locale="ko">기록된 상태 시퀀스에서 시뮬레이션 RGB를 다시 생성했습니다.</span></p></li>
-<li><span class="research-label"><span data-locale="en">CONTRACT</span><span data-locale="ko">정합 규약</span></span><strong>RGB[t] ↔ obs[t]</strong><p><span data-locale="en">Match the image to the pre-action observation and check action indexing.</span><span data-locale="ko">영상을 행동 실행 전 관측에 맞추고 행동 인덱스를 확인합니다.</span></p></li>
-</ol>
-<div class="demo-quality-facts">
-<div><strong>660</strong><span data-locale="en">source episodes checked for observation/action semantics</span><span data-locale="ko">관측·행동 의미를 점검한 원본 에피소드</span></div>
-<div><strong>75 + 75</strong><span data-locale="en">Basket / Handover in a specific aligned T25 + M50 release</span><span data-locale="ko">특정 T25 + M50 정합 릴리스의 Basket / Handover</span></div>
-</div>
-<details class="research-disclosure demo-conditions"><summary><span data-locale="en">Audit and release scope</span><span data-locale="ko">검증 및 릴리스 범위</span></summary><div class="disclosure-body"><p><span data-locale="en">The 660-episode semantics audit and the 150-episode aligned release are separate records, not a single 660 → 150 filtering funnel. The release contains 25 teleoperation + 50 Mimic demonstrations per task. RGB[t] matches the pre-action observation: initial_state at t=0, then the original states[t−1]. Splits and normalization belong to each subsequent training configuration.</span><span data-locale="ko">660개 의미 검증과 150개 정합 릴리스는 서로 다른 기록이며, 660 → 150의 단일 필터링 과정을 뜻하지 않습니다. 릴리스는 태스크마다 Teleop25 + Mimic50으로 구성됩니다. RGB[t]는 행동 실행 전 관측에 맞췄으며, t=0에는 initial_state, 이후에는 원본 states[t−1]에 대응합니다. 분할과 정규화는 후속 학습별 설정으로 구분합니다.</span></p></div></details>
-</article>
-
-<figure class="research-figure negative-result-mini">
-<div class="figure-heading"><div><h3 class="negative-result-minor-title"><span data-locale="en">A negative result, with experimental controls</span><span data-locale="ko">통제 조건에서 확인한 음성 결과</span></h3></div><button type="button" class="inline-link research-zoom" data-research-figure="../assets/charts/success-rollout-controls.svg" aria-haspopup="dialog" aria-controls="research-figure-modal"><span data-locale="en">Expand here ⤢</span><span data-locale="ko">여기서 확대 ⤢</span></button></div>
+<article class="demo-research-panel demo-success-study" id="success-rollout-study" aria-labelledby="success-rollouts-title">
+<h3 class="demo-topic-heading" id="success-rollouts-title"><span data-locale="en">SUCCESS ROLLOUTS</span><span data-locale="ko">성공 롤아웃</span></h3>
+<figure class="research-figure demo-success-figure">
+<div class="figure-heading"><div><h4 class="demo-success-figure-title"><span data-locale="en">Successful-rollout retraining</span><span data-locale="ko">성공 롤아웃 재학습</span></h4></div><button type="button" class="inline-link research-zoom" data-research-figure="../assets/charts/success-rollout-controls.svg" aria-haspopup="dialog" aria-controls="research-figure-modal"><span data-locale="en">Expand here ⤢</span><span data-locale="ko">여기서 확대 ⤢</span></button></div>
 <img src="../assets/charts/success-rollout-controls.svg" alt="Expert50: 56 and 57.2 percent; Expert50 plus Self50: 22.4 and 14.4 percent" data-alt-en="Expert50: 56 and 57.2 percent; Expert50 plus Self50: 22.4 and 14.4 percent" data-alt-ko="Expert50 성공률 56%, 57.2%; Expert50+Self50 성공률 22.4%, 14.4%" width="1200" height="727" loading="lazy">
 </figure>
 
-<details class="research-disclosure demo-conditions" id="success-rollout-study"><summary><span data-locale="en">Successful-rollout controls and failure observations</span><span data-locale="ko">성공 롤아웃 재학습 통제 조건 및 실패 관찰</span></summary><div class="disclosure-body">
+<details class="research-disclosure demo-conditions" id="success-rollout-conditions"><summary><span data-locale="en">Successful-rollout controls and failure observations</span><span data-locale="ko">성공 롤아웃 재학습 통제 조건 및 실패 관찰</span></summary><div class="disclosure-body">
 <p><span data-locale="en">Here, “Expert50” means 50 Mimic expert-source demonstrations. Adding 50 successful policy rollouts reduced success under this recorded protocol.</span><span data-locale="ko">여기서 “Expert50”은 Mimic 전문가 출처 시연 50개를 뜻합니다. 이 기록의 실험 조건에서는 정책 성공 롤아웃 50개를 추가했을 때 성공률이 낮아졌습니다.</span></p>
 <dl class="demo-control-facts">
 <div><dt><span data-locale="en">Training budget</span><span data-locale="ko">학습 예산</span></dt><dd>14,000 / 14,001 updates</dd></div>
@@ -209,11 +190,12 @@
 </dl>
 <p><span data-locale="en">Students train from scratch; comparisons use final checkpoints. The failure breakdown below uses training seed0 only, with XY ±2cm, horizon708, AMP off, and temporal aggregation decay0.01.</span><span data-locale="ko">학생 모델은 처음부터 학습하고 최종 체크포인트로 비교했습니다. 아래 실패 분류는 학습 seed0만 사용하며 XY ±2cm·horizon708·AMP off·temporal aggregation decay0.01 조건입니다.</span></p>
 <figure class="research-figure demo-failure-figure">
-<div class="figure-heading"><div><h3><span data-locale="en">Where the two seed0 policies stopped</span><span data-locale="ko">두 seed0 정책이 멈춘 단계</span></h3></div><button type="button" class="inline-link research-zoom" data-research-figure="../assets/charts/demonstration-failure-breakdown.svg" aria-haspopup="dialog" aria-controls="research-figure-modal"><span data-locale="en">Expand here ⤢</span><span data-locale="ko">여기서 확대 ⤢</span></button></div>
+<div class="figure-heading"><div><h4 class="demo-failure-heading"><span data-locale="en">Where the two seed0 policies stopped</span><span data-locale="ko">두 seed0 정책이 멈춘 단계</span></h4></div><button type="button" class="inline-link research-zoom" data-research-figure="../assets/charts/demonstration-failure-breakdown.svg" aria-haspopup="dialog" aria-controls="research-figure-modal"><span data-locale="en">Expand here ⤢</span><span data-locale="ko">여기서 확대 ⤢</span></button></div>
 <img src="../assets/charts/demonstration-failure-breakdown.svg" alt="Basket seed0 rollout outcomes for Mimic50 and Mimic50 plus 50 successful policy rollouts" data-alt-en="Basket seed0 rollout outcomes for Mimic50 and Mimic50 plus 50 successful policy rollouts" data-alt-ko="Basket seed0의 Mimic50 및 Mimic50+정책 성공 롤아웃50 결과 분류" width="940" height="680" loading="lazy">
 <figcaption><span data-locale="en">250 trials per condition. Categories use a 2.5cm lift threshold and goal history. They describe failed executions; they do not establish the cause of retraining degradation.</span><span data-locale="ko">조건마다 250회입니다. 2.5cm 상승 기준과 목표 도달 이력으로 실행을 분류한 관찰이며, 재학습 성능 저하의 원인을 확정하는 결과는 아닙니다.</span></figcaption>
 </figure>
 </div></details>
+</article>
 <div class="research-links"><a class="inline-link" href="../assets/charts/demonstration-research-data.json" download><span data-locale="en">Download demonstration-study data ↓</span><span data-locale="ko">시연 데이터 연구 수치 내려받기 ↓</span></a></div>
 
 

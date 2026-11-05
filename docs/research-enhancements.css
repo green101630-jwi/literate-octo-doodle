@@ -13,6 +13,8 @@
 #policies>.wrap>.research-grid>.research-card{display:flex;flex-direction:column}
 #policies>.wrap>.research-grid>.research-card>.inline-link{margin-top:auto;padding-top:12px}
 #policies #act-baseline{margin-top:25px}
+#policies .tc-act-extension-card{border-top:3px solid #9c75b9}
+#policies .tc-act-extension-label{font-size:.95rem;line-height:1.5;letter-spacing:.045em;color:#75439a}
 .research-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px}
 .research-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
 .research-grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -94,52 +96,19 @@
  .tc-act-diagram-viewport img{min-width:820px}
 }
 
-/* Demonstration source labels and understated negative-result heading. */
+/* Demonstration source labels. */
 #demonstrations .featured-demonstration-label{font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:850;line-height:1.25;letter-spacing:-.015em;color:var(--ink);margin-bottom:12px}
-#demonstrations .research-figure h3.negative-result-minor-title{font-size:.7rem;line-height:1.3;font-weight:650;letter-spacing:0;margin-bottom:2px}
-
-
-/* Secondary result: shrink the complete figure, chart, and controls to a quarter
-   of the research content width on desktop; use a legible width on mobile. */
-#demonstrations .negative-result-mini{
-  width:25%;
-  max-width:300px;
-  min-width:0;
-  margin:18px 0 0;
-}
-#demonstrations .negative-result-mini .figure-heading{
-  display:block;
-  padding:10px 12px 4px;
-}
-#demonstrations .negative-result-mini .figure-heading h3{
-  font-size:.7rem;
-  line-height:1.35;
-  margin:0 0 5px;
-}
-#demonstrations .negative-result-mini .figure-heading .research-zoom{
-  display:inline-flex;
-  font-size:.69rem;
-  white-space:normal;
-  margin:0 0 4px;
-}
-#demonstrations .negative-result-mini>img{
-  display:block;
-  width:100%;
-  height:auto;
-}
-@media(max-width:700px){
-  #demonstrations .negative-result-mini{
-    width:100%;
-    max-width:300px;
-  }
-}
 
 
 /* Research 03: recorded demonstration coverage, collection and data quality. */
 #demonstrations .demo-coverage>img{display:block;max-width:780px;margin-inline:auto}
 #demonstrations .demo-research-panel{margin-top:30px;padding:25px;border:1px solid var(--line);border-radius:var(--radius);background:#fff}
-#demonstrations .demo-research-panel>h3{font-size:1.24rem;line-height:1.45;margin-bottom:12px}
 #demonstrations .demo-brief{font-size:.85rem;line-height:1.8;color:var(--muted);max-width:900px}
+#demonstrations h3.demo-topic-heading{font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:850;line-height:1.25;letter-spacing:-.015em;color:var(--ink);margin:0 0 12px}
+#demonstrations h4.demo-topic-subtitle{font-size:1.1rem;font-weight:650;line-height:1.5;color:var(--muted);margin:0 0 16px}
+#success-rollout-study .demo-success-figure{width:100%;max-width:980px;margin:22px auto 0}
+#success-rollout-study .demo-success-figure .figure-heading{align-items:center;padding:19px 22px 0}
+#success-rollout-study .demo-success-figure-title,#success-rollout-study .demo-failure-heading{font-size:1.05rem;line-height:1.5;margin:0 0 6px;color:var(--ink)}
 /* Scripted Basket: a static generation diagram and sequential motion phases. */
 #scripted-basket-study .scripted-workflow{margin-top:27px}
 #scripted-basket-study h4{font-size:.88rem;line-height:1.55;margin:0 0 18px;color:var(--ink)}
@@ -165,14 +134,7 @@
 #scripted-basket-study .scripted-implementation>div{display:grid;grid-template-columns:140px minmax(0,1fr);gap:18px;align-items:baseline}
 #scripted-basket-study .scripted-implementation dt{font-size:.8rem;font-weight:750;line-height:1.7;color:var(--ink)}
 #scripted-basket-study .scripted-implementation dd{margin:0;font-size:.8rem;line-height:1.8;color:var(--muted);max-width:850px}
-#scripted-basket-study .scripted-collection-results{display:flex;flex-wrap:wrap;gap:18px 38px;margin:22px 0 0;padding-top:18px;border-top:1px solid var(--line)}
-#scripted-basket-study .scripted-collection-results>div{min-width:0}
-#scripted-basket-study .scripted-collection-results dt{font-size:.71rem;font-weight:650;line-height:1.6;color:var(--muted);margin-bottom:5px}
-#scripted-basket-study .scripted-collection-results dd{font-size:.76rem;line-height:1.75;color:var(--muted);margin:0}
-#scripted-basket-study .scripted-collection-results strong{font-size:.98rem;font-weight:750;color:var(--ink);margin-right:7px;font-variant-numeric:tabular-nums}
 #scripted-basket-study .scripted-flow p,#scripted-basket-study .scripted-implementation dd{word-break:keep-all;overflow-wrap:break-word}
-#scripted-basket-study .scripted-learning-result{margin-top:20px}
-#scripted-basket-study .scripted-learning-result>summary{font-size:.8rem;padding:14px 17px}
 @media(max-width:900px){
  #scripted-basket-study .scripted-flow{grid-template-columns:1fr;gap:20px}
  #scripted-basket-study .scripted-flow>li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;border-top:0;border-left:2px solid #c4dedb;padding:0 0 0 13px}
@@ -190,7 +152,6 @@
  #scripted-basket-study .scripted-phase-strip>li:nth-child(4){border-left:0}
  #scripted-basket-study .scripted-phase-strip>li:nth-child(n+4){border-top:1px solid #d5e2e3}
  #scripted-basket-study .scripted-implementation>div{grid-template-columns:1fr;gap:3px}
- #scripted-basket-study .scripted-collection-results{display:grid;grid-template-columns:1fr;gap:14px}
 }
 #demonstrations .demo-metric-flow,#demonstrations .demo-quality-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;list-style:none;padding:0;margin:22px 0}
 #demonstrations .demo-metric-flow>li,#demonstrations .demo-quality-flow>li{min-width:0;border:1px solid var(--line);border-radius:10px;background:var(--soft);padding:21px}
@@ -219,14 +180,12 @@
 }
 @media(max-width:600px){
  #demonstrations .demo-research-panel{padding:20px 18px}
- #demonstrations .demo-research-panel>h3{font-size:1.12rem}
  #demonstrations .demo-quality-facts,#demonstrations .demo-control-facts{grid-template-columns:1fr}
 }
 
 
 /* Research 03: select a coverage task; both figures remain visible without JS. */
 #demonstrations .demo-coverage-switcher{margin-top:30px;min-width:0}
-#demonstrations .demo-coverage-heading h3{font-size:1.24rem;line-height:1.45;margin-bottom:16px}
 #demonstrations .demo-coverage-tabs{display:flex;flex-wrap:wrap;gap:8px}
 #demonstrations .demo-coverage-tabs [role="tab"]{border:1px solid var(--line);border-radius:8px;padding:10px 20px;background:#fff;color:var(--teal-deep);font-size:.85rem;font-weight:750;cursor:pointer}
 #demonstrations .demo-coverage-tabs [aria-selected="true"]{background:var(--teal-deep);color:#fff;border-color:var(--teal-deep)}
@@ -234,8 +193,11 @@
 #demonstrations .demo-coverage-switcher [hidden]{display:none!important}
 #demonstrations #coverage-panel-basket>img{max-width:1100px}
 @media(max-width:600px){
- #demonstrations .demo-coverage-heading h3{font-size:1.12rem}
  #demonstrations .demo-coverage-tabs [role="tab"]{padding:10px 17px}
 }
 
 #results>.wrap>.research-intro,#e6000-main-comparison figcaption{word-break:keep-all;overflow-wrap:break-word}
+
+@media(max-width:700px){
+ #success-rollout-study .demo-success-figure .figure-heading{padding:17px 18px 0;align-items:flex-start}
+}

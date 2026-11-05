@@ -37,7 +37,7 @@
       trigger.addEventListener("click", () => {
         const src = trigger.dataset.researchFigure;
         if (!src) return;
-        const heading = trigger.closest(".research-figure")?.querySelector(".figure-heading h3");
+        const heading = trigger.closest(".research-figure")?.querySelector(".figure-heading h3, .figure-heading h4");
         const caption = heading?.querySelector('[data-locale="' + language() + '"]');
         const label = caption?.textContent || heading?.textContent?.trim() || "Research figure";
         if (typeof dialog.showModal !== "function") {
