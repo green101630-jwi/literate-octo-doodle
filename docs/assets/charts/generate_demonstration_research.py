@@ -124,6 +124,81 @@ def coverage_chart(data, output: Path):
              'demonstration-coverage', title, desc)
 
 
+def basket_coverage_chart(data, output: Path):
+    d = data['basket_coverage']
+    assert d['episode_count'] == 75
+    assert d['source_episode_counts'] == {'teleop': 25, 'mimic': 50}
+    assert len(d['objects']) == 2
+    fig = plt.figure(figsize=(10.4, 8.0))
+    fig.text(.08, .965, 'Basket start-position coverage',
+             fontsize=25, weight='bold', va='top')
+    fig.text(.08, .905, 'Selected release · Teleop25 + Mimic50 = 75 episodes',
+             fontsize=16, color=MUTED, va='top')
+    panels = [[.10, .31, .36, .46], [.58, .31, .36, .46]]
+    handles = []
+    stats = []
+    for index, (obj, position) in enumerate(zip(d['objects'], panels)):
+        series = {row['source']: row for row in obj['series']}
+        teleop, mimic = series['teleop'], series['mimic']
+        assert teleop['n'] == len(teleop['xy_relative_mm']) == 25
+        assert mimic['n'] == len(mimic['xy_relative_mm']) == 50
+        assert all(-25 <= value <= 25 for row in (teleop, mimic)
+                   for point in row['xy_relative_mm'] for value in point)
+        ax = fig.add_axes(position)
+        mx, my = zip(*mimic['xy_relative_mm'])
+        tx, ty = zip(*teleop['xy_relative_mm'])
+        mimic_markers = ax.scatter(mx, my, s=62, color=TEAL, alpha=.83,
+                                  edgecolors='white', linewidths=.65,
+                                  zorder=3, label='Mimic (n = 50)')
+        teleop_markers = ax.scatter(tx, ty, s=64, marker='x', color=NAVY,
+                                   linewidths=1.7, zorder=4,
+                                   label='Teleop (n = 25)')
+        if index == 0:
+            handles = [teleop_markers, mimic_markers]
+        ax.axhline(0, color='#b7c8d1', linewidth=.9, zorder=1)
+        ax.axvline(0, color='#b7c8d1', linewidth=.9, zorder=1)
+        ax.set(xlim=(-25, 25), ylim=(-25, 25),
+               xlabel='Initial X offset (mm)')
+        if index == 0:
+            ax.set_ylabel('Initial Y offset (mm)')
+        ax.set_title(obj['label'], fontsize=19, weight='bold', pad=14)
+        ax.set_aspect('equal', adjustable='box')
+        ax.xaxis.set_major_locator(MultipleLocator(10))
+        ax.yaxis.set_major_locator(MultipleLocator(10))
+        ax.grid(color=GRID, linewidth=.8, zorder=0)
+        ax.tick_params(length=0, pad=7, labelsize=15)
+        ts, ms = teleop['population_std_xy_mm'], mimic['population_std_xy_mm']
+        short_name = obj['label'].replace(' cube', '')
+        stats.append(f'{short_name}: Teleop {ts[0]:.2f} / {ts[1]:.2f}'
+                     f'   ·   Mimic {ms[0]:.2f} / {ms[1]:.2f}')
+    fig.legend(handles=handles, loc='upper left',
+               bbox_to_anchor=(.08, .875), ncol=2,
+               fontsize=16, borderaxespad=0, columnspacing=2,
+               handletextpad=.55)
+    fig.text(.08, .195, 'XY standard deviation, X / Y (mm)',
+             fontsize=15, weight='bold')
+    fig.text(.08, .150, stats[0], fontsize=15, color=MUTED)
+    fig.text(.08, .112, stats[1], fontsize=15, color=MUTED)
+    fig.text(.08, .066, "Offsets from each object's Teleop mean; no jitter.",
+             fontsize=13.5, color=MUTED)
+    fig.text(.08, .028, 'Similar initial XY ranges in this selected release.',
+             fontsize=13.5, color=MUTED)
+    title = 'Basket initial object-position coverage'
+    description = (
+        'Two scatter panels show the yellow and green cube starts in the same 75 '
+        'selected Basket demonstration episodes: 25 Teleop and 50 Mimic. '
+        'Each object uses its own selected Teleop centroid as zero, with units '
+        'in millimeters and axes from minus 25 to plus 25. No jitter is added. '
+        'Yellow XY population standard deviation: Teleop 11.11/12.76 mm and '
+        'Mimic 10.85/11.86 mm. Green: Teleop 11.76/10.85 mm and '
+        'Mimic 11.18/10.64 mm. Teleop and Mimic occupy similar initial XY ranges '
+        'in this selected release. The two panels are 75 shared episodes, '
+        'not 150 independent demonstrations. This is dataset coverage, '
+        'not a measurement of policy generalization.')
+    save_svg(fig, output / 'demonstration-coverage-basket.svg',
+             'demonstration-coverage-basket', title, description)
+
+
 def failure_chart(data, output: Path):
     d = data['failure_breakdown']
     models, categories = d['models'], d['categories']
@@ -188,6 +263,7 @@ def main():
     args.output_dir.mkdir(parents=True, exist_ok=True)
     coverage_chart(data, args.output_dir)
     failure_chart(data, args.output_dir)
+    basket_coverage_chart(data, args.output_dir)
 
 
 if __name__ == '__main__':

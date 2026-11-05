@@ -11,11 +11,12 @@
 <meta property="og:image" content="https://green101630-jwi.github.io/literate-octo-doodle/assets/media/dual-arm-workspace.jpg">
 <title data-title-en="Research | Won Ik Jang" data-title-ko="연구 | 장원익">Research | Won Ik Jang</title>
 <link rel="stylesheet" href="../portfolio.css">
-<link rel="stylesheet" href="../research-enhancements.css?v=20261105-research03">
+<link rel="stylesheet" href="../research-enhancements.css?v=20261105-basket-coverage">
 <link rel="stylesheet" href="../research-page-interactions.css">
 <link rel="stylesheet" href="../policy-videos.css?v=20261104-paired-seeds">
 <script src="../portfolio.js" defer></script>
 <script src="../research-page-interactions.js" defer></script>
+<script src="../demonstration-coverage.js?v=20261105-basket-coverage" defer></script>
 <script src="../policy-videos.js?v=20261104-paired-seeds" defer></script>
 </head>
 <body>
@@ -116,12 +117,24 @@
 <article class="research-card"><span class="research-label featured-demonstration-label">04 / SUCCESS ROLLOUTS</span><h3><span data-locale="en">Filter and retrain</span><span data-locale="ko">성공 궤적 선별과 재학습</span></h3><p><span data-locale="en">Select successful policy executions and test teacher/student data composition under controlled retraining conditions.</span><span data-locale="ko">정책 실행에서 성공 궤적을 선별하고 교사·학생 데이터 구성을 통제하여 재학습했습니다.</span></p></article>
 </div>
 
-<figure class="research-figure demo-coverage" id="demonstration-coverage">
-<div class="figure-heading"><div><span class="research-label"><span data-locale="en">MIMIC / PLACEMENT COVERAGE</span><span data-locale="ko">MIMIC / 초기 위치 분포</span></span><h3><span data-locale="en">Retarget the motion, expand the placements</span><span data-locale="ko">동작을 재배치해 초기 위치 확장</span></h3></div><button type="button" class="inline-link research-zoom" data-research-figure="../assets/charts/demonstration-coverage.svg" aria-haspopup="dialog" aria-controls="research-figure-modal"><span data-locale="en">Expand here ⤢</span><span data-locale="ko">여기서 확대 ⤢</span></button></div>
-<img src="../assets/charts/demonstration-coverage.svg" alt="Handover initial object positions: 25 overlapping teleoperation samples and 50 Mimic samples" data-alt-en="Handover initial object positions: 25 overlapping teleoperation samples and 50 Mimic samples" data-alt-ko="Handover 물체 초기 위치: 서로 겹치는 Teleop 25개와 Mimic 50개 표본" width="756" height="702" loading="lazy">
-<figcaption><span data-locale="en">Actual initial positions from one aligned Handover release: Teleop25 + Mimic50. Overlapping source points are preserved; this shows data coverage.</span><span data-locale="ko">특정 Handover 정합 릴리스의 실제 초기 위치입니다: Teleop25 + Mimic50. 원본 점의 중첩을 그대로 보여주는 데이터 분포입니다.</span></figcaption>
+<div class="demo-coverage-switcher" id="demonstration-coverage" data-demo-coverage>
+<div class="demo-coverage-heading"><span class="research-label"><span data-locale="en">MIMIC / PLACEMENT COVERAGE</span><span data-locale="ko">MIMIC / 초기 위치 분포</span></span><h3><span data-locale="en">Retarget the motion, compare placement coverage</span><span data-locale="ko">동작 재배치와 초기 위치 분포 비교</span></h3></div>
+<div class="demo-coverage-tabs" role="tablist" aria-label="Demonstration coverage by task" data-demo-coverage-tabs hidden>
+<button type="button" role="tab" id="coverage-tab-basket" data-demo-coverage-tab aria-controls="coverage-panel-basket" aria-selected="true" tabindex="0">Basket</button>
+<button type="button" role="tab" id="coverage-tab-handover" data-demo-coverage-tab aria-controls="coverage-panel-handover" aria-selected="false" tabindex="-1">Handover</button>
+</div>
+<figure class="research-figure demo-coverage" id="coverage-panel-basket" role="tabpanel" aria-labelledby="coverage-tab-basket" tabindex="0" data-demo-coverage-panel>
+<div class="figure-heading"><div><h3><span data-locale="en">Basket: yellow and green initial positions</span><span data-locale="ko">Basket: 노란색·초록색 물체의 초기 위치</span></h3></div><button type="button" class="inline-link research-zoom" data-research-figure="../assets/charts/demonstration-coverage-basket.svg" aria-haspopup="dialog" aria-controls="research-figure-modal"><span data-locale="en">Expand here ⤢</span><span data-locale="ko">여기서 확대 ⤢</span></button></div>
+<img src="../assets/charts/demonstration-coverage-basket.svg" alt="Basket initial XY positions for yellow and green objects, each with 25 teleoperation and 50 Mimic samples" data-alt-en="Basket initial XY positions for yellow and green objects, each with 25 teleoperation and 50 Mimic samples" data-alt-ko="Basket 노란색·초록색 물체의 초기 XY 위치: 물체마다 Teleop 25개와 Mimic 50개 표본" width="1040" height="800" loading="lazy">
+<figcaption><span data-locale="en">75 demonstrations, 150 object positions. Teleop already covers varied placements; Mimic largely preserves that distribution. Each panel is centered on its object's Teleop mean, in mm, without artificial jitter.</span><span data-locale="ko">시연 75개에서 얻은 물체 위치 150개입니다. Teleop부터 위치가 다양하며 Mimic도 그 분포를 대체로 유지합니다. 물체마다 Teleop 평균을 원점으로 삼아 mm 단위로 표시했으며 인위적인 jitter는 없습니다.</span></figcaption>
 </figure>
-<details class="research-disclosure demo-conditions"><summary><span data-locale="en">Mimic implementation and coverage conditions</span><span data-locale="ko">Mimic 구현 및 분포 조건</span></summary><div class="disclosure-body"><p><span data-locale="en">I connected subtask segmentation, object-relative trajectory retargeting, physics replay, and source-episode lineage. The plot uses the 75 recorded initial XY positions, centered on the teleoperation layout, without artificial jitter. It describes this T25 + M50 release; the visual E5000 policies below use a different Teleop30 + Mimic300 dataset.</span><span data-locale="ko">하위 작업 분할, 물체 기준 궤적 재배치, 물리 재생과 원본 시연 계보를 연결했습니다. 그림은 기록된 75개 초기 XY 위치를 Teleop 배치 기준으로 중심화했으며 인위적인 jitter를 넣지 않았습니다. 이 T25 + M50 릴리스의 분포이며, 아래 시각 E5000 정책의 Teleop30 + Mimic300 데이터와는 구분합니다.</span></p></div></details>
+<figure class="research-figure demo-coverage" id="coverage-panel-handover" role="tabpanel" aria-labelledby="coverage-tab-handover" tabindex="0" data-demo-coverage-panel>
+<div class="figure-heading"><div><h3><span data-locale="en">Handover: placements beyond the fixed source layout</span><span data-locale="ko">Handover: 고정된 원본 배치에서 위치 확장</span></h3></div><button type="button" class="inline-link research-zoom" data-research-figure="../assets/charts/demonstration-coverage.svg" aria-haspopup="dialog" aria-controls="research-figure-modal"><span data-locale="en">Expand here ⤢</span><span data-locale="ko">여기서 확대 ⤢</span></button></div>
+<img src="../assets/charts/demonstration-coverage.svg" alt="Handover initial object positions: 25 overlapping teleoperation samples and 50 Mimic samples" data-alt-en="Handover initial object positions: 25 overlapping teleoperation samples and 50 Mimic samples" data-alt-ko="Handover 물체 초기 위치: 서로 겹치는 Teleop 25개와 Mimic 50개 표본" width="756" height="702" loading="lazy">
+<figcaption><span data-locale="en">75 recorded initial positions. The fixed Teleop layout produces overlapping source points; Mimic spreads the placements around it. Actual overlaps are preserved.</span><span data-locale="ko">기록된 초기 위치 75개입니다. 고정 배치에서 수집한 Teleop 점은 서로 겹치고, Mimic은 주변으로 위치를 확장합니다. 실제 중첩을 그대로 유지했습니다.</span></figcaption>
+</figure>
+</div>
+<details class="research-disclosure demo-conditions"><summary><span data-locale="en">Mimic implementation and coverage conditions</span><span data-locale="ko">Mimic 구현 및 분포 조건</span></summary><div class="disclosure-body"><p><span data-locale="en">I connected subtask segmentation, object-relative trajectory retargeting, physics replay, and source-episode lineage. Each task uses a specific aligned Teleop25 + Mimic50 release. Basket plots both objects separately: 75 points per object, 150 in total, centered on each object's Teleop mean. Handover plots 75 positions centered on the fixed Teleop layout. All positions are recorded initial XY values, shown in mm without artificial jitter.</span><span data-locale="ko">하위 작업 분할, 물체 기준 궤적 재배치, 물리 재생과 원본 시연 계보를 연결했습니다. 각 태스크의 특정 Teleop25 + Mimic50 정합 릴리스를 사용합니다. Basket은 두 물체를 따로 표시하며 물체마다 75개, 총 150개 위치를 각 Teleop 평균 기준으로 중심화했습니다. Handover는 고정 Teleop 배치를 기준으로 초기 위치 75개를 표시합니다. 모두 기록된 초기 XY 값이며 mm 단위로 인위적인 jitter 없이 그렸습니다.</span></p><p><span data-locale="en">These plots show dataset placement coverage. The visual E5000 policies below use a different Teleop30 + Mimic300 dataset.</span><span data-locale="ko">이 그림은 데이터셋의 초기 위치 분포를 보여줍니다. 아래 시각 E5000 정책의 Teleop30 + Mimic300 데이터와는 구분합니다.</span></p></div></details>
 
 <article class="demo-research-panel" id="scripted-basket-study">
 <span class="research-label"><span data-locale="en">SCRIPTED / BASKET</span><span data-locale="ko">스크립트 시연 / BASKET</span></span>

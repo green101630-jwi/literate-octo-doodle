@@ -79,7 +79,7 @@ The older Scripted75 E2000 experiment and its diagnostic recordings are differen
 
 **Source-audit scope and the aligned release are separate.** The 660-episode semantics audit checked the action decoding rule `processed_actions = clip(actions × 0.25 + default_joint_pos, joint limits)` and the pre-action observation rule: time zero uses `initial_state`; later observations use `states[t−1]`. It is not a count of episodes manually inspected image by image.
 
-The later aligned release contains Basket and Handover, each Teleop25 + Mimic50, for 150 episodes total. Its report states that all 150 episodes received full-frame numeric reconstruction and hash readback checks; only additional sampled images received visual inspection. The Handover Mimic source episode `demo_143` had an initial RGB/state mismatch corrected in this later release. This does not mean all 660 source episodes were rerendered or that the 150 episodes were produced by a single uniform 660→150 selection funnel. The original datasets and the existing 60-episode verification set were preserved.
+The later aligned release contains Basket and Handover, each Teleop25 + Mimic50, for 150 episodes total. Its report states that all 150 episodes received full-frame numeric reconstruction and hash readback checks; only additional sampled images received visual inspection. One Handover Mimic source episode had an initial RGB/state mismatch corrected in this later release. This does not mean all 660 source episodes were rerendered or that the 150 episodes were produced by a single uniform 660→150 selection funnel. The original datasets and the existing 60-episode verification set were preserved.
 
 Logical source records:
 
@@ -89,6 +89,21 @@ Logical source records:
 The release-creation report records that training, split creation, and feature extraction had not yet run at that stage. Later training runs need their own split/normalization records; release verification alone does not establish lineage-disjoint splits or learned-policy performance.
 
 **Coverage plots describe the selected data.** An initial-position mean is the sample center; a per-axis standard deviation describes spatial spread. Neither is a success rate, a confidence interval for policy performance, or proof of generalization. Keep task, object, coordinate axes, units, source counts, and selection scope attached. Quality selection can change coverage, so its effect cannot be isolated from distribution changes without controlled training and evaluation.
+
+### Task-specific initial-position distributions
+
+The [Basket initial-position figure](assets/charts/demonstration-coverage-basket.svg) describes the selected **T25 + M50** release: 75 demonstrations, each containing one yellow-cube and one green-cube initial XY position, for **150 object observations**. The horizontal and vertical offsets are measured in millimetres from each object's Teleop25 mean. Both Teleop and Mimic points use that same per-object Teleop reference.
+
+Basket Teleop25 already contains 25 distinct initial placements. Mimic50 broadly preserves that spatial spread; these selected data do not show an expansion of Basket coverage. The per-axis standard deviations are:
+
+| Basket object | Teleop25 X / Y (mm) | Mimic50 X / Y (mm) |
+| --- | --- | --- |
+| Yellow cube | 11.11 / 12.76 | 10.85 / 11.86 |
+| Green cube | 11.76 / 10.85 | 11.18 / 10.64 |
+
+Handover has a different starting distribution: its selected Teleop25 demonstrations share one initial position, while Mimic50 broadens the initial-position distribution. Keep this expansion claim specific to Handover. These are descriptive statistics of the selected demonstrations, with no isolated claim about their effect on learned-policy success.
+
+Logical source records are the **T25 + M50 selection manifest** (`selection_manifest.json`) and **demonstration-curation audit** (`curation_audit.json`). The public [demonstration research data](assets/charts/demonstration-research-data.json) retain the Basket distribution under `basket_coverage`. The initial-position analysis concerns this T25 + M50 release; the main ACT / TC-ACT gallery videos use the separate **T30 + M300** training datasets and their own evaluation conditions.
 
 ## November Task2 Diffusion runtime benchmark
 
