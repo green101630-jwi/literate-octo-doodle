@@ -11,7 +11,7 @@
 <meta property="og:image" content="https://green101630-jwi.github.io/literate-octo-doodle/assets/media/dual-arm-workspace.jpg">
 <title data-title-en="Research | Won Ik Jang" data-title-ko="연구 | 장원익">Research | Won Ik Jang</title>
 <link rel="stylesheet" href="../portfolio.css">
-<link rel="stylesheet" href="../research-enhancements.css?v=20261105-basket-coverage">
+<link rel="stylesheet" href="../research-enhancements.css?v=20261105-scripted-logic">
 <link rel="stylesheet" href="../research-page-interactions.css">
 <link rel="stylesheet" href="../policy-videos.css?v=20261104-paired-seeds">
 <script src="../portfolio.js" defer></script>
@@ -113,7 +113,7 @@
 <div class="research-grid four">
 <article class="research-card"><span class="research-label featured-demonstration-label">01 / TELEOP</span><h3><span data-locale="en">Human demonstrations</span><span data-locale="ko">사람의 시연</span></h3><p><span data-locale="en">Capture operator strategies through leader/follower control and record aligned trajectories.</span><span data-locale="ko">리더·팔로워 제어로 사람의 조작 전략을 기록하고 시연 궤적을 정렬했습니다.</span></p></article>
 <article class="research-card"><span class="research-label featured-demonstration-label">02 / MIMIC</span><h3><span data-locale="en">Retarget and augment</span><span data-locale="ko">재배치와 증강</span></h3><p><span data-locale="en">Segment subtasks, retarget around objects, and broaden initial-position coverage while tracking the source episodes.</span><span data-locale="ko">하위 작업을 분할하고 물체 기준으로 궤적을 재배치하여 초기 위치 범위를 넓히고 원본 계보를 관리했습니다.</span></p></article>
-<article class="research-card"><span class="research-label featured-demonstration-label">03 / CODE-SCRIPTED</span><h3><span data-locale="en">Generate trajectories</span><span data-locale="ko">코드로 궤적 생성</span></h3><p><span data-locale="en">Use IK, grasp/transport/release stages, and physical contact to collect simulation demonstrations.</span><span data-locale="ko">IK와 파지·운반·해제 단계 및 물리 접촉을 이용해 시뮬레이션 시연을 자동 수집했습니다.</span></p></article>
+<article class="research-card"><span class="research-label featured-demonstration-label">03 / CODE-SCRIPTED</span><h3><span data-locale="en">Generate demonstrations</span><span data-locale="ko">시연 자동 생성</span></h3><p><span data-locale="en">Plan object-relative motion, execute it with IK and physical contact, and verify the saved demonstrations in RGB replay.</span><span data-locale="ko">물체 기준 동작을 계획하고 IK·물리 접촉으로 실행한 뒤, 저장한 시연을 RGB 재생으로 검증했습니다.</span></p></article>
 <article class="research-card"><span class="research-label featured-demonstration-label">04 / SUCCESS ROLLOUTS</span><h3><span data-locale="en">Filter and retrain</span><span data-locale="ko">성공 궤적 선별과 재학습</span></h3><p><span data-locale="en">Select successful policy executions and test teacher/student data composition under controlled retraining conditions.</span><span data-locale="ko">정책 실행에서 성공 궤적을 선별하고 교사·학생 데이터 구성을 통제하여 재학습했습니다.</span></p></article>
 </div>
 
@@ -138,15 +138,44 @@
 
 <article class="demo-research-panel" id="scripted-basket-study">
 <span class="research-label"><span data-locale="en">SCRIPTED / BASKET</span><span data-locale="ko">스크립트 시연 / BASKET</span></span>
-<h3><span data-locale="en">From generated motion to a learned policy</span><span data-locale="ko">코드로 생성한 동작에서 학습된 정책까지</span></h3>
-<p class="demo-brief"><span data-locale="en">I built staged IK collection and checked exported demonstrations in RGB replay before evaluating the trained ACT policy.</span><span data-locale="ko">단계별 IK 시연 수집을 구현하고, 내보낸 데이터를 RGB로 재생 검증한 뒤 학습한 ACT 정책을 평가했습니다.</span></p>
-<ol class="demo-metric-flow">
-<li><span class="research-label"><span data-locale="en">01 / COLLECTION</span><span data-locale="ko">01 / 수집</span></span><strong>100 / 135</strong><span data-locale="en">demonstrations exported / attempts</span><span data-locale="ko">내보낸 시연 / 수집 시도</span></li>
-<li><span class="research-label"><span data-locale="en">02 / RGB REPLAY</span><span data-locale="ko">02 / RGB 재생</span></span><strong>100 / 100</strong><span data-locale="en">selected demonstrations reached final success</span><span data-locale="ko">선별 시연의 최종 성공 재현</span></li>
-<li><span class="research-label"><span data-locale="en">03 / ACT EVALUATION</span><span data-locale="ko">03 / ACT 평가</span></span><strong>88.4<small>%</small></strong><span data-locale="en">221 / 250 policy rollouts succeeded</span><span data-locale="ko">정책 롤아웃 250회 중 221회 성공</span></li>
+<h3><span data-locale="en">Scripted demonstration generation</span><span data-locale="ko">코드 기반 시연 자동 생성</span></h3>
+<p class="demo-brief"><span data-locale="en">The Basket collector reads object and basket poses from simulator state, plans staged motion, and executes it through physical contact to record successful demonstrations.</span><span data-locale="ko">Basket 수집기는 시뮬레이터 상태에서 물체·바구니 위치를 읽어 단계별 동작을 계획하고, 물리 접촉으로 실행해 성공한 시연을 기록합니다.</span></p>
+
+<div class="scripted-workflow" aria-labelledby="scripted-workflow-title">
+<h4 id="scripted-workflow-title"><span data-locale="en">Generation workflow</span><span data-locale="ko">시연 생성 흐름</span></h4>
+<ol class="scripted-flow">
+<li><span class="scripted-step-number" aria-hidden="true">01</span><div><strong><span data-locale="en">Scene &amp; goals</span><span data-locale="ko">초기 위치·목표</span></strong><p><span data-locale="en">Simulator object poses and left / right basket slots</span><span data-locale="ko">시뮬레이터의 물체 위치·바구니 좌우 슬롯</span></p></div><span class="scripted-flow-arrow" aria-hidden="true">→</span></li>
+<li><span class="scripted-step-number" aria-hidden="true">02</span><div><strong><span data-locale="en">Plan motion phases</span><span data-locale="ko">동작 단계 계획</span></strong><p><span data-locale="en">Approach, grasp, lift, transport, release and return</span><span data-locale="ko">접근·파지·들기·운반·놓기·복귀</span></p></div><span class="scripted-flow-arrow" aria-hidden="true">→</span></li>
+<li><span class="scripted-step-number" aria-hidden="true">03</span><div><strong><span data-locale="en">IK &amp; gripper commands</span><span data-locale="ko">IK·그리퍼 명령</span></strong><p><span data-locale="en">Position targets → joint and finger commands</span><span data-locale="ko">위치 목표 → 관절·손가락 명령</span></p></div><span class="scripted-flow-arrow" aria-hidden="true">→</span></li>
+<li><span class="scripted-step-number" aria-hidden="true">04</span><div><strong><span data-locale="en">Execute in physics</span><span data-locale="ko">물리 접촉·안정화</span></strong><p><span data-locale="en">Grasp, carry and settle through contact</span><span data-locale="ko">접촉을 통한 파지·운반·안정화</span></p></div><span class="scripted-flow-arrow" aria-hidden="true">→</span></li>
+<li><span class="scripted-step-number" aria-hidden="true">05</span><div><strong><span data-locale="en">Record &amp; verify</span><span data-locale="ko">기록·RGB 재생 검증</span></strong><p><span data-locale="en">Export successes, then replay saved actions for RGB</span><span data-locale="ko">성공 시연 저장 후 행동 재생으로 RGB 기록</span></p></div></li>
 </ol>
-<p class="demo-brief"><span data-locale="en">Collection, selected-data replay, and learned-policy success are three separate measurements.</span><span data-locale="ko">수집·선별 데이터 재생·학습 정책의 성공은 각각 별도의 측정입니다.</span></p>
-<details class="research-disclosure demo-conditions"><summary><span data-locale="en">Scripted Basket protocol and model conditions</span><span data-locale="ko">Scripted Basket 실험 및 모델 조건</span></summary><div class="disclosure-body"><p><span data-locale="en">Existing close64 simulation study: 100 exported demonstrations, 80 / 20 training-validation split. ACT CVAE uses a frozen visual backbone, chunk50, E5000, and training seed0. Evaluation: seed2026, 250 rollouts, horizon1100, XY ±2cm, AMP off, temporal aggregation decay0.01. This is a separate dataset/model protocol from the visual E5000 paired ACT / TC-ACT comparison.</span><span data-locale="ko">기존 close64 시뮬레이션 연구입니다. 내보낸 시연 100개를 학습80·검증20으로 분할했습니다. ACT CVAE는 고정된 시각 backbone, chunk50, E5000, 학습 seed0을 사용했습니다. 평가는 seed2026·250회·horizon1100·XY ±2cm·AMP off·temporal aggregation decay0.01입니다. 시각 E5000 ACT·TC-ACT 동일 초기조건 비교와는 데이터·모델 실험이 다릅니다.</span></p></div></details>
+</div>
+
+<div class="scripted-motion" aria-labelledby="scripted-motion-title">
+<h4 id="scripted-motion-title"><span data-locale="en">Complete one arm's sequence before the next</span><span data-locale="ko">한쪽 팔의 전체 동작을 마친 뒤 다음 팔로</span></h4>
+<p class="scripted-arm-order"><span class="scripted-arm"><i class="scripted-object yellow" aria-hidden="true"></i><span data-locale="en">Left arm · yellow · place &amp; return</span><span data-locale="ko">왼팔 · 노란 물체 · 배치 후 복귀</span></span><span class="scripted-order-arrow" aria-hidden="true">→</span><span class="scripted-arm"><i class="scripted-object green" aria-hidden="true"></i><span data-locale="en">Right arm · green · place &amp; return</span><span data-locale="ko">오른팔 · 초록 물체 · 배치 후 복귀</span></span></p>
+<ol class="scripted-phase-strip">
+<li><span data-locale="en">Approach</span><span data-locale="ko">접근</span></li>
+<li><span data-locale="en">Grasp</span><span data-locale="ko">파지</span></li>
+<li><span data-locale="en">Lift</span><span data-locale="ko">들어 올리기</span></li>
+<li><span data-locale="en">Transport &amp; lower</span><span data-locale="ko">운반·내림</span></li>
+<li><span data-locale="en">Release</span><span data-locale="ko">놓기</span></li>
+<li><span data-locale="en">Return</span><span data-locale="ko">복귀</span></li>
+</ol>
+<p class="scripted-motion-note"><span data-locale="en">The inactive arm holds its position with the gripper open.</span><span data-locale="ko">비작동 팔은 위치를 유지하고 그리퍼를 열어 둡니다.</span></p>
+</div>
+
+<dl class="scripted-implementation">
+<div><dt><span data-locale="en">Motion control</span><span data-locale="ko">동작 제어</span></dt><dd><span data-locale="en">Jacobian damped least-squares IK tracks position targets. Cartesian and gripper transitions use cubic smoothstep; initial transit and return use quintic minimum-jerk interpolation.</span><span data-locale="ko">위치 목표를 Jacobian 기반 DLS IK로 추종합니다. Cartesian·그리퍼 전환에는 cubic smoothstep, 초기 이동·복귀에는 quintic minimum-jerk 보간을 사용합니다.</span></dd></div>
+<div><dt><span data-locale="en">Grasp stability</span><span data-locale="ko">파지 안정화</span></dt><dd><span data-locale="en">Adjust gripper closing duration, grasp height and finger collision shapes, using convex decomposition for finger contact.</span><span data-locale="ko">그리퍼 닫힘 시간·파지 높이·손가락 충돌 형상을 조정하고, 손가락 접촉에 convex decomposition을 적용합니다.</span></dd></div>
+<div><dt><span data-locale="en">Recording &amp; replay</span><span data-locale="ko">기록과 재생</span></dt><dd><span data-locale="en">Retain successes during collection. Restore the initial state, then capture RGB before replaying each saved action. A separate check covers RGB / joint / action indexing, data formats, and final replay success.</span><span data-locale="ko">수집할 때 성공 시연을 선별합니다. 초기 상태를 복원한 뒤, 저장한 행동을 하나씩 재실행하기 직전에 RGB를 기록합니다. RGB·관절·행동 인덱스와 데이터 형식, 최종 재생 성공은 별도로 검증합니다.</span></dd></div>
+</dl>
+<dl class="scripted-collection-results">
+<div><dt><span data-locale="en">Collection</span><span data-locale="ko">시연 수집</span></dt><dd><strong>100 / 135</strong> <span data-locale="en">saved demonstrations / attempts</span><span data-locale="ko">저장한 시연 / 시도</span></dd></div>
+<div><dt><span data-locale="en">RGB replay</span><span data-locale="ko">RGB 재생</span></dt><dd><strong>100 / 100</strong> <span data-locale="en">retained demonstrations reached final success</span><span data-locale="ko">저장한 시연의 최종 성공 재확인</span></dd></div>
+</dl>
+<details class="research-disclosure demo-conditions scripted-learning-result"><summary><span data-locale="en">Subsequent ACT training</span><span data-locale="ko">후속 ACT 학습 결과</span></summary><div class="disclosure-body"><p><span data-locale="en">Scripted100 ACT reached 221/250 (88.4%) in a separate learned-policy evaluation. Existing close64 simulation study: 100 exported demonstrations, 80 / 20 training-validation split. ACT CVAE uses a frozen visual backbone, chunk50, E5000, and training seed0. Evaluation: seed2026, 250 rollouts, horizon1100, XY ±2cm, AMP off, temporal aggregation decay0.01. This is a separate dataset/model protocol from the visual E5000 paired ACT / TC-ACT comparison.</span><span data-locale="ko">별도의 학습 정책 평가에서 Scripted100 ACT는 221/250회(88.4%) 성공했습니다. 기존 close64 시뮬레이션 연구로, 내보낸 시연 100개를 학습80·검증20으로 분할했습니다. ACT CVAE는 고정된 시각 backbone, chunk50, E5000, 학습 seed0을 사용했습니다. 평가는 seed2026·250회·horizon1100·XY ±2cm·AMP off·temporal aggregation decay0.01입니다. 시각 E5000 ACT·TC-ACT 동일 초기조건 비교와는 데이터·모델 실험이 다릅니다.</span></p></div></details>
 </article>
 
 <article class="demo-research-panel" id="demonstration-alignment">

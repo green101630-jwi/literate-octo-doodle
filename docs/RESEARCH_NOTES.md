@@ -67,6 +67,35 @@ Each clip is a selected successful rollout; its card rate comes from the complet
 
 ## Demonstration research: measurement boundaries
 
+The Research overview's Scripted presentation now explains how the demonstrations are generated. The downstream policy measurements remain available in the collapsed follow-up details, with the collection, replay, and policy-evaluation scopes preserved below.
+
+### Scripted generation implementation
+
+The close64 Basket collection entry point is `run_basket_scripted100_decomposition_close64.sh`, which calls `collect_basket_procedural_demos.py`. This is a different collector from the earlier `collect_double_put_scripted_demos.py`. Here, **close64 means 64 gripper-closing control steps** (1.28 seconds at 50 Hz), increased from the earlier 32-step setting; it is not a gripper position of 0.64. The wrapper also selects convex-decomposition finger colliders and an object-relative pick offset.
+
+The demonstrator reads the current simulated cube and basket poses to construct pickup and placement targets. It completes the yellow-cube sequence with the left arm, including release and return home, before running the green-cube sequence with the right arm. The inactive arm holds its position with the gripper open. The two cubes have separate basket slots. These scene poses guide the scripted demonstrator; they are not added as inputs to the learned visual policy.
+
+`BasketArm.phase_action` implements position inverse kinematics with a damped least-squares Jacobian update. Cartesian goals and gripper targets use cubic smoothstep interpolation; the initial joint transit and return home use quintic minimum-jerk curves. The grasp-offset “lock” stores the measured end-effector/cube offset and joint anchor for subsequent target construction. It does not create an attachment or force the cube to follow the gripper; cube motion during collection is produced by simulated contact physics.
+
+The data path has three stages:
+
+1. **Collect and select low-dimensional demonstrations.** The recorder retains raw actions, joint observations, `initial_state`, and subsequent states. The collector rejects unstable grasps, insufficient lift or release clearance, incomplete home return, and failed final placement; only successful episodes are exported.
+2. **Replay the retained actions for RGB.** `record_basket_rgb_replay.py` restores each episode's initial state, captures fixed-camera RGB before action `t`, then applies stored action `t`. It checks final task success. This is action replay from the initial state, rather than a per-frame forced restoration of every recorded state.
+3. **Validate and assemble the aligned release.** `assemble_basket_scripted_dataset.py` checks the low-dimensional observation timing against `initial_state` and previous recorded joint states, then requires complete, correctly shaped RGB episodes with final success. It assembles the 14D joint observations, actions, states, and RGB, retaining numeric/action/RGB hashes. The numeric alignment check and RGB byte hashes have separate roles; they do not establish identical physical trajectories between collection and replay.
+
+Implementation source snapshots reviewed on 5 November 2026 are identified below by logical filenames and SHA-256. These identifiers document the implementation examined for this explanation; the website does not distribute the source code, demonstration datasets, or model weights.
+
+| Logical source filename | Verified role | SHA-256 |
+| --- | --- | --- |
+| `double_put_scripted_demo/run_basket_scripted100_decomposition_close64.sh` | Collection parameters; ten chunks; combine → RGB replay → finalize. | `7ff0e91faaabae43827604d2402621af743355099f293e049960062251f1af7b` |
+| `double_put_scripted_demo/collect_basket_procedural_demos.py` | Object-relative targets; sequential arm phases; position IK; transit/home curves; successful-only export. | `3d4c6fd28f34e5cfb138ee4394fccd39fa078a4710408c66c9f74bd488639ad4` |
+| `double_put_scripted_demo/procedural_template.py` | Arm primitives; cubic interpolation; inactive-arm hold; measured grasp offset. | `41952589201a79632ac6871f57f963878c6a873d4f68809eef28875caa7f7b68` |
+| `double_put_scripted_demo/basket_gripper_collider.py` | Select and verify convex-decomposition finger collision geometry. | `310b3e93b3eb597b2ddbbd3db04988a38e5c5c73eab9ed791a35915455daa574` |
+| `temporal_context_visual_act_omx/record_basket_rgb_replay.py` | Initial-state reset, pre-action RGB capture, stored-action replay, and final-success check. | `3117695d83b2317430c0c418374919aa0fd465655feec5063673aadf0909919f` |
+| `double_put_scripted_demo/assemble_basket_scripted_dataset.py` | Numeric observation alignment, replay completeness/success checks, release assembly, and hashes. | `d8d89e926d69bf00608a91b5c1bf6158248221edab12c72944d64b37b9882526` |
+
+### Collection, replay, and downstream policy results
+
 The close64 scripted Basket study has three separate records:
 
 | Logical source record | Measurement and conditions |
