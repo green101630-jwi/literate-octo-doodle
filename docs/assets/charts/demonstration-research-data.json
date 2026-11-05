@@ -1,0 +1,618 @@
+{
+  "schema_version": 1,
+  "created": "2026-11-05",
+  "description": "Public plotting data for demonstration research; only anonymous 2D plot coordinates, conditions, aggregate counts and source digests. No source disk locations, episode IDs, images, trajectories or model weights.",
+  "coverage": {
+    "task": "Handover",
+    "domain": "simulation demonstration data",
+    "release": "Selected Teleop25+Mimic50,2026-10-11",
+    "coordinate_frame": "Initial object XY relative to the common selected Teleop start",
+    "units": "mm",
+    "series": [
+      {
+        "source": "teleop",
+        "label": "Teleop",
+        "n": 25,
+        "xy_relative_mm": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "population_std_xy_mm": [
+          0.0,
+          0.0
+        ],
+        "unique_start_positions": 1
+      },
+      {
+        "source": "mimic",
+        "label": "Mimic",
+        "n": 50,
+        "xy_relative_mm": [
+          [
+            -2.07032263,
+            -3.66094708
+          ],
+          [
+            0.72488189,
+            -0.97468495
+          ],
+          [
+            2.68118083,
+            0.27471781
+          ],
+          [
+            -13.06881011,
+            -5.23656607
+          ],
+          [
+            -2.02456117,
+            -1.27637386
+          ],
+          [
+            -9.36722755,
+            2.08950043
+          ],
+          [
+            -10.32839715,
+            -4.60773706
+          ],
+          [
+            -2.45650113,
+            -1.58831477
+          ],
+          [
+            -8.49108398,
+            -8.20627809
+          ],
+          [
+            6.37252629,
+            -0.03424287
+          ],
+          [
+            4.25209105,
+            3.86694074
+          ],
+          [
+            -5.5052191,
+            -13.56312633
+          ],
+          [
+            -3.47752869,
+            1.44281983
+          ],
+          [
+            -0.44590235,
+            -0.17234683
+          ],
+          [
+            -2.56243348,
+            15.56628942
+          ],
+          [
+            -11.73397899,
+            4.0948391
+          ],
+          [
+            -5.52381575,
+            -9.01135802
+          ],
+          [
+            6.02917373,
+            -4.33018804
+          ],
+          [
+            15.04072547,
+            2.85425782
+          ],
+          [
+            13.70680332,
+            2.02968717
+          ],
+          [
+            -3.44637036,
+            -14.25483823
+          ],
+          [
+            -2.58032978,
+            -0.95459819
+          ],
+          [
+            -16.70648158,
+            14.88050818
+          ],
+          [
+            -4.75583971,
+            15.47661424
+          ],
+          [
+            0.46695769,
+            -15.78623056
+          ],
+          [
+            12.70017028,
+            -8.89798999
+          ],
+          [
+            0.63429773,
+            -5.15109301
+          ],
+          [
+            8.55407119,
+            12.17460632
+          ],
+          [
+            6.01223111,
+            2.569139
+          ],
+          [
+            1.29982829,
+            -2.75924802
+          ],
+          [
+            2.40293145,
+            -2.01901793
+          ],
+          [
+            -16.70150459,
+            0.4889667
+          ],
+          [
+            16.17094874,
+            -4.0140748
+          ],
+          [
+            0.81148744,
+            4.40916419
+          ],
+          [
+            -1.65218115,
+            15.1925385
+          ],
+          [
+            18.94134283,
+            -16.63768291
+          ],
+          [
+            6.40307367,
+            18.29639077
+          ],
+          [
+            17.94041693,
+            3.93679738
+          ],
+          [
+            -8.94547999,
+            -3.37383151
+          ],
+          [
+            13.44761252,
+            14.44521546
+          ],
+          [
+            8.46478343,
+            7.01004267
+          ],
+          [
+            17.48657227,
+            16.54168963
+          ],
+          [
+            -13.87964189,
+            13.125211
+          ],
+          [
+            7.43232667,
+            0.74675679
+          ],
+          [
+            -9.78428125,
+            -2.91839242
+          ],
+          [
+            5.62037528,
+            14.79753852
+          ],
+          [
+            -14.9012208,
+            10.84417105
+          ],
+          [
+            10.67188382,
+            -8.89065862
+          ],
+          [
+            19.17433739,
+            -19.81067657
+          ],
+          [
+            15.07587731,
+            -8.87709856
+          ]
+        ],
+        "population_std_xy_mm": [
+          9.901475090191397,
+          9.36406711496201
+        ],
+        "unique_start_positions": 50
+      }
+    ],
+    "source_ids": [
+      "release-selection",
+      "source-curation"
+    ],
+    "interpretation": "Descriptive coverage of selected demonstrations; no causal claim about policy success or generalization. All 25 Teleop starts coincide; plot uses no jitter.",
+    "selection_note": "Final 25 frames must satisfy goal/stability conditions; quality ranking changes initial-position coverage."
+  },
+  "failure_breakdown": {
+    "task": "Basket",
+    "domain": "simulation evaluation",
+    "models": [
+      {
+        "id": "A0",
+        "label": "Mimic50",
+        "training_seed": 0,
+        "train_episodes": 50,
+        "epochs": 2000,
+        "optimizer_updates": 14000,
+        "counts": {
+          "success": 140,
+          "both_cubes_never_lifted": 44,
+          "cube_never_lifted": 32,
+          "lifted_but_cube_never_entered_basket": 34
+        },
+        "n": 250,
+        "source_ids": [
+          "a0-evaluation",
+          "a0-diagnostics",
+          "a0-training-config"
+        ]
+      },
+      {
+        "id": "B0",
+        "label": "Mimic50+self50",
+        "training_seed": 0,
+        "train_episodes": 100,
+        "epochs": 1077,
+        "optimizer_updates": 14001,
+        "counts": {
+          "success": 56,
+          "both_cubes_never_lifted": 81,
+          "cube_never_lifted": 72,
+          "lifted_but_cube_never_entered_basket": 41
+        },
+        "n": 250,
+        "source_ids": [
+          "b0-evaluation",
+          "b0-diagnostics",
+          "b0-training-config"
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "id": "success",
+        "label": "Success",
+        "color": "#148f88"
+      },
+      {
+        "id": "both_cubes_never_lifted",
+        "label": "Neither lifted",
+        "color": "#173e64"
+      },
+      {
+        "id": "cube_never_lifted",
+        "label": "One not lifted",
+        "color": "#6a91ad"
+      },
+      {
+        "id": "lifted_but_cube_never_entered_basket",
+        "label": "Lifted, not placed",
+        "color": "#c4dce4"
+      }
+    ],
+    "conditions": {
+      "input": "14D joints and one front RGB camera",
+      "camera_resolution": [
+        640,
+        360
+      ],
+      "action_dimension": 14,
+      "chunk_length": 100,
+      "backbone_mode": "finetune",
+      "training_seed": 0,
+      "evaluation_seed": 2026,
+      "rollouts_per_model": 250,
+      "num_envs": 8,
+      "horizon_steps": 708,
+      "initial_xy_half_range_cm": 2,
+      "amp": false,
+      "temporal_aggregation": true,
+      "aggregation_decay": 0.01,
+      "normalized_action_clipping": false,
+      "checkpoint_selection": "fixed final epoch, no validation",
+      "normalization": "z-score fitted to original Mimic50, held fixed",
+      "training_update_note": "A0:14000 updates;B0:14001 updates. Both student models trained from scratch.",
+      "self_rollout_collection_seed": 314161
+    },
+    "heuristic_definition": {
+      "not_lifted": "Maximum lift relative to first recorded sample below 0.025 m",
+      "not_placed": "Object never enters Basket goal region during recorded rollout",
+      "category_order": [
+        "success",
+        "neither cube lifted",
+        "one cube not lifted",
+        "lifted but never placed"
+      ],
+      "interpretation": "Stage labels are descriptive heuristics, not confirmed contact or grasp causes. Each bar contains all 250 rollouts. Same evaluation seed does not establish an exactly matched reset schedule."
+    }
+  },
+  "scripted_basket": {
+    "task": "Basket",
+    "variant": "close64 scripted, convex-decomposition finger collider",
+    "collection": {
+      "attempts": 135,
+      "exported_successful_demonstrations": 100,
+      "collection_seeds": [
+        20261018,
+        20261019,
+        20261020,
+        20261021,
+        20261022,
+        20261023,
+        20261024,
+        20261025,
+        20261026,
+        20261027
+      ],
+      "source_ids": [
+        "scripted-collection-00",
+        "scripted-collection-01",
+        "scripted-collection-02",
+        "scripted-collection-03",
+        "scripted-collection-04",
+        "scripted-collection-05",
+        "scripted-collection-06",
+        "scripted-collection-07",
+        "scripted-collection-08",
+        "scripted-collection-09"
+      ]
+    },
+    "rgb_replay": {
+      "selected_demonstrations": 100,
+      "final_successes": 100,
+      "source_ids": [
+        "scripted-rgb-replay"
+      ]
+    },
+    "learned_policy": {
+      "model": "ACT with CVAE",
+      "training_seed": 0,
+      "epochs": 5000,
+      "train_demos": 80,
+      "validation_demos": 20,
+      "backbone_mode": "frozen",
+      "chunk_length": 50,
+      "observation": "14D joints and one front RGB camera",
+      "evaluation_seed": 2026,
+      "rollouts": 250,
+      "successes": 221,
+      "success_percent": 88.4,
+      "horizon_steps": 1100,
+      "initial_xy_half_range_cm": 2,
+      "amp": false,
+      "temporal_aggregation": true,
+      "aggregation_decay": 0.01,
+      "source_ids": [
+        "scripted-act-config",
+        "scripted-act-evaluation"
+      ]
+    },
+    "interpretation": "Collection yield, replay of selected demonstrations and learned-policy rollout success have distinct denominators. This is not a complete four-source-by-policy benchmark."
+  },
+  "source_provenance": [
+    {
+      "id": "release-selection",
+      "logical_source": "Selected Teleop25/Mimic50 release manifest,2026-10-11",
+      "sha256": "842cf900fc45b2723b6cb056490b742e1151b9add115a1e013e0befdaae99010"
+    },
+    {
+      "id": "source-curation",
+      "logical_source": "Original episode quality and initial-position audit,2026-10-11",
+      "sha256": "7bb9c5d70aea3046ab13178096eddff5943353e141283c5b9b19c600edd65107"
+    },
+    {
+      "id": "a0-evaluation",
+      "logical_source": "Basket source-control A0 final-checkpoint evaluation,2026-10-17",
+      "sha256": "5d1b221143bddefc0b925e7cafcfa77a57a45c6aa2eb7c1df186ea2c8c83d3de"
+    },
+    {
+      "id": "a0-diagnostics",
+      "logical_source": "Basket source-control A0 heuristic stage summary,2026-10-17",
+      "sha256": "08e26094a34b35517f44545287b3c49c8c4c235da8d5bb944ee28daa318f332e"
+    },
+    {
+      "id": "a0-training-config",
+      "logical_source": "Basket source-control A0 training configuration,2026-10-17",
+      "sha256": "232298d0ad0fe803aa90040c7101f605b4378294fe8135e0bea035dc14d83bd4"
+    },
+    {
+      "id": "b0-evaluation",
+      "logical_source": "Basket source-control B0 final-checkpoint evaluation,2026-10-17",
+      "sha256": "35eadbb48ec89d59737d14f1464083190fa45f5eb6eff053785a421f708196ad"
+    },
+    {
+      "id": "b0-diagnostics",
+      "logical_source": "Basket source-control B0 heuristic stage summary,2026-10-17",
+      "sha256": "a5ea6db50b127e9828b6a23dd20e0f208f19ec7191a8b46fbecde7111cc5e716"
+    },
+    {
+      "id": "b0-training-config",
+      "logical_source": "Basket source-control B0 training configuration,2026-10-17",
+      "sha256": "361f9c42d10b9e71fe63cf1c872a8e0fcff09d35ddbfba510e0dd97370c5c1ad"
+    },
+    {
+      "id": "scripted-collection-00",
+      "logical_source": "Basket close64 scripted collection chunk00,2026-10-19",
+      "sha256": "b789a80bbe99c305fb2a7a79b2d525dcb38f6892f29f693bf298dadbb428dbb1"
+    },
+    {
+      "id": "scripted-collection-01",
+      "logical_source": "Basket close64 scripted collection chunk01,2026-10-19",
+      "sha256": "8c0fab3b3002de22d42ed8321d08786b22fb279b9e2075c51058e1fe6bde8fad"
+    },
+    {
+      "id": "scripted-collection-02",
+      "logical_source": "Basket close64 scripted collection chunk02,2026-10-19",
+      "sha256": "19bbe3c60181b68554eddaee8078a09c8598e137a78bba8c0e345bc770afff62"
+    },
+    {
+      "id": "scripted-collection-03",
+      "logical_source": "Basket close64 scripted collection chunk03,2026-10-19",
+      "sha256": "3442541f884ff5bf8fbefdbc2724cb8ef804b633a4e99be922ce58998b590a2c"
+    },
+    {
+      "id": "scripted-collection-04",
+      "logical_source": "Basket close64 scripted collection chunk04,2026-10-19",
+      "sha256": "02474f4a0fd37d34751de7a7f491bad0b8c27b4ffd5779de75df5e932abda26b"
+    },
+    {
+      "id": "scripted-collection-05",
+      "logical_source": "Basket close64 scripted collection chunk05,2026-10-19",
+      "sha256": "71352e304275ef4165aa8da498c93d7a5ce4ff6551953509283828c6708ac441"
+    },
+    {
+      "id": "scripted-collection-06",
+      "logical_source": "Basket close64 scripted collection chunk06,2026-10-19",
+      "sha256": "7ac127fca12ccf429ec913c74d95a7d0c30c13761c3dff3c578d335038dc4fae"
+    },
+    {
+      "id": "scripted-collection-07",
+      "logical_source": "Basket close64 scripted collection chunk07,2026-10-19",
+      "sha256": "3ac824f7010b8bbf8f6eb2fa5f80e07b67fa6011800524897d4e923d3086de92"
+    },
+    {
+      "id": "scripted-collection-08",
+      "logical_source": "Basket close64 scripted collection chunk08,2026-10-19",
+      "sha256": "8c6dac8691248330be8777ee925f9b9bf371a41a6bc5bb352e9d3cca50606d0a"
+    },
+    {
+      "id": "scripted-collection-09",
+      "logical_source": "Basket close64 scripted collection chunk09,2026-10-19",
+      "sha256": "4b8500a1d7e29979f39cc4ec0253401d8c06e6da9026cccaae7c9c23031de0fe"
+    },
+    {
+      "id": "scripted-rgb-replay",
+      "logical_source": "Basket close64 scripted RGB replay summary,2026-10-19",
+      "sha256": "9c037ff124182161b932560cc4de0b8aee11a974b69ef48f4f447bdc8abab469"
+    },
+    {
+      "id": "scripted-act-evaluation",
+      "logical_source": "Basket scripted100 close64 ACT-CVAE E5000 evaluation",
+      "sha256": "3d4606cfdbe2f370eff73997ee211efe11e0a1a007dc278fb6ee134771cec65d"
+    },
+    {
+      "id": "scripted-act-config",
+      "logical_source": "Basket scripted100 close64 ACT-CVAE training configuration",
+      "sha256": "5fc7299c3466a08a4df762da78a48f2ac19c7e747475c56c0559779af5de919e"
+    }
+  ],
+  "uncertainty": "No inferred confidence intervals, significance tests or causal performance claims."
+}

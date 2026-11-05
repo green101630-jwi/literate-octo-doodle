@@ -1,0 +1,31 @@
+{
+  "title": "Task2 C128 Diffusion inference runtime",
+  "recorded_date": "2026-11-04",
+  "measurement_note": "Previously recorded benchmark; not rerun during this website update.",
+  "model": "Task2 C128 Diffusion",
+  "observation_dimensions": {
+    "joint_state": 14,
+    "fixed_environment": 6,
+    "total": 20
+  },
+  "gpu": "NVIDIA GeForce RTX 3070",
+  "ddim_steps": 10,
+  "measurements": [
+    {
+      "execution": "eager",
+      "samples": 100,
+      "p50_ms": 53.84535598568618,
+      "p99_ms": 62.18345652334393
+    },
+    {
+      "execution": "compiled",
+      "samples": 100,
+      "p50_ms": 12.94237794354558,
+      "p99_ms": 14.577622872311625
+    }
+  ],
+  "source": {
+    "logical_filename": "Task2 C128 RTX3070 DDIM10 benchmark.json",
+    "sha256": "0e1116ecedf5779753de86484d8836fcb2b1a8cea6d5ca3619b0bafba6cfd299"
+  }
+}

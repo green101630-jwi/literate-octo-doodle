@@ -1,6 +1,6 @@
 # Research notes and figure scope
 
-Portfolio evidence update: 3 November 2026.
+Portfolio evidence update: 5 November 2026.
 
 This website presents a connected set of robotics projects. Different experiment generations use different models, datasets, colliders, observation contracts, and execution rules. Captions keep these conditions attached to each result.
 
@@ -64,3 +64,34 @@ TC-ACT and Mamba-2 temporal-context experiments, source-controlled demonstration
 The four Sim gallery cards use ACT / TC-ACT CVAE E5000 checkpoints trained on Teleop30 + Mimic300 (training seed0), with 14D joints + RGB and one shared fixed camera. TC-ACT also uses sampled joint/image history. Basket uses XY ±2 cm resets and evaluation seed2028: ACT 233/250 (93.2%), TC-ACT 228/250 (91.2%). Tube Handover uses XY ±2 cm resets and evaluation seed2030: ACT 178/250 (71.2%), TC-ACT 220/250 (88.0%).
 
 Each clip is a selected successful rollout; its card rate comes from the complete corresponding 250-trial evaluation. The gallery replacement uses these same task/checkpoint/seed conditions. Original timing, source hashes, camera settings, and rollout evidence belong in [success-rollout-provenance.json](assets/media/policy-videos/success-rollout-provenance.json). These single-seed cards remain separate from the five-seed benchmark charts and the older technical-report recordings. Diffusion slots remain empty.
+
+## Demonstration research: measurement boundaries
+
+The close64 scripted Basket study has three separate records:
+
+| Logical source record | Measurement and conditions |
+| --- | --- |
+| Close64 scripted Basket collection summaries | 100 demonstrations exported from 135 attempts across ten collection chunks. This measures collection yield. |
+| Close64 scripted Basket RGB replay summary | All 100 selected episodes reached final success during RGB replay. This validates the retained replay set, not a learned policy. |
+| Scripted100 ACT CVAE final evaluation | 221/250 (88.4%); training seed 0, E5000 final checkpoint, 50,000 optimizer updates, 80 training / 20 validation episodes from the 100-demo release; evaluation seed 2026, XY ±2cm, horizon 1,100, AMP off, temporal aggregation with decay 0.01. |
+
+The older Scripted75 E2000 experiment and its diagnostic recordings are different runs. Yellow-on-Green footage is also a different task. Neither recording supports the Scripted100 ACT 88.4% result. No matched policy-success recording is asserted for that result.
+
+**Source-audit scope and the aligned release are separate.** The 660-episode semantics audit checked the action decoding rule `processed_actions = clip(actions × 0.25 + default_joint_pos, joint limits)` and the pre-action observation rule: time zero uses `initial_state`; later observations use `states[t−1]`. It is not a count of episodes manually inspected image by image.
+
+The later aligned release contains Basket and Handover, each Teleop25 + Mimic50, for 150 episodes total. Its report states that all 150 episodes received full-frame numeric reconstruction and hash readback checks; only additional sampled images received visual inspection. The Handover Mimic source episode `demo_143` had an initial RGB/state mismatch corrected in this later release. This does not mean all 660 source episodes were rerendered or that the 150 episodes were produced by a single uniform 660→150 selection funnel. The original datasets and the existing 60-episode verification set were preserved.
+
+Logical source records:
+
+- **660-episode action/observation semantics audit** — SHA-256 `9ea894a278253ca4a2c71117eb8f2b41c7a3d8337d8142c885597fddc29bdabb`.
+- **Dual-OMX Teleop25 + Mimic50 release report, 11 October 2026** — SHA-256 `1a0a6bbcfa948ef7e1c3c6a90ed742cdbeae3e82aac8aebd5f367db3f7c2e669`.
+
+The release-creation report records that training, split creation, and feature extraction had not yet run at that stage. Later training runs need their own split/normalization records; release verification alone does not establish lineage-disjoint splits or learned-policy performance.
+
+**Coverage plots describe the selected data.** An initial-position mean is the sample center; a per-axis standard deviation describes spatial spread. Neither is a success rate, a confidence interval for policy performance, or proof of generalization. Keep task, object, coordinate axes, units, source counts, and selection scope attached. Quality selection can change coverage, so its effect cannot be isolated from distribution changes without controlled training and evaluation.
+
+## November Task2 Diffusion runtime benchmark
+
+[Task2 C128 runtime data](assets/charts/task2-diffusion-runtime-20261104.json) transcribes an existing 4 November 2026 measurement; the website update did not rerun it. The model consumes 20D observations (14 joint values + 6 fixed-environment values), uses DDIM10, and was measured on an RTX3070 with 100 eager and 100 compiled samples. Eager p50/p99 are 53.85/62.18ms; compiled p50/p99 are 12.94/14.58ms.
+
+This is an inference-runtime measurement for the November C128 Task2 model. It is separate from the August 34D no-cube Diffusion benchmark and from physical-feedback shadow timing. It is not a manipulation-success evaluation, an end-to-end control deadline guarantee, or evidence that Diffusion completed the physical task. The public data retain the logical source filename and its SHA-256, without workstation paths or weights.
