@@ -59,6 +59,12 @@
 .research-table tbody tr:last-child td{border-bottom:0}
 .research-table td{color:var(--muted)}
 .research-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:24px}
+#e6000-comparison-protocol .core-protocol-list{display:grid;gap:15px;margin:0 0 18px}
+#e6000-comparison-protocol .core-protocol-list>div{display:grid;grid-template-columns:135px minmax(0,1fr);gap:18px;align-items:baseline}
+#e6000-comparison-protocol .core-protocol-list dt{font-size:.8rem;font-weight:750;color:var(--ink);line-height:1.75}
+#e6000-comparison-protocol .core-protocol-list dd{margin:0;font-size:.82rem;line-height:1.8;color:var(--muted)}
+#e6000-comparison-protocol .disclosure-body>p:last-child{margin-bottom:0}
+@media(max-width:600px){#e6000-comparison-protocol .core-protocol-list>div{grid-template-columns:1fr;gap:3px}}
 .research-footer-note{margin-top:28px;font-size:.81rem;color:var(--muted);max-width:900px;line-height:1.85}
 .home-research-note{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 25px;margin-top:22px;border:1px solid var(--line);border-radius:12px;background:#fff}
 .home-research-note p{margin:0;color:var(--muted);font-size:.85rem;max-width:710px}
@@ -231,3 +237,5 @@
  #demonstrations .demo-coverage-heading h3{font-size:1.12rem}
  #demonstrations .demo-coverage-tabs [role="tab"]{padding:10px 17px}
 }
+
+#results>.wrap>.research-intro,#e6000-main-comparison figcaption{word-break:keep-all;overflow-wrap:break-word}

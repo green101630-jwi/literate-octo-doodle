@@ -15,9 +15,10 @@ results from one trained checkpoint per method/task, not five training runs.
 spatial-generalization-e6000.svg / .png
 Source: two preserved summary_5seeds_e6000.json files covering XY half-ranges
 2/4/6 cm and 3/5 cm. Every value was cross-checked against the audit CSV.
-Baseline task collider; AMP off; epoch 6000; training seed 0. Five evaluation
+Task-specific default colliders; Basket AMP off / Handover AMP on; epoch6000;
+training seed 0. Five evaluation
 seeds, 250 paired rollouts per seed, 1,250 per model/task/range. Half-range is
-not radius. Precision-collider / AMP-on results are excluded.
+not radius. The Basket decomposition / AMP-on series is excluded.
 
 diffusion-steps.svg / .png
 Source: preserved fixed-placement rollout JSON for the Diffusion34 no-cube
@@ -57,3 +58,11 @@ No confidence intervals or significance claims were inferred. Evaluation-seed
 repetition and training-seed repetition are explicitly distinguished.
 Figures were generated with Matplotlib from the public evidence-data.json.
 SVG provides editable vectors/text; PNG is 2376 × 1440 pixels for sharing.
+
+visual-act-tc-e6000.svg
+Main comparison refreshed on 5 November 2026: Basket ACT1168/1250 (93.44%),
+TC-ACT1164/1250 (93.12%); Handover ACT929/1250 (74.32%), TC-ACT1034/1250
+(82.72%). Source data and individual evaluation hashes: visual-act-tc-e6000.json.
+Shared core settings are E6000, XY ±2cm, AMP on and five evaluation seeds.
+Task definitions and horizons remain task-specific; see RESEARCH_NOTES.md.
+The original E5000 artifacts and recordings remain archived experiment evidence.

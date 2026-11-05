@@ -37,17 +37,17 @@
     {
       "id": "spatial-generalization-e6000",
       "title": "Spatial generalization at epoch 6000",
-      "alt": "Two panels show ACT and TC-ACT success rates over XY half-ranges from ±2 to ±6 cm. ACT leads in Basket; TC-ACT leads in Handover. Baseline collider, AMP off, training seed 0 and five evaluation seeds, 1,250 rollouts per point.",
+      "alt": "Two panels show ACT and TC-ACT success rates over XY half-ranges from ±2 to ±6 cm. ACT leads in Basket; TC-ACT leads in Handover. Basket AMP off; Handover AMP on. training seed 0 and five evaluation seeds, 1,250 rollouts per point.",
       "assets": {
         "svg": {
           "file": "spatial-generalization-e6000.svg",
-          "sha256": "3770b9e245bc4ce0ae8f5bcf4211ecdbf9ce9afdd8e29c8958b3071229d940c5",
-          "bytes": 22490
+          "sha256": "737c95d15b5ee439f175375b2f05eeb4a75ef5f7551bdb5991ea658ecf498243",
+          "bytes": 21263
         },
         "png": {
           "file": "spatial-generalization-e6000.png",
-          "sha256": "8d989f53d9612413b65558dc819d149b31af15375d1691660c329461e74a5f92",
-          "bytes": 237119
+          "sha256": "25e4e3cc2d8b478022506c66b841f634b89dd836acff8d2a14089a6e01bdf4b5",
+          "bytes": 238247
         }
       },
       "sources": [
@@ -56,7 +56,7 @@
       ],
       "notes": [
         "XY half-range is not a radius.",
-        "Do not merge with convex-decomposition/AMP-on evaluations."
+        "Separate range study: Basket AMP off; Handover AMP on."
       ]
     },
     {

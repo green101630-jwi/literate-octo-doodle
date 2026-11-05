@@ -1,0 +1,5 @@
+task,model,successes,trials,success_percent,checkpoint_epoch,training_seed,evaluation_seeds,xy_half_range_cm,evaluation_amp,horizon,source_ids
+Basket,ACT,1168,1250,93.44,6000,0,2026;2027;2028;2029;2030,2,true,708,basket-act-seed2026;basket-act-seed2027;basket-act-seed2028;basket-act-seed2029;basket-act-seed2030
+Basket,TC-ACT,1164,1250,93.12,6000,0,2026;2027;2028;2029;2030,2,true,708,basket-tc-seed2026;basket-tc-seed2027;basket-tc-seed2028;basket-tc-seed2029;basket-tc-seed2030
+Handover,ACT,929,1250,74.32,6000,0,2026;2027;2028;2029;2030,2,true,500,handover-act-seed2026;handover-act-seed2027;handover-act-seed2028;handover-act-seed2029;handover-act-seed2030
+Handover,TC-ACT,1034,1250,82.72,6000,0,2026;2027;2028;2029;2030,2,true,500,handover-tc-seed2026;handover-tc-seed2027;handover-tc-seed2028;handover-tc-seed2029;handover-tc-seed2030

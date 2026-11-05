@@ -416,8 +416,8 @@
     "실험은 상태만 사용한 이력, 영상만 사용한 이력, 혼합 이력, CVAE·phase 제거 실험 및 일부 버전의 미래 상태 보조 예측을 포함합니다. 미래 값은 학습 목표로만 사용합니다."
   ],
   [
-    "Model generations use different history encodings and auxiliary objectives. E5000 compares complete ACT/TC-ACT configurations under paired resets; it does not isolate history alone.",
-    "모델 세대마다 이력 인코딩 및 보조 목적함수가 다릅니다. E5000은 동일 초기화 조건에서 ACT/TC-ACT 전체 구성을 비교하므로 이력만의 효과를 분리한 결과는 아닙니다."
+    "Model generations use different history encodings and auxiliary objectives. The E6000 comparison reports complete ACT/TC-ACT configurations under shared core settings.",
+    "모델 세대마다 이력 인코딩과 보조 학습 목적이 다릅니다. E6000 비교는 공통 기준에서 ACT·TC-ACT 모델 구성 전체를 평가한 결과입니다."
   ],
   [
     "Model-version context (EN / KO) ↗",
@@ -428,32 +428,32 @@
     "위치 변화 일반화"
   ],
   [
-    "Visual policies · E5000",
-    "시각 정책 · E5000"
+    "Visual policies · E6000",
+    "시각 정책 · E6000"
   ],
   [
-    "TC-ACT improved Handover; Basket favored ACT.",
-    "Handover에서는 TC-ACT가, Basket에서는 ACT가 더 높은 성공률을 기록했습니다."
+    "ACT and TC-ACT across two tasks.",
+    "두 태스크에서 ACT·TC-ACT 비교"
   ],
   [
-    "1,250 paired-reset evaluations per model and task.",
-    "모델·태스크당 동일 초기화 비교 평가 1,250회"
+    "E6000 · initial XY ±2cm · AMP on.",
+    "E6000 · 초기 XY ±2cm · AMP on"
   ],
   [
-    "Five evaluation seeds × 250 rollouts; one trained seed. Basket and Handover show different effects of temporal context.",
-    "평가 시드 5개 × 롤아웃 250회이며 학습 시드는 1개입니다. Basket과 Handover에서 시간 문맥의 효과가 다르게 나타났습니다."
+    "Five evaluation seeds × 250 rollouts = 1,250 trials per model and task.",
+    "평가 시드 5개 × 250회로 모델·태스크당 총 1,250회입니다."
   ],
   [
     "Evaluation setup and exact values",
     "평가 설정과 실제 수치"
   ],
   [
-    "Teleop30 + Mimic300 visual policies; epoch5000, frozen ResNet18 features, temporal aggregation. The five seeds vary evaluation resets. They are not five separately trained policies.",
-    "Teleop30 + Mimic300 시각 정책, 5,000 epoch, 고정된 ResNet18 특징, 시간적 집계를 사용했습니다. 다섯 시드는 평가 초기화 조건의 차이이며 서로 다른 다섯 개의 학습 정책이 아닙니다."
+    "Shared core settings: Teleop30 + Mimic300, training seed0, 14D joints + RGB, frozen ResNet18 features, chunk50, E6000 final checkpoints and temporal aggregation. Evaluation seeds are 2026–2030, with matched initial positions within each ACT/TC-ACT pair. TC-ACT also uses sampled history and auxiliary future-state supervision.",
+    "공통 기준은 Teleop30 + Mimic300, 학습 seed0, 14D 관절 + RGB, ResNet18 고정, chunk50, E6000 최종 체크포인트와 temporal aggregation입니다. 평가 시드는 2026–2030이며 각 ACT·TC-ACT 쌍의 초기 위치를 맞췄습니다. TC-ACT에는 표본화한 이력과 미래 상태 보조 학습이 추가됩니다."
   ],
   [
-    "E5000 visual policy success rates",
-    "E5000 시각 정책 성공률"
+    "E6000 visual policy success rates",
+    "E6000 시각 정책 성공률"
   ],
   [
     "Task",
@@ -476,16 +476,16 @@
     "그래프의 모든 조건에서 시뮬레이션 평가 총 25,000회"
   ],
   [
-    "Basic collider, AMP-off evaluation, E6000. Each model/task/range has 5 evaluation seeds × 250 rollouts. XY half-range is per axis, not a radial distance.",
-    "기본 충돌체, AMP 비활성화, E6000 평가입니다. 모델·태스크·범위별로 시드 5개 × 롤아웃 250회를 수행했습니다. XY 절반 범위는 반경이 아니라 각 축 기준입니다."
+    "Separate E6000 reset-range study: Basket AMP off; Handover AMP on. Each model/task/range has 5 evaluation seeds × 250 rollouts. XY half-range is per axis, not a radial distance.",
+    "별도의 E6000 초기 위치 범위 실험입니다. Basket은 AMP off, Handover는 AMP on이며 모델·태스크·범위마다 평가 시드 5개 × 250회입니다. XY 범위는 반경이 아닌 각 축 기준입니다."
   ],
   [
     "Read the evaluation protocol",
     "평가 절차 보기"
   ],
   [
-    "ACT and TC-ACT share initial placements within each pair. Both use training seed0. These E6000 policies, geometry, and numerical settings form a separate experiment from the E5000 comparison above and later convex-decomposition runs.",
-    "각 비교 쌍에서 ACT와 TC-ACT는 동일한 초기 물체 위치를 사용합니다. 두 모델의 학습 시드는 0입니다. E6000의 정책·기하 구조·수치 설정은 위 E5000 및 이후 볼록 분해 실험과 별개입니다."
+    "ACT and TC-ACT share initial placements within each pair. Both use training seed0. This reset-range study uses task-specific settings and is separate from the shared-core E6000 comparison above. Its Basket points use AMP off and exclude the decomposition / AMP-on Basket series.",
+    "각 ACT·TC-ACT 쌍의 초기 위치와 학습 seed0을 맞췄습니다. 이 초기 위치 범위 실험은 태스크별 설정을 사용하며 위의 E6000 대표 비교와 구분됩니다. Basket 그래프는 AMP off 결과로, 분해 충돌체·AMP on Basket 결과는 포함하지 않습니다."
   ],
   [
     "Download the plotted values",
@@ -1050,6 +1050,14 @@
   [
     "Data processing, statistical analysis, and publication-oriented figure preparation.",
     "데이터 전처리, 통계 분석 및 논문용 결과 그림 제작을 수행했습니다."
+  ],
+  [
+    "Task-specific evaluation horizons are Basket708 and Handover500. Basket uses convex-decomposition finger colliders; the current Handover task also selects decomposition colliders, while its full historical physics snapshot was not retained.",
+    "태스크별 평가 길이는 Basket708·Handover500스텝입니다. Basket은 손가락 분해 충돌체를 사용하며 현재 Handover 코드도 분해 충돌체를 선택합니다. 당시 Handover 물리 설정 전체의 스냅샷은 보존되어 있지 않습니다."
+  ],
+  [
+    "Download the comparison values ↓",
+    "비교 수치 내려받기 ↓"
   ]
 ]);
   const nodes = [];

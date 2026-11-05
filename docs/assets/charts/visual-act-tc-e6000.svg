@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns2="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" width="950.4pt" height="576pt" viewBox="0 0 950.4 576" version="1.1" role="img" aria-labelledby="visual-act-tc-e6000-title visual-act-tc-e6000-desc">
+ <title id="visual-act-tc-e6000-title">Visual ACT vs. TC-ACT at E6000</title><desc id="visual-act-tc-e6000-desc">Basket: ACT 1168/1250, 93.44%; TC-ACT 1164/1250, 93.12%. Handover: ACT 929/1250, 74.32%; TC-ACT 1034/1250, 82.72%. Five evaluation seeds, training seed 0, XY half-range ±2 cm and AMP on. The tasks use different horizons and task-specific physics.</desc><title>Visual ACT vs. TC-ACT at E6000</title>
+ <metadata>
+  <rdf:RDF>
+   <ns2:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    <dc:title>Visual ACT vs. TC-ACT at E6000</dc:title>
+    <dc:description>Basket: ACT 1168/1250, 93.44%; TC-ACT 1164/1250, 93.12%. Handover: ACT 929/1250, 74.32%; TC-ACT 1034/1250, 82.72%. Five evaluation seeds, training seed 0, XY half-range ±2 cm and AMP on. The tasks use different horizons and task-specific physics.</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <ns2:Agent>
+      <dc:title>E6000 public-summary chart generator</dc:title>
+     </ns2:Agent>
+    </dc:creator>
+   </ns2:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 576  L 950.4 576  L 950.4 0  L 0 0  z " style="fill: #ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 99.792 434.88  L 907.632 434.88  L 907.632 146.88  L 99.792 146.88  z " style="fill: #ffffff" />
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1" />
+     <g id="text_1">
+      <text style="fill: #52647a; font: 17px 'DejaVu Sans'; text-anchor: middle" x="323.390571" y="460.797344" transform="rotate(-0, 323.390571, 460.797344)">Basket</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2" />
+     <g id="text_2">
+      <text style="fill: #52647a; font: 17px 'DejaVu Sans'; text-anchor: middle" x="684.033429" y="460.797344" transform="rotate(-0, 684.033429, 460.797344)">Handover</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_3">
+      <path d="M 99.792 434.88  L 907.632 434.88  " clip-path="url(#p3a5e57b7dd)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_4" />
+     <g id="text_3">
+      <text style="fill: #52647a; font: 14px 'DejaVu Sans'; text-anchor: end" x="91.792" y="440.198906" transform="rotate(-0, 91.792, 440.198906)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_5">
+      <path d="M 99.792 377.28  L 907.632 377.28  " clip-path="url(#p3a5e57b7dd)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_6" />
+     <g id="text_4">
+      <text style="fill: #52647a; font: 14px 'DejaVu Sans'; text-anchor: end" x="91.792" y="382.598906" transform="rotate(-0, 91.792, 382.598906)">20</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_7">
+      <path d="M 99.792 319.68  L 907.632 319.68  " clip-path="url(#p3a5e57b7dd)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_8" />
+     <g id="text_5">
+      <text style="fill: #52647a; font: 14px 'DejaVu Sans'; text-anchor: end" x="91.792" y="324.998906" transform="rotate(-0, 91.792, 324.998906)">40</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_9">
+      <path d="M 99.792 262.08  L 907.632 262.08  " clip-path="url(#p3a5e57b7dd)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_10" />
+     <g id="text_6">
+      <text style="fill: #52647a; font: 14px 'DejaVu Sans'; text-anchor: end" x="91.792" y="267.398906" transform="rotate(-0, 91.792, 267.398906)">60</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_11">
+      <path d="M 99.792 204.48  L 907.632 204.48  " clip-path="url(#p3a5e57b7dd)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_12" />
+     <g id="text_7">
+      <text style="fill: #52647a; font: 14px 'DejaVu Sans'; text-anchor: end" x="91.792" y="209.798906" transform="rotate(-0, 91.792, 209.798906)">80</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_13">
+      <path d="M 99.792 146.88  L 907.632 146.88  " clip-path="url(#p3a5e57b7dd)" style="fill: none; stroke: #e8edf3; stroke-linecap: square" />
+     </g>
+     <g id="line2d_14" />
+     <g id="text_8">
+      <text style="fill: #52647a; font: 14px 'DejaVu Sans'; text-anchor: end" x="91.792" y="152.198906" transform="rotate(-0, 91.792, 152.198906)">100</text>
+     </g>
+    </g>
+    <g id="text_9">
+     <text style="fill: #182c43; font: 16px 'DejaVu Sans'; text-anchor: middle" x="48.742" y="290.88" transform="rotate(-90, 48.742, 290.88)">Success rate (%)</text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 99.792 434.88  L 99.792 146.88  " style="fill: none; stroke: #c8d2df; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square" />
+   </g>
+   <g id="patch_4">
+    <path d="M 99.792 434.88  L 907.632 434.88  " style="fill: none; stroke: #c8d2df; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square" />
+   </g>
+   <g id="patch_5">
+    <path d="M 211.591286 434.88  L 312.571286 434.88  L 312.571286 165.7728  L 211.591286 165.7728  z " clip-path="url(#p3a5e57b7dd)" style="fill: #377cf6" />
+   </g>
+   <g id="patch_6">
+    <path d="M 572.234143 434.88  L 673.214143 434.88  L 673.214143 220.8384  L 572.234143 220.8384  z " clip-path="url(#p3a5e57b7dd)" style="fill: #377cf6" />
+   </g>
+   <g id="text_10">
+    <g id="patch_7">
+     <path d="M 223.156286 162.0288  L 301.006286 162.0288  L 301.006286 141.728175  L 223.156286 141.728175  z " style="fill: #ffffff" />
+    </g>
+    <text style="fill: #182c43; font: 700 18px 'DejaVu Sans'; text-anchor: middle" x="262.081286" y="156.845362" transform="rotate(-0, 262.081286, 156.845362)">93.44%</text>
+   </g>
+   <g id="text_11">
+    <g id="patch_8">
+     <path d="M 583.799143 217.0944  L 661.649143 217.0944  L 661.649143 196.793775  L 583.799143 196.793775  z " style="fill: #ffffff" />
+    </g>
+    <text style="fill: #182c43; font: 700 18px 'DejaVu Sans'; text-anchor: middle" x="622.724143" y="211.910962" transform="rotate(-0, 622.724143, 211.910962)">74.32%</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 334.209857 434.88  L 435.189857 434.88  L 435.189857 166.6944  L 334.209857 166.6944  z " clip-path="url(#p3a5e57b7dd)" style="fill: #16a08c" />
+   </g>
+   <g id="patch_10">
+    <path d="M 694.852714 434.88  L 795.832714 434.88  L 795.832714 196.6464  L 694.852714 196.6464  z " clip-path="url(#p3a5e57b7dd)" style="fill: #16a08c" />
+   </g>
+   <g id="text_12">
+    <g id="patch_11">
+     <path d="M 345.774857 162.9504  L 423.624857 162.9504  L 423.624857 142.649775  L 345.774857 142.649775  z " style="fill: #ffffff" />
+    </g>
+    <text style="fill: #182c43; font: 700 18px 'DejaVu Sans'; text-anchor: middle" x="384.699857" y="157.766962" transform="rotate(-0, 384.699857, 157.766962)">93.12%</text>
+   </g>
+   <g id="text_13">
+    <g id="patch_12">
+     <path d="M 706.417714 192.9024  L 784.267714 192.9024  L 784.267714 172.601775  L 706.417714 172.601775  z " style="fill: #ffffff" />
+    </g>
+    <text style="fill: #182c43; font: 700 18px 'DejaVu Sans'; text-anchor: middle" x="745.342714" y="187.718962" transform="rotate(-0, 745.342714, 187.718962)">82.72%</text>
+   </g>
+  </g>
+  <g id="text_14">
+   <text style="fill: #182c43; font: 700 25px 'DejaVu Sans'; text-anchor: start" x="71.28" y="47.796094" transform="rotate(-0, 71.28, 47.796094)">Visual ACT vs. TC-ACT</text>
+  </g>
+  <g id="text_15">
+   <text style="fill: #52647a; font: 15px 'DejaVu Sans'; text-anchor: start" x="71.28" y="77.061656" transform="rotate(-0, 71.28, 77.061656)">E6000 · XY ±2 cm · 5 evaluation seeds</text>
+  </g>
+  <g id="text_16">
+   <text style="fill: #52647a; font: 12px 'DejaVu Sans'; text-anchor: start" x="71.28" y="505.728" transform="rotate(-0, 71.28, 505.728)">1,250 rollouts per bar · 5 evaluation seeds × 250 · training seed 0</text>
+  </g>
+  <g id="text_17">
+   <text style="fill: #52647a; font: 11.5px 'DejaVu Sans'; text-anchor: start" x="71.28" y="531.072" transform="rotate(-0, 71.28, 531.072)">Task-specific physics and horizons; recorded starts match within ACT / TC-ACT pairs.</text>
+  </g>
+  <g id="legend_1">
+   <g id="patch_13">
+    <path d="M 405.163172 117.057656  L 432.163172 117.057656  L 432.163172 106.557656  L 405.163172 106.557656  z " style="fill: #377cf6" />
+   </g>
+   <g id="text_18">
+    <text style="fill: #182c43; font: 15px 'DejaVu Sans'; text-anchor: start" x="444.163172" y="117.057656" transform="rotate(-0, 444.163172, 117.057656)">ACT</text>
+   </g>
+   <g id="patch_14">
+    <path d="M 509.797547 117.057656  L 536.797547 117.057656  L 536.797547 106.557656  L 509.797547 106.557656  z " style="fill: #16a08c" />
+   </g>
+   <g id="text_19">
+    <text style="fill: #182c43; font: 15px 'DejaVu Sans'; text-anchor: start" x="548.797547" y="117.057656" transform="rotate(-0, 548.797547, 117.057656)">TC-ACT</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p3a5e57b7dd">
+   <rect x="99.792" y="146.88" width="807.84" height="288" />
+  </clipPath>
+ </defs>
+</svg>

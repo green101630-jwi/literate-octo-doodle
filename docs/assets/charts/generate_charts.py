@@ -120,10 +120,10 @@ save(fig, name, 'Visual ACT and TC-ACT at epoch 5000',
      'Each value uses 1,250 simulated rollouts across five evaluation seeds, with training seed 0.',
      ['5 evaluation seeds, not 5 training seeds.', 'Seed 2026 reused an earlier paired evaluation.'], ['e5000-summary'])
 
-# 2: Baseline collider only; no precision-collider data mixed in.
+# 2: Separate range study; Basket AMP off / Handover AMP on.
 name = 'spatial-generalization-e6000'
 fig = base('Generalization across initial object positions',
-           'Visual ACT / TC-ACT  ·  E6000  ·  baseline collider  ·  AMP off')
+           'Visual ACT / TC-ACT  ·  E6000  ·  task-specific settings')
 axes = [fig.add_axes([.10, .25, .38, .49]), fig.add_axes([.58, .25, .38, .49])]
 for ax, task in zip(axes, ['Basket', 'Handover']):
     style(ax, 'Success rate (%)' if task == 'Basket' else '')
@@ -145,9 +145,9 @@ footer(fig, 'Each point: 5 evaluation seeds × 250 paired rollouts = 1,250 per m
        'Training seed 0. Wider ranges change the evaluation distribution; no confidence intervals inferred.')
 save(fig, name, 'Spatial generalization at epoch 6000',
      'Two panels show ACT and TC-ACT success rates over XY half-ranges from ±2 to ±6 cm. '
-     'ACT leads in Basket; TC-ACT leads in Handover. Baseline collider, AMP off, '
+     'ACT leads in Basket; TC-ACT leads in Handover. Basket AMP off; Handover AMP on. '
      'training seed 0 and five evaluation seeds, 1,250 rollouts per point.',
-     ['XY half-range is not a radius.', 'Do not merge with convex-decomposition/AMP-on evaluations.'],
+     ['XY half-range is not a radius.', 'Separate range study: Basket AMP off; Handover AMP on.'],
      ['e6000-2_4_6-summary', 'e6000-3_5-summary'])
 
 # 3: Existing matched checkpoint, fixed cube placement.

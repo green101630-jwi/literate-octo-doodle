@@ -4,12 +4,13 @@ Portfolio evidence update: 5 November 2026.
 
 This website presents a connected set of robotics projects. Different experiment generations use different models, datasets, colliders, observation contracts, and execution rules. Captions keep these conditions attached to each result.
 
-Home, Research, Projects, and About support English/Korean switching. The detailed technical report remains in English at [Research details](research/details/), which redirects to [research-details.html](research-details.html) while preserving section anchors. Its existing figures and recordings are retained.
+Home, Research, Projects, and About support English/Korean switching. The detailed technical report at [Research details](research/details/) redirects to [research-details.html](research-details.html) while preserving section anchors and also supports English/Korean switching. Its existing figures and recordings are retained.
 
 | Figure / result | Scope |
 | --- | --- |
-| Visual ACT / TC-ACT E5000 | Teleop30 + Mimic300; one training seed; five evaluation seeds × 250 paired-reset trials per model/task. |
-| Spatial generalization E6000 | Basic collider; Basket AMP-off / Handover AMP-on evaluation; XY half-ranges 2–6cm; one training seed; 1,250 trials per model/task/range. |
+| Visual ACT / TC-ACT E6000 — primary comparison | Task-specific Teleop30 + Mimic300; training seed 0; XY ±2cm; AMP-on; evaluation seeds 2026–2030 × 250 matched-reset trials, 1,250 per model/task. |
+| Visual ACT / TC-ACT E5000 — archived comparison | Earlier Teleop30 + Mimic300 checkpoints; one training seed; five evaluation seeds × 250 paired-reset trials per model/task. Original data, figure, and recordings retain their E5000 scope. |
+| Spatial generalization E6000 — earlier protocol | Earlier “basic collider” series; Basket AMP-off / Handover AMP-on evaluation; XY half-ranges 2–6cm; one training seed; 1,250 trials per model/task/range. Separate from the primary AMP-on comparison. |
 | Diffusion denoising steps | Earlier 34D no-cube policy; fixed-layout simulation; 250 trials for 4-step, 10-step, and compiled 10-step inference. |
 | Diffusion latency | August U-Net benchmark and real-feedback shadow are distinct measurements, preserved in the experiment presentation. |
 | Successful-rollout controls | Approximately matched 14k-update budget; two training seeds; 250 evaluations each; final checkpoints. Normalization was fitted on the original Mimic50 and held fixed across conditions. |
@@ -24,7 +25,22 @@ History sample count is separate from observation dimension. **14D** refers to a
 
 TC-ACT versions do not all use the same training objective. Some early configurations include auxiliary future-state-delta prediction alongside action reconstruction and the CVAE KL term. Future states are training targets, never inference inputs. Later **paper-fair configurations omit that auxiliary objective and use action L1 + KL**. Check the specific run configuration before assigning either formulation to a result.
 
-The E5000 chart compares the reported ACT and TC-ACT model configurations. Its task-dependent differences are **not an isolated causal estimate of history alone**. That claim would require controls that separately vary history, auxiliary supervision, and any other configuration differences. The five evaluation seeds assess those trained policies under different resets; they are not five independent training repetitions.
+Both the primary E6000 comparison and the archived E5000 chart compare the reported ACT and TC-ACT model configurations. Their task-dependent differences are **not an isolated causal estimate of history alone**. The TC-ACT checkpoints in these comparisons include sampled joint/image history and auxiliary future-state prediction; isolating history would require controls that separately vary those components and any other configuration differences. The five evaluation seeds assess those trained policies under different resets; they are not five independent training repetitions.
+
+## Primary Visual ACT / TC-ACT comparison: E6000
+
+The primary comparison uses task-specific **Teleop30 + Mimic300**, training seed 0, frozen visual backbones, CVAE policies, chunk length 50, and E6000 final checkpoints. Evaluation uses **XY ±2cm, AMP on, temporal aggregation with decay 0.01**, and seeds 2026–2030 with 250 trials per seed. ACT and TC-ACT have identical recorded initial object positions within each task/seed pair. Each percentage below is the total number of successes divided by **1,250 trials for that model and task**.
+
+| Task | ACT | TC-ACT | Evaluation horizon |
+| --- | --- | --- | --- |
+| Basket | 1,168/1,250 — **93.44%** | 1,164/1,250 — **93.12%** | 708 control steps |
+| Tube Handover | 929/1,250 — **74.32%** | 1,034/1,250 — **82.72%** | 500 control steps |
+
+The Basket reports explicitly record convex-decomposition finger colliders. The current Handover task source also selects a convex-decomposition robot asset, but the historical Handover reports do not serialize a complete physics snapshot. The shared settings above support comparisons between ACT and TC-ACT within each task. Horizon, task geometry, success rules, and the available collider evidence remain task specific; the two tasks are not presented as differing only in task name.
+
+Public evidence and reproducible figure: [E6000 data and source checksums](assets/charts/visual-act-tc-e6000.json), [E6000 comparison figure](assets/charts/visual-act-tc-e6000.svg), [per-seed CSV](assets/data/visual-act-tc-e6000.csv), and [figure generator](assets/charts/generate_visual_act_tc_e6000.py).
+
+The [archived E5000 figure](assets/charts/visual-act-tc-e5000.svg) and its original summary values remain preserved. The earlier E6000 spatial-generalization figure retains its original Basket AMP-off / Handover AMP-on protocol. Neither historical series is relabeled as this primary E6000 AMP-on comparison.
 
 ## Keep deployment generations separate
 
@@ -36,7 +52,7 @@ These generations have different observation and execution contracts. A timing m
 
 ## Data and media
 
-Exact chart data, source identifiers, and checksums: [evidence-data.json](assets/charts/evidence-data.json).
+Original chart data, source identifiers, and checksums, including the archived E5000 comparison: [evidence-data.json](assets/charts/evidence-data.json). The primary E6000 comparison has its separate data, CSV, figure, and generator linked above.
 
 Source descriptions and limitations: [sources.txt](assets/charts/sources.txt).
 
@@ -63,7 +79,7 @@ TC-ACT and Mamba-2 temporal-context experiments, source-controlled demonstration
 
 The four Sim gallery cards use ACT / TC-ACT CVAE E5000 checkpoints trained on Teleop30 + Mimic300 (training seed0), with 14D joints + RGB and one shared fixed camera. TC-ACT also uses sampled joint/image history. Basket uses XY ±2 cm resets and evaluation seed2028: ACT 233/250 (93.2%), TC-ACT 228/250 (91.2%). Tube Handover uses XY ±2 cm resets and evaluation seed2030: ACT 178/250 (71.2%), TC-ACT 220/250 (88.0%).
 
-Each clip is a selected successful rollout; its card rate comes from the complete corresponding 250-trial evaluation. The gallery replacement uses these same task/checkpoint/seed conditions. Original timing, source hashes, camera settings, and rollout evidence belong in [success-rollout-provenance.json](assets/media/policy-videos/success-rollout-provenance.json). These single-seed cards remain separate from the five-seed benchmark charts and the older technical-report recordings. Diffusion slots remain empty.
+Each clip is a selected successful E5000 rollout; its original single-seed rate comes from the complete corresponding 250-trial evaluation. Original timing, source hashes, camera settings, and rollout evidence belong in [success-rollout-provenance.json](assets/media/policy-videos/success-rollout-provenance.json). These recordings retain their E5000 task/checkpoint/seed conditions and remain separate from the primary E6000 five-seed statistics. No matched E6000 policy-success recording was identified in the audited media. Diffusion slots remain empty.
 
 ## Demonstration research: measurement boundaries
 

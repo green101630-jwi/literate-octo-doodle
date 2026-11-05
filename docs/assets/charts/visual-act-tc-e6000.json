@@ -1,0 +1,538 @@
+{
+  "schema_version": 1,
+  "created": "2026-11-05",
+  "title": "Visual ACT vs. TC-ACT at E6000",
+  "measurement_scope": "Previously recorded simulation evaluations; no new training or rollout was performed for this figure.",
+  "summary": [
+    {
+      "task": "Basket",
+      "model": "ACT",
+      "successes": 1168,
+      "trials": 1250,
+      "success_percent": 93.44,
+      "source_ids": [
+        "basket-act-seed2026",
+        "basket-act-seed2027",
+        "basket-act-seed2028",
+        "basket-act-seed2029",
+        "basket-act-seed2030"
+      ]
+    },
+    {
+      "task": "Basket",
+      "model": "TC-ACT",
+      "successes": 1164,
+      "trials": 1250,
+      "success_percent": 93.12,
+      "source_ids": [
+        "basket-tc-seed2026",
+        "basket-tc-seed2027",
+        "basket-tc-seed2028",
+        "basket-tc-seed2029",
+        "basket-tc-seed2030"
+      ]
+    },
+    {
+      "task": "Handover",
+      "model": "ACT",
+      "successes": 929,
+      "trials": 1250,
+      "success_percent": 74.32,
+      "source_ids": [
+        "handover-act-seed2026",
+        "handover-act-seed2027",
+        "handover-act-seed2028",
+        "handover-act-seed2029",
+        "handover-act-seed2030"
+      ]
+    },
+    {
+      "task": "Handover",
+      "model": "TC-ACT",
+      "successes": 1034,
+      "trials": 1250,
+      "success_percent": 82.72,
+      "source_ids": [
+        "handover-tc-seed2026",
+        "handover-tc-seed2027",
+        "handover-tc-seed2028",
+        "handover-tc-seed2029",
+        "handover-tc-seed2030"
+      ]
+    }
+  ],
+  "training_contract": {
+    "dataset": "Teleop30 + Mimic300 per task",
+    "training_demonstrations": 264,
+    "validation_demonstrations": 66,
+    "training_seed": 0,
+    "completed_epochs": 6000,
+    "optimizer_updates": 198000,
+    "checkpoint_selection": "final/last checkpoints after E6000 training",
+    "current_observation": "14D left/right joint observations plus front RGB",
+    "action_dimensions": 14,
+    "chunk_length": 50,
+    "visual_backbone": "frozen ResNet18 ImageNet layer4 features",
+    "cvae": true,
+    "kl_weight": 10.0,
+    "data_split_and_normalization_equal_within_task": true,
+    "exact_training_timestep_sequence_verified": false
+  },
+  "evaluation_contract": {
+    "seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "rollouts_per_seed_per_model": 250,
+    "total_rollouts_per_task_model": 1250,
+    "xy_half_range_cm": 2,
+    "range_definition": "Per XY axis, not radial distance.",
+    "amp": true,
+    "parallel_environments": 8,
+    "temporal_aggregation": true,
+    "aggregation_decay": 0.01,
+    "normalized_action_clipping": false,
+    "camera": {
+      "name": "front_rgb_cam",
+      "width": 640,
+      "height": 360,
+      "eye": [
+        -0.33,
+        -0.45,
+        0.65
+      ],
+      "target": [
+        -0.33,
+        0.32,
+        0.03
+      ],
+      "horizontal_fov_degrees": 55
+    },
+    "paired_batch_resets": true,
+    "reset_seed_formula": "evaluation_seed + 100003 * batch",
+    "matched_initial_positions": {
+      "all_verified_rows_equal": true,
+      "per_task_seed": [
+        {
+          "task": "Basket",
+          "evaluation_seed": 2026,
+          "recorded_positions": "yellow XY + green XY",
+          "identical_rows": 250,
+          "rows_compared": 250,
+          "common_evaluation_fields_equal": true
+        },
+        {
+          "task": "Basket",
+          "evaluation_seed": 2027,
+          "recorded_positions": "yellow XY + green XY",
+          "identical_rows": 250,
+          "rows_compared": 250,
+          "common_evaluation_fields_equal": true
+        },
+        {
+          "task": "Basket",
+          "evaluation_seed": 2028,
+          "recorded_positions": "yellow XY + green XY",
+          "identical_rows": 250,
+          "rows_compared": 250,
+          "common_evaluation_fields_equal": true
+        },
+        {
+          "task": "Basket",
+          "evaluation_seed": 2029,
+          "recorded_positions": "yellow XY + green XY",
+          "identical_rows": 250,
+          "rows_compared": 250,
+          "common_evaluation_fields_equal": true
+        },
+        {
+          "task": "Basket",
+          "evaluation_seed": 2030,
+          "recorded_positions": "yellow XY + green XY",
+          "identical_rows": 250,
+          "rows_compared": 250,
+          "common_evaluation_fields_equal": true
+        },
+        {
+          "task": "Handover",
+          "evaluation_seed": 2026,
+          "recorded_positions": "tube XYZ",
+          "identical_rows": 250,
+          "rows_compared": 250,
+          "common_evaluation_fields_equal": true
+        },
+        {
+          "task": "Handover",
+          "evaluation_seed": 2027,
+          "recorded_positions": "tube XYZ",
+          "identical_rows": 250,
+          "rows_compared": 250,
+          "common_evaluation_fields_equal": true
+        },
+        {
+          "task": "Handover",
+          "evaluation_seed": 2028,
+          "recorded_positions": "tube XYZ",
+          "identical_rows": 250,
+          "rows_compared": 250,
+          "common_evaluation_fields_equal": true
+        },
+        {
+          "task": "Handover",
+          "evaluation_seed": 2029,
+          "recorded_positions": "tube XYZ",
+          "identical_rows": 250,
+          "rows_compared": 250,
+          "common_evaluation_fields_equal": true
+        },
+        {
+          "task": "Handover",
+          "evaluation_seed": 2030,
+          "recorded_positions": "tube XYZ",
+          "identical_rows": 250,
+          "rows_compared": 250,
+          "common_evaluation_fields_equal": true
+        }
+      ],
+      "scope": "Recorded object positions within each ACT/TC-ACT pair. Unrecorded complete simulator states are not asserted equal."
+    }
+  },
+  "task_conditions": {
+    "Basket": {
+      "horizon": 708,
+      "gripper_collision": "convexDecomposition, link6/link7",
+      "collider_evidence": "Explicit collider mode and selected robot asset path are serialized in the original evaluation JSON.",
+      "task_specific_asset": "Basket gripper decomposition asset"
+    },
+    "Handover": {
+      "horizon": 500,
+      "success_stability_steps": 25,
+      "gripper_collision": "Current common task selects mimic-disabled OMX with link6/link7 convex decomposition.",
+      "collider_evidence": "Original evaluation JSON does not serialize the robot asset, collider mode, full physics parameters, or asset hashes.",
+      "historical_full_asset_snapshot_available": false,
+      "task_specific_asset": "Handover gripper decomposition asset selected by currently inspected task source"
+    }
+  },
+  "model_configuration_difference": {
+    "tc_act": [
+      "sampled state history",
+      "sampled image history",
+      "auxiliary future joint-delta prediction"
+    ],
+    "future_prediction_horizon": 10,
+    "future_loss_weight": 1.0,
+    "interpretation": "Configured policy comparison; the effect of temporal history alone is not isolated."
+  },
+  "per_evaluation_seed": [
+    {
+      "task": "Basket",
+      "model": "ACT",
+      "evaluation_seed": 2026,
+      "successes": 236,
+      "trials": 250,
+      "success_percent": 94.4,
+      "source_id": "basket-act-seed2026"
+    },
+    {
+      "task": "Basket",
+      "model": "TC-ACT",
+      "evaluation_seed": 2026,
+      "successes": 233,
+      "trials": 250,
+      "success_percent": 93.2,
+      "source_id": "basket-tc-seed2026"
+    },
+    {
+      "task": "Basket",
+      "model": "ACT",
+      "evaluation_seed": 2027,
+      "successes": 235,
+      "trials": 250,
+      "success_percent": 94.0,
+      "source_id": "basket-act-seed2027"
+    },
+    {
+      "task": "Basket",
+      "model": "TC-ACT",
+      "evaluation_seed": 2027,
+      "successes": 234,
+      "trials": 250,
+      "success_percent": 93.6,
+      "source_id": "basket-tc-seed2027"
+    },
+    {
+      "task": "Basket",
+      "model": "ACT",
+      "evaluation_seed": 2028,
+      "successes": 235,
+      "trials": 250,
+      "success_percent": 94.0,
+      "source_id": "basket-act-seed2028"
+    },
+    {
+      "task": "Basket",
+      "model": "TC-ACT",
+      "evaluation_seed": 2028,
+      "successes": 229,
+      "trials": 250,
+      "success_percent": 91.6,
+      "source_id": "basket-tc-seed2028"
+    },
+    {
+      "task": "Basket",
+      "model": "ACT",
+      "evaluation_seed": 2029,
+      "successes": 237,
+      "trials": 250,
+      "success_percent": 94.8,
+      "source_id": "basket-act-seed2029"
+    },
+    {
+      "task": "Basket",
+      "model": "TC-ACT",
+      "evaluation_seed": 2029,
+      "successes": 237,
+      "trials": 250,
+      "success_percent": 94.8,
+      "source_id": "basket-tc-seed2029"
+    },
+    {
+      "task": "Basket",
+      "model": "ACT",
+      "evaluation_seed": 2030,
+      "successes": 225,
+      "trials": 250,
+      "success_percent": 90.0,
+      "source_id": "basket-act-seed2030"
+    },
+    {
+      "task": "Basket",
+      "model": "TC-ACT",
+      "evaluation_seed": 2030,
+      "successes": 231,
+      "trials": 250,
+      "success_percent": 92.4,
+      "source_id": "basket-tc-seed2030"
+    },
+    {
+      "task": "Handover",
+      "model": "ACT",
+      "evaluation_seed": 2026,
+      "successes": 192,
+      "trials": 250,
+      "success_percent": 76.8,
+      "source_id": "handover-act-seed2026"
+    },
+    {
+      "task": "Handover",
+      "model": "TC-ACT",
+      "evaluation_seed": 2026,
+      "successes": 208,
+      "trials": 250,
+      "success_percent": 83.2,
+      "source_id": "handover-tc-seed2026"
+    },
+    {
+      "task": "Handover",
+      "model": "ACT",
+      "evaluation_seed": 2027,
+      "successes": 179,
+      "trials": 250,
+      "success_percent": 71.6,
+      "source_id": "handover-act-seed2027"
+    },
+    {
+      "task": "Handover",
+      "model": "TC-ACT",
+      "evaluation_seed": 2027,
+      "successes": 203,
+      "trials": 250,
+      "success_percent": 81.2,
+      "source_id": "handover-tc-seed2027"
+    },
+    {
+      "task": "Handover",
+      "model": "ACT",
+      "evaluation_seed": 2028,
+      "successes": 185,
+      "trials": 250,
+      "success_percent": 74.0,
+      "source_id": "handover-act-seed2028"
+    },
+    {
+      "task": "Handover",
+      "model": "TC-ACT",
+      "evaluation_seed": 2028,
+      "successes": 209,
+      "trials": 250,
+      "success_percent": 83.6,
+      "source_id": "handover-tc-seed2028"
+    },
+    {
+      "task": "Handover",
+      "model": "ACT",
+      "evaluation_seed": 2029,
+      "successes": 190,
+      "trials": 250,
+      "success_percent": 76.0,
+      "source_id": "handover-act-seed2029"
+    },
+    {
+      "task": "Handover",
+      "model": "TC-ACT",
+      "evaluation_seed": 2029,
+      "successes": 212,
+      "trials": 250,
+      "success_percent": 84.8,
+      "source_id": "handover-tc-seed2029"
+    },
+    {
+      "task": "Handover",
+      "model": "ACT",
+      "evaluation_seed": 2030,
+      "successes": 183,
+      "trials": 250,
+      "success_percent": 73.2,
+      "source_id": "handover-act-seed2030"
+    },
+    {
+      "task": "Handover",
+      "model": "TC-ACT",
+      "evaluation_seed": 2030,
+      "successes": 202,
+      "trials": 250,
+      "success_percent": 80.8,
+      "source_id": "handover-tc-seed2030"
+    }
+  ],
+  "source_provenance": [
+    {
+      "id": "basket-act-seed2026",
+      "logical_filename": "basket_act_e6000_decomp_amp_rand2cm_seed2026_n250.json",
+      "sha256": "c5a3eb1fc8fa5797656597de1fbfa7190dea817b789c957159aef6096dc596d9",
+      "bytes": 143655
+    },
+    {
+      "id": "basket-tc-seed2026",
+      "logical_filename": "basket_tc_e6000_decomp_amp_rand2cm_seed2026_n250.json",
+      "sha256": "46c2bde8ae312be00f625e93b32bfca9f87c808088c75e76c5f55dac5d4417ab",
+      "bytes": 143797
+    },
+    {
+      "id": "basket-act-seed2027",
+      "logical_filename": "basket_act_e6000_decomp_amp_rand2cm_seed2027_n250.json",
+      "sha256": "fe8fcb0fe2abcb330df897a9bd27dd7e4d25db15d1f3e86d57a8620d4e34b7f2",
+      "bytes": 143722
+    },
+    {
+      "id": "basket-tc-seed2027",
+      "logical_filename": "basket_tc_e6000_decomp_amp_rand2cm_seed2027_n250.json",
+      "sha256": "7e914b9177b7e2067b70a1a14866d1d677cde70aaab40dc4a4a159209e19c2dd",
+      "bytes": 143863
+    },
+    {
+      "id": "basket-act-seed2028",
+      "logical_filename": "basket_act_e6000_decomp_amp_rand2cm_seed2028_n250.json",
+      "sha256": "bd4eb74fb4cfbb8220a6e4d4eb56663986a9469d31091fa93ee34fa4a0ea340c",
+      "bytes": 143720
+    },
+    {
+      "id": "basket-tc-seed2028",
+      "logical_filename": "basket_tc_e6000_decomp_amp_rand2cm_seed2028_n250.json",
+      "sha256": "08d63a962628c0a77e05658092f7eeaed7d3386858d29a70dfd3b30b87f07238",
+      "bytes": 143864
+    },
+    {
+      "id": "basket-act-seed2029",
+      "logical_filename": "basket_act_e6000_decomp_amp_rand2cm_seed2029_n250.json",
+      "sha256": "66a59a6eadf1efa2f43fdab8c2ffd4423eaab214e758366a0587edd3a05fe026",
+      "bytes": 143672
+    },
+    {
+      "id": "basket-tc-seed2029",
+      "logical_filename": "basket_tc_e6000_decomp_amp_rand2cm_seed2029_n250.json",
+      "sha256": "3003b7ae538fb704b35bac52320ac3e506f2337def43fa3a9c1c57f040863bb1",
+      "bytes": 143809
+    },
+    {
+      "id": "basket-act-seed2030",
+      "logical_filename": "basket_act_e6000_decomp_amp_rand2cm_seed2030_n250.json",
+      "sha256": "df78eb2690b5bbab9b19d7725264c17cdb40751c5e983ff38cb7d18277a1cf42",
+      "bytes": 143795
+    },
+    {
+      "id": "basket-tc-seed2030",
+      "logical_filename": "basket_tc_e6000_decomp_amp_rand2cm_seed2030_n250.json",
+      "sha256": "e297637b69bfb092a169bbc06ccfa8c0da017c6dc407b6f7890e92689a578fd7",
+      "bytes": 143931
+    },
+    {
+      "id": "handover-act-seed2026",
+      "logical_filename": "handover_act_e6000_seed2026_n250.json",
+      "sha256": "ca19fdbbaadde994df03c69fcaddc51d1c6b1c43300191b562a7aa8a90439bec",
+      "bytes": 72744
+    },
+    {
+      "id": "handover-tc-seed2026",
+      "logical_filename": "handover_tc_e6000_seed2026_n250.json",
+      "sha256": "65570827a452f4d356dc45506f553a37ce8b4287131865497a714739b5d3702f",
+      "bytes": 171303
+    },
+    {
+      "id": "handover-act-seed2027",
+      "logical_filename": "handover_act_e6000_rand2cm_seed2027_n250.json",
+      "sha256": "ba2d9023f560466fbd8e231684ccec98adb34c1e4d3c8ba36d5153a7bf1e341e",
+      "bytes": 72749
+    },
+    {
+      "id": "handover-tc-seed2027",
+      "logical_filename": "handover_tc_e6000_rand2cm_seed2027_n250.json",
+      "sha256": "7262b75c10b61b892aded158581071650abf2a119f266b81140e8c0f7a663768",
+      "bytes": 171381
+    },
+    {
+      "id": "handover-act-seed2028",
+      "logical_filename": "handover_act_e6000_rand2cm_seed2028_n250.json",
+      "sha256": "c75a81c3ea72b69c1fade0aa7ebf054a3e813ef0f94d4062df6455279d8bab9e",
+      "bytes": 72737
+    },
+    {
+      "id": "handover-tc-seed2028",
+      "logical_filename": "handover_tc_e6000_rand2cm_seed2028_n250.json",
+      "sha256": "d3bb23cc6eb7f7fb579583dcaeb379d2ed76ce34c2c990c6fdeac11d93638500",
+      "bytes": 171339
+    },
+    {
+      "id": "handover-act-seed2029",
+      "logical_filename": "handover_act_e6000_rand2cm_seed2029_n250.json",
+      "sha256": "7647a17d86089b6f8933c637e24a1348685e4724762eb2447b7a2175ecbc154c",
+      "bytes": 72754
+    },
+    {
+      "id": "handover-tc-seed2029",
+      "logical_filename": "handover_tc_e6000_rand2cm_seed2029_n250.json",
+      "sha256": "47d17f92bcf0cb93f89e813c6b25e1bb666da37c879a308abf1ce78f9d6f8383",
+      "bytes": 171348
+    },
+    {
+      "id": "handover-act-seed2030",
+      "logical_filename": "handover_act_e6000_rand2cm_seed2030_n250.json",
+      "sha256": "8ee16e132702dd1ad3229fb264be6b6084655a01dd71c1e0512d5e216373e2fa",
+      "bytes": 72775
+    },
+    {
+      "id": "handover-tc-seed2030",
+      "logical_filename": "handover_tc_e6000_rand2cm_seed2030_n250.json",
+      "sha256": "622dc89515e16086fb87c275456d3547aeaef33a27480ba20c5264df79142b97",
+      "bytes": 171401
+    }
+  ],
+  "limitations": [
+    "Task-specific horizons and physics differ; the two tasks are not claimed to have identical complete physical settings.",
+    "Five evaluation seeds vary resets of one trained seed per model; these are not five independently trained models.",
+    "No confidence intervals, significance tests, or equivalence claims are inferred from the observed success totals."
+  ]
+}
