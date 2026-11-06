@@ -42,6 +42,7 @@
 <li><strong><span data-locale="en">Real-robot deployment</span><span data-locale="ko">실로봇 배포</span></strong> — <span data-locale="en">Cameras, inference & control</span><span data-locale="ko">카메라·추론·제어 연결</span></li>
 </ol>
 <div class="systems-resource-links" style="display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-top:18px">
+<a class="inline-link" href="#systems-implementation"><span data-locale="en">System architecture and implementation ↓</span><span data-locale="ko">시스템 구조와 구현 상세 ↓</span></a>
 <a class="inline-link" href="omx-teleoperation-learning-guide.html" target="_blank" rel="noopener noreferrer" aria-label="Open OMX Teleoperation and Learning Guide in a new tab"><span data-locale="en">OMX Teleoperation &amp; Learning Guide (new tab) ↗</span><span data-locale="ko">OMX 전체 구현 가이드 (새 탭) ↗</span></a>
 </div>
 </div><img src="../assets/media/dual-arm-workspace.jpg" alt="Actual dual-arm OMX teleoperation and simulation workspace" loading="lazy"></div>
@@ -50,7 +51,14 @@
 <article class="research-card"><span class="research-label">DATA INTERFACES</span><h3><span data-locale="en">Make the data consistent</span><span data-locale="ko">데이터 인터페이스 정합</span></h3><p><span data-locale="en">HDF5 episodes, RGB/state/action alignment, source IDs, normalization statistics, and training/validation splits.</span><span data-locale="ko">HDF5 에피소드, RGB·state·action 정렬, 출처 ID, 정규화 통계와 학습·검증 분할을 관리했습니다.</span></p></article>
 <article class="research-card"><span class="research-label">PHYSICAL EXECUTION</span><h3><span data-locale="en">Preserve the action contract</span><span data-locale="ko">실행 규약 유지</span></h3><p><span data-locale="en">Policy server → TCP → ROS 2 → physical arms, with explicit joint order, units, scaling, and reset behavior.</span><span data-locale="ko">정책 서버 → TCP → ROS 2 → 실물 로봇 경로에서 관절 순서·단위·스케일과 초기화 방식을 맞췄습니다.</span></p></article>
 </div>
-<details class="research-disclosure research-inline-details" id="systems-implementation"><summary><span data-locale="en">System architecture and implementation</span><span data-locale="ko">시스템 구조 및 구현 상세</span></summary><div class="disclosure-body">
+<details class="research-disclosure research-inline-details" id="systems-implementation"><summary><span data-locale="en">System architecture and implementation</span><span data-locale="ko">시스템 구조 및 구현 상세</span></summary><div class="disclosure-body"><p><span data-locale="en">The ROS 2 leader/follower setup connects recording, aligned HDF5 episodes, policy training, matched rollout evaluation, and hardware control with consistent joint/gripper action contracts.</span><span data-locale="ko">ROS 2 리더·팔로워 구성은 데이터 기록, 정렬된 HDF5 에피소드, 정책 학습, 동일 조건 평가, 실물 제어를 일관된 관절·그리퍼 행동 규약으로 연결합니다.</span></p>
+<ol class="research-steps">
+<li><b>01</b><strong><span data-locale="en">Digital twin</span><span data-locale="ko">디지털 트윈</span></strong><p>ROS 2 · OpenMANIPULATOR-X</p></li>
+<li><b>02</b><strong><span data-locale="en">Collect demonstrations</span><span data-locale="ko">시연 데이터 수집</span></strong><p><span data-locale="en">Teleoperation · Mimic · Code-scripted</span><span data-locale="ko">텔레오퍼레이션 · Mimic · 코드 스크립트</span></p></li>
+<li><b>03</b><strong><span data-locale="en">Train policies</span><span data-locale="ko">정책 학습</span></strong><p>ACT · TC-ACT · Diffusion Policy</p></li>
+<li><b>04</b><strong><span data-locale="en">Evaluate</span><span data-locale="ko">성능 평가</span></strong><p><span data-locale="en">Task success · Matched resets</span><span data-locale="ko">태스크 성공률 · 동일 초기조건</span></p></li>
+<li><b>05</b><strong><span data-locale="en">Deploy on real robots</span><span data-locale="ko">실로봇 배포</span></strong><p>GPU → TCP → ROS 2 → OMX</p></li>
+</ol>
 <ul class="research-detail-list">
 <li><span data-locale="en">Joint order, timestamp alignment, normalization and HDF5 episode format are kept consistent during recording and training.</span><span data-locale="ko">관절 순서, 타임스탬프, 정규화, HDF5 에피소드 형식을 기록 및 학습 과정에서 일관되게 유지합니다.</span></li>
 <li><span data-locale="en">The physical robot requires its own controller period, gripper conversion and ROS 2 bridge; matching simulation settings alone is not sufficient.</span><span data-locale="ko">실물 로봇에는 별도 제어 주기, 그리퍼 값 변환, ROS 2 브리지가 필요하며 시뮬레이션 설정만 같게 해서는 충분하지 않습니다.</span></li>
