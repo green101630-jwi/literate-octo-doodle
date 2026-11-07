@@ -2,8 +2,8 @@
   "schema_version": 1,
   "media_url_base": "manifest",
   "description": {
-    "en": "Selected successful simulation rollouts and reserved real-robot video slots. Empty entries do not indicate completed experiments.",
-    "ko": "선별한 시뮬레이션 성공 롤아웃과 실로봇 영상 등록 공간입니다. 빈 항목은 실험 완료 여부를 뜻하지 않습니다."
+    "en": "Selected successful simulation rollouts and real-robot TC-ACT demonstrations. Empty entries do not indicate completed experiments.",
+    "ko": "선별한 시뮬레이션 성공 롤아웃과 실로봇 TC-ACT 시연입니다. 빈 항목은 실험 완료 여부를 뜻하지 않습니다."
   },
   "slots": [
     {
@@ -157,10 +157,19 @@
       "environment": "real",
       "policy": "tc-act",
       "task": "basket",
-      "src": null,
-      "poster": null,
-      "caption": null,
-      "experiment": null
+      "src": "policy-videos/real-tc-act-basket.mp4",
+      "poster": "policy-videos/real-tc-act-basket.jpg",
+      "caption": {
+        "en": "Real-robot demonstration: two arms pick up colored blocks and place them in a box.",
+        "ko": "양팔이 색상 블록을 집어 상자에 넣는 실로봇 시연입니다."
+      },
+      "experiment": {
+        "model": "TC-ACT",
+        "condition": {
+          "en": "Same TC-ACT model as in simulation, mapped to hardware",
+          "ko": "시뮬레이션과 동일한 TC-ACT 모델을 하드웨어에 매핑"
+        }
+      }
     },
     {
       "id": "video-real-diffusion-basket",
@@ -187,10 +196,19 @@
       "environment": "real",
       "policy": "tc-act",
       "task": "handover",
-      "src": null,
-      "poster": null,
-      "caption": null,
-      "experiment": null
+      "src": "policy-videos/real-tc-act-handover.mp4",
+      "poster": "policy-videos/real-tc-act-handover.jpg",
+      "caption": {
+        "en": "Real-robot demonstration: one arm passes a tube to the other, which places it in a box.",
+        "ko": "한 팔이 원통을 다른 팔에 전달하고, 전달받은 팔이 상자에 넣는 실로봇 시연입니다."
+      },
+      "experiment": {
+        "model": "TC-ACT",
+        "condition": {
+          "en": "Same TC-ACT model as in simulation, mapped to hardware",
+          "ko": "시뮬레이션과 동일한 TC-ACT 모델을 하드웨어에 매핑"
+        }
+      }
     },
     {
       "id": "video-real-diffusion-handover",

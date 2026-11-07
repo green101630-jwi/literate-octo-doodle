@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "evidence_scope": "Two physical-robot demonstration recordings supplied by the portfolio owner; not an aggregate success-rate evaluation.",
+  "model_identity": {
+    "policy": "TC-ACT",
+    "relationship_to_simulation": "The owner explicitly confirmed that these recordings use the same TC model discussed for simulation, mapped to hardware.",
+    "confirmation_source": "Owner's confirmation in the homepage editing conversation.",
+    "checkpoint_version": null,
+    "training_seed": null,
+    "training_dataset": null,
+    "observation_configuration": null,
+    "note": "No specific simulation checkpoint, epoch, seed, dataset, input configuration, or aggregate success rate is inferred from the model-identity confirmation."
+  },
+  "unreported_recording_information": {
+    "recording_date": null,
+    "initial_placement_protocol": null,
+    "physical_trial_count": null,
+    "physical_success_rate": null,
+    "evaluation_protocol": null
+  },
+  "recordings": [
+    {
+      "slot_id": "video-real-tc-act-basket",
+      "source": "Real_video/TC_basket.mp4",
+      "published_video": "real-tc-act-basket.mp4",
+      "published_poster": "real-tc-act-basket.jpg",
+      "source_sha256": "fadd1f76bc0adb24d37ddf1ad186c9110faa4cdfba51f2eeae0da4b114217c62",
+      "video_git_blob_sha1": "afb69ccd616bec82aa17263c2af0073120814afe",
+      "video_processing": "Byte-for-byte copy of the supplied H.264 MP4; no transcoding, cuts, or playback-speed changes.",
+      "width": 1280,
+      "height": 720,
+      "fps": 24,
+      "frame_count": 695,
+      "duration_seconds": 28.9583333333,
+      "poster_frame_index": 139,
+      "visible_actions": "Two physical robot arms pick up colored blocks and place them in a box.",
+      "outcome_scope": "Visual demonstration only; no aggregate trial outcome is assigned."
+    },
+    {
+      "slot_id": "video-real-tc-act-handover",
+      "source": "Real_video/TC_handover.mp4",
+      "published_video": "real-tc-act-handover.mp4",
+      "published_poster": "real-tc-act-handover.jpg",
+      "source_sha256": "0e43518d10ae7185e46d84be99b5022c5cfbb1c7b7ec5a03fc5626a2465bed75",
+      "video_git_blob_sha1": "6da0b45f76aa2c22003696a6eee9ecc784dfc56b",
+      "video_processing": "Byte-for-byte copy of the supplied H.264 MP4; no transcoding, cuts, or playback-speed changes.",
+      "width": 1280,
+      "height": 720,
+      "fps": 24,
+      "frame_count": 522,
+      "duration_seconds": 21.75,
+      "poster_frame_index": 208,
+      "visible_actions": "One physical robot arm picks up a tube and passes it to the other arm, which places it in a box.",
+      "outcome_scope": "Visual demonstration only; no aggregate trial outcome is assigned."
+    }
+  ]
+}
