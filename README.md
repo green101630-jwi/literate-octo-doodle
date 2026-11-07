@@ -51,6 +51,8 @@ Open `http://localhost:8765`. Serve the directory rather than opening it through
 
 The **Deploy Pages Static** GitHub Actions workflow uploads `docs/`. It runs when changes to the website are pushed to `main` and can also be started manually. GitHub Pages must use **GitHub Actions** as its source, as configured for the existing deployment.
 
+Each run attempt uses a unique `github-pages-<run_id>-<run_attempt>` artifact name shared by the upload and deployment steps, so retrying a failed job does not select duplicate artifacts from earlier attempts.
+
 ## Pre-feedback restore point
 
 The complete website before the feedback revision is preserved on the remote branch [`backup/pre-feedback-2026-11-07`](https://github.com/green101630-jwi/literate-octo-doodle/tree/backup/pre-feedback-2026-11-07), at commit [`b645a24b3ea05808780b46892c167fb769886b7d`](https://github.com/green101630-jwi/literate-octo-doodle/commit/b645a24b3ea05808780b46892c167fb769886b7d). This baseline includes the short About page, enlarged competition media, and the two real-robot TC-ACT recordings. Keep this backup branch at that commit.
