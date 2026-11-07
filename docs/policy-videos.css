@@ -5,11 +5,17 @@
 .policy-video-gallery .policy-video-filters button{border:1px solid var(--line);border-radius:7px;padding:7px 15px;background:var(--white);color:var(--muted);font-size:.79rem;font-weight:700;cursor:pointer}
 .policy-video-gallery .policy-video-filters button:hover{border-color:var(--teal);color:var(--teal-deep)}
 .policy-video-gallery .policy-video-filters button[aria-pressed="true"]{border-color:var(--teal-deep);background:var(--teal-deep);color:var(--white)}
+.policy-video-gallery .policy-video-display-options{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:15px}
+.policy-video-gallery .policy-video-status{margin:0;font-size:.79rem;color:var(--muted)}
+.policy-video-gallery .policy-video-empty-toggle{padding:8px 12px;border:1px solid var(--line);border-radius:7px;background:var(--white);color:var(--muted);font-size:.77rem;font-weight:650;cursor:pointer}
+.policy-video-gallery .policy-video-empty-toggle:hover,.policy-video-gallery .policy-video-empty-toggle[aria-pressed="true"]{border-color:var(--teal);color:var(--teal-deep)}
+.policy-video-gallery .policy-video-empty-toggle:focus-visible,.policy-video-gallery .policy-video-filters button:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.policy-video-gallery [data-policy-state="empty"]{border-style:dashed}
 .policy-video-gallery .policy-video-group{margin-top:36px}
 .policy-video-gallery .policy-video-group-heading{display:flex;align-items:baseline;gap:13px;margin-bottom:17px}
 .policy-video-gallery .policy-video-group-heading h3{margin:0;font-size:1.5rem}
 .policy-video-gallery .policy-video-group-code{font-size:.67rem;font-weight:800;letter-spacing:.12em;color:var(--teal-deep)}
-.policy-video-gallery .policy-video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.policy-video-gallery .policy-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
 .policy-video-gallery .policy-video-card{min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:var(--white);scroll-margin-top:100px}
 .policy-video-gallery .policy-video-frame{width:100%;aspect-ratio:16/9;display:grid;place-items:center;background:var(--soft);border-bottom:1px solid var(--line);overflow:hidden}
 .policy-video-gallery .policy-video-placeholder{padding:20px;text-align:center;max-width:100%;color:var(--muted)}

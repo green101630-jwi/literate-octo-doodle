@@ -37,15 +37,35 @@
     const filterBar = root.querySelector("[data-policy-filters]");
     const filters = Array.from(root.querySelectorAll("[data-policy-filter]"));
     const status = root.querySelector("[data-policy-filter-status]");
+    const emptyToggle = root.querySelector("[data-policy-empty-toggle]");
     let activeFilter = "all";
+    let showEmpty = false;
+    const wiredVideos = new WeakSet();
     const locale = () => document.documentElement.lang.startsWith("ko") ? "ko" : "en";
+
+    function wireVideo(video) {
+      if (wiredVideos.has(video)) return;
+      wiredVideos.add(video);
+      video.addEventListener("play", () => {
+        document.querySelectorAll("video").forEach((other) => {
+          if (other !== video && !other.paused) other.pause();
+        });
+      });
+    }
 
     function updateLanguage() {
       const korean = locale() === "ko";
       if (filterBar) filterBar.setAttribute("aria-label", korean ? "영상 환경 선택" : "Filter videos by environment");
+      if (emptyToggle) {
+        emptyToggle.setAttribute("aria-pressed", String(showEmpty));
+        emptyToggle.textContent = korean ? (showEmpty ? "미등록 슬롯 숨기기" : "미등록 슬롯 보기") : (showEmpty ? "Hide unregistered slots" : "Show unregistered slots");
+      }
       if (status) {
-        const count = cards.filter((card) => activeFilter === "all" || card.dataset.environment === activeFilter).length;
-        status.textContent = korean ? `${count}개 영상 공간 표시` : `${count} video slots shown`;
+        const visible = cards.filter((card) => !card.hidden);
+        const count = visible.filter((card) => card.dataset.policyState === "available").length;
+        const emptyCount = visible.length - count;
+        status.textContent = korean ? `${count}개 영상 표시` : `${count} videos shown`;
+        if (emptyCount) status.textContent += korean ? ` · 미등록 슬롯 ${emptyCount}개` : ` · ${emptyCount} unregistered slots`;
       }
       root.querySelectorAll("video[data-policy-video]").forEach((video) => {
         const card = video.closest("[data-policy-slot]");
@@ -57,16 +77,43 @@
     function applyFilter(value) {
       activeFilter = ["all", "sim", "real"].includes(value) ? value : "all";
       filters.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.policyFilter === activeFilter)));
-      groups.forEach((group) => {
-        group.hidden = activeFilter !== "all" && group.dataset.policyEnvironment !== activeFilter;
-        if (group.hidden) group.querySelectorAll("video").forEach((video) => video.pause());
+      cards.forEach((card) => {
+        const matchesEnvironment = activeFilter === "all" || card.dataset.environment === activeFilter;
+        card.hidden = !matchesEnvironment || (card.dataset.policyState !== "available" && !showEmpty);
+        if (card.hidden) card.querySelectorAll("video").forEach((video) => video.pause());
       });
+      groups.forEach((group) => {
+        group.hidden = !Array.from(group.querySelectorAll("[data-policy-slot]")).some((card) => !card.hidden);
+      });
+      if (emptyToggle) emptyToggle.hidden = !cards.some((card) => card.dataset.policyState !== "available");
       updateLanguage();
     }
 
+    function revealSlotFromHash() {
+      let target;
+      try { target = document.getElementById(decodeURIComponent(location.hash.slice(1))); }
+      catch { return; }
+      if (!target || !cards.includes(target)) return;
+      if (target.dataset.policyState !== "available") showEmpty = true;
+      applyFilter(activeFilter === "all" ? "all" : target.dataset.environment);
+      requestAnimationFrame(() => target.scrollIntoView({ block: "start", behavior: "auto" }));
+    }
+
+    // Static sources keep registered videos usable even if the manifest cannot load.
+    cards.forEach((card) => {
+      const video = card.querySelector("video[data-policy-video]");
+      card.dataset.policyState = video?.querySelector("source[src]") ? "available" : "empty";
+      if (video) wireVideo(video);
+    });
     filters.forEach((button) => button.addEventListener("click", () => applyFilter(button.dataset.policyFilter)));
+    if (emptyToggle) emptyToggle.addEventListener("click", () => {
+      showEmpty = !showEmpty;
+      applyFilter(activeFilter);
+    });
     if (filterBar) filterBar.hidden = false;
     applyFilter("all");
+    window.addEventListener("hashchange", revealSlotFromHash);
+    revealSlotFromHash();
     if ("MutationObserver" in window) {
       new MutationObserver(updateLanguage).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
     }
@@ -86,14 +133,30 @@
     }
 
     function populateCard(card, entry) {
-      // Empty source entries retain the static placeholder without media requests.
-      const sourceURL = mediaURL(entry.src);
-      if (!sourceURL) return;
       if (entry.environment !== card.dataset.environment || entry.policy !== card.dataset.policy || entry.task !== card.dataset.task) return;
       const frame = card.querySelector("[data-policy-frame]");
       if (!frame) return;
+      const sourceURL = mediaURL(entry.src);
+      if (!sourceURL) {
+        card.dataset.policyState = "empty";
+        const previousVideo = frame.querySelector("video");
+        if (previousVideo) {
+          previousVideo.pause();
+          const placeholder = document.createElement("div");
+          placeholder.className = "policy-video-placeholder";
+          const label = document.createElement("span");
+          label.className = "policy-video-placeholder-label";
+          label.textContent = `${card.dataset.environment === "sim" ? "Sim" : "Real"} · ${card.dataset.policyLabel} · ${card.dataset.taskLabel}`;
+          const description = document.createElement("p");
+          appendLocalized(description, { en: "No video registered", ko: "미등록 슬롯" });
+          placeholder.append(label, description);
+          frame.replaceChildren(placeholder);
+        }
+        return;
+      }
+      card.dataset.policyState = "available";
 
-      const video = document.createElement("video");
+      const video = frame.querySelector("video[data-policy-video]") || document.createElement("video");
       video.controls = true;
       video.playsInline = true;
       video.preload = "metadata";
@@ -101,18 +164,14 @@
       video.setAttribute("playsinline", "");
       const posterURL = mediaURL(entry.poster);
       if (posterURL) video.poster = posterURL;
-      const source = document.createElement("source");
-      source.src = sourceURL;
+      const source = video.querySelector("source") || document.createElement("source");
+      if (source.src !== sourceURL) source.src = sourceURL;
       const types = { mp4: "video/mp4", webm: "video/webm", ogv: "video/ogg" };
       const extension = new URL(sourceURL).pathname.split(".").pop().toLowerCase();
       if (types[extension]) source.type = types[extension];
-      video.append(source);
-      video.addEventListener("play", () => {
-        document.querySelectorAll("video").forEach((other) => {
-          if (other !== video && !other.paused) other.pause();
-        });
-      });
-      frame.replaceChildren(video);
+      if (!video.contains(source)) video.append(source);
+      wireVideo(video);
+      if (!frame.contains(video)) frame.replaceChildren(video);
 
       const caption = card.querySelector("[data-policy-caption]");
       if (caption && appendLocalized(caption, entry.caption)) caption.hidden = false;
@@ -139,10 +198,10 @@
           const entry = entries.get(card.dataset.policySlot);
           if (entry) populateCard(card, entry);
         });
-        updateLanguage();
+        applyFilter(activeFilter);
       })
       .catch(() => {
-        // Static slots and environment filtering remain usable if JSON is unavailable.
+        // Registered static players, empty-slot toggling and filters remain usable.
       });
   }
 

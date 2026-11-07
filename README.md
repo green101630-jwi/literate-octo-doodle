@@ -10,10 +10,10 @@ GitHub Pages serves **`docs/`**. The public portfolio has four English/Korean pa
 
 | Page | Source | Purpose |
 | --- | --- | --- |
-| [Home](https://green101630-jwi.github.io/literate-octo-doodle/) | `docs/index.html` | Academic introduction and selected research |
+| [Home](https://green101630-jwi.github.io/literate-octo-doodle/) | `docs/index.html` | Research question, selected results, contributions, and engineering projects |
 | [Research](https://green101630-jwi.github.io/literate-octo-doodle/research/) | `docs/research/index.html` | Research overview and policy video gallery |
 | [Projects](https://green101630-jwi.github.io/literate-octo-doodle/projects/) | `docs/projects/index.html` | Additional robotics, embedded, and biomedical projects |
-| [About](https://green101630-jwi.github.io/literate-octo-doodle/about/) | `docs/about/index.html` | Background, academic information, and contact |
+| [About](https://green101630-jwi.github.io/literate-octo-doodle/about/) | `docs/about/index.html` | Short personal introduction, contact, and co-authored publication |
 | [Technical report](https://green101630-jwi.github.io/literate-octo-doodle/research/details/) | `docs/research-details.html` | English experiment details, charts, and existing footage; `docs/research/details/index.html` redirects here |
 
 The repository-root `index.html` is an older technical guide; `portfolio/` is an archived draft. Edit `docs/` for the published website.
@@ -51,11 +51,17 @@ Open `http://localhost:8765`. Serve the directory rather than opening it through
 
 The **Deploy Pages Static** GitHub Actions workflow uploads `docs/`. It runs when changes to the website are pushed to `main` and can also be started manually. GitHub Pages must use **GitHub Actions** as its source, as configured for the existing deployment.
 
+## Pre-feedback restore point
+
+The complete website before the feedback revision is preserved on the remote branch [`backup/pre-feedback-2026-11-07`](https://github.com/green101630-jwi/literate-octo-doodle/tree/backup/pre-feedback-2026-11-07), at commit [`b645a24b3ea05808780b46892c167fb769886b7d`](https://github.com/green101630-jwi/literate-octo-doodle/commit/b645a24b3ea05808780b46892c167fb769886b7d). This baseline includes the short About page, enlarged competition media, and the two real-robot TC-ACT recordings. Keep this backup branch at that commit.
+
+The revision is developed on `revamp/feedback-2026-11-07`. To undo the published revision while preserving its history, restore the baseline `docs/` tree in a new commit and redeploy `main`; individual pages can also be restored separately. Preserve later unrelated edits and refresh stylesheet/script cache versions when restoring assets. The tracked Git history contains all website images and videos. A local ZIP snapshot of the same baseline is also retained beside the checkout as `homepage-before-feedback-2026-11-07.zip`.
+
 ## Adding policy videos
 
 The [policy video gallery](https://green101630-jwi.github.io/literate-octo-doodle/research/#policy-videos) is configured in `docs/assets/media/policy-videos.json` and rendered by `docs/policy-videos.js` with `docs/policy-videos.css`.
 
-It provides **12 slots: simulation / real × ACT / TC-ACT / Diffusion × Basket / Handover**. Verified simulation successes and owner-confirmed real TC-ACT demonstrations are populated with videos, posters, and their available metadata; remaining slots keep `src: null` and `poster: null`. The two real TC-ACT recordings use the same model discussed for simulation, mapped to hardware, as confirmed by the owner. Their specific checkpoint, observation configuration, recording dates, and aggregate physical evaluation results were not supplied. An empty slot reserves space for future footage; it does **not** claim that a model was trained, an experiment was completed, or a task succeeded. Existing Home and technical-report media remain separate.
+It provides **12 slots: simulation / real × ACT / TC-ACT / Diffusion × Basket / Handover**. The six populated videos are shown by default; unregistered slots are available through an optional toggle. Verified simulation successes and owner-confirmed real TC-ACT demonstrations have videos, posters, and their available metadata; remaining slots keep `src: null` and `poster: null`. The two real TC-ACT recordings use the same model discussed for simulation, mapped to hardware, as confirmed by the owner. Their specific checkpoint, observation configuration, recording dates, and aggregate physical evaluation results were not supplied. An empty slot reserves space for future footage; it does **not** claim that a model was trained, an experiment was completed, or a task succeeded. Existing Home and technical-report media remain separate.
 
 To add a recording:
 
