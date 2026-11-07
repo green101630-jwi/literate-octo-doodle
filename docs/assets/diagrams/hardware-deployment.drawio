@@ -20,7 +20,7 @@
         <mxCell id="a-state" parent="1" style="rounded=1;arcSize=10;whiteSpace=nowrap;html=0;fillColor=#f0f8f7;strokeColor=#007f75;strokeWidth=2;fontColor=#18364c;fontFamily=Arial;fontSize=18;align=center;verticalAlign=middle;spacing=12;" value="ACT / Diffusion&#10;Latest RGB frame&#10;Joints + fixed environment" vertex="1">
           <mxGeometry height="75" width="230" x="60" y="210" as="geometry" />
         </mxCell>
-        <mxCell id="a-camera" parent="1" style="rounded=1;arcSize=10;whiteSpace=nowrap;html=0;fillColor=#f6f1fa;strokeColor=#75439a;strokeWidth=2;fontColor=#18364c;fontFamily=Arial;fontSize=18;align=center;verticalAlign=middle;spacing=12;" value="Visual TC-ACT&#10;Latest RGB frame&#10;Joints + sampled history" vertex="1">
+        <mxCell id="a-camera" parent="1" style="rounded=1;arcSize=10;whiteSpace=nowrap;html=0;fillColor=#f6f1fa;strokeColor=#75439a;strokeWidth=2;fontColor=#18364c;fontFamily=Arial;fontSize=18;align=center;verticalAlign=middle;spacing=12;" value="TC-ACT&#10;Latest RGB frame&#10;Joints + sampled history" vertex="1">
           <mxGeometry height="95" width="230" x="60" y="305" as="geometry" />
         </mxCell>
         <mxCell id="a-policy" parent="1" style="rounded=1;arcSize=10;whiteSpace=nowrap;html=0;fillColor=#f6f1fa;strokeColor=#75439a;strokeWidth=2;fontColor=#18364c;fontFamily=Arial;fontSize=21;align=center;verticalAlign=middle;spacing=12;" value="GPU policy server&#10;&#10;ACT · TC-ACT&#10;Diffusion Policy" vertex="1">

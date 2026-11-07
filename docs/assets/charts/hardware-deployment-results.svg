@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns2="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" width="1320" height="900" viewBox="0 0 950.4 648" version="1.1" role="img" aria-labelledby="hardware-deployment-results-title hardware-deployment-results-desc">
- <title id="hardware-deployment-results-title">ACT and Visual TC-ACT: separate physical deployment studies</title><desc id="hardware-deployment-results-desc">ACT: five consecutive operator-observed successes on a fixed-layout handover; no denominator-based success rate is claimed, and only the final 796-step run has a detailed command and feedback log. Visual TC-ACT: one training seed, 25 operator-observed physical trials per task and observation condition. Pick&amp;Place: 14D joint-state with RGB 21/25 (84%), phase-augmented 17D state with RGB 0/25 (0%). The 14D/17D dimensions describe the state vector; both configurations also use live RGB. Handover: 14D 23/25 (92%), 17D 20/25 (80%). These are separate studies, not a matched ACT versus TC-ACT comparison.</desc><metadata>
+ <title id="hardware-deployment-results-title">ACT and TC-ACT: separate physical deployment studies</title><desc id="hardware-deployment-results-desc">ACT: five consecutive operator-observed successes on a fixed-layout handover; no denominator-based success rate is claimed, and only the final 796-step run has a detailed command and feedback log. TC-ACT: one training seed, 25 operator-observed physical trials per task and observation condition. Pick&amp;Place: 14D joint-state with RGB 21/25 (84%), phase-augmented 17D state with RGB 0/25 (0%). The 14D/17D dimensions describe the state vector; both configurations also use live RGB. Handover: 14D 23/25 (92%), 17D 20/25 (80%). These are separate studies, not a matched ACT versus TC-ACT comparison.</desc><metadata>
   <rdf:RDF>
    <ns2:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-    <dc:title>ACT and Visual TC-ACT: separate physical deployment studies</dc:title>
-    <dc:description>ACT: five consecutive operator-observed successes on a fixed-layout handover; no denominator-based success rate is claimed, and only the final 796-step run has a detailed command and feedback log. Visual TC-ACT: one training seed, 25 operator-observed physical trials per task and observation condition. Pick&amp;Place: 14D joint-state with RGB 21/25 (84%), phase-augmented 17D state with RGB 0/25 (0%). The 14D/17D dimensions describe the state vector; both configurations also use live RGB. Handover: 14D 23/25 (92%), 17D 20/25 (80%). These are separate studies, not a matched ACT versus TC-ACT comparison.</dc:description>
+    <dc:title>ACT and TC-ACT: separate physical deployment studies</dc:title>
+    <dc:description>ACT: five consecutive operator-observed successes on a fixed-layout handover; no denominator-based success rate is claimed, and only the final 796-step run has a detailed command and feedback log. TC-ACT: one training seed, 25 operator-observed physical trials per task and observation condition. Pick&amp;Place: 14D joint-state with RGB 21/25 (84%), phase-augmented 17D state with RGB 0/25 (0%). The 14D/17D dimensions describe the state vector; both configurations also use live RGB. Handover: 14D 23/25 (92%), 17D 20/25 (80%). These are separate studies, not a matched ACT versus TC-ACT comparison.</dc:description>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <ns2:Agent>
@@ -156,7 +156,7 @@
    <text style="fill: #52647a; font: 12.5px 'DejaVu Sans'; text-anchor: start" x="145.4112" y="202.824" transform="rotate(-0, 145.4112, 202.824)">Detailed command / feedback log: final 796-step run only</text>
   </g>
   <g id="text_20">
-   <text style="fill: #182c43; font: 700 20px 'DejaVu Sans'; text-anchor: start" x="61.776" y="277.636875" transform="rotate(-0, 61.776, 277.636875)">Visual TC-ACT · live RGB + joints</text>
+   <text style="fill: #182c43; font: 700 20px 'DejaVu Sans'; text-anchor: start" x="61.776" y="277.636875" transform="rotate(-0, 61.776, 277.636875)">TC-ACT · live RGB + joints</text>
   </g>
   <g id="text_21">
    <text style="fill: #52647a; font: 12.5px 'DejaVu Sans'; text-anchor: start" x="61.776" y="579.96" transform="rotate(-0, 61.776, 579.96)">TC-ACT: one trained seed · 25 physical trials per task / condition</text>

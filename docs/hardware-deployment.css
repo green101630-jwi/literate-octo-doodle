@@ -35,12 +35,6 @@
 #deployment .hardware-rate-period{display:block;margin-top:6px;color:var(--muted);font-size:.82rem;font-variant-numeric:tabular-nums}
 #deployment .hardware-rate-flow p{font-size:.75rem;line-height:1.7;color:var(--muted);margin:12px 0 0}
 #deployment .hardware-cadence-note{font-size:.79rem;line-height:1.85;color:var(--muted);margin:18px 0 0}
-#deployment .hardware-cadence-details{margin-top:17px;border-top:1px solid var(--line);padding-top:15px}
-#deployment .hardware-cadence-details summary{cursor:pointer;color:var(--teal-deep);font-weight:750;font-size:.8rem;line-height:1.6}
-#deployment .hardware-cadence-body{padding-top:15px}
-#deployment .hardware-cadence-body>p{font-size:.78rem;line-height:1.85;color:var(--muted);margin:14px 0 0}
-#deployment .hardware-rate-table-wrap{overflow-x:auto;overscroll-behavior-x:contain}
-#deployment .hardware-rate-table-wrap .research-table{min-width:510px;width:100%;margin:0;font-size:.8rem}
 #deployment .hardware-engineering-heading{margin:45px 0 18px}
 #deployment .hardware-engineering-heading h3{font-size:1.4rem;margin:0 0 9px}
 #deployment .hardware-engineering-heading p{color:var(--muted);font-size:.88rem;margin:0}

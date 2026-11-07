@@ -123,7 +123,7 @@ def render_results(data: dict, output: Path) -> None:
              weight="bold", va="baseline")
     fig.text(.153, .687, "Detailed command / feedback log: final 796-step run only",
              fontsize=12.5, color=MUTED, va="baseline")
-    fig.text(.065, .595, "Visual TC-ACT · live RGB + joints", fontsize=20,
+    fig.text(.065, .595, "TC-ACT · live RGB + joints", fontsize=20,
              weight="bold", va="top")
     ax = fig.add_axes([.105, .19, .80, .315])
     ax.set_ylim(0, 108)
@@ -153,10 +153,10 @@ def render_results(data: dict, output: Path) -> None:
              fontsize=12.5, color=MUTED)
     fig.text(.065, .06, "ACT and TC-ACT here use different policies, inputs and trial protocols.",
              fontsize=12.5, color=MUTED)
-    save(fig, output, "ACT and Visual TC-ACT: separate physical deployment studies",
+    save(fig, output, "ACT and TC-ACT: separate physical deployment studies",
          "ACT: five consecutive operator-observed successes on a fixed-layout handover; "
          "no denominator-based success rate is claimed, and only the final 796-step run "
-         "has a detailed command and feedback log. Visual TC-ACT: one training seed, "
+         "has a detailed command and feedback log. TC-ACT: one training seed, "
          "25 operator-observed physical trials per task and observation condition. "
          "Pick&Place: 14D joint-state with RGB 21/25 (84%), phase-augmented "
          "17D state with RGB 0/25 (0%). The 14D/17D dimensions describe the "

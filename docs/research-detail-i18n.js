@@ -792,8 +792,8 @@
     "독립적인 제어 주기"
   ],
   [
-    "This Task2 ACT policy uses joint and fixed-environment observations. Its hardware result is a separate experiment from the real-camera Visual TC-ACT study below.",
-    "Task2 ACT 정책은 관절 상태와 고정 환경 관측을 사용합니다. 실물 평가 결과는 아래의 실시간 카메라 Visual TC-ACT 실험과 별개입니다."
+    "This Task2 ACT policy uses joint and fixed-environment observations. Its hardware result is a separate experiment from the real-camera TC-ACT study below.",
+    "Task2 ACT 정책은 관절 상태와 고정 환경 관측을 사용합니다. 실물 평가 결과는 아래의 실시간 카메라 TC-ACT 실험과 별개입니다."
   ],
   [
     "Download the hardware mapping test",
@@ -844,8 +844,8 @@
     "실물 로봇 구동까지"
   ],
   [
-    "I collected real-camera demonstrations and deployed Visual TC-ACT using live RGB and joint observations. The study compares joint-only 14D inputs with 17D inputs that add phase features.",
-    "실물 카메라 시연을 수집하고 실시간 RGB 영상과 관절 상태를 입력으로 Visual TC-ACT를 배포했습니다. 관절만 사용하는 14D와 phase 특징 3개를 추가한 17D 입력을 비교했습니다."
+    "I collected real-camera demonstrations and deployed TC-ACT using live RGB and joint observations. The study compares joint-only 14D inputs with 17D inputs that add phase features.",
+    "실물 카메라 시연을 수집하고 실시간 RGB 영상과 관절 상태를 입력으로 TC-ACT를 배포했습니다. 관절만 사용하는 14D와 phase 특징 3개를 추가한 17D 입력을 비교했습니다."
   ],
   [
     "Camera thread",
@@ -904,8 +904,8 @@
     "관측 및 데이터셋 조건"
   ],
   [
-    "Real-camera clean30 datasets; 24 training / 6 validation demonstrations per task. 14D uses joint observations; 17D adds three phase features. Historical image and joint information is maintained by the Visual TC-ACT policy.",
-    "실물 카메라 clean30 데이터셋에서 태스크당 학습 24개·검증 6개 시연을 사용했습니다. 14D는 관절 상태를 사용하고 17D에는 phase 특징 3개를 추가합니다. Visual TC-ACT 정책은 과거 영상과 관절 이력도 유지합니다."
+    "Real-camera clean30 datasets; 24 training / 6 validation demonstrations per task. 14D uses joint observations; 17D adds three phase features. Historical image and joint information is maintained by the TC-ACT policy.",
+    "실물 카메라 clean30 데이터셋에서 태스크당 학습 24개·검증 6개 시연을 사용했습니다. 14D는 관절 상태를 사용하고 17D에는 phase 특징 3개를 추가합니다. TC-ACT 정책은 과거 영상과 관절 이력도 유지합니다."
   ],
   [
     "Physical real-camera trial counts",

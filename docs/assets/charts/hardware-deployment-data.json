@@ -18,7 +18,7 @@
       "limitation": "No denominator-based success rate is inferred; detailed feedback and timing are retained only for the final run."
     },
     "tc_act": {
-      "model": "Visual TC-ACT",
+      "model": "TC-ACT",
       "input": "Live RGB and joint observations, with sampled observation history",
       "training_seed": 0,
       "measurement_type": "user-observed physical trial totals",
