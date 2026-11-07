@@ -1,0 +1,15 @@
+/* A short personal introduction using the shared portfolio palette and actions. */
+html[data-portfolio-page="about"] body{min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
+html[data-portfolio-page="about"] main{flex:1;display:flex;align-items:center}
+.about-personal{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.85fr);align-items:center;gap:64px;padding-top:84px;padding-bottom:92px}
+.about-personal-copy{min-width:0}
+.about-personal h1{font-size:clamp(2rem,3.4vw,3.1rem);line-height:1.2;margin-bottom:30px}
+.about-personal-bio{font-size:1.02rem;line-height:1.95;color:#405c6b;word-break:keep-all;overflow-wrap:anywhere}
+.about-personal-bio p{margin-bottom:20px}
+.about-personal-bio p:last-child{margin-bottom:0}
+.about-contact{margin-top:30px}
+.about-personal-photo{min-width:0;margin:0}
+.about-personal-photo img{width:100%;height:auto;border:1px solid var(--line);border-radius:var(--radius)}
+.about-personal-photo figcaption{margin-top:12px;color:var(--muted);font-size:.75rem;line-height:1.6}
+@media(max-width:950px){.about-personal{gap:34px;grid-template-columns:minmax(0,1.3fr) minmax(0,.8fr)}}
+@media(max-width:700px){.about-personal{grid-template-columns:1fr;gap:34px;padding-top:48px;padding-bottom:48px}.about-personal h1{margin-bottom:24px}.about-personal-bio{font-size:.98rem;line-height:1.9}.about-contact{margin-top:25px}.about-personal-photo{max-width:460px}}
