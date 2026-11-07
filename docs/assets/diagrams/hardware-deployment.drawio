@@ -6,10 +6,10 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="a-title" value="Shared deployment architecture" style="text;html=0;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontColor=#18364c;fontFamily=Arial;fontSize=30;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="40" y="30" width="1300" height="45" as="geometry" />
+          <mxGeometry x="40" y="30" width="900" height="45" as="geometry" />
         </mxCell>
-        <mxCell id="a-subtitle" value="Shared action path; temporal context is added inside TC-ACT." style="text;html=0;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontColor=#52647a;fontFamily=Arial;fontSize=19;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="40" y="82" width="1300" height="35" as="geometry" />
+        <mxCell id="a-subtitle" value="One execution path, with observations adapted to each trained policy." style="text;html=0;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontColor=#52647a;fontFamily=Arial;fontSize=19;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="82" width="900" height="35" as="geometry" />
         </mxCell>
         <mxCell id="a-input-frame" value="" style="rounded=1;arcSize=10;whiteSpace=nowrap;html=0;fillColor=#ffffff;strokeColor=#9aaaba;strokeWidth=2;fontColor=#18364c;fontFamily=Arial;fontSize=20;align=center;verticalAlign=middle;spacing=12;dashed=1;" vertex="1" parent="1">
           <mxGeometry x="40" y="150" width="270" height="270" as="geometry" />
@@ -17,19 +17,19 @@
         <mxCell id="a-input-title" value="Observation adapter" style="text;html=0;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontColor=#18364c;fontFamily=Arial;fontSize=21;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
           <mxGeometry x="55" y="160" width="240" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="a-state" value="Current observation&#10;Per-checkpoint input" style="rounded=1;arcSize=10;whiteSpace=nowrap;html=0;fillColor=#f0f8f7;strokeColor=#007f75;strokeWidth=2;fontColor=#18364c;fontFamily=Arial;fontSize=18;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+        <mxCell id="a-state" value="ACT / Diffusion&#10;Joints + fixed environment" style="rounded=1;arcSize=10;whiteSpace=nowrap;html=0;fillColor=#f0f8f7;strokeColor=#007f75;strokeWidth=2;fontColor=#18364c;fontFamily=Arial;fontSize=18;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
           <mxGeometry x="60" y="210" width="230" height="75" as="geometry" />
         </mxCell>
-        <mxCell id="a-camera" value="TC-ACT context path&#10;Sampled past observations" style="rounded=1;arcSize=10;whiteSpace=nowrap;html=0;fillColor=#f6f1fa;strokeColor=#75439a;strokeWidth=2;fontColor=#18364c;fontFamily=Arial;fontSize=18;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+        <mxCell id="a-camera" value="Visual TC-ACT&#10;Latest RGB frame&#10;Joints + sampled history" style="rounded=1;arcSize=10;whiteSpace=nowrap;html=0;fillColor=#f6f1fa;strokeColor=#75439a;strokeWidth=2;fontColor=#18364c;fontFamily=Arial;fontSize=18;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
           <mxGeometry x="60" y="305" width="230" height="95" as="geometry" />
         </mxCell>
-        <mxCell id="a-policy" value="GPU policy server&#10;ACT&#10;TC-ACT: + TC encoder&#10;Diffusion Policy" style="rounded=1;arcSize=10;whiteSpace=nowrap;html=0;fillColor=#f6f1fa;strokeColor=#75439a;strokeWidth=2;fontColor=#18364c;fontFamily=Arial;fontSize=18;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+        <mxCell id="a-policy" value="GPU policy server&#10;ACT · TC-ACT&#10;Diffusion Policy" style="rounded=1;arcSize=10;whiteSpace=nowrap;html=0;fillColor=#f6f1fa;strokeColor=#75439a;strokeWidth=2;fontColor=#18364c;fontFamily=Arial;fontSize=21;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
           <mxGeometry x="355" y="210" width="230" height="165" as="geometry" />
         </mxCell>
         <mxCell id="a-tcp" value="TCP" style="rounded=1;arcSize=10;whiteSpace=nowrap;html=0;fillColor=#f5f7fa;strokeColor=#9aaaba;strokeWidth=2;fontColor=#18364c;fontFamily=Arial;fontSize=21;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
           <mxGeometry x="630" y="245" width="100" height="95" as="geometry" />
         </mxCell>
-        <mxCell id="a-execute" value="Action execution&#10;Select next action&#10;Command timing" style="rounded=1;arcSize=10;whiteSpace=nowrap;html=0;fillColor=#f0f8f7;strokeColor=#007f75;strokeWidth=2;fontColor=#18364c;fontFamily=Arial;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+        <mxCell id="a-execute" value="Action execution&#10;Select next action&#10;Send robot command" style="rounded=1;arcSize=10;whiteSpace=nowrap;html=0;fillColor=#f0f8f7;strokeColor=#007f75;strokeWidth=2;fontColor=#18364c;fontFamily=Arial;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
           <mxGeometry x="780" y="210" width="235" height="165" as="geometry" />
         </mxCell>
         <mxCell id="a-map" value="Joint / gripper mapping&#10;Command bounds" style="rounded=1;arcSize=10;whiteSpace=nowrap;html=0;fillColor=#fff7e9;strokeColor=#aa6a13;strokeWidth=2;fontColor=#18364c;fontFamily=Arial;fontSize=20;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
@@ -73,8 +73,20 @@
         <mxCell id="a-feedback-label" value="Live joint feedback" style="text;html=0;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontColor=#007f75;fontFamily=Arial;fontSize=19;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
           <mxGeometry x="470" y="515" width="355" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="a-contract" value="Current inputs follow each checkpoint.&#10;TC-ACT adds temporal context to ACT.&#10;Timing figures describe the recorded deployment runs." style="text;html=0;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontColor=#52647a;fontFamily=Arial;fontSize=18;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="355" y="420" width="650" height="85" as="geometry" />
+        <mxCell id="a-contract" value="Inputs follow the deployed checkpoint." style="text;html=0;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontColor=#52647a;fontFamily=Arial;fontSize=18;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="355" y="420" width="650" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="a-compute-card" value="" style="rounded=1;arcSize=12;whiteSpace=nowrap;html=0;fillColor=#f5f7fa;strokeColor=#d3dce5;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="25" width="355" height="106" as="geometry" />
+        </mxCell>
+        <mxCell id="a-compute-label" value="COMPUTE HOST" style="text;html=0;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontFamily=Arial;align=left;verticalAlign=middle;spacing=0;fontSize=13;fontColor=#52647a;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1015" y="34" width="325" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="a-compute-cpu" value="CPU: Intel Core i9-9900KF" style="text;html=0;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontFamily=Arial;align=left;verticalAlign=middle;spacing=0;fontSize=17;fontColor=#18364c;" vertex="1" parent="1">
+          <mxGeometry x="1015" y="59" width="325" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="a-compute-gpu" value="GPU: NVIDIA GeForce RTX 3070 · 8 GB" style="text;html=0;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontFamily=Arial;align=left;verticalAlign=middle;spacing=0;fontSize=17;fontColor=#18364c;" vertex="1" parent="1">
+          <mxGeometry x="1015" y="89" width="325" height="25" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
