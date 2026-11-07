@@ -14,9 +14,33 @@
 #deployment .hardware-figure .figure-heading h3{font-size:1.12rem;line-height:1.5;margin:5px 0 8px}
 #deployment .hardware-figure>img{width:100%;height:auto;display:block}
 #deployment .hardware-figure figcaption{font-size:.79rem;line-height:1.85}
-#deployment .hardware-diagram-viewport{overflow-x:auto;background:#fff;overscroll-behavior-x:contain}
-#deployment .hardware-diagram-viewport img{display:block;width:100%;height:auto;min-width:900px;max-width:none;background:#fff}
-#deployment .hardware-edit-link{display:block;width:fit-content;margin-top:10px;font-size:.78rem}
+#deployment #hardware-architecture{width:100%;max-width:960px;margin:30px auto}
+#deployment #hardware-flow{width:100%;max-width:900px;margin:30px auto}
+#deployment .hardware-diagram .figure-heading{display:flex;justify-content:space-between;align-items:center;padding:16px 20px 8px}
+#deployment .hardware-diagram .figure-heading .research-label{margin:0}
+#deployment .hardware-diagram .figure-heading .research-zoom{margin:0;flex-shrink:0}
+#deployment .hardware-diagram-viewport{width:100%;box-sizing:border-box;padding:0 18px 18px;background:#fff}
+#deployment .hardware-diagram-viewport img{display:block;width:100%;height:auto;min-width:0;max-width:100%;background:#fff}
+.hardware-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap;border:0!important}
+#deployment .hardware-cadence{margin:36px 0;padding:24px;border:1px solid var(--line);border-radius:12px;background:var(--soft);scroll-margin-top:98px}
+#deployment .hardware-cadence-heading{margin-bottom:22px}
+#deployment .hardware-cadence-heading h3{font-size:1.2rem;line-height:1.5;margin:8px 0 0}
+#deployment .hardware-rate-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;list-style:none;margin:0;padding:0}
+#deployment .hardware-rate-flow>li{position:relative;min-width:0;padding:20px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;text-align:center}
+#deployment .hardware-rate-flow>li:not(:last-child)::after{content:'→';position:absolute;right:-25px;top:50%;transform:translateY(-50%);color:var(--teal-deep);font-size:1.2rem}
+#deployment .hardware-rate-label{display:block;font-size:.7rem;font-weight:800;line-height:1.5;letter-spacing:.04em;color:var(--muted)}
+#deployment .hardware-rate-flow strong{display:block;margin-top:10px;color:var(--teal-deep);font-size:2.15rem;line-height:1.15;font-weight:800}
+#deployment .hardware-rate-flow strong small{font-size:.9rem;font-weight:700}
+#deployment .hardware-rate-flow>li:nth-child(2) strong{color:#75439a}
+#deployment .hardware-rate-period{display:block;margin-top:6px;color:var(--muted);font-size:.82rem;font-variant-numeric:tabular-nums}
+#deployment .hardware-rate-flow p{font-size:.75rem;line-height:1.7;color:var(--muted);margin:12px 0 0}
+#deployment .hardware-cadence-note{font-size:.79rem;line-height:1.85;color:var(--muted);margin:18px 0 0}
+#deployment .hardware-cadence-details{margin-top:17px;border-top:1px solid var(--line);padding-top:15px}
+#deployment .hardware-cadence-details summary{cursor:pointer;color:var(--teal-deep);font-weight:750;font-size:.8rem;line-height:1.6}
+#deployment .hardware-cadence-body{padding-top:15px}
+#deployment .hardware-cadence-body>p{font-size:.78rem;line-height:1.85;color:var(--muted);margin:14px 0 0}
+#deployment .hardware-rate-table-wrap{overflow-x:auto;overscroll-behavior-x:contain}
+#deployment .hardware-rate-table-wrap .research-table{min-width:510px;width:100%;margin:0;font-size:.8rem}
 #deployment .hardware-engineering-heading{margin:45px 0 18px}
 #deployment .hardware-engineering-heading h3{font-size:1.4rem;margin:0 0 9px}
 #deployment .hardware-engineering-heading p{color:var(--muted);font-size:.88rem;margin:0}
@@ -38,5 +62,13 @@
  #deployment .hardware-model-card p{margin-bottom:14px}
  #deployment .hardware-figure .figure-heading{align-items:flex-start}
  #deployment .hardware-figure .figure-heading h3{font-size:1.03rem}
- #deployment .hardware-diagram-viewport img{min-width:840px}
+ #deployment .hardware-diagram .figure-heading{align-items:center;padding:14px 14px 7px}
+ #deployment .hardware-diagram .figure-heading .research-label{font-size:.6rem}
+ #deployment .hardware-diagram .figure-heading .research-zoom{font-size:.72rem}
+ #deployment .hardware-diagram-viewport{padding:0 12px 12px}
+ #deployment .hardware-cadence{padding:20px 16px}
+ #deployment .hardware-cadence-heading h3{font-size:1.08rem}
+ #deployment .hardware-rate-flow{grid-template-columns:1fr;gap:28px}
+ #deployment .hardware-rate-flow>li{padding:17px 14px}
+ #deployment .hardware-rate-flow>li:not(:last-child)::after{right:50%;top:auto;bottom:-27px;transform:translateX(50%) rotate(90deg)}
 }
