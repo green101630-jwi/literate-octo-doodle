@@ -270,11 +270,7 @@
 
 </figure>
 
-<figure class="research-figure hardware-figure" id="hardware-timing">
-<div class="figure-heading"><div><span class="research-label">INFERENCE &amp; FEEDBACK</span><h3><span data-locale="en">Reduce compute latency and stale observations</span><span data-locale="ko">추론 지연과 오래된 관측을 각각 개선</span></h3></div><button type="button" class="inline-link research-zoom" data-research-figure="../assets/charts/hardware-deployment-timing.svg" aria-haspopup="dialog" aria-controls="research-figure-modal"><span data-locale="en">Expand here ⤢</span><span data-locale="ko">여기서 확대 ⤢</span></button></div>
-<img src="../assets/charts/hardware-deployment-timing.svg" alt="Separate timing measurements: C128 Diffusion model p99 62.18 to 14.58 milliseconds after compilation; joint feedback age about 192 to 194 milliseconds reduced to about 3 to 5 milliseconds with a depth-one queue" data-alt-en="Separate timing measurements: C128 Diffusion model p99 62.18 to 14.58 milliseconds after compilation; joint feedback age about 192 to 194 milliseconds reduced to about 3 to 5 milliseconds with a depth-one queue" data-alt-ko="별도 지연 측정: 컴파일 후 C128 Diffusion 모델 p99 62.18→14.58ms, 구독 큐 depth1 적용 후 관절 메시지 나이 약192~194→3~5ms" width="1320" height="1000" loading="lazy">
-<figcaption><span data-locale="en">Left: C128 / DDIM10 / RTX3070, 100 model-only measurements per mode. Right: median sensor-message age in a separate no-command probe. The 20ms reference denotes a 50Hz period; it is not an end-to-end deadline guarantee.</span><span data-locale="ko">왼쪽은 C128·DDIM10·RTX3070에서 모드별 100회 측정한 모델 단독 추론입니다. 오른쪽은 명령을 발행하지 않은 별도 시험의 센서 메시지 나이 중앙값입니다. 20ms 기준선은 50Hz 주기이며 전체 실행 지연 보장을 뜻하지 않습니다.</span></figcaption>
-</figure>
+
 
 <details class="research-disclosure hardware-ddim-details" id="hardware-ddim-study"><summary><span data-locale="en">Denoising steps and task quality</span><span data-locale="ko">디노이징 단계에 따른 작업 성능</span></summary><div class="disclosure-body">
 <figure class="research-figure hardware-figure" id="hardware-ddim">
