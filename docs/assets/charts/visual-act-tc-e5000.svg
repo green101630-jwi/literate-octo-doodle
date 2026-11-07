@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns2="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" width="950.4pt" height="576pt" viewBox="0 0 950.4 576" version="1.1" role="img" aria-labelledby="visual-act-tc-e5000-title visual-act-tc-e5000-desc">
- <title id="visual-act-tc-e5000-title">Visual ACT and TC-ACT at epoch 5000</title><desc id="visual-act-tc-e5000-desc">Basket: ACT 96.00%, TC-ACT 89.04%. Handover: ACT 74.08%, TC-ACT 84.08%. Each value uses 1,250 simulated rollouts across five evaluation seeds, with training seed 0.</desc><metadata>
+ <title id="visual-act-tc-e5000-title">Visual ACT and TC-ACT at epoch 5000</title><desc id="visual-act-tc-e5000-desc">Pick&amp;Place: ACT 96.00%, TC-ACT 89.04%. Handover: ACT 74.08%, TC-ACT 84.08%. Each value uses 1,250 simulated rollouts across five evaluation seeds, with training seed 0.</desc><metadata>
   <rdf:RDF>
    <ns2:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
@@ -29,7 +29,7 @@
     <g id="xtick_1">
      <g id="line2d_1" />
      <g id="text_1">
-      <text style="font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #52647a" x="324" y="464.917656" transform="rotate(-0 324 464.917656)">Basket</text>
+      <text style="font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #52647a" x="324" y="464.917656" transform="rotate(-0 324 464.917656)">Pick&amp;Place</text>
      </g>
     </g>
     <g id="xtick_2">

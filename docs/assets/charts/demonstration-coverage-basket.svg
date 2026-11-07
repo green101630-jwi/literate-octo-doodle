@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns2="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" width="748.8pt" height="576pt" viewBox="0 0 748.8 576" version="1.1" role="img" aria-labelledby="demonstration-coverage-basket-title demonstration-coverage-basket-desc">
- <title id="demonstration-coverage-basket-title">Basket initial object-position coverage</title><desc id="demonstration-coverage-basket-desc">Two scatter panels show the yellow and green cube starts in the same 75 selected Basket demonstration episodes: 25 Teleop and 50 Mimic. Each object uses its own selected Teleop centroid as zero, with units in millimeters and axes from minus 25 to plus 25. No jitter is added. Yellow XY population standard deviation: Teleop 11.11/12.76 mm and Mimic 10.85/11.86 mm. Green: Teleop 11.76/10.85 mm and Mimic 11.18/10.64 mm. Teleop and Mimic occupy similar initial XY ranges in this selected release. The two panels are 75 shared episodes, not 150 independent demonstrations. This is dataset coverage, not a measurement of policy generalization.</desc><title>Basket initial object-position coverage</title>
+ <title id="demonstration-coverage-basket-title">Pick&amp;Place initial object-position coverage</title><desc id="demonstration-coverage-basket-desc">Two scatter panels show the yellow and green cube starts in the same 75 selected Pick&amp;Place demonstration episodes: 25 Teleop and 50 Mimic. Each object uses its own selected Teleop centroid as zero, with units in millimeters and axes from minus 25 to plus 25. No jitter is added. Yellow XY population standard deviation: Teleop 11.11/12.76 mm and Mimic 10.85/11.86 mm. Green: Teleop 11.76/10.85 mm and Mimic 11.18/10.64 mm. Teleop and Mimic occupy similar initial XY ranges in this selected release. The two panels are 75 shared episodes, not 150 independent demonstrations. This is dataset coverage, not a measurement of policy generalization.</desc><title>Pick&amp;Place initial object-position coverage</title>
  <metadata>
   <rdf:RDF>
    <ns2:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-    <dc:title>Basket initial object-position coverage</dc:title>
-    <dc:description>Two scatter panels show the yellow and green cube starts in the same 75 selected Basket demonstration episodes: 25 Teleop and 50 Mimic. Each object uses its own selected Teleop centroid as zero, with units in millimeters and axes from minus 25 to plus 25. No jitter is added. Yellow XY population standard deviation: Teleop 11.11/12.76 mm and Mimic 10.85/11.86 mm. Green: Teleop 11.76/10.85 mm and Mimic 11.18/10.64 mm. Teleop and Mimic occupy similar initial XY ranges in this selected release. The two panels are 75 shared episodes, not 150 independent demonstrations. This is dataset coverage, not a measurement of policy generalization.</dc:description>
+    <dc:title>Pick&amp;Place initial object-position coverage</dc:title>
+    <dc:description>Two scatter panels show the yellow and green cube starts in the same 75 selected Pick&amp;Place demonstration episodes: 25 Teleop and 50 Mimic. Each object uses its own selected Teleop centroid as zero, with units in millimeters and axes from minus 25 to plus 25. No jitter is added. Yellow XY population standard deviation: Teleop 11.11/12.76 mm and Mimic 10.85/11.86 mm. Green: Teleop 11.76/10.85 mm and Mimic 11.18/10.64 mm. Teleop and Mimic occupy similar initial XY ranges in this selected release. The two panels are 75 shared episodes, not 150 independent demonstrations. This is dataset coverage, not a measurement of policy generalization.</dc:description>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <ns2:Agent>
@@ -433,7 +433,7 @@
    </g>
   </g>
   <g id="text_26">
-   <text style="fill: #18364c; font: 700 25px 'DejaVu Sans'; text-anchor: start" x="59.904" y="39.156094" transform="rotate(-0, 59.904, 39.156094)">Basket start-position coverage</text>
+   <text style="fill: #18364c; font: 700 25px 'DejaVu Sans'; text-anchor: start" x="59.904" y="39.156094" transform="rotate(-0, 59.904, 39.156094)">Pick&amp;Place start-position coverage</text>
   </g>
   <g id="text_27">
    <text style="fill: #526a7a; font: 16px 'DejaVu Sans'; text-anchor: start" x="59.904" y="66.8775" transform="rotate(-0, 59.904, 66.8775)">Selected release · Teleop25 + Mimic50 = 75 episodes</text>

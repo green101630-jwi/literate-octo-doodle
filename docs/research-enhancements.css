@@ -201,3 +201,7 @@
 @media(max-width:700px){
  #success-rollout-study .demo-success-figure .figure-heading{padding:17px 18px 0;align-items:flex-start}
 }
+
+/* Match the closing research topic to the main section hierarchy. */
+#exploratory .research-section-subtitle{font-size:1rem}
+#exploratory .research-intro{font-size:.9rem;line-height:1.85}

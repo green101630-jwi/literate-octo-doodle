@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns2="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" width="950.4pt" height="576pt" viewBox="0 0 950.4 576" version="1.1" role="img" aria-labelledby="visual-act-tc-e6000-title visual-act-tc-e6000-desc">
- <title id="visual-act-tc-e6000-title">Visual ACT vs. TC-ACT at E6000</title><desc id="visual-act-tc-e6000-desc">Basket: ACT 1168/1250, 93.44%; TC-ACT 1164/1250, 93.12%. Handover: ACT 929/1250, 74.32%; TC-ACT 1034/1250, 82.72%. Five evaluation seeds, training seed 0, XY half-range ±2 cm and AMP on. The tasks use different horizons and task-specific physics.</desc><title>Visual ACT vs. TC-ACT at E6000</title>
+ <title id="visual-act-tc-e6000-title">Visual ACT vs. TC-ACT at E6000</title><desc id="visual-act-tc-e6000-desc">Pick&amp;Place: ACT 1168/1250, 93.44%; TC-ACT 1164/1250, 93.12%. Handover: ACT 929/1250, 74.32%; TC-ACT 1034/1250, 82.72%. Five evaluation seeds, training seed 0, XY half-range ±2 cm and AMP on. The tasks use different horizons and task-specific physics.</desc><title>Visual ACT vs. TC-ACT at E6000</title>
  <metadata>
   <rdf:RDF>
    <ns2:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
     <dc:title>Visual ACT vs. TC-ACT at E6000</dc:title>
-    <dc:description>Basket: ACT 1168/1250, 93.44%; TC-ACT 1164/1250, 93.12%. Handover: ACT 929/1250, 74.32%; TC-ACT 1034/1250, 82.72%. Five evaluation seeds, training seed 0, XY half-range ±2 cm and AMP on. The tasks use different horizons and task-specific physics.</dc:description>
+    <dc:description>Pick&amp;Place: ACT 1168/1250, 93.44%; TC-ACT 1164/1250, 93.12%. Handover: ACT 929/1250, 74.32%; TC-ACT 1034/1250, 82.72%. Five evaluation seeds, training seed 0, XY half-range ±2 cm and AMP on. The tasks use different horizons and task-specific physics.</dc:description>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <ns2:Agent>
@@ -31,7 +31,7 @@
     <g id="xtick_1">
      <g id="line2d_1" />
      <g id="text_1">
-      <text style="fill: #52647a; font: 17px 'DejaVu Sans'; text-anchor: middle" x="323.390571" y="460.797344" transform="rotate(-0, 323.390571, 460.797344)">Basket</text>
+      <text style="fill: #52647a; font: 17px 'DejaVu Sans'; text-anchor: middle" x="323.390571" y="460.797344" transform="rotate(-0, 323.390571, 460.797344)">Pick&amp;Place</text>
      </g>
     </g>
     <g id="xtick_2">

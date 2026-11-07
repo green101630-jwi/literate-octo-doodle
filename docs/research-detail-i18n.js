@@ -476,16 +476,16 @@
     "그래프의 모든 조건에서 시뮬레이션 평가 총 25,000회"
   ],
   [
-    "Separate E6000 reset-range study: Basket AMP off; Handover AMP on. Each model/task/range has 5 evaluation seeds × 250 rollouts. XY half-range is per axis, not a radial distance.",
-    "별도의 E6000 초기 위치 범위 실험입니다. Basket은 AMP off, Handover는 AMP on이며 모델·태스크·범위마다 평가 시드 5개 × 250회입니다. XY 범위는 반경이 아닌 각 축 기준입니다."
+    "Separate E6000 reset-range study: Pick&Place AMP off; Handover AMP on. Each model/task/range has 5 evaluation seeds × 250 rollouts. XY half-range is per axis, not a radial distance.",
+    "별도의 E6000 초기 위치 범위 실험입니다. Pick&Place은 AMP off, Handover는 AMP on이며 모델·태스크·범위마다 평가 시드 5개 × 250회입니다. XY 범위는 반경이 아닌 각 축 기준입니다."
   ],
   [
     "Read the evaluation protocol",
     "평가 절차 보기"
   ],
   [
-    "ACT and TC-ACT share initial placements within each pair. Both use training seed0. This reset-range study uses task-specific settings and is separate from the shared-core E6000 comparison above. Its Basket points use AMP off and exclude the decomposition / AMP-on Basket series.",
-    "각 ACT·TC-ACT 쌍의 초기 위치와 학습 seed0을 맞췄습니다. 이 초기 위치 범위 실험은 태스크별 설정을 사용하며 위의 E6000 대표 비교와 구분됩니다. Basket 그래프는 AMP off 결과로, 분해 충돌체·AMP on Basket 결과는 포함하지 않습니다."
+    "ACT and TC-ACT share initial placements within each pair. Both use training seed0. This reset-range study uses task-specific settings and is separate from the shared-core E6000 comparison above. Its Pick&Place points use AMP off and exclude the decomposition / AMP-on Pick&Place series.",
+    "각 ACT·TC-ACT 쌍의 초기 위치와 학습 seed0을 맞췄습니다. 이 초기 위치 범위 실험은 태스크별 설정을 사용하며 위의 E6000 대표 비교와 구분됩니다. Pick&Place 그래프는 AMP off 결과로, 분해 충돌체·AMP on Pick&Place 결과는 포함하지 않습니다."
   ],
   [
     "Download the plotted values",
@@ -508,8 +508,8 @@
     "비교 사례 영상 보기"
   ],
   [
-    "Basket · ±4cm · 21 Oct 2026.",
-    "Basket · ±4cm · 2026년 10월 21일"
+    "Pick&Place · ±4cm · 21 Oct 2026.",
+    "Pick&Place · ±4cm · 2026년 10월 21일"
   ],
   [
     "An illustrative ACT-success / TC-ACT-failure pair with identical initial cube positions. This diagnostic run is separate from the aggregate chart protocols.",
@@ -588,8 +588,8 @@
     "정렬 완료된 공개 에피소드"
   ],
   [
-    "75 Basket + 75 Handover",
-    "Basket 75개 + Handover 75개"
+    "75 Pick&Place + 75 Handover",
+    "Pick&Place 75개 + Handover 75개"
   ],
   [
     "Data quality is part of the experiment.",
@@ -624,8 +624,8 @@
     "데이터 수집부터 정책 학습까지"
   ],
   [
-    "Scripted Basket demonstrations",
-    "스크립트 기반 Basket 시연"
+    "Scripted Pick&Place demonstrations",
+    "스크립트 기반 Pick&Place 시연"
   ],
   [
     "100 exported from 135 attempts.",
@@ -924,16 +924,16 @@
     "실물 OMX 작업 공간 사진입니다. 기존 하드웨어 매핑 시연에서 촬영한 장면입니다."
   ],
   [
-    "Real · TC-ACT · Basket / Handover",
-    "실물 · TC-ACT · Basket / Handover"
+    "Real · TC-ACT · Pick&Place / Handover",
+    "실물 · TC-ACT · Pick&Place / Handover"
   ],
   [
     "The dedicated matrix contains separate slots for both tasks. The earlier workspace still is kept here as system documentation.",
     "영상 비교표에는 두 태스크를 위한 별도 영역이 있습니다. 기존 작업 공간 사진은 시스템 문서로 남겨두었습니다."
   ],
   [
-    "Basket video slot ↗",
-    "Basket 영상 공간 ↗"
+    "Pick&Place video slot ↗",
+    "Pick&Place 영상 공간 ↗"
   ],
   [
     "Handover video slot ↗",
@@ -1052,8 +1052,8 @@
     "데이터 전처리, 통계 분석 및 논문용 결과 그림 제작을 수행했습니다."
   ],
   [
-    "Task-specific evaluation horizons are Basket708 and Handover500. Basket uses convex-decomposition finger colliders; the current Handover task also selects decomposition colliders, while its full historical physics snapshot was not retained.",
-    "태스크별 평가 길이는 Basket708·Handover500스텝입니다. Basket은 손가락 분해 충돌체를 사용하며 현재 Handover 코드도 분해 충돌체를 선택합니다. 당시 Handover 물리 설정 전체의 스냅샷은 보존되어 있지 않습니다."
+    "Task-specific evaluation horizons are Pick&Place 708 and Handover500. Pick&Place uses convex-decomposition finger colliders; the current Handover task also selects decomposition colliders, while its full historical physics snapshot was not retained.",
+    "태스크별 평가 길이는 Pick&Place 708·Handover500스텝입니다. Pick&Place은 손가락 분해 충돌체를 사용하며 현재 Handover 코드도 분해 충돌체를 선택합니다. 당시 Handover 물리 설정 전체의 스냅샷은 보존되어 있지 않습니다."
   ],
   [
     "Download the comparison values ↓",

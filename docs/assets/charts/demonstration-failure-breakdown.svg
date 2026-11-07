@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns2="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" width="676.8pt" height="489.6pt" viewBox="0 0 676.8 489.6" version="1.1" role="img" aria-labelledby="demonstration-failure-breakdown-title demonstration-failure-breakdown-desc">
- <title id="demonstration-failure-breakdown-title">Basket source-control rollout outcome breakdown</title><desc id="demonstration-failure-breakdown-desc">Both models are ACT, trained with seed 0 and evaluated with seed 2026. Each row contains 250 simulated Basket rollouts. Mimic50 A0: success 140, neither cube lifted 44, one not lifted 32, lifted but not placed 34. Mimic50 plus self50 B0: success 56, neither lifted 81, one not lifted 72, lifted but not placed 41. Not lifted means maximum recorded lift below 2.5 cm. Failure labels are descriptive heuristics and do not establish contact causes. This is one model per condition, not independent training replicates.</desc><title>Basket source-control rollout outcome breakdown</title>
+ <title id="demonstration-failure-breakdown-title">Pick&amp;Place source-control rollout outcome breakdown</title><desc id="demonstration-failure-breakdown-desc">Both models are ACT, trained with seed 0 and evaluated with seed 2026. Each row contains 250 simulated Pick&amp;Place rollouts. Mimic50 A0: success 140, neither cube lifted 44, one not lifted 32, lifted but not placed 34. Mimic50 plus self50 B0: success 56, neither lifted 81, one not lifted 72, lifted but not placed 41. Not lifted means maximum recorded lift below 2.5 cm. Failure labels are descriptive heuristics and do not establish contact causes. This is one model per condition, not independent training replicates.</desc><title>Pick&amp;Place source-control rollout outcome breakdown</title>
  <metadata>
   <rdf:RDF>
    <ns2:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-    <dc:title>Basket source-control rollout outcome breakdown</dc:title>
-    <dc:description>Both models are ACT, trained with seed 0 and evaluated with seed 2026. Each row contains 250 simulated Basket rollouts. Mimic50 A0: success 140, neither cube lifted 44, one not lifted 32, lifted but not placed 34. Mimic50 plus self50 B0: success 56, neither lifted 81, one not lifted 72, lifted but not placed 41. Not lifted means maximum recorded lift below 2.5 cm. Failure labels are descriptive heuristics and do not establish contact causes. This is one model per condition, not independent training replicates.</dc:description>
+    <dc:title>Pick&amp;Place source-control rollout outcome breakdown</dc:title>
+    <dc:description>Both models are ACT, trained with seed 0 and evaluated with seed 2026. Each row contains 250 simulated Pick&amp;Place rollouts. Mimic50 A0: success 140, neither cube lifted 44, one not lifted 32, lifted but not placed 34. Mimic50 plus self50 B0: success 56, neither lifted 81, one not lifted 72, lifted but not placed 41. Not lifted means maximum recorded lift below 2.5 cm. Failure labels are descriptive heuristics and do not establish contact causes. This is one model per condition, not independent training replicates.</dc:description>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <ns2:Agent>
@@ -155,7 +155,7 @@
    </g>
   </g>
   <g id="text_18">
-   <text style="fill: #18364c; font: 700 25px 'DejaVu Sans'; text-anchor: start" x="47.376" y="38.580094" transform="rotate(-0, 47.376, 38.580094)">Basket rollout outcomes</text>
+   <text style="fill: #18364c; font: 700 25px 'DejaVu Sans'; text-anchor: start" x="47.376" y="38.580094" transform="rotate(-0, 47.376, 38.580094)">Pick&amp;Place rollout outcomes</text>
   </g>
   <g id="text_19">
    <text style="fill: #526a7a; font: 16px 'DejaVu Sans'; text-anchor: start" x="47.376" y="62.5863" transform="rotate(-0, 47.376, 62.5863)">Source-control study · 250 rollouts per model</text>

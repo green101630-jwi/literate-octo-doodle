@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns2="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" width="950.4pt" height="576pt" viewBox="0 0 950.4 576" version="1.1" role="img" aria-labelledby="spatial-generalization-e6000-title spatial-generalization-e6000-desc">
- <title id="spatial-generalization-e6000-title">Spatial generalization at epoch 6000</title><desc id="spatial-generalization-e6000-desc">Two panels show ACT and TC-ACT success rates over XY half-ranges from ±2 to ±6 cm. ACT leads in Basket; TC-ACT leads in Handover. Basket AMP off; Handover AMP on. training seed 0 and five evaluation seeds, 1,250 rollouts per point.</desc><metadata>
+ <title id="spatial-generalization-e6000-title">Spatial generalization at epoch 6000</title><desc id="spatial-generalization-e6000-desc">Two panels show ACT and TC-ACT success rates over XY half-ranges from ±2 to ±6 cm. ACT leads in Pick&amp;Place; TC-ACT leads in Handover. Pick&amp;Place AMP off; Handover AMP on. training seed 0 and five evaluation seeds, 1,250 rollouts per point.</desc><metadata>
   <rdf:RDF>
    <ns2:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
@@ -179,7 +179,7 @@
     <text style="fill: #16a08c; font: 700 11.5px 'DejaVu Sans'; text-anchor: middle" x="439.776" y="416.711744" transform="rotate(-0, 439.776, 416.711744)">11.4</text>
    </g>
    <g id="text_24">
-    <text style="fill: #182c43; font: 700 19px 'DejaVu Sans'; text-anchor: middle" x="275.616" y="131.76" transform="rotate(-0, 275.616, 131.76)">Basket</text>
+    <text style="fill: #182c43; font: 700 19px 'DejaVu Sans'; text-anchor: middle" x="275.616" y="131.76" transform="rotate(-0, 275.616, 131.76)">Pick&amp;Place</text>
    </g>
   </g>
   <g id="axes_2">

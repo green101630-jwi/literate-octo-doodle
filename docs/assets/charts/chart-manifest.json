@@ -13,12 +13,12 @@
     {
       "id": "visual-act-tc-e5000",
       "title": "Visual ACT and TC-ACT at epoch 5000",
-      "alt": "Basket: ACT 96.00%, TC-ACT 89.04%. Handover: ACT 74.08%, TC-ACT 84.08%. Each value uses 1,250 simulated rollouts across five evaluation seeds, with training seed 0.",
+      "alt": "Pick&Place: ACT 96.00%, TC-ACT 89.04%. Handover: ACT 74.08%, TC-ACT 84.08%. Each value uses 1,250 simulated rollouts across five evaluation seeds, with training seed 0.",
       "assets": {
         "svg": {
           "file": "visual-act-tc-e5000.svg",
-          "sha256": "61a79200eecc2e298693abad4ca250384f4e56a228e607455eee6e2e783cf811",
-          "bytes": 8643
+          "sha256": "162d70cfd0f7579bed86bf3d31b5e8706e71d22bc1768848d14cd82992a8a123",
+          "bytes": 8659
         },
         "png": {
           "file": "visual-act-tc-e5000.png",
@@ -37,12 +37,12 @@
     {
       "id": "spatial-generalization-e6000",
       "title": "Spatial generalization at epoch 6000",
-      "alt": "Two panels show ACT and TC-ACT success rates over XY half-ranges from ±2 to ±6 cm. ACT leads in Basket; TC-ACT leads in Handover. Basket AMP off; Handover AMP on. training seed 0 and five evaluation seeds, 1,250 rollouts per point.",
+      "alt": "Two panels show ACT and TC-ACT success rates over XY half-ranges from ±2 to ±6 cm. ACT leads in Pick&Place; TC-ACT leads in Handover. Pick&Place AMP off; Handover AMP on. training seed 0 and five evaluation seeds, 1,250 rollouts per point.",
       "assets": {
         "svg": {
           "file": "spatial-generalization-e6000.svg",
-          "sha256": "737c95d15b5ee439f175375b2f05eeb4a75ef5f7551bdb5991ea658ecf498243",
-          "bytes": 21263
+          "sha256": "daba84a3a2a1c6b1872b6e278f0f2af0dc8ae120a5314072b7df7a3c0dd9ca4e",
+          "bytes": 21287
         },
         "png": {
           "file": "spatial-generalization-e6000.png",
@@ -56,7 +56,7 @@
       ],
       "notes": [
         "XY half-range is not a radius.",
-        "Separate range study: Basket AMP off; Handover AMP on."
+        "Separate range study: Pick&Place AMP off; Handover AMP on."
       ]
     },
     {
@@ -112,12 +112,12 @@
     {
       "id": "real-camera-phase-ablation",
       "title": "Real-camera phase-input comparison",
-      "alt": "User-observed physical trials, seed-0 models: Basket joint-only 14D 21/25 (84%), 17D with phase 0/25 (0%); Handover 14D 23/25 (92%), 17D 20/25 (80%). Complete trial-level raw ledger unavailable.",
+      "alt": "User-observed physical trials, seed-0 models: Pick&Place joint-only 14D 21/25 (84%), 17D with phase 0/25 (0%); Handover 14D 23/25 (92%), 17D 20/25 (80%). Complete trial-level raw ledger unavailable.",
       "assets": {
         "svg": {
           "file": "real-camera-phase-ablation.svg",
-          "sha256": "9112fadc4e119f940eb3706c8b11f4d43ea81d391ee74f685b3ff75dda08b3a6",
-          "bytes": 9165
+          "sha256": "29960b3c00db5360a387bc8295659ef9be09ed2160682ce1c3ff39903e93c183",
+          "bytes": 9181
         },
         "png": {
           "file": "real-camera-phase-ablation.png",
@@ -137,12 +137,12 @@
     {
       "id": "success-rollout-controls",
       "title": "Successful self-rollout data control experiment",
-      "alt": "Basket simulation with approximately 14,000 training updates: expert50 scores 56.0% and 57.2% for training seeds 0 and 1; expert50 plus self-success50 scores 22.4% and 14.4%. Each model was evaluated on 250 rollouts at evaluation seed 2026.",
+      "alt": "Pick&Place simulation with approximately 14,000 training updates: expert50 scores 56.0% and 57.2% for training seeds 0 and 1; expert50 plus self-success50 scores 22.4% and 14.4%. Each model was evaluated on 250 rollouts at evaluation seed 2026.",
       "assets": {
         "svg": {
           "file": "success-rollout-controls.svg",
-          "sha256": "4f09a678baccc2f960d2d003e3767e37f7db0d34ae82e7d6283267eea1af66c0",
-          "bytes": 9282
+          "sha256": "09095943f6d661a3d5de64f989cc66a1b00839829c86e051cb5ff3b222ba0ede",
+          "bytes": 9298
         },
         "png": {
           "file": "success-rollout-controls.png",

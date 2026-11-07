@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns2="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" width="950.4pt" height="576pt" viewBox="0 0 950.4 576" version="1.1" role="img" aria-labelledby="success-rollout-controls-title success-rollout-controls-desc">
- <title id="success-rollout-controls-title">Successful self-rollout data control experiment</title><desc id="success-rollout-controls-desc">Basket simulation with approximately 14,000 training updates: expert50 scores 56.0% and 57.2% for training seeds 0 and 1; expert50 plus self-success50 scores 22.4% and 14.4%. Each model was evaluated on 250 rollouts at evaluation seed 2026.</desc><metadata>
+ <title id="success-rollout-controls-title">Successful self-rollout data control experiment</title><desc id="success-rollout-controls-desc">Pick&amp;Place simulation with approximately 14,000 training updates: expert50 scores 56.0% and 57.2% for training seeds 0 and 1; expert50 plus self-success50 scores 22.4% and 14.4%. Each model was evaluated on 250 rollouts at evaluation seed 2026.</desc><metadata>
   <rdf:RDF>
    <ns2:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
@@ -134,7 +134,7 @@
    <text style="font-weight: 700; font-size: 25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #182c43" x="71.28" y="47.796094" transform="rotate(-0 71.28 47.796094)">Successful self-rollouts did not improve this baseline</text>
   </g>
   <g id="text_15">
-   <text style="font-size: 14.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #52647a" x="71.28" y="76.681734" transform="rotate(-0 71.28 76.681734)">Basket simulation  ·  matched update budget (~14,000)  ·  two training seeds</text>
+   <text style="font-size: 14.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #52647a" x="71.28" y="76.681734" transform="rotate(-0 71.28 76.681734)">Pick&amp;Place simulation  ·  matched update budget (~14,000)  ·  two training seeds</text>
   </g>
   <g id="text_16">
    <text style="font-size: 12.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #52647a" x="71.28" y="533.430094" transform="rotate(-0 71.28 533.430094)">Expert = Mimic demonstrations. Expert-only: 14,000 updates; expert + self-success: 14,001.</text>

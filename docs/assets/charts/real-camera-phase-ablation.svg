@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns2="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" width="950.4pt" height="576pt" viewBox="0 0 950.4 576" version="1.1" role="img" aria-labelledby="real-camera-phase-ablation-title real-camera-phase-ablation-desc">
- <title id="real-camera-phase-ablation-title">Real-camera phase-input comparison</title><desc id="real-camera-phase-ablation-desc">User-observed physical trials, seed-0 models: Basket joint-only 14D 21/25 (84%), 17D with phase 0/25 (0%); Handover 14D 23/25 (92%), 17D 20/25 (80%). Complete trial-level raw ledger unavailable.</desc><metadata>
+ <title id="real-camera-phase-ablation-title">Real-camera phase-input comparison</title><desc id="real-camera-phase-ablation-desc">User-observed physical trials, seed-0 models: Pick&amp;Place joint-only 14D 21/25 (84%), 17D with phase 0/25 (0%); Handover 14D 23/25 (92%), 17D 20/25 (80%). Complete trial-level raw ledger unavailable.</desc><metadata>
   <rdf:RDF>
    <ns2:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
@@ -29,7 +29,7 @@
     <g id="xtick_1">
      <g id="line2d_1" />
      <g id="text_1">
-      <text style="font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #52647a" x="324" y="453.397656" transform="rotate(-0 324 453.397656)">Basket</text>
+      <text style="font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #52647a" x="324" y="453.397656" transform="rotate(-0 324 453.397656)">Pick&amp;Place</text>
      </g>
     </g>
     <g id="xtick_2">

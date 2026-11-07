@@ -22,8 +22,8 @@
         "model": "ACT · CVAE · E5000",
         "dataset": "Teleop30 + Mimic300",
         "condition": {
-          "en": "Basket · XY ±2 cm resets",
-          "ko": "Basket · XY ±2 cm 초기 배치"
+          "en": "Pick&Place · XY ±2 cm resets",
+          "ko": "Pick&Place · XY ±2 cm 초기 배치"
         },
         "observation": {
           "en": "14D joints + RGB",
@@ -51,8 +51,8 @@
         "model": "TC-ACT · CVAE · E5000",
         "dataset": "Teleop30 + Mimic300",
         "condition": {
-          "en": "Basket · XY ±2 cm resets",
-          "ko": "Basket · XY ±2 cm 초기 배치"
+          "en": "Pick&Place · XY ±2 cm resets",
+          "ko": "Pick&Place · XY ±2 cm 초기 배치"
         },
         "observation": {
           "en": "14D joints + RGB + history",

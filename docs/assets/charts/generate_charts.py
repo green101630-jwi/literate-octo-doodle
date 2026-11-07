@@ -110,24 +110,24 @@ for offset, model, color in [(-w/2, 'ACT', BLUE), (w/2, 'TC-ACT', TEAL)]:
     vals = [r['success_pct'] for r in rows]
     bars = ax.bar(x+offset, vals, w, color=color, label=model)
     bar_labels(ax, bars, vals, decimals=2)
-ax.set_xticks(x, ['Basket', 'Handover'])
+ax.set_xticks(x, ['Pick&Place', 'Handover'])
 ax.set_xlim(-.6, 1.6)
 fig.legend(*ax.get_legend_handles_labels(), loc='upper right', bbox_to_anchor=(.94, .838), ncol=2)
 footer(fig, '5 evaluation seeds × 250 rollouts = 1,250 per model and task.',
        'One trained model per method/task (training seed 0). Evaluation seeds are not training replicates.')
 save(fig, name, 'Visual ACT and TC-ACT at epoch 5000',
-     'Basket: ACT 96.00%, TC-ACT 89.04%. Handover: ACT 74.08%, TC-ACT 84.08%. '
+     'Pick&Place: ACT 96.00%, TC-ACT 89.04%. Handover: ACT 74.08%, TC-ACT 84.08%. '
      'Each value uses 1,250 simulated rollouts across five evaluation seeds, with training seed 0.',
      ['5 evaluation seeds, not 5 training seeds.', 'Seed 2026 reused an earlier paired evaluation.'], ['e5000-summary'])
 
-# 2: Separate range study; Basket AMP off / Handover AMP on.
+# 2: Separate range study; Pick&Place AMP off / Handover AMP on.
 name = 'spatial-generalization-e6000'
 fig = base('Generalization across initial object positions',
            'Visual ACT / TC-ACT  ·  E6000  ·  task-specific settings')
 axes = [fig.add_axes([.10, .25, .38, .49]), fig.add_axes([.58, .25, .38, .49])]
 for ax, task in zip(axes, ['Basket', 'Handover']):
     style(ax, 'Success rate (%)' if task == 'Basket' else '')
-    ax.set_title(task, pad=18)
+    ax.set_title('Pick&Place' if task == 'Basket' else task, pad=18)
     for model, color, marker in [('ACT', BLUE, 'o'), ('TC-ACT', TEAL, 's')]:
         rows = sorted([r for r in C[name]['rows'] if r['task'] == task and r['model'] == model],
                       key=lambda r:r['xy_half_range_cm'])
@@ -145,9 +145,9 @@ footer(fig, 'Each point: 5 evaluation seeds × 250 paired rollouts = 1,250 per m
        'Training seed 0. Wider ranges change the evaluation distribution; no confidence intervals inferred.')
 save(fig, name, 'Spatial generalization at epoch 6000',
      'Two panels show ACT and TC-ACT success rates over XY half-ranges from ±2 to ±6 cm. '
-     'ACT leads in Basket; TC-ACT leads in Handover. Basket AMP off; Handover AMP on. '
+     'ACT leads in Pick&Place; TC-ACT leads in Handover. Pick&Place AMP off; Handover AMP on. '
      'training seed 0 and five evaluation seeds, 1,250 rollouts per point.',
-     ['XY half-range is not a radius.', 'Separate range study: Basket AMP off; Handover AMP on.'],
+     ['XY half-range is not a radius.', 'Separate range study: Pick&Place AMP off; Handover AMP on.'],
      ['e6000-2_4_6-summary', 'e6000-3_5-summary'])
 
 # 3: Existing matched checkpoint, fixed cube placement.
@@ -216,13 +216,13 @@ for offset, observation, color in [(-w/2,'14D',TEAL),(w/2,'17D','#78bfb1')]:
     vals = [r['success_pct'] for r in rows]
     bars = ax.bar(x+offset,vals,w,color=color,label='14D: joints only' if observation=='14D' else '17D: joints + phase')
     bar_labels(ax,bars,vals,[f"{r['successes']} / 25" for r in rows],0)
-ax.set_xticks(x,['Basket','Handover'])
+ax.set_xticks(x,['Pick&Place','Handover'])
 ax.set_xlim(-.6,1.6)
 fig.legend(*ax.get_legend_handles_labels(),loc='upper right',bbox_to_anchor=(.94,.837),ncol=2,fontsize=14)
 footer(fig, '25 physical attempts per task/configuration, recorded in September deployment notes.',
        'User-observed totals; a complete trial-level ledger and model-hash mapping are unavailable.')
 save(fig,name,'Real-camera phase-input comparison',
-     'User-observed physical trials, seed-0 models: Basket joint-only 14D 21/25 (84%), '
+     'User-observed physical trials, seed-0 models: Pick&Place joint-only 14D 21/25 (84%), '
      '17D with phase 0/25 (0%); Handover 14D 23/25 (92%), 17D 20/25 (80%). '
      'Complete trial-level raw ledger unavailable.',
      ['User-observed counts, not simulator evaluation.', 'Seed-1/2 results excluded because denominators were not confirmed.'],
@@ -231,7 +231,7 @@ save(fig,name,'Real-camera phase-input comparison',
 # 6: Show both training seeds rather than a pooled average.
 name = 'success-rollout-controls'
 fig = base('Successful self-rollouts did not improve this baseline',
-           'Basket simulation  ·  matched update budget (~14,000)  ·  two training seeds')
+           'Pick&Place simulation  ·  matched update budget (~14,000)  ·  two training seeds')
 ax = fig.add_axes([.12,.25,.81,.49])
 style(ax)
 x, w = np.arange(2), .30
@@ -247,7 +247,7 @@ fig.legend(*ax.get_legend_handles_labels(),loc='upper right',bbox_to_anchor=(.94
 footer(fig, 'Expert = Mimic demonstrations. Expert-only: 14,000 updates; expert + self-success: 14,001.',
        '250 rollouts per model at evaluation seed 2026. This result is specific to this data/training protocol.')
 save(fig,name,'Successful self-rollout data control experiment',
-     'Basket simulation with approximately 14,000 training updates: expert50 scores 56.0% and 57.2% '
+     'Pick&Place simulation with approximately 14,000 training updates: expert50 scores 56.0% and 57.2% '
      'for training seeds 0 and 1; expert50 plus self-success50 scores 22.4% and 14.4%. '
      'Each model was evaluated on 250 rollouts at evaluation seed 2026.',
      ['A negative result under this protocol, not a universal claim about self-generated data.',

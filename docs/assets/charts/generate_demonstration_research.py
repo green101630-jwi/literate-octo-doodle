@@ -130,7 +130,7 @@ def basket_coverage_chart(data, output: Path):
     assert d['source_episode_counts'] == {'teleop': 25, 'mimic': 50}
     assert len(d['objects']) == 2
     fig = plt.figure(figsize=(10.4, 8.0))
-    fig.text(.08, .965, 'Basket start-position coverage',
+    fig.text(.08, .965, 'Pick&Place start-position coverage',
              fontsize=25, weight='bold', va='top')
     fig.text(.08, .905, 'Selected release · Teleop25 + Mimic50 = 75 episodes',
              fontsize=16, color=MUTED, va='top')
@@ -183,10 +183,10 @@ def basket_coverage_chart(data, output: Path):
              fontsize=13.5, color=MUTED)
     fig.text(.08, .028, 'Similar initial XY ranges in this selected release.',
              fontsize=13.5, color=MUTED)
-    title = 'Basket initial object-position coverage'
+    title = 'Pick&Place initial object-position coverage'
     description = (
         'Two scatter panels show the yellow and green cube starts in the same 75 '
-        'selected Basket demonstration episodes: 25 Teleop and 50 Mimic. '
+        'selected Pick&Place demonstration episodes: 25 Teleop and 50 Mimic. '
         'Each object uses its own selected Teleop centroid as zero, with units '
         'in millimeters and axes from minus 25 to plus 25. No jitter is added. '
         'Yellow XY population standard deviation: Teleop 11.11/12.76 mm and '
@@ -205,7 +205,7 @@ def failure_chart(data, output: Path):
     assert len(models) == 2
     assert all(sum(row['counts'].values()) == row['n'] == 250 for row in models)
     fig = plt.figure(figsize=(9.4, 6.8))
-    fig.text(.07, .96, 'Basket rollout outcomes', fontsize=25,
+    fig.text(.07, .96, 'Pick&Place rollout outcomes', fontsize=25,
              weight='bold', va='top')
     fig.text(.07, .897, 'Source-control study · 250 rollouts per model',
              fontsize=16, color=MUTED, va='top')
@@ -240,9 +240,9 @@ def failure_chart(data, output: Path):
              fontsize=13.5, color=MUTED)
     fig.text(.07, .041, 'One model per source condition; no causal claim.',
              fontsize=13.5, color=MUTED)
-    title = 'Basket source-control rollout outcome breakdown'
+    title = 'Pick&Place source-control rollout outcome breakdown'
     desc = ('Both models are ACT, trained with seed 0 and evaluated with seed 2026. '
-            'Each row contains 250 simulated Basket rollouts. Mimic50 A0: '
+            'Each row contains 250 simulated Pick&Place rollouts. Mimic50 A0: '
             'success 140, neither cube lifted 44, one not lifted 32, lifted but not placed 34. '
             'Mimic50 plus self50 B0: success 56, neither lifted 81, one not lifted 72, '
             'lifted but not placed 41. Not lifted means maximum recorded lift below 2.5 cm. '

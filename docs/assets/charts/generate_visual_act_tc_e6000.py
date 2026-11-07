@@ -66,7 +66,7 @@ def render_svg(data: dict, output: Path) -> None:
     ax.set_xlim(-.62, 1.62)
     ax.yaxis.set_major_locator(MultipleLocator(20))
     ax.set_ylabel("Success rate (%)", labelpad=13)
-    ax.set_xticks([0, 1], ["Basket", "Handover"])
+    ax.set_xticks([0, 1], ["Pick&Place", "Handover"])
     ax.tick_params(axis="x", length=0, pad=13)
     ax.tick_params(axis="y", length=0, pad=8)
     ax.yaxis.grid(True, color=GRID, linewidth=1)
@@ -95,7 +95,7 @@ def render_svg(data: dict, output: Path) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
     title = "Visual ACT vs. TC-ACT at E6000"
     description = (
-        "Basket: ACT 1168/1250, 93.44%; TC-ACT 1164/1250, 93.12%. "
+        "Pick&Place: ACT 1168/1250, 93.44%; TC-ACT 1164/1250, 93.12%. "
         "Handover: ACT 929/1250, 74.32%; TC-ACT 1034/1250, 82.72%. "
         "Five evaluation seeds, training seed 0, XY half-range ±2 cm and AMP on. "
         "The tasks use different horizons and task-specific physics."
