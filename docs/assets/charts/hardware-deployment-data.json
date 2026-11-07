@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "created": "2026-11-07",
+  "scope": "Public aggregate values and logical source checksums only. Physical task outcomes, standalone model latency, sensor message age, and archived simulation outcomes are separate studies.",
+  "physical_results": {
+    "act": {
+      "model": "ACT",
+      "task": "Fixed-layout handover",
+      "successful_consecutive_runs": 5,
+      "measurement_type": "operator-observed consecutive physical successes",
+      "success_rate_claimed": false,
+      "preserved_full_detail_runs": 1,
+      "final_run_control_ticks": 796,
+      "policy_rate_hz": 50,
+      "command_rate_hz": 50,
+      "final_run_command_interval_median_ms": 19.98,
+      "source_id": "act-physical-snapshot",
+      "limitation": "No denominator-based success rate is inferred; detailed feedback and timing are retained only for the final run."
+    },
+    "tc_act": {
+      "model": "Visual TC-ACT",
+      "input": "Live RGB and joint observations, with sampled observation history",
+      "training_seed": 0,
+      "measurement_type": "user-observed physical trial totals",
+      "per_trial_ledger_available": false,
+      "rows": [
+        {
+          "task": "Pick&Place",
+          "observation": "14D",
+          "successes": 21,
+          "trials": 25,
+          "success_percent": 84
+        },
+        {
+          "task": "Pick&Place",
+          "observation": "17D",
+          "successes": 0,
+          "trials": 25,
+          "success_percent": 0
+        },
+        {
+          "task": "Handover",
+          "observation": "14D",
+          "successes": 23,
+          "trials": 25,
+          "success_percent": 92
+        },
+        {
+          "task": "Handover",
+          "observation": "17D",
+          "successes": 20,
+          "trials": 25,
+          "success_percent": 80
+        }
+      ],
+      "source_id": "tc-physical-public-summary",
+      "original_public_summary_selector": "charts.real-camera-phase-ablation",
+      "source_note_provenance": {
+        "id": "real-camera-notes",
+        "document": "September deployment notes, lines 214–218",
+        "sha256_excerpt": "9239a71e6ab5b8d9d66e871349e1dda99737d7c6672f2386513f010d55b61088",
+        "note": "User-observed physical success/attempt totals; complete trial-level ledger unavailable."
+      },
+      "limitation": "One trained seed; 25 operator-observed trials per task/condition. These are not ACT/TC-ACT matched-comparison trials."
+    }
+  },
+  "timing": {
+    "model": {
+      "study": "November Task2 C128 Diffusion",
+      "observation_dim": 20,
+      "gpu": "NVIDIA GeForce RTX 3070",
+      "ddim_steps": 10,
+      "metric": "standalone model inference p99 (ms)",
+      "eager": {
+        "samples": 100,
+        "p50_ms": 53.84535598568618,
+        "p95_ms": 56.23366382205859,
+        "p99_ms": 62.18345652334393,
+        "max_ms": 63.357545994222164
+      },
+      "compiled": {
+        "samples": 100,
+        "p50_ms": 12.94237794354558,
+        "p95_ms": 13.880738778971136,
+        "p99_ms": 14.577622872311625,
+        "max_ms": 15.201096888631582
+      },
+      "compile_mode": "reduce-overhead",
+      "reference_period_ms": 20,
+      "reference_rate_hz": 50,
+      "source_id": "c128-model-benchmark",
+      "limitation": "Standalone model latency, not end-to-end ROS timing or a physical-success result."
+    },
+    "feedback": {
+      "metric": "sensor timestamp age median (ms)",
+      "hardware_commands": 0,
+      "rows": [
+        {
+          "subscription_depth": 20,
+          "arm": "pair2",
+          "median_ms": 191.982424,
+          "samples": 160
+        },
+        {
+          "subscription_depth": 20,
+          "arm": "pair1",
+          "median_ms": 193.550917,
+          "samples": 159
+        },
+        {
+          "subscription_depth": 1,
+          "arm": "pair2",
+          "median_ms": 3.087694,
+          "samples": 158
+        },
+        {
+          "subscription_depth": 1,
+          "arm": "pair1",
+          "median_ms": 4.648975,
+          "samples": 158
+        }
+      ],
+      "source_id": "sensor-message-age-probe",
+      "limitation": "No-command live feedback probe. Message age and model inference time are different metrics."
+    }
+  },
+  "diffusion_ddim": {
+    "study": "Archived 34D no-cube Diffusion",
+    "measurement_type": "simulation task success",
+    "layout": "fixed demo6",
+    "evaluation_seed": 2026,
+    "parallel_environments": 8,
+    "temporal_aggregation_decay": 0.01,
+    "sweep": [
+      {
+        "ddim_steps": 4,
+        "successes": 62,
+        "trials": 250,
+        "success_percent": 24.8,
+        "source_id": "archived-ddim-4"
+      },
+      {
+        "ddim_steps": 5,
+        "successes": 99,
+        "trials": 250,
+        "success_percent": 39.6,
+        "source_id": "archived-ddim-5"
+      },
+      {
+        "ddim_steps": 6,
+        "successes": 125,
+        "trials": 250,
+        "success_percent": 50.0,
+        "source_id": "archived-ddim-6"
+      },
+      {
+        "ddim_steps": 7,
+        "successes": 138,
+        "trials": 250,
+        "success_percent": 55.2,
+        "source_id": "archived-ddim-7"
+      },
+      {
+        "ddim_steps": 8,
+        "successes": 168,
+        "trials": 250,
+        "success_percent": 67.2,
+        "source_id": "archived-ddim-8"
+      },
+      {
+        "ddim_steps": 9,
+        "successes": 183,
+        "trials": 250,
+        "success_percent": 73.2,
+        "source_id": "archived-ddim-9"
+      },
+      {
+        "ddim_steps": 10,
+        "successes": 197,
+        "trials": 250,
+        "success_percent": 78.8,
+        "source_id": "archived-ddim-10"
+      }
+    ],
+    "compiled10": {
+      "ddim_steps": 10,
+      "successes": 188,
+      "trials": 250,
+      "success_percent": 75.2,
+      "source_id": "archived-ddim-compiled10"
+    },
+    "limitation": "Single evaluation seed, 250 simulator rollouts per setting. This is a different model generation from November 20D C128; no physical success or compilation-equivalence claim is made."
+  },
+  "source_provenance": [
+    {
+      "id": "act-physical-snapshot",
+      "logical_filename": "success_snapshot.json",
+      "sha256": "23924fb3087680e4639926df945a975c06142ae666f08a583760463b7f8d8688",
+      "scope": "User-observed five physical successes; only the final full-detail command/feedback run remains."
+    },
+    {
+      "id": "tc-physical-public-summary",
+      "logical_filename": "evidence-data.json",
+      "sha256": "3c6fb27501275e16a37d4e6365da8e8ef3dd8b3b65a1f9da72b61af105f67598",
+      "scope": "Public summary, selector charts.real-camera-phase-ablation; operator-observed physical trial totals, not a complete per-trial ledger."
+    },
+    {
+      "id": "c128-model-benchmark",
+      "logical_filename": "benchmark.json",
+      "sha256": "0e1116ecedf5779753de86484d8836fcb2b1a8cea6d5ca3619b0bafba6cfd299",
+      "scope": "Pure model inference; no ROS, motor publication, or task-success evaluation."
+    },
+    {
+      "id": "sensor-message-age-probe",
+      "logical_filename": "feedback_timestamp_probe.json",
+      "sha256": "104503f4ce6604bea11b3331d903c6cda9c30531ee3b614e11491a4477aad368",
+      "scope": "Read-only live feedback probe; no robot commands, same two spin_once calls per 20 ms."
+    },
+    {
+      "id": "archived-ddim-4",
+      "logical_filename": "eval_250_demo6_cube_fixed_step4_temporal.json",
+      "sha256": "e7f7f7fabcc7a2f2e926ad0bd573b5408eafc71094d0107e4f2877644e96ef8f",
+      "scope": "Archived 34D fixed-layout simulation evaluation; not physical task success."
+    },
+    {
+      "id": "archived-ddim-5",
+      "logical_filename": "eval_250_demo6_cube_fixed_step5_temporal.json",
+      "sha256": "658d4d7d94c069e43c5033f318b47835818dc24beefe3e75460760a509c93bdb",
+      "scope": "Archived 34D fixed-layout simulation evaluation; not physical task success."
+    },
+    {
+      "id": "archived-ddim-6",
+      "logical_filename": "eval_250_demo6_cube_fixed_step6_temporal.json",
+      "sha256": "8e5433e493089d4aa075c549bcf8acf2a8795a3bfa2ad69dee476ea1eaefbc75",
+      "scope": "Archived 34D fixed-layout simulation evaluation; not physical task success."
+    },
+    {
+      "id": "archived-ddim-7",
+      "logical_filename": "eval_250_demo6_cube_fixed_step7_temporal.json",
+      "sha256": "2bc179ba33bdd3a9b0024a1d0ca69a4b2c8c562839fc424385ec0ea7b81afb7b",
+      "scope": "Archived 34D fixed-layout simulation evaluation; not physical task success."
+    },
+    {
+      "id": "archived-ddim-8",
+      "logical_filename": "eval_250_demo6_cube_fixed_step8_temporal.json",
+      "sha256": "0d2779e8af67111733015d3592b6f2ba60aa2489df0bd3b11f32d009895d69a9",
+      "scope": "Archived 34D fixed-layout simulation evaluation; not physical task success."
+    },
+    {
+      "id": "archived-ddim-9",
+      "logical_filename": "eval_250_demo6_cube_fixed_step9_temporal.json",
+      "sha256": "2fddce2d9dca3b7fec6282f44ebfbf8d78eb3758ddd978ac03375e3671750b8e",
+      "scope": "Archived 34D fixed-layout simulation evaluation; not physical task success."
+    },
+    {
+      "id": "archived-ddim-10",
+      "logical_filename": "eval_250_demo6_cube_fixed_step10_temporal.json",
+      "sha256": "c390d796aeaf3dfdbad2f53b6a1f5f3121e2bb8b1fd4d970e01151689c68994f",
+      "scope": "Archived 34D fixed-layout simulation evaluation; not physical task success."
+    },
+    {
+      "id": "archived-ddim-compiled10",
+      "logical_filename": "eval_250_demo6_fixed_compile_reduce_temporal.json",
+      "sha256": "f7189efe0c6107edc7f378701364a7f50d54d81f740b1797122f4e7680a2ebb3",
+      "scope": "Separate compiled10 simulator evaluation; not the November 20D C128 model."
+    }
+  ]
+}
