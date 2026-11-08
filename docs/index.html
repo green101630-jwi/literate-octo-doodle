@@ -47,13 +47,13 @@
 <a class="inline-link" href="research/?v=feedback-20261107-v1#results"><span data-locale="en">Results & evaluation conditions ↗</span><span data-locale="ko">비교 결과·평가 조건 보기 ↗</span></a>
 </article>
 <article class="home-finding">
-<p class="eyebrow"><span data-locale="en">DIFFUSION / MODEL INFERENCE</span><span data-locale="ko">DIFFUSION / 모델 추론</span></p>
-<h3><span data-locale="en">Lower p99 inference latency</span><span data-locale="ko">p99 추론 지연 단축</span></h3>
-<p class="finding-value finding-latency">62.18 <i aria-hidden="true">→</i> 14.58 <span>ms</span></p>
-<p class="finding-comparison"><span data-locale="en">Eager → compiled inference</span><span data-locale="ko">Eager → 컴파일 추론</span></p>
-<p class="finding-conditions">Task2 C128 · 20D · RTX3070 · DDIM10</p>
-<p class="finding-scope"><span data-locale="en">100 runs per setting; model-only timing, separate from full robot-loop latency.</span><span data-locale="ko">설정별 100회 측정한 모델 단독 추론 시간이며, 로봇 전체 제어 지연과 구분됩니다.</span></p>
-<a class="inline-link" href="research/?v=feedback-20261107-v1#diffusion-benchmark"><span data-locale="en">Benchmark & measurement conditions ↗</span><span data-locale="ko">벤치마크·측정 조건 보기 ↗</span></a>
+<p class="eyebrow"><span data-locale="en">REAL ROBOT / TC-ACT</span><span data-locale="ko">실로봇 / TC-ACT</span></p>
+<h3><span data-locale="en">Observed physical task trials</span><span data-locale="ko">실로봇 작업 수행 실험</span></h3>
+<p class="finding-value finding-latency">84% <i aria-hidden="true"> / </i> 92%</p>
+<p class="finding-comparison">Pick&amp;Place 21/25 · Handover 23/25</p>
+<p class="finding-conditions"><span data-locale="en">Live RGB + 14D joints · one training seed · 25 trials per task.</span><span data-locale="ko">실카메라 RGB + 14D 관절 · 학습 시드 1개 · 태스크별 25회.</span></p>
+<p class="finding-scope"><span data-locale="en">Operator-observed results; not a paired ACT/TC-ACT comparison or a general reliability estimate.</span><span data-locale="ko">작업자가 관찰한 성공 횟수이며 ACT와의 동일 조건 비교나 일반적인 신뢰도 추정이 아닙니다.</span></p>
+<a class="inline-link" href="research/#deployment"><span data-locale="en">Physical deployment & evidence ↗</span><span data-locale="ko">실로봇 구동·검증 내용 ↗</span></a>
 </article>
 </div>
 </section>
@@ -62,7 +62,7 @@
 <div class="card-grid three">
 <a href="research/?v=feedback-20261107-v1#tc-act" class="info-card"><span class="index">01 / POLICY EXTENSIONS</span><h3>ACT & TC-ACT</h3><p><span data-locale="en">Extended ACT with temporal observations and future-state auxiliary supervision, then compared complete ACT / TC-ACT configurations.</span><span data-locale="ko">ACT에 시간적 관측과 미래 상태 보조 학습을 연결하고, ACT·TC-ACT 전체 구성의 성능을 비교했습니다.</span></p><span class="card-arrow" aria-hidden="true">↗</span></a>
 <a href="research/?v=feedback-20261107-v1#demonstrations" class="info-card"><span class="index">02 / DEMONSTRATION PIPELINES</span><h3><span data-locale="en">Data for bimanual learning</span><span data-locale="ko">양팔 학습을 위한 시연 데이터</span></h3><p><span data-locale="en">Built workflows for teleoperation, Mimic retargeting, scripted collection, and successful-rollout retraining.</span><span data-locale="ko">텔레오퍼레이션, Mimic 궤적 재배치, 코드 기반 수집, 성공 롤아웃 재학습 흐름을 구현했습니다.</span></p><span class="card-arrow" aria-hidden="true">↗</span></a>
-<a href="research/?v=feedback-20261107-v1#systems" class="info-card"><span class="index">03 / PHYSICAL EXECUTION</span><h3><span data-locale="en">Policies on real robots</span><span data-locale="ko">학습한 정책을 실로봇으로</span></h3><p><span data-locale="en">Connected ROS 2 simulation and hardware execution, optimized Diffusion inference, and mapped TC-ACT to physical robots.</span><span data-locale="ko">ROS 2 시뮬레이션·하드웨어 실행을 연결하고, Diffusion 추론 최적화와 TC-ACT의 실로봇 매핑을 구현했습니다.</span></p><span class="card-arrow" aria-hidden="true">↗</span></a>
+<a href="research/?v=feedback-20261107-v1#systems" class="info-card"><span class="index">03 / PHYSICAL EXECUTION</span><h3><span data-locale="en">Policies on real robots</span><span data-locale="ko">학습한 정책을 실로봇으로</span></h3><p><span data-locale="en">Integrated TC-ACT and Diffusion with ROS 2 hardware; profiled standard inference optimizations and independently checked feedback timing and ordered commands.</span><span data-locale="ko">TC-ACT·Diffusion을 ROS 2 실로봇 시스템에 연결하고, 기존 추론 최적화 기법의 효과와 피드백 지연·행동 순서를 구분해 검증했습니다.</span></p><span class="card-arrow" aria-hidden="true">↗</span></a>
 </div>
 <div class="home-video-link"><p><span data-locale="en">See four simulation rollouts and two real-robot TC-ACT demonstrations.</span><span data-locale="ko">시뮬레이션 롤아웃 네 개와 실로봇 TC-ACT 시연 두 개를 확인할 수 있습니다.</span></p><a class="inline-link" href="research/?v=feedback-20261107-v1#policy-videos"><span data-locale="en">Watch the policy videos ↗</span><span data-locale="ko">정책별 영상 보기 ↗</span></a></div>
 </section>
