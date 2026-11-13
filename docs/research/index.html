@@ -20,6 +20,8 @@
 <script src="../research-page-interactions.js?v=20261106-section-emphasis" defer></script>
 <script src="../demonstration-coverage.js?v=20261105-basket-coverage" defer></script>
 <script src="../policy-videos.js?v=725211c2faa1" defer></script>
+<link rel="stylesheet" href="../real-to-sim.css?v=20261113">
+<script src="../real-to-sim.js?v=20261113" defer></script>
 </head>
 <body>
 <a class="skip" href="#main"><span data-locale="en">Skip to content</span><span data-locale="ko">본문으로 건너뛰기</span></a>
@@ -127,6 +129,35 @@
 <article class="research-card"><span class="research-label featured-demonstration-label">03 / CODE-SCRIPTED</span><h3><span data-locale="en">Generate demonstrations</span><span data-locale="ko">시연 자동 생성</span></h3><p><span data-locale="en">Plan object-relative motion, execute it with IK and physical contact, and verify the saved demonstrations in RGB replay.</span><span data-locale="ko">물체 기준 동작을 계획하고 IK·물리 접촉으로 실행한 뒤, 저장한 시연을 RGB 재생으로 검증했습니다.</span></p></article>
 <article class="research-card"><span class="research-label featured-demonstration-label">04 / SUCCESS ROLLOUTS</span><h3><span data-locale="en">Filter and retrain</span><span data-locale="ko">성공 궤적 선별과 재학습</span></h3><p><span data-locale="en">Select successful policy executions and test teacher/student data composition under controlled retraining conditions.</span><span data-locale="ko">정책 실행에서 성공 궤적을 선별하고 교사·학생 데이터 구성을 통제하여 재학습했습니다.</span></p></article>
 </div>
+
+<article class="real-to-sim-panel" id="real-to-sim" aria-labelledby="real-to-sim-title">
+  <div class="real-to-sim-heading">
+    <p class="eyebrow">REAL → SIM / PICK&amp;PLACE</p>
+    <h3 id="real-to-sim-title"><span data-locale="en">From a real demonstration to simulation</span><span data-locale="ko">실물 시연을 시뮬레이션 데모로</span></h3>
+    <p><span data-locale="en">Explore the same demonstration in real camera footage, simulation, and an overlay.</span><span data-locale="ko">같은 시연의 실물 영상과 시뮬레이션을 겹쳐 보거나 각각 살펴보세요.</span></p>
+  </div>
+  <div class="real-to-sim-layout" data-real-to-sim>
+    <div class="real-to-sim-media">
+      <div class="real-to-sim-modes" role="group" aria-label="Video comparison view" hidden>
+        <button type="button" data-demo-view="overlay" data-video-src="../assets/media/real-to-sim/basket-overlay.mp4" aria-pressed="true"><span data-locale="en">Overlay</span><span data-locale="ko">겹쳐 보기</span></button>
+        <button type="button" data-demo-view="real" data-video-src="../assets/media/real-to-sim/basket-real.mp4" aria-pressed="false"><span data-locale="en">Real</span><span data-locale="ko">실물</span></button>
+        <button type="button" data-demo-view="sim" data-video-src="../assets/media/real-to-sim/basket-sim.mp4" aria-pressed="false"><span data-locale="en">Simulation</span><span data-locale="ko">시뮬레이션</span></button>
+      </div>
+      <video class="real-to-sim-video" controls muted playsinline preload="metadata" poster="../assets/media/real-to-sim/basket-overlay.jpg" aria-label="Real demonstration and generated simulation comparison">
+        <source src="../assets/media/real-to-sim/basket-overlay.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="real-to-sim-explanation">
+      <h4><span data-locale="en">How the simulation was created</span><span data-locale="ko">시뮬레이션은 이렇게 만들었습니다</span></h4>
+      <p><span data-locale="en">The camera view and workspace were built around the real demonstration footage. Recorded joint commands guided the grasp-and-place motion, which was adjusted and executed in a physics simulation to record new images and joint data.</span><span data-locale="ko">실물 시연 영상에 맞춰 카메라 시점과 작업 환경을 구성했습니다. 함께 기록한 관절 명령으로 집기·놓기 동작을 보정하고, 물리 시뮬레이션에서 실행하며 새로운 영상과 관절 데이터를 저장했습니다.</span></p>
+      <ol class="real-to-sim-flow">
+        <li><strong><span data-locale="en">Real demonstration</span><span data-locale="ko">실물 시연</span></strong><span><span data-locale="en">Camera footage and joint commands</span><span data-locale="ko">카메라 영상과 관절 명령</span></span></li>
+        <li><strong><span data-locale="en">Scene and motion</span><span data-locale="ko">환경과 동작 구성</span></strong><span><span data-locale="en">Match the view and adapt the trajectory</span><span data-locale="ko">시점·배치를 맞추고 궤적 보정</span></span></li>
+        <li><strong><span data-locale="en">Simulation recording</span><span data-locale="ko">시뮬레이션 기록</span></strong><span><span data-locale="en">Physics execution and learning data</span><span data-locale="ko">물리 실행으로 학습 데이터 저장</span></span></li>
+      </ol>
+    </div>
+  </div>
+</article>
 
 <div class="demo-coverage-switcher" id="demonstration-coverage" data-demo-coverage>
 <div class="demo-coverage-heading"><h3 class="demo-topic-heading" id="mimic-topic-title"><span data-locale="en">MIMIC / PLACEMENT COVERAGE</span><span data-locale="ko">MIMIC / 초기 위치 분포</span></h3><h4 class="demo-topic-subtitle"><span data-locale="en">Retarget the motion, compare placement coverage</span><span data-locale="ko">동작 재배치와 초기 위치 분포 비교</span></h4></div>
