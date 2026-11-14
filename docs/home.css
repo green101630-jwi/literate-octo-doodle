@@ -1,6 +1,6 @@
 /* Evidence-first home page; the shared portfolio design remains unchanged. */
 .hero{padding-top:64px;padding-bottom:48px}
-.hero-lead{margin-top:26px}
+.hero-lead{margin-top:26px;word-break:keep-all;overflow-wrap:anywhere}
 .home-findings{padding-top:26px;padding-bottom:10px}
 .home-findings h2,.home-contributions h2,#other-projects h2{font-size:clamp(1.8rem,2.8vw,2.6rem)}
 .home-finding-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
@@ -17,7 +17,7 @@
 .home-finding .inline-link{font-size:.8rem}
 .home-contributions{padding-top:66px;padding-bottom:66px}
 .home-contributions .info-card h3{font-size:1.25rem;line-height:1.4}
-.home-contributions .info-card p{margin-bottom:0}
+.home-contributions .info-card p{margin-bottom:0;word-break:keep-all;overflow-wrap:anywhere}
 .home-video-link{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:24px;padding-top:22px;border-top:1px solid var(--line)}
 .home-video-link p{margin:0;font-size:.86rem;color:var(--muted)}
 .home-video-link .inline-link{white-space:nowrap}
@@ -35,3 +35,4 @@
 .home-experience-links a:hover{text-decoration:underline}
 @media(max-width:950px){.home-project-grid{grid-template-columns:1fr}.home-project{grid-template-columns:170px minmax(0,1fr)}.home-project-visual{height:180px}}
 @media(max-width:700px){.hero{padding-top:45px;padding-bottom:32px}.home-findings{padding-top:25px}.home-finding-grid{grid-template-columns:1fr;gap:16px}.home-finding{padding:23px}.home-finding .eyebrow{font-size:.65rem}.finding-scope{min-height:0}.home-contributions{padding-top:46px;padding-bottom:45px}.home-contributions .card-grid.three{grid-template-columns:1fr}.home-video-link{display:block}.home-video-link .inline-link{margin-top:13px}#other-projects{padding-top:45px;padding-bottom:43px}.home-project{grid-template-columns:100px minmax(0,1fr);padding:20px;gap:17px}.home-project-visual{height:170px}.home-project h3{font-size:1.1rem}.home-project .eyebrow{font-size:.6rem}.home-project p:not(.eyebrow){font-size:.78rem}.home-experience-links{gap:15px;flex-direction:column;align-items:flex-start}}
+

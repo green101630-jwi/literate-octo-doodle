@@ -5,15 +5,15 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="#f6f8fb" name="theme-color"/>
-<meta content="Won Ik Jang. Undergraduate researcher at Kyung Hee University working on robot learning, robot control, and sim-to-real manipulation." name="description"/>
+<meta content="Won Ik Jang studies dual-arm robot learning through ACT/TC-ACT comparisons, Diffusion Policy deployment, and SmolVLA fine-tuning and execution." name="description"/>
 <meta content="website" property="og:type"/>
 <meta content="Won Ik Jang | Robot Learning &amp; Control" property="og:title"/>
-<meta content="Won Ik Jang. Undergraduate researcher at Kyung Hee University working on robot learning, robot control, and sim-to-real manipulation." property="og:description"/>
+<meta content="Won Ik Jang studies dual-arm robot learning through ACT/TC-ACT comparisons, Diffusion Policy deployment, and SmolVLA fine-tuning and execution." property="og:description"/>
 <meta content="https://green101630-jwi.github.io/literate-octo-doodle/assets/media/dual-arm-workspace.jpg" property="og:image"/>
 <title data-title-en="Won Ik Jang | Robot Learning &amp; Control" data-title-ko="장원익 | 로봇 학습 및 제어">Won Ik Jang | Robot Learning &amp; Control</title>
 <link href="portfolio.css" rel="stylesheet"/>
 <link href="research-enhancements.css" rel="stylesheet"/>
-<link href="home.css?v=d6b59a765246" rel="stylesheet"/>
+<link href="home.css?v=20261115-home-about" rel="stylesheet"/>
 <script defer="" src="portfolio.js"></script>
 </head>
 <body>
@@ -25,10 +25,9 @@
 <p class="eyebrow"><span class="pulse"></span><span data-locale="en">UNDERGRADUATE RESEARCHER · ROBOT LEARNING &amp; CONTROL</span><span data-locale="ko">학부연구생 · 로봇 학습 및 제어</span></p>
 <h1 id="hero-name">Won Ik Jang<span class="heading-line"> <span data-locale="en">Robot Learning <em>&amp;</em> Control</span><span data-locale="ko">로봇 학습 <em>&amp;</em> 제어</span></span></h1>
 <p class="identity">Kyung Hee University <span class="sep">/</span> <span data-locale="en">Biomedical Engineering &amp; Electronic Engineering (Double Major)</span><span data-locale="ko">생체의공학 · 전자공학 복수전공</span></p>
-<p class="hero-lead"><span data-locale="en">I study how temporal context and demonstration data shape bimanual robot learning, and bring learned policies to physical robots.</span><span data-locale="ko">양팔 로봇 조작에서 시간적 문맥과 시연 데이터가 학습에 미치는 영향을 연구하고, 학습한 정책을 실제 로봇에 적용합니다.</span></p>
-<div class="hero-actions"><a class="btn primary" href="research/?v=feedback-20261107-v1"><span data-locale="en">Explore Research</span><span data-locale="ko">연구 살펴보기</span><span aria-hidden="true"> ↗</span></a><a class="btn subtle" href="about/?v=feedback-20261107-v1"><span data-locale="en">About Me</span><span data-locale="ko">자기소개</span><span aria-hidden="true"> ↗</span></a><a class="btn ghost" href="assets/WonIkJang_CV.pdf?v=31153842b9fe" rel="noopener" target="_blank">CV <span aria-hidden="true">↗</span></a></div>
-<div class="hero-tags"><span>Imitation Learning</span><span>Robot Control</span><span>Sim-to-Real</span></div>
-
+<p class="hero-lead"><span data-locale="en">I train and evaluate imitation-learning policies for dual-arm robots in simulation and on hardware. My work includes ACT/TC-ACT architecture comparisons, Diffusion Policy deployment, and SmolVLA fine-tuning and execution.</span><span data-locale="ko">시연 데이터로 양팔 로봇의 행동을 학습하고, 시뮬레이션과 실로봇에서 평가합니다. ACT·TC-ACT의 구조 비교, Diffusion Policy의 실물 구동, SmolVLA의 학습·실행을 다뤘습니다.</span></p>
+<div class="hero-actions"><a class="btn primary" href="research/"><span data-locale="en">Explore Research</span><span data-locale="ko">연구 살펴보기</span><span aria-hidden="true"> ↗</span></a><a class="btn subtle" href="about/"><span data-locale="en">About Me</span><span data-locale="ko">자기소개</span><span aria-hidden="true"> ↗</span></a><a class="btn ghost" href="assets/WonIkJang_CV.pdf?v=31153842b9fe" rel="noopener" target="_blank">CV <span aria-hidden="true">↗</span></a></div>
+<div class="hero-tags"><span>Imitation Learning</span><span>Vision-Language-Action</span><span>Robot Deployment</span></div>
 </div>
 <div class="hero-media">
 <div class="media-label"><span class="pulse"></span><span data-locale="en">ON THE ROBOT · DUAL-ARM OMX</span><span data-locale="ko">실제 로봇 · 양팔 OMX</span></div>
@@ -36,7 +35,11 @@
 <div class="media-caption"><span>01 / PHYSICAL SYSTEM</span><span><span data-locale="en">ROS 2 · Teleoperation · Digital twin</span><span data-locale="ko">ROS 2 · 원격 조작 · 디지털 트윈</span></span></div>
 </div>
 </section>
-<section aria-labelledby="findings-heading" class="wrap home-findings">
+<section aria-labelledby="research-heading" class="section wrap home-contributions">
+<div class="section-head"><div><p class="eyebrow">RESEARCH / DUAL-ARM LEARNING</p><h2 id="research-heading"><span data-locale="en">What I built and evaluated</span><span data-locale="ko">직접 구현하고 평가한 것들</span></h2></div><a class="inline-link" href="research/"><span data-locale="en">Research details →</span><span data-locale="ko">연구 내용 보기 →</span></a></div>
+<div class="card-grid three"><a class="info-card" href="research/#act-tc"><span class="index">01 / POLICY DESIGN</span><h3>ACT / TC-ACT</h3><p><span data-locale="en">Designed TC-ACT by adding observation history and future-state auxiliary supervision to ACT, then compared task performance at matched initial placements.</span><span data-locale="ko">ACT에 관측 이력과 미래 상태 보조 학습을 더한 TC-ACT를 설계하고, 같은 초기 배치에서 태스크별 성능을 비교했습니다.</span></p><span aria-hidden="true" class="card-arrow">→</span></a><a class="info-card" href="research/#diffusion"><span class="index">02 / HARDWARE EXECUTION</span><h3>Diffusion Policy</h3><p><span data-locale="en">Applied existing compilation and CUDA Graph techniques to a smaller, retrained U-Net. Measured inference delay and joint-feedback age, and checked action delivery order on the robot.</span><span data-locale="ko">재학습된 작은 U-Net에 기존 compile·CUDA Graph 기법을 적용했습니다. 실물 구동에서 추론·피드백 지연과 행동 전달 순서를 검증했습니다.</span></p><span aria-hidden="true" class="card-arrow">→</span></a><a class="info-card" href="research/#smolvla"><span class="index">03 / VLA ADAPTATION</span><h3>SmolVLA</h3><p><span data-locale="en">Fine-tuned four models with different real/simulation data and trainable modules. Implemented asynchronous inference to compute the next action chunk while executing the current one.</span><span data-locale="ko">실물·시뮬 데이터와 학습 모듈을 달리해 네 모델을 fine-tuning했습니다. 기존 행동 청크를 실행하는 동안 다음 청크를 계산하는 비동기 구조를 구현했습니다.</span></p><span aria-hidden="true" class="card-arrow">→</span></a></div>
+<div class="home-video-link"><p><span data-locale="en">See four simulation rollouts and two real-robot TC-ACT demonstrations.</span><span data-locale="ko">시뮬레이션 롤아웃 네 개와 실로봇 TC-ACT 시연 두 개를 확인할 수 있습니다.</span></p><a class="inline-link" href="research/?v=feedback-20261107-v1#policy-videos"><span data-locale="en">Watch the policy videos ↗</span><span data-locale="ko">정책별 영상 보기 ↗</span></a></div>
+</section><section aria-labelledby="findings-heading" class="wrap home-findings">
 <div class="section-head"><div><p class="eyebrow">SELECTED RESULTS</p><h2 id="findings-heading"><span data-locale="en">Results at a glance</span><span data-locale="ko">대표 실험 결과</span></h2></div></div>
 <div class="home-finding-grid">
 <article class="home-finding">
@@ -59,15 +62,7 @@
 </article>
 </div>
 </section>
-<section aria-labelledby="research-heading" class="section wrap home-contributions">
-<div class="section-head"><div><p class="eyebrow">RESEARCH / DUAL-ARM LEARNING</p><h2 id="research-heading"><span data-locale="en">What I built and evaluated</span><span data-locale="ko">직접 구현하고 평가한 것들</span></h2></div><a class="inline-link" href="research/?v=feedback-20261107-v1"><span data-locale="en">Research overview ↗</span><span data-locale="ko">연구 개요 보기 ↗</span></a></div>
-<div class="card-grid three">
-<a class="info-card" href="research/?v=feedback-20261107-v1#tc-act"><span class="index">01 / POLICY EXTENSIONS</span><h3>ACT &amp; TC-ACT</h3><p><span data-locale="en">Extended ACT with temporal observations and future-state auxiliary supervision, then compared complete ACT / TC-ACT configurations.</span><span data-locale="ko">ACT에 시간적 관측과 미래 상태 보조 학습을 연결하고, ACT·TC-ACT 전체 구성의 성능을 비교했습니다.</span></p><span aria-hidden="true" class="card-arrow">↗</span></a>
-<a class="info-card" href="research/?v=real-to-sim-20261113#real-to-sim"><span class="index">02 / DEMONSTRATION PIPELINES</span><h3><span data-locale="en">Data for bimanual learning</span><span data-locale="ko">양팔 학습을 위한 시연 데이터</span></h3><p><span data-locale="en">Built demonstration workflows from teleoperation to simulation. Explore real footage and its generated simulation in an overlay.</span><span data-locale="ko">실물 시연을 시뮬레이션 학습 데이터로 연결했습니다. 원본 영상과 생성한 시뮬레이션을 겹쳐 볼 수 있습니다.</span></p><span aria-hidden="true" class="card-arrow">↗</span></a>
-<a class="info-card" href="research/?v=feedback-20261107-v1#systems"><span class="index">03 / PHYSICAL EXECUTION</span><h3><span data-locale="en">Policies on real robots</span><span data-locale="ko">학습한 정책을 실로봇으로</span></h3><p><span data-locale="en">Integrated TC-ACT and Diffusion with ROS 2 hardware; profiled standard inference optimizations and independently checked feedback timing and ordered commands.</span><span data-locale="ko">TC-ACT·Diffusion을 ROS 2 실로봇 시스템에 연결하고, 기존 추론 최적화 기법의 효과와 피드백 지연·행동 순서를 구분해 검증했습니다.</span></p><span aria-hidden="true" class="card-arrow">↗</span></a>
-</div>
-<div class="home-video-link"><p><span data-locale="en">See four simulation rollouts and two real-robot TC-ACT demonstrations.</span><span data-locale="ko">시뮬레이션 롤아웃 네 개와 실로봇 TC-ACT 시연 두 개를 확인할 수 있습니다.</span></p><a class="inline-link" href="research/?v=feedback-20261107-v1#policy-videos"><span data-locale="en">Watch the policy videos ↗</span><span data-locale="ko">정책별 영상 보기 ↗</span></a></div>
-</section>
+
 <section class="section alternate" id="other-projects"><div class="wrap">
 <div class="section-head"><div><p class="eyebrow">OTHER PROJECTS &amp; EXPERIENCES</p><h2><span data-locale="en">Hands-on engineering</span><span data-locale="ko">직접 만든 공학 프로젝트</span></h2></div><a class="inline-link" href="projects/?v=feedback-20261107-v1"><span data-locale="en">All projects ↗</span><span data-locale="ko">프로젝트 전체 보기 ↗</span></a></div>
 <div class="home-project-grid">
