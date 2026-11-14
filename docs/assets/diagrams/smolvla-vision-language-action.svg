@@ -55,9 +55,9 @@
     <text x="530" y="56" class="node-title" font-size="18.5" fill="#FFFFFF">Language embedding</text>
     <text x="530" y="85" class="node-detail" fill="#FFFFFF">instruction tokens</text>
   </g>
-  <g id="language_frozen_tail" data-module="language_frozen_tail" data-state="frozen" role="group" aria-label="네 모델 모두 동결: 동결">
+  <g id="language_frozen_tail" data-module="language_frozen_tail" data-state="frozen" role="group" aria-label="Frozen in all four models">
     <rect x="720" y="26" width="480" height="74" fill="#EDF0F2" stroke="#A7AFB3" stroke-width="1.3"/>
-    <text x="960" y="56" class="node-title" font-size="19" fill="#69757B">네 모델 모두 동결</text>
+    <text x="960" y="56" class="node-title" font-size="19" fill="#69757B">Frozen in all four models</text>
     <text x="960" y="85" class="node-detail" fill="#69757B">Language layer 15 / final norm / LM head</text>
   </g>
   <g id="state_proj" data-module="state_proj" data-state="train" role="group" aria-label="state_proj: 학습">
