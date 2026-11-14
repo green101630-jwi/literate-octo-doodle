@@ -104,3 +104,13 @@ html:not([lang="ko"]) #main [data-locale="ko"],html[lang="ko"] #main [data-local
 .research-records-content>.story-question{font-size:.86rem}
 .research-records-content>.story-details{margin-top:13px}
 @media(max-width:700px){.research-threeparts .research-part{padding-top:35px;padding-bottom:35px}.research-part-subtitle{font-size:.9rem;margin-bottom:20px}.research-common-records{margin-bottom:35px}.research-common-records>summary{padding:17px}.research-common-records>.disclosure-body{padding:15px}.research-threeparts #e6000-main-comparison .figure-heading{gap:12px}}
+
+/* Page-wide controls sit beside the existing three-study index. */
+.research-navigation-tools{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.research-navigation-tools .research-nav{margin:0}
+.research-disclosure-controls{display:flex;gap:8px;flex-wrap:wrap}
+.research-disclosure-controls[hidden]{display:none}
+.research-disclosure-controls button{border:1px solid var(--line);border-radius:6px;padding:9px 13px;background:#fff;color:var(--teal-deep);font:inherit;font-size:.78rem;font-weight:700;line-height:1.5;cursor:pointer}
+.research-disclosure-controls button:hover{border-color:var(--teal);background:#edf6f4}
+@media(max-width:700px){.research-navigation-tools{gap:13px}.research-disclosure-controls button{padding:8px 12px}}
+@media print{.research-disclosure-controls{display:none!important}}

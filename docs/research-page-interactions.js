@@ -35,6 +35,40 @@
     window.addEventListener("hashchange", revealTarget);
     revealTarget();
 
+    const main = document.getElementById("main");
+    const controls = document.querySelector("[data-research-disclosure-controls]");
+    if (main && controls) {
+      const setAll = open => {
+        main.querySelectorAll("details").forEach(detail => { detail.open = open; });
+      };
+      controls.querySelector("[data-research-expand-all]").addEventListener("click", () => setAll(true));
+      controls.querySelector("[data-research-collapse-all]").addEventListener("click", () => setAll(false));
+      const updateControlLanguage = () => {
+        const lang = document.documentElement.lang === "ko" ? "ko" : "en";
+        controls.setAttribute("aria-label", controls.getAttribute("data-label-" + lang));
+      };
+      updateControlLanguage();
+      new MutationObserver(updateControlLanguage).observe(document.documentElement, {
+        attributes: true, attributeFilter: ["lang"]
+      });
+      controls.hidden = false;
+
+      // Closing all disclosures can leave the current fragment inside a fold.
+      // Re-clicking that same link must reveal it and select its model/runtime tab.
+      main.addEventListener("click", event => {
+        if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        const link = event.target.closest("a[href]");
+        if (!link) return;
+        const destination = new URL(link.href, location.href);
+        if (!destination.hash || destination.origin !== location.origin ||
+            destination.pathname !== location.pathname || destination.search !== location.search ||
+            destination.hash !== location.hash) return;
+        requestAnimationFrame(() => window.dispatchEvent(new HashChangeEvent("hashchange", {
+          oldURL: location.href, newURL: location.href
+        })));
+      });
+    }
+
     const dialog = document.getElementById("research-figure-modal");
     const image = document.getElementById("research-figure-modal-image");
     const title = document.getElementById("research-figure-modal-title");
