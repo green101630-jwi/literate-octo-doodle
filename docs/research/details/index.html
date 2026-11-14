@@ -4,7 +4,7 @@
 <meta http-equiv="refresh" content="0;url=../">
 <script>
 (() => {
-  const map = {pipeline:"systems-implementation",policies:"act-baseline","tc-act":"tc-act",demonstrations:"demo-footage",deployment:"deployment-context","real-camera":"camera-observations",results:"results"};
+  const map = {pipeline:"systems",policies:"policies","tc-act":"tc-act",demonstrations:"demonstrations",deployment:"deployment","real-camera":"deployment",results:"results"};
   const requested = location.hash.replace(/^#/, "");
   const destination = map[requested] || "research-index";
   location.replace(new URL("../#" + destination, location.href));

@@ -1,0 +1,287 @@
+{
+  "schema_version": 1,
+  "prepared": "2026-11-15",
+  "scope": "Training settings and module selection for four SmolVLA checkpoints. Diagram colors describe the last listed training stage.",
+  "source_presentation": {
+    "filename": "07_SmolVLA_Model1-4_비교표_수정본_27장.pptx",
+    "diagram_slides": [
+      8,
+      9,
+      10
+    ],
+    "web_diagrams": "Redrawn as accessible SVGs from the original block structure."
+  },
+  "learning_objective": {
+    "name": "action flow-matching MSE",
+    "lora": false,
+    "note": "Only selected original parameters are updated; frozen modules still participate in inference."
+  },
+  "real_data_split": {
+    "training_demonstrations": 40,
+    "validation_demonstrations": 8
+  },
+  "models": [
+    {
+      "model": 1,
+      "checkpoint_id": "smolvla_real_aug",
+      "source_slide": 8,
+      "parent_ko": "공식 사전학습 SmolVLA base",
+      "parent_en": "Official pretrained SmolVLA base",
+      "data": {
+        "training_real_episodes": 40,
+        "validation_real_episodes": 8,
+        "photometric_augmentation": true,
+        "brightness": [
+          0.8,
+          1.2
+        ],
+        "contrast": [
+          0.8,
+          1.2
+        ],
+        "saturation": [
+          0.9,
+          1.1
+        ],
+        "geometric_augmentation": false
+      },
+      "selected_step": 15500,
+      "stages": [
+        {
+          "stage": "real_adaptation",
+          "parent": "official_base",
+          "data": "real40+photometric",
+          "selected_step": 15500,
+          "trainable_group": "action_only"
+        }
+      ],
+      "updated_modules": [
+        "action_expert",
+        "state_proj",
+        "action_in_proj",
+        "action_time_mlp_in",
+        "action_time_mlp_out",
+        "action_out_proj"
+      ],
+      "frozen_modules": [
+        "vision_encoder",
+        "connector",
+        "language_embedding",
+        "language_layers_0_14",
+        "language_layer_15",
+        "language_final_norm",
+        "language_lm_head"
+      ],
+      "status_by_module": {
+        "vision_encoder": "frozen",
+        "connector": "frozen",
+        "language_embedding": "frozen",
+        "language_layers_0_14": "frozen",
+        "language_layer_15": "frozen",
+        "language_final_norm": "frozen",
+        "language_lm_head": "frozen",
+        "action_expert": "train",
+        "state_proj": "train",
+        "action_in_proj": "train",
+        "action_time_mlp_in": "train",
+        "action_time_mlp_out": "train",
+        "action_out_proj": "train"
+      },
+      "diagram": "../diagrams/smolvla-action-only.svg"
+    },
+    {
+      "model": 2,
+      "checkpoint_id": "smolvla_sim_dr_real_s6500",
+      "source_slide": 8,
+      "parent_ko": "DR시뮬 선행학습 모델 dr_s2",
+      "parent_en": "DR-simulation-pretrained dr_s2",
+      "data": {
+        "training_real_episodes": 40,
+        "validation_real_episodes": 8,
+        "parent_DR_episodes": 1600,
+        "photometric_augmentation": true
+      },
+      "selected_step": 6500,
+      "stages": [
+        {
+          "stage": "DR_stage1",
+          "parent": "official_base",
+          "data": "DR1600",
+          "steps": 20000,
+          "trainable_group": "action_only",
+          "status_basis": "Latest build_deck/slide_manifest training-parent notes"
+        },
+        {
+          "stage": "DR_stage2",
+          "parent": "DR_stage1",
+          "data": "DR1600",
+          "additional_steps": 40000,
+          "trainable_group": "vision_action",
+          "language": "frozen",
+          "status_basis": "Latest build_deck/slide_manifest training-parent notes"
+        },
+        {
+          "stage": "real_adaptation",
+          "parent": "dr_s2",
+          "data": "real40+photometric",
+          "selected_step": 6500,
+          "trainable_group": "action_only"
+        }
+      ],
+      "updated_modules": [
+        "action_expert",
+        "state_proj",
+        "action_in_proj",
+        "action_time_mlp_in",
+        "action_time_mlp_out",
+        "action_out_proj"
+      ],
+      "frozen_modules": [
+        "vision_encoder",
+        "connector",
+        "language_embedding",
+        "language_layers_0_14",
+        "language_layer_15",
+        "language_final_norm",
+        "language_lm_head"
+      ],
+      "status_by_module": {
+        "vision_encoder": "frozen",
+        "connector": "frozen",
+        "language_embedding": "frozen",
+        "language_layers_0_14": "frozen",
+        "language_layer_15": "frozen",
+        "language_final_norm": "frozen",
+        "language_lm_head": "frozen",
+        "action_expert": "train",
+        "state_proj": "train",
+        "action_in_proj": "train",
+        "action_time_mlp_in": "train",
+        "action_time_mlp_out": "train",
+        "action_out_proj": "train"
+      },
+      "diagram": "../diagrams/smolvla-action-only.svg"
+    },
+    {
+      "model": 3,
+      "checkpoint_id": "smolvla_real_vision_s2000",
+      "source_slide": 9,
+      "parent_ko": "Model1의15,500-step가중치",
+      "parent_en": "Model1 at15,500steps",
+      "data": {
+        "training_real_episodes": 40,
+        "validation_real_episodes": 8,
+        "photometric_augmentation": true,
+        "same_real_data_as_models_1_2": true
+      },
+      "selected_step": 2000,
+      "stages": [
+        {
+          "stage": "vision_real_adaptation",
+          "parent": "smolvla_real_aug@15500",
+          "data": "same_real40+photometric",
+          "additional_steps": 2000,
+          "trainable_group": "vision_action"
+        }
+      ],
+      "updated_modules": [
+        "vision_encoder",
+        "connector",
+        "action_expert",
+        "state_proj",
+        "action_in_proj",
+        "action_time_mlp_in",
+        "action_time_mlp_out",
+        "action_out_proj"
+      ],
+      "frozen_modules": [
+        "language_embedding",
+        "language_layers_0_14",
+        "language_layer_15",
+        "language_final_norm",
+        "language_lm_head"
+      ],
+      "status_by_module": {
+        "vision_encoder": "train",
+        "connector": "train",
+        "language_embedding": "frozen",
+        "language_layers_0_14": "frozen",
+        "language_layer_15": "frozen",
+        "language_final_norm": "frozen",
+        "language_lm_head": "frozen",
+        "action_expert": "train",
+        "state_proj": "train",
+        "action_in_proj": "train",
+        "action_time_mlp_in": "train",
+        "action_time_mlp_out": "train",
+        "action_out_proj": "train"
+      },
+      "diagram": "../diagrams/smolvla-vision-action.svg"
+    },
+    {
+      "model": 4,
+      "checkpoint_id": "smolvla_r2s_s2",
+      "source_slide": 10,
+      "parent_ko": "공식SmolVLA에서 출발한 시뮬1단계15,000-step모델",
+      "parent_en": "A15,000-step simulation-stage1 model initialized from the official base",
+      "data": {
+        "simulation_episodes": 2300,
+        "ordinary_episodes": 2000,
+        "recovery_episodes": 300,
+        "collection": "scripted expert in real-video-matched simulation",
+        "real_episode_count_in_this_stage": 0
+      },
+      "selected_step": 25000,
+      "stages": [
+        {
+          "stage": "simulation_stage1",
+          "parent": "official_base",
+          "checkpoint_step": 15000,
+          "data": "unverified",
+          "trainable_group": "unverified"
+        },
+        {
+          "stage": "simulation_stage2",
+          "parent": "simulation_stage1@15000",
+          "data": "r2s2300",
+          "checkpoint_step": 25000,
+          "trainable_group": "vision_language_action",
+          "additional_vs_cumulative": "unverified"
+        }
+      ],
+      "updated_modules": [
+        "vision_encoder",
+        "connector",
+        "language_embedding",
+        "language_layers_0_14",
+        "action_expert",
+        "state_proj",
+        "action_in_proj",
+        "action_time_mlp_in",
+        "action_time_mlp_out",
+        "action_out_proj"
+      ],
+      "frozen_modules": [
+        "language_layer_15",
+        "language_final_norm",
+        "language_lm_head"
+      ],
+      "status_by_module": {
+        "vision_encoder": "train",
+        "connector": "train",
+        "language_embedding": "train",
+        "language_layers_0_14": "train",
+        "language_layer_15": "frozen",
+        "language_final_norm": "frozen",
+        "language_lm_head": "frozen",
+        "action_expert": "train",
+        "state_proj": "train",
+        "action_in_proj": "train",
+        "action_time_mlp_in": "train",
+        "action_time_mlp_out": "train",
+        "action_out_proj": "train"
+      },
+      "diagram": "../diagrams/smolvla-vision-language-action.svg"
+    }
+  ]
+}

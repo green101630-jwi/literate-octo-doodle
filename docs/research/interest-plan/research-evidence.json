@@ -127,25 +127,11 @@
         "source": "official base → simulation stage1 15000 (stage1 data/modules not established)",
         "data": "sim2300: ordinary2000 + recovery300",
         "checkpoint_step": 25000,
-        "updated": "vision, connector, language, action components",
-        "step_scope_limit": "Whether 25000 is additional or cumulative is not established."
+        "updated": "vision, connector, language embedding and layers 0–14, action components",
+        "step_scope_limit": "Whether 25000 is additional or cumulative is not established.",
+        "frozen": "language layer 15, language final norm, language LM head"
       }
     ],
-    "stored_model4_simulation": {
-      "successes": 131,
-      "trials": 144,
-      "seen_wording": [
-        69,
-        72
-      ],
-      "unseen_wording": [
-        62,
-        72
-      ],
-      "inference_steps": 10,
-      "measurement_scope": "Historical registered simulator result, not rerun original rollouts."
-    },
-    "matched_four_model_hardware_success_rates": null,
     "hardware_inference": {
       "chunk_shape": [
         50,
@@ -168,8 +154,8 @@
     },
     "controlled_sync_async_success_benefit_demonstrated": false,
     "public_sources": [
-      "https://github.com/green101630-jwi/cuddly-adventure/blob/main/hardware-records/20261110_smolvla_updates/RUN_INDEX.json",
-      "https://github.com/green101630-jwi/cuddly-adventure/blob/main/hardware-records/20261112/analysis/REPORT_KO.md"
+      "../#smolvla-training",
+      "../../assets/data/smolvla-model-training.json"
     ]
   },
   "logical_source_checksums": [

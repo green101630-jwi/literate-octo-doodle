@@ -58,5 +58,17 @@
     }).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
     document.addEventListener('visibilitychange',()=>{if(document.hidden){stop();showPhase();}});
     select('act');
+    function revealLinkedPanel(){
+      let id;
+      try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}
+      if(!id)return;
+      const target=document.getElementById(id);
+      const panel=target?.closest('[data-hc-panel]');
+      if(!panel||!root.contains(panel))return;
+      select(panel.dataset.hcPanel);
+      requestAnimationFrame(()=>target.scrollIntoView({block:'start',behavior:'auto'}));
+    }
+    window.addEventListener('hashchange',revealLinkedPanel);
+    revealLinkedPanel();
   });
 })();
