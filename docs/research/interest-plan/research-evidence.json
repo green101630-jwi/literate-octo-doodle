@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "prepared": "2026-11-15",
+  "scope": "Public aggregate research companion. Existing measurements only; no new inference, training, or robot commands. Proposed work is not a completed result.",
+  "simulation_act_tc": {
+    "source_url": "../../assets/charts/evidence-data.json",
+    "selector": "charts.visual-act-tc-e5000",
+    "epoch": 5000,
+    "updates": 165000,
+    "training_seed": 0,
+    "training_data": "Teleop30 + Mimic300",
+    "input": "14D joints + RGB",
+    "batch_size": 8,
+    "chunk_size": 50,
+    "evaluation_seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "trials_per_seed": 250,
+    "paired_initial_positions": true,
+    "xy_range_cm": [
+      -2,
+      2
+    ],
+    "rows": [
+      {
+        "task": "Basket",
+        "amp": false,
+        "act_successes": 1200,
+        "tc_successes": 1113,
+        "trials_per_model": 1250
+      },
+      {
+        "task": "Handover, hollow tube",
+        "amp": true,
+        "act_successes": 926,
+        "tc_successes": 1051,
+        "trials_per_model": 1250
+      }
+    ],
+    "limits": "One training seed; complete configurations differ. This is not the later E6000 home-page comparison."
+  },
+  "diffusion": {
+    "input": "14D joints + 6D environment, two observations",
+    "prediction_horizon": 16,
+    "executed_chunk": 8,
+    "ddim_steps": 10,
+    "target_action_rate_hz": 50,
+    "gpu": "RTX 3070",
+    "c128_standalone": {
+      "metric": "p99_ms",
+      "samples_per_condition": 100,
+      "eager": 62.18345652334393,
+      "compiled": 14.577622872311625,
+      "source_url": "../../assets/charts/hardware-deployment-data.json"
+    },
+    "c128_physical_run": {
+      "fresh_inference_median_ms": 14.0,
+      "fresh_inference_max_ms": 17.88,
+      "roundtrip_max_ms": 21.21,
+      "actions": 796,
+      "skipped_actions": 0,
+      "task_success_rate": null,
+      "runtime": "compile + full DDIM10 CUDA Graph",
+      "logical_source": "physical_latestfeedback_seed2026_summary.json"
+    },
+    "model_parameters": {
+      "large": 65804814,
+      "c128": 17928078,
+      "note": "Retrained model change, separate from runtime optimization."
+    },
+    "ddim_step_reduction": {
+      "model": "larger Task2, separate from C128",
+      "steps": [
+        10,
+        5,
+        3
+      ],
+      "median_ms": [
+        52.66,
+        25.72,
+        16.32
+      ],
+      "ddim3_physical_simulation": "failed",
+      "limits": "Latency improvement is not task-performance evidence."
+    }
+  },
+  "smolvla": {
+    "real_demo_split": {
+      "training": 40,
+      "validation": 8
+    },
+    "models": [
+      {
+        "id": 1,
+        "checkpoint": "smolvla_real_aug",
+        "source": "official base",
+        "data": "real40 + photometric",
+        "steps": 15500,
+        "updated": "action expert, projections, time MLP",
+        "frozen": "vision, connector, language"
+      },
+      {
+        "id": 2,
+        "checkpoint": "smolvla_sim_dr_real_s6500",
+        "source": "official base → DR1600 (action20k, then vision+connector+action40k)",
+        "data": "real40 + photometric",
+        "adaptation_steps": 6500,
+        "updated": "action components",
+        "frozen": "vision, connector, language during final real adaptation"
+      },
+      {
+        "id": 3,
+        "checkpoint": "smolvla_real_vision_s2000",
+        "source": "Model1 15500-step checkpoint",
+        "data": "real40 + photometric",
+        "additional_steps": 2000,
+        "updated": "vision, connector, action",
+        "frozen": "language"
+      },
+      {
+        "id": 4,
+        "checkpoint": "smolvla_r2s_s2",
+        "source": "official base → simulation stage1 15000 (stage1 data/modules not established)",
+        "data": "sim2300: ordinary2000 + recovery300",
+        "checkpoint_step": 25000,
+        "updated": "vision, connector, language, action components",
+        "step_scope_limit": "Whether 25000 is additional or cumulative is not established."
+      }
+    ],
+    "stored_model4_simulation": {
+      "successes": 131,
+      "trials": 144,
+      "seen_wording": [
+        69,
+        72
+      ],
+      "unseen_wording": [
+        62,
+        72
+      ],
+      "inference_steps": 10,
+      "measurement_scope": "Historical registered simulator result, not rerun original rollouts."
+    },
+    "matched_four_model_hardware_success_rates": null,
+    "hardware_inference": {
+      "chunk_shape": [
+        50,
+        12
+      ],
+      "inference_steps": 5,
+      "action_publish_hz": 30,
+      "query_target_max_hz": 10,
+      "pending_max": 1,
+      "measured_query_hz_range": [
+        5.4,
+        5.7
+      ],
+      "server_median_ms_range": [
+        149,
+        165
+      ],
+      "server_timing_includes": "JPEG decoding and preprocessing/postprocessing",
+      "alignment": "request observation software timestamp; not sensor exposure time"
+    },
+    "controlled_sync_async_success_benefit_demonstrated": false,
+    "public_sources": [
+      "https://github.com/green101630-jwi/cuddly-adventure/blob/main/hardware-records/20261110_smolvla_updates/RUN_INDEX.json",
+      "https://github.com/green101630-jwi/cuddly-adventure/blob/main/hardware-records/20261112/analysis/REPORT_KO.md"
+    ]
+  },
+  "logical_source_checksums": [
+    {
+      "logical_filename": "DIFFUSION_HARDWARE_OPTIMIZATION_HISTORY_2026-11-08_KO.md",
+      "sha256": "10de306a0f9c6059259a3d68e8cfea94771898d164c017054cfd0cbfa43e7648",
+      "role": "Traceability of prepared aggregate; not a new experiment."
+    },
+    {
+      "logical_filename": "physical_latestfeedback_seed2026_summary.json",
+      "sha256": "85b47f06d921e9cf8ca524b52a29abd32a92fa6942c45b66aeb3de1a8b421fdb",
+      "role": "Traceability of prepared aggregate; not a new experiment."
+    },
+    {
+      "logical_filename": "diffusion_ddim_steps_rtx3070_benchmark.json",
+      "sha256": "608c7e9eb9d0201289e18080925b70ae0bc4637d87dbc538d952f40ae1d95968",
+      "role": "Traceability of prepared aggregate; not a new experiment."
+    },
+    {
+      "logical_filename": "slide_manifest.json",
+      "sha256": "b8a4f6ba7cba4ebe97afcc8e2cdb824b510e7db6abe78920aa58e11b7f68f250",
+      "role": "Traceability of prepared aggregate; not a new experiment."
+    }
+  ],
+  "privacy": "Aggregate measurements and logical filenames only. No private notes, credentials, raw robot logs, model weights, or local filesystem paths are included."
+}
