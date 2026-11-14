@@ -1,4 +1,4 @@
-/* The selector is progressive enhancement: all four articles remain visible without JS. */
+/* The selector is progressive enhancement: all model articles remain visible without JS. */
 .smolvla-training{min-width:0}
 .smolvla-training-title{margin:0 0 12px;font-size:clamp(1.25rem,2.3vw,1.7rem);line-height:1.45}
 .smolvla-training-intro{max-width:1000px;margin:0 0 18px;line-height:1.85;color:var(--muted,#526675)}
@@ -22,6 +22,8 @@
 .smolvla-swatch{display:inline-block;width:16px;height:16px;border:1px solid #a7b2b7;flex:none}
 .smolvla-swatch.trained{background:#147d73;border-color:#147d73}
 .smolvla-swatch.frozen{background:#edf0f2}
+.smolvla-swatch.lora{background:linear-gradient(to bottom,#edf0f2 0 55%,#147d73 55% 100%);border-color:#147d73}
+.smolvla-model-status{display:inline-block;margin:5px 0 0 10px;padding:3px 8px;border:1px solid #bed8d2;border-radius:5px;background:#edf6f4;color:#12685f;font-size:.7rem;font-weight:700;line-height:1.5;vertical-align:middle}
 .smolvla-model{border:1px solid var(--line,#d9e3e7);border-radius:10px;padding:23px;margin:16px 0 0;background:#fff;min-width:0;scroll-margin-top:95px}
 .smolvla-model-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
 .smolvla-model-head>div{min-width:0}
@@ -62,3 +64,4 @@
 .smolvla-modal-viewport img{display:block;width:100%;min-width:1220px;max-width:none;height:auto}
 @media(max-width:700px){.smolvla-model{padding:17px}.smolvla-model-head{flex-wrap:wrap;gap:11px}.smolvla-model-head>div{width:100%}.smolvla-module-list{grid-template-columns:1fr;gap:14px}.smolvla-model-tab{padding:10px 14px}.smolvla-legend{font-size:.73rem;gap:9px 18px}.smolvla-path{font-size:.8rem}.smolvla-common-note{font-size:.76rem}.smolvla-source-note{padding:14px}.smolvla-modal-head{padding:12px 14px;gap:12px}.smolvla-modal-head strong{font-size:.8rem}.smolvla-modal-close{font-size:.77rem;padding:7px 9px}.smolvla-modal-hint{margin:9px 14px}}
 @media print{.smolvla-model-tabs,.smolvla-zoom,.smolvla-diagram-modal,.smolvla-scroll-hint{display:none!important}.smolvla-model,.smolvla-model[hidden]{display:block!important;break-inside:avoid;padding:16px}.smolvla-diagram-scroll img{min-width:0}.smolvla-diagram-scroll,.smolvla-recipe-scroll{overflow:visible}.smolvla-recipes{min-width:0}}
+

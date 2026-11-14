@@ -1,7 +1,7 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "prepared": "2026-11-15",
-  "scope": "Training settings and module selection for four SmolVLA checkpoints. Diagram colors describe the last listed training stage.",
+  "scope": "Training settings and module selection for five SmolVLA experiments: four preserved checkpoints and one training run started on 2026-11-15. Diagram colors describe the last listed stage or the active training configuration; Model 5 is not a completed result.",
   "source_presentation": {
     "filename": "07_SmolVLA_Model1-4_비교표_수정본_27장.pptx",
     "diagram_slides": [
@@ -9,12 +9,27 @@
       9,
       10
     ],
-    "web_diagrams": "Redrawn as accessible SVGs from the original block structure."
+    "web_diagrams": "Redrawn as accessible SVGs from the original block structure.",
+    "applies_to_models": [
+      1,
+      2,
+      3,
+      4
+    ]
   },
   "learning_objective": {
     "name": "action flow-matching MSE",
-    "lora": false,
-    "note": "Only selected original parameters are updated; frozen modules still participate in inference."
+    "lora_by_model": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": false,
+      "5": {
+        "enabled": true,
+        "scope": "vision attention projections only"
+      }
+    },
+    "note": "Models 1–4 update selected original parameters. Model 5 updates vision-attention LoRA adapters and original connector/action parameters; original vision weights and all language parameters stay frozen. Frozen modules still participate in inference and gradient propagation."
   },
   "real_data_split": {
     "training_demonstrations": 40,
@@ -282,6 +297,148 @@
         "action_out_proj": "train"
       },
       "diagram": "../diagrams/smolvla-vision-language-action.svg"
+    },
+    {
+      "model": 5,
+      "checkpoint_id": "smolvla_vision_lora_r8",
+      "status": "training_in_progress",
+      "started": "2026-11-15",
+      "parent_ko": "공식 사전학습 SmolVLA base에서 새 학습",
+      "parent_en": "New training initialized from the official pretrained SmolVLA base",
+      "source": "Active training configuration recorded on 2026-11-15; no completed task-performance result.",
+      "data": {
+        "simulation_episodes": 2300,
+        "ordinary_episodes": 2000,
+        "recovery_episodes": 300,
+        "training_simulation_episodes": 2068,
+        "validation_simulation_episodes": 232,
+        "collection": "scripted expert in real-video-matched simulation",
+        "real_episode_count_in_this_stage": 0,
+        "split": "Group both cube initial XY positions across task meanings before the approximately 90/10 split; preserve ordinary/recovery task proportions.",
+        "normalization": "Training episodes only; count-weighted population mean/std from per-episode statistics.",
+        "photometric_augmentation": true,
+        "brightness": [
+          0.9,
+          1.1
+        ],
+        "contrast": [
+          0.9,
+          1.1
+        ],
+        "hue_augmentation": false,
+        "geometric_augmentation": false,
+        "initial_cube_position_variation": true,
+        "new_scene_dr_demonstrations_generated": false,
+        "camera_lighting_material_dynamics_dr_in_source_data": "unverified"
+      },
+      "planned_steps": 25000,
+      "selected_step": null,
+      "stages": [
+        {
+          "stage": "vision_lora_simulation_training",
+          "parent": "official_base",
+          "data": "r2s2300_grouped_train2068_validation232",
+          "status": "training_in_progress",
+          "planned_steps": 25000,
+          "trainable_group": "vision_lora_connector_action",
+          "language": "frozen"
+        }
+      ],
+      "lora": {
+        "enabled": true,
+        "scope": "vision encoder attention only",
+        "layers": 12,
+        "target_projections": [
+          "q_proj",
+          "k_proj",
+          "v_proj",
+          "out_proj"
+        ],
+        "adapted_linear_modules": 48,
+        "rank": 8,
+        "alpha": 16,
+        "dropout": 0.05,
+        "original_vision_weights": "frozen",
+        "frozen_vision_components": [
+          "patch_embedding",
+          "position_embedding",
+          "base_attention_projections",
+          "MLP",
+          "layer_norms"
+        ],
+        "inference_export": "Adapters are merged into ordinary vision projection weights; wrapped adapter weights are retained in the training resume state."
+      },
+      "updated_modules": [
+        "vision_attention_lora",
+        "connector",
+        "action_expert",
+        "state_proj",
+        "action_in_proj",
+        "action_time_mlp_in",
+        "action_time_mlp_out",
+        "action_out_proj"
+      ],
+      "frozen_modules": [
+        "vision_encoder_original_weights",
+        "vision_patch_embedding",
+        "vision_position_embedding",
+        "vision_attention_base_projections",
+        "vision_mlp",
+        "vision_layer_norms",
+        "language_embedding",
+        "language_layers_0_14",
+        "language_layer_15",
+        "language_final_norm",
+        "language_lm_head"
+      ],
+      "status_by_module": {
+        "vision_encoder": "lora",
+        "vision_encoder_base": "frozen",
+        "vision_attention_lora": "train",
+        "connector": "train",
+        "language_embedding": "frozen",
+        "language_layers_0_14": "frozen",
+        "language_layer_15": "frozen",
+        "language_final_norm": "frozen",
+        "language_lm_head": "frozen",
+        "action_expert": "train",
+        "state_proj": "train",
+        "action_in_proj": "train",
+        "action_time_mlp_in": "train",
+        "action_time_mlp_out": "train",
+        "action_out_proj": "train"
+      },
+      "training": {
+        "precision": "bf16",
+        "micro_batch_size": 1,
+        "gradient_accumulation_steps": 16,
+        "effective_batch_size": 16,
+        "learning_rates": {
+          "vision_lora": 0.0001,
+          "connector": 1e-05,
+          "action": 5e-05
+        },
+        "optimizer": "AdamW",
+        "warmup_optimizer_steps": 500,
+        "scheduler": "cosine decay to 0.1 of peak learning rates",
+        "validation_every_optimizer_steps": 500,
+        "seed": 2026,
+        "fps": 30,
+        "state_dimensions": 12,
+        "action_dimensions": 12,
+        "chunk_size": 50,
+        "inference_steps": 5
+      },
+      "parameter_counts": {
+        "vision_lora_trainable": 589824,
+        "connector_trainable": 11796480,
+        "action_trainable": 99880992,
+        "total_trainable": 112267296,
+        "total": 450636000
+      },
+      "hardware_validated": false,
+      "task_success_evaluated": false,
+      "diagram": "../diagrams/smolvla-vision-lora-action.svg"
     }
   ]
 }

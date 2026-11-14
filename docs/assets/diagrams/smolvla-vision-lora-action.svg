@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1220" height="390" viewBox="0 0 1220 390" role="img" aria-labelledby="diagram-title diagram-desc">
+  <title id="diagram-title">Vision LoRA + Action 학습 구조 — Model 5</title>
+  <desc id="diagram-desc">Model 5의 학습 구조. 비전 인코더의 원래 가중치는 patch, position, MLP, norm을 포함해 모두 동결합니다. 12개 비전 attention 층의 q, k, v, out projection에만 rank 8, alpha 16, dropout 0.05의 LoRA 어댑터를 추가해 학습합니다. Connector와 action expert, state/action projection, 시간 MLP는 전체 학습합니다. 언어 embedding, 언어 0–15층, final norm, LM head는 모두 동결합니다. 녹색 블록은 전체 학습, 회색은 동결, 비전 블록 안의 녹색 띠는 LoRA 어댑터만 학습함을 나타냅니다. 적분 후 50행·12차원의 목표 관절각을 생성합니다.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#718087"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; text-anchor: middle; }
+    .node-title { font-weight: 700; }
+    .node-detail { font-size: 15.5px; font-weight: 400; }
+    .flow { fill: none; stroke: #718087; stroke-width: 1.7; marker-end: url(#arrow); }
+    .legend { text-anchor: start; font-size: 15px; }
+  </style>
+  <rect width="1220" height="390" fill="#FFFFFF"/>
+  <!-- Module positions and connections match the other SmolVLA diagrams. -->
+  <g aria-hidden="true">
+    <path class="flow" d="M 218 190 H 240"/>
+    <path class="flow" d="M 390 190 H 412"/>
+    <path class="flow" d="M 648 190 H 670"/>
+    <path class="flow" d="M 894 190 H 916"/>
+    <path class="flow" d="M 530 100 V 145"/>
+    <path class="flow" d="M 530 280 V 235"/>
+    <path class="flow" d="M 782 280 V 235"/>
+  </g>
+  <text x="119" y="107" class="node-title" font-size="14" fill="#147D73">Vision attention LoRA</text>
+  <text x="119" y="128" font-size="12.5" fill="#69757B">q / k / v / out · dropout 0.05</text>
+  <g id="vision_encoder" data-module="vision_encoder" data-state="lora" role="group" aria-label="Vision encoder: 원래 가중치는 동결, 12개 attention 층의 LoRA 어댑터만 학습">
+    <g id="vision_original_weights" data-module="vision_original_weights" data-state="frozen" role="group" aria-label="Vision original weights: patch, position, 12 layers, MLP, norm 모두 동결">
+      <rect x="20" y="145" width="198" height="90" fill="#EDF0F2" stroke="#A7AFB3" stroke-width="1.3"/>
+      <text x="119" y="169" class="node-title" font-size="18.5" fill="#69757B">Vision encoder</text>
+      <text x="119" y="190" font-size="13.5" fill="#69757B">12-layer base frozen</text>
+    </g>
+    <g id="vision_lora" data-module="vision_lora" data-state="train" data-rank="8" data-alpha="16" data-dropout="0.05" data-targets="q_proj,k_proj,v_proj,out_proj" data-layers="12" role="group" aria-label="LoRA 어댑터 학습: rank 8, alpha 16, dropout 0.05; 비전 12개 층의 q, k, v, out projection">
+      <rect x="28" y="201" width="182" height="26" rx="3" fill="#147D73"/>
+      <text x="119" y="219" class="node-title" font-size="14" fill="#FFFFFF">LoRA · r8 / α16</text>
+    </g>
+  </g>
+  <g id="connector" data-module="connector" data-state="train" role="group" aria-label="Connector: 전체 학습">
+    <rect x="240" y="145" width="150" height="90" fill="#147D73" stroke="#147D73" stroke-width="1.3"/>
+    <text x="315" y="175" class="node-title" font-size="20" fill="#FFFFFF">Connector</text>
+    <text x="315" y="204" class="node-detail" fill="#FFFFFF">image → VLM</text>
+  </g>
+  <g id="language_layers_0_14" data-module="language_layers_0_14" data-state="frozen" role="group" aria-label="Language 0–14: 동결">
+    <rect x="412" y="145" width="236" height="90" fill="#EDF0F2" stroke="#A7AFB3" stroke-width="1.3"/>
+    <text x="530" y="175" class="node-title" font-size="20" fill="#69757B">Language 0–14</text>
+    <text x="530" y="204" class="node-detail" fill="#69757B">attention / MLP / norm</text>
+  </g>
+  <g id="action_expert" data-module="action_expert" data-state="train" role="group" aria-label="Action expert: 전체 학습">
+    <rect x="670" y="145" width="224" height="90" fill="#147D73" stroke="#147D73" stroke-width="1.3"/>
+    <text x="782" y="175" class="node-title" font-size="20" fill="#FFFFFF">Action expert</text>
+    <text x="782" y="204" class="node-detail" fill="#FFFFFF">16 layers + final norm</text>
+  </g>
+  <g id="action_out_proj" data-module="action_out_proj" data-state="train" role="group" aria-label="action_out_proj: 전체 학습">
+    <rect x="916" y="145" width="284" height="90" fill="#147D73" stroke="#147D73" stroke-width="1.3"/>
+    <text x="1058" y="175" class="node-title" font-size="20" fill="#FFFFFF">action_out_proj</text>
+    <text x="1058" y="204" class="node-detail" fill="#FFFFFF">720 → 32D flow</text>
+  </g>
+  <g id="language_embedding" data-module="language_embedding" data-state="frozen" role="group" aria-label="Language embedding: 동결">
+    <rect x="412" y="26" width="236" height="74" fill="#EDF0F2" stroke="#A7AFB3" stroke-width="1.3"/>
+    <text x="530" y="56" class="node-title" font-size="18.5" fill="#69757B">Language embedding</text>
+    <text x="530" y="85" class="node-detail" fill="#69757B">instruction tokens</text>
+  </g>
+  <g id="language_frozen_tail" data-module="language_frozen_tail" data-state="frozen" role="group" aria-label="Frozen language tail: 언어 15층, final norm, LM head 동결">
+    <rect x="720" y="26" width="480" height="74" fill="#EDF0F2" stroke="#A7AFB3" stroke-width="1.3"/>
+    <text x="960" y="56" class="node-title" font-size="19" fill="#69757B">Frozen language tail</text>
+    <text x="960" y="85" class="node-detail" fill="#69757B">Language layer 15 / final norm / LM head</text>
+  </g>
+  <g id="state_proj" data-module="state_proj" data-state="train" role="group" aria-label="state_proj: 전체 학습">
+    <rect x="412" y="280" width="236" height="78" fill="#147D73" stroke="#147D73" stroke-width="1.3"/>
+    <text x="530" y="310" class="node-title" font-size="20" fill="#FFFFFF">state_proj</text>
+    <text x="530" y="339" class="node-detail" fill="#FFFFFF">current joint state</text>
+  </g>
+  <g id="action_in_proj_and_time_mlp" data-module="action_in_proj_and_time_mlp" data-state="train" role="group" aria-label="action_in_proj + action_time_mlp_in/out: 전체 학습">
+    <rect x="670" y="280" width="530" height="78" fill="#147D73" stroke="#147D73" stroke-width="1.3"/>
+    <text x="935" y="310" class="node-title" font-size="19" fill="#FFFFFF">action_in_proj + action_time_mlp_in/out</text>
+    <text x="935" y="339" class="node-detail" fill="#FFFFFF">noisy action + flow timestep τ</text>
+  </g>
+  <text id="integrated_action_output" x="1058" y="260" font-size="15" fill="#4C575C">적분 → 50×12D 목표 관절각</text>
+  <g id="legend" aria-label="녹색 블록: 전체 학습, 회색: 동결, 회색과 녹색 띠: LoRA 어댑터만 학습">
+    <rect x="20" y="291" width="17" height="17" fill="#147D73"/>
+    <text x="48" y="305" class="legend" font-weight="700" fill="#147D73">전체 학습: 원래 가중치 갱신</text>
+    <rect x="20" y="332" width="17" height="17" fill="#EDF0F2" stroke="#A7AFB3" stroke-width="1"/>
+    <text x="48" y="346" class="legend" fill="#69757B">동결: 비전 원본·언어 가중치</text>
+    <rect x="20" y="371" width="17" height="17" fill="#EDF0F2" stroke="#A7AFB3" stroke-width="1"/>
+    <rect x="22" y="381" width="13" height="5" fill="#147D73"/>
+    <text x="48" y="385" class="legend" font-weight="700" fill="#147D73">LoRA: 어댑터만 학습</text>
+  </g>
+</svg>
