@@ -13,7 +13,7 @@
 <title data-title-en="Won Ik Jang | Robot Learning &amp; Control" data-title-ko="장원익 | 로봇 학습 및 제어">Won Ik Jang | Robot Learning &amp; Control</title>
 <link href="portfolio.css" rel="stylesheet"/>
 <link href="research-enhancements.css" rel="stylesheet"/>
-<link href="home.css?v=20261115-home-about" rel="stylesheet"/>
+<link href="home.css?v=20261115-research" rel="stylesheet"/>
 <script defer="" src="portfolio.js"></script>
 </head>
 <body>
@@ -25,42 +25,57 @@
 <p class="eyebrow"><span class="pulse"></span><span data-locale="en">UNDERGRADUATE RESEARCHER · ROBOT LEARNING &amp; CONTROL</span><span data-locale="ko">학부연구생 · 로봇 학습 및 제어</span></p>
 <h1 id="hero-name">Won Ik Jang<span class="heading-line"> <span data-locale="en">Robot Learning <em>&amp;</em> Control</span><span data-locale="ko">로봇 학습 <em>&amp;</em> 제어</span></span></h1>
 <p class="identity">Kyung Hee University <span class="sep">/</span> <span data-locale="en">Biomedical Engineering &amp; Electronic Engineering (Double Major)</span><span data-locale="ko">생체의공학 · 전자공학 복수전공</span></p>
-<p class="hero-lead"><span data-locale="en">I train and evaluate imitation-learning policies for dual-arm robots in simulation and on hardware. My work includes ACT/TC-ACT architecture comparisons, Diffusion Policy deployment, and SmolVLA fine-tuning and execution.</span><span data-locale="ko">시연 데이터로 양팔 로봇의 행동을 학습하고, 시뮬레이션과 실로봇에서 평가합니다. ACT·TC-ACT의 구조 비교, Diffusion Policy의 실물 구동, SmolVLA의 학습·실행을 다뤘습니다.</span></p>
+<p class="hero-lead"><span data-locale="en">I design imitation-learning policies for dual-arm robots. I built a teleoperation system to collect demonstrations, tested my TC-ACT model against ACT, and ran learned policies on physical robots.</span><span data-locale="ko">사람의 시연에서 양팔 로봇의 동작을 학습하는 정책을 설계합니다. 시연 수집용 원격 조작 시스템을 구축했고, 직접 설계한 TC-ACT를 기존 ACT와 비교한 뒤 학습한 정책을 실물 로봇에서 구동했습니다.</span></p>
 <div class="hero-actions"><a class="btn primary" href="research/"><span data-locale="en">Explore Research</span><span data-locale="ko">연구 살펴보기</span><span aria-hidden="true"> ↗</span></a><a class="btn subtle" href="about/"><span data-locale="en">About Me</span><span data-locale="ko">자기소개</span><span aria-hidden="true"> ↗</span></a><a class="btn ghost" href="assets/WonIkJang_CV.pdf?v=31153842b9fe" rel="noopener" target="_blank">CV <span aria-hidden="true">↗</span></a></div>
-<div class="hero-tags"><span>Imitation Learning</span><span>Vision-Language-Action</span><span>Robot Deployment</span></div>
 </div>
 <div class="hero-media">
-<div class="media-label"><span class="pulse"></span><span data-locale="en">ON THE ROBOT · DUAL-ARM OMX</span><span data-locale="ko">실제 로봇 · 양팔 OMX</span></div>
-<video aria-label="Dual-arm OpenMANIPULATOR-X real teleoperation" controls="" muted="" playsinline="" poster="assets/media/dual-arm-workspace.jpg" preload="metadata"><source src="assets/media/dual-arm-teleoperation.mp4" type="video/mp4"/></video>
-<div class="media-caption"><span>01 / PHYSICAL SYSTEM</span><span><span data-locale="en">ROS 2 · Teleoperation · Digital twin</span><span data-locale="ko">ROS 2 · 원격 조작 · 디지털 트윈</span></span></div>
+<div class="media-label" id="teleoperation-title"><span data-locale="en">Collecting demonstrations by teleoperation</span><span data-locale="ko">원격 조작으로 양팔 시연 수집</span></div>
+<video aria-labelledby="teleoperation-title" controls="" muted="" playsinline="" poster="assets/media/dual-arm-workspace.jpg" preload="metadata"><source src="assets/media/dual-arm-teleoperation.mp4" type="video/mp4"/></video>
+<div class="media-caption"><span>OpenMANIPULATOR-X</span><span>ROS 2</span></div>
 </div>
 </section>
 <section aria-labelledby="research-heading" class="section wrap home-contributions">
-<div class="section-head"><div><p class="eyebrow">RESEARCH / DUAL-ARM LEARNING</p><h2 id="research-heading"><span data-locale="en">What I built and evaluated</span><span data-locale="ko">직접 구현하고 평가한 것들</span></h2></div><a class="inline-link" href="research/"><span data-locale="en">Research details →</span><span data-locale="ko">연구 내용 보기 →</span></a></div>
-<div class="card-grid three"><a class="info-card" href="research/#act-tc"><span class="index">01 / POLICY DESIGN</span><h3>ACT / TC-ACT</h3><p><span data-locale="en">Designed TC-ACT by adding observation history and future-state auxiliary supervision to ACT, then compared task performance at matched initial placements.</span><span data-locale="ko">ACT에 관측 이력과 미래 상태 보조 학습을 더한 TC-ACT를 설계하고, 같은 초기 배치에서 태스크별 성능을 비교했습니다.</span></p><span aria-hidden="true" class="card-arrow">→</span></a><a class="info-card" href="research/#diffusion"><span class="index">02 / HARDWARE EXECUTION</span><h3>Diffusion Policy</h3><p><span data-locale="en">Applied existing compilation and CUDA Graph techniques to a smaller, retrained U-Net. Measured inference delay and joint-feedback age, and checked action delivery order on the robot.</span><span data-locale="ko">재학습된 작은 U-Net에 기존 compile·CUDA Graph 기법을 적용했습니다. 실물 구동에서 추론·피드백 지연과 행동 전달 순서를 검증했습니다.</span></p><span aria-hidden="true" class="card-arrow">→</span></a><a class="info-card" href="research/#smolvla"><span class="index">03 / VLA ADAPTATION</span><h3>SmolVLA</h3><p><span data-locale="en">Fine-tuned four models with different real/simulation data and trainable modules. Implemented asynchronous inference to compute the next action chunk while executing the current one.</span><span data-locale="ko">실물·시뮬 데이터와 학습 모듈을 달리해 네 모델을 fine-tuning했습니다. 기존 행동 청크를 실행하는 동안 다음 청크를 계산하는 비동기 구조를 구현했습니다.</span></p><span aria-hidden="true" class="card-arrow">→</span></a></div>
-<div class="home-video-link"><p><span data-locale="en">See four simulation rollouts and two real-robot TC-ACT demonstrations.</span><span data-locale="ko">시뮬레이션 롤아웃 네 개와 실로봇 TC-ACT 시연 두 개를 확인할 수 있습니다.</span></p><a class="inline-link" href="research/?v=feedback-20261107-v1#policy-videos"><span data-locale="en">Watch the policy videos ↗</span><span data-locale="ko">정책별 영상 보기 ↗</span></a></div>
-</section><section aria-labelledby="findings-heading" class="wrap home-findings">
-<div class="section-head"><div><p class="eyebrow">SELECTED RESULTS</p><h2 id="findings-heading"><span data-locale="en">Results at a glance</span><span data-locale="ko">대표 실험 결과</span></h2></div></div>
-<div class="home-finding-grid">
-<article class="home-finding">
-<p class="eyebrow"><span data-locale="en">SIMULATION / HANDOVER</span><span data-locale="ko">시뮬레이션 / HANDOVER</span></p>
-<h3><span data-locale="en">Temporal-context policy comparison</span><span data-locale="ko">시간적 문맥을 활용한 정책 비교</span></h3>
-<p class="finding-value">+8.40 <span><span data-locale="en">pp</span><span data-locale="ko">%p</span></span></p>
-<p class="finding-comparison">ACT 74.32% <span aria-hidden="true">→</span> TC-ACT 82.72%</p>
-<p class="finding-conditions"><span data-locale="en">E6000 · XY ±2 cm · 1,250 rollouts per model.</span><span data-locale="ko">E6000 · XY ±2 cm · 모델당 1,250회 평가.</span></p>
-<p class="finding-scope"><span data-locale="en">Task-dependent results: Pick&amp;Place was 93.44% → 93.12%.</span><span data-locale="ko">태스크별 차이가 있으며, Pick&amp;Place는 93.44% → 93.12%였습니다.</span></p>
-<a class="inline-link" href="research/?v=feedback-20261107-v1#results"><span data-locale="en">Results &amp; evaluation conditions ↗</span><span data-locale="ko">비교 결과·평가 조건 보기 ↗</span></a>
-</article>
-<article class="home-finding">
-<p class="eyebrow"><span data-locale="en">REAL ROBOT / TC-ACT</span><span data-locale="ko">실로봇 / TC-ACT</span></p>
-<h3><span data-locale="en">Observed physical task trials</span><span data-locale="ko">실로봇 작업 수행 실험</span></h3>
-<p class="finding-value finding-latency">84% <i aria-hidden="true"> / </i> 92%</p>
-<p class="finding-comparison">Pick&amp;Place 21/25 · Handover 23/25</p>
-<p class="finding-conditions"><span data-locale="en">Live RGB + 14D joints · one training seed · 25 trials per task.</span><span data-locale="ko">실카메라 RGB + 14D 관절 · 학습 시드 1개 · 태스크별 25회.</span></p>
-<p class="finding-scope"><span data-locale="en">Operator-observed results; not a paired ACT/TC-ACT comparison or a general reliability estimate.</span><span data-locale="ko">작업자가 관찰한 성공 횟수이며 ACT와의 동일 조건 비교나 일반적인 신뢰도 추정이 아닙니다.</span></p>
-<a class="inline-link" href="research/#deployment"><span data-locale="en">Physical deployment &amp; evidence ↗</span><span data-locale="ko">실로봇 구동·검증 내용 ↗</span></a>
-</article>
-</div>
+  <div class="home-study">
+    <div class="home-study-copy">
+      <p class="eyebrow"><span data-locale="en">FEATURED RESEARCH · TC-ACT</span><span data-locale="ko">대표 연구 · TC-ACT</span></p>
+      <h2 id="research-heading"><span data-locale="en">When does a robot need its recent observations?</span><span data-locale="ko">로봇에게 이전 장면이 필요한 작업은 무엇일까?</span></h2>
+      <p><span data-locale="en">I designed TC-ACT to combine past images and joint states with the current observation, and trained it to predict future joint motion. I compared it with ACT on two tasks, giving both models the same starting positions.</span><span data-locale="ko">현재 장면과 함께 과거 영상·관절 상태를 읽고, 학습 중에는 다음 관절 움직임도 예측하는 TC-ACT를 설계했습니다. 두 모델에 같은 초기 배치를 주고, 튜브 건네기와 바구니에 물체 놓기에서 기존 ACT와 비교했습니다.</span></p>
+      <a class="inline-link" href="research/#act-tc"><span data-locale="en">See the model design</span><span data-locale="ko">모델 설계 보기</span> <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="home-study-result">
+      <h3 id="home-simulation"><span data-locale="en">Success rates in simulation</span><span data-locale="ko">시뮬레이션 작업 성공률</span></h3>
+      <table aria-labelledby="home-simulation">
+        <thead><tr><th scope="col"><span data-locale="en">Task</span><span data-locale="ko">작업</span></th><th scope="col">ACT</th><th scope="col">TC-ACT</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><span data-locale="en">Tube handover</span><span data-locale="ko">튜브 건네기</span></th><td>74.32%</td><td><strong>82.72%</strong></td></tr>
+          <tr><th scope="row"><span data-locale="en">Basket placement</span><span data-locale="ko">바구니에 놓기</span></th><td>93.44%</td><td>93.12%</td></tr>
+        </tbody>
+      </table>
+      <p><span data-locale="en">1,250 trials per model and task · one training seed · starting positions varied by ±2 cm per axis.</span><span data-locale="ko">모델·작업별 1,250회 · 학습 시드 1개 · 가로·세로 각 축의 초기 위치 범위 ±2 cm.</span></p>
+      <a class="inline-link" href="research/#results"><span data-locale="en">Evaluation protocol and results</span><span data-locale="ko">평가 조건과 전체 결과</span> <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+  <div class="home-physical">
+    <p><strong><span data-locale="en">On the physical robot</span><span data-locale="ko">실물 로봇 평가</span></strong> <span data-locale="en">In a separate TC-ACT evaluation, I recorded 23 successful handovers in 25 trials and 21 successful basket placements in 25 trials.</span><span data-locale="ko">TC-ACT를 실물에서 별도로 평가했습니다. 작업당 25회 중 튜브 건네기는 23회, 바구니에 놓기는 21회 성공했습니다.</span></p>
+    <div class="home-study-links">
+      <a class="inline-link" href="research/#deployment"><span data-locale="en">Trial records</span><span data-locale="ko">실험 기록</span> <span aria-hidden="true">→</span></a>
+      <a class="inline-link" href="research/#policy-videos"><span data-locale="en">Watch the demos</span><span data-locale="ko">시연 영상</span> <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+  <div class="home-followups">
+    <article>
+      <p class="eyebrow"><span data-locale="en">DIFFUSION POLICY · INFERENCE</span><span data-locale="ko">확산 정책 · 추론 시간</span></p>
+      <h3><span data-locale="en">Faster inference for robot control</span><span data-locale="ko">로봇 제어를 위한 추론 시간 단축</span></h3>
+      <p><span data-locale="en">I retrained a compact diffusion model and compared its inference time before and after compilation. On an RTX 3070, its 99th-percentile latency fell from 62.18 to 14.58 ms across 100 runs per setting.</span><span data-locale="ko">소형 확산 모델을 재학습하고 컴파일 전후의 추론 시간을 비교했습니다. RTX 3070에서 조건별 100회 측정했을 때, 모델 단독 추론의 99백분위 지연은 62.18밀리초에서 14.58밀리초로 줄었습니다.</span></p>
+      <a class="inline-link" href="research/#diffusion"><span data-locale="en">Inference timings and robot tests</span><span data-locale="ko">추론 측정값과 실물 구동 기록</span> <span aria-hidden="true">→</span></a>
+    </article>
+    <article>
+      <p class="eyebrow"><span data-locale="en">SMOLVLA · ROBOT EXECUTION</span><span data-locale="ko">스몰VLA · 실물 구동</span></p>
+      <h3><span data-locale="en">Keeping the robot moving between predictions</span><span data-locale="ko">모델이 다음 동작을 계산하는 동안 로봇 움직이기</span></h3>
+      <p><span data-locale="en">I fine-tuned four model variants and built an asynchronous controller. While the robot executed one sequence of actions, the model predicted the next. The controller sent commands at 30 Hz and requested predictions at 5.4–5.7 Hz.</span><span data-locale="ko">네 가지 구성으로 모델을 미세조정하고, 로봇이 동작을 수행하는 동안 다음 동작을 미리 계산하는 제어기를 구현했습니다. 실물에서 초당 30회 명령을 보내면서 모델에는 초당 5.4~5.7회 새 예측을 요청했습니다.</span></p>
+      <a class="inline-link" href="research/#smolvla"><span data-locale="en">Training and controller design</span><span data-locale="ko">학습 조건과 제어기 구조</span> <span aria-hidden="true">→</span></a>
+    </article>
+  </div>
 </section>
 
 <section class="section alternate" id="other-projects"><div class="wrap">
