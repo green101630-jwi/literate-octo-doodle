@@ -16,12 +16,21 @@
         const filterButton = document.querySelector('[data-policy-filter="' + videoGroup.dataset.policyEnvironment + '"]');
         filterButton?.click();
       }
-      const disclosure = target.matches("details") ? target :
-        target.closest("details") || target.querySelector(":scope > details.research-disclosure");
-      if (disclosure && !disclosure.open) {
-        disclosure.open = true;
-        requestAnimationFrame(() => target.scrollIntoView({block:"start",behavior:"auto"}));
+      // Deep links can refer to content inside more than one folded record.
+      // Open every enclosing disclosure before scrolling to the target.
+      let current = target;
+      let opened = false;
+      while (current) {
+        if (current.matches("details") && !current.open) {
+          current.open = true;
+          opened = true;
+        }
+        current = current.parentElement;
       }
+      const child = target.matches("[data-reveal-disclosure]") ?
+        target.querySelector(":scope > details.research-disclosure") : null;
+      if (child && !child.open) { child.open = true; opened = true; }
+      if (opened) requestAnimationFrame(() => target.scrollIntoView({block:"start",behavior:"auto"}));
     }
     window.addEventListener("hashchange", revealTarget);
     revealTarget();
