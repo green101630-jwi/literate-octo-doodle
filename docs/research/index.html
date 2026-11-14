@@ -14,8 +14,8 @@
 <link href="../portfolio.css" rel="stylesheet"/>
 <link href="../research-enhancements.css?v=20261107-research-layout" rel="stylesheet"/>
 <link href="../research-page-interactions.css" rel="stylesheet"/>
-<link href="../hardware-deployment.css?v=20261107-tc-label" rel="stylesheet"/>
-<link href="../policy-videos.css?v=efbe8ec01a85" rel="stylesheet"/>
+<link href="../hardware-deployment.css?v=20261115-readability" rel="stylesheet"/>
+<link href="../policy-videos.css?v=20261115-readability" rel="stylesheet"/>
 <link href="../research-summary.css?v=099cd386a03e" rel="stylesheet"/>
 <script defer="" src="../portfolio.js"></script>
 <script defer="" src="../research-page-interactions.js?v=20261115-disclosure-controls"></script>
@@ -371,10 +371,13 @@
 </section>
 <p class="hc-rates-foot"><span data-locale="en">50 Hz and 6.25 Hz are target / nominal rates. SmolVLA request rates and inference medians come from the recent physical-run logs. Sequence playback highlights processing order.</span><span data-locale="ko">50Hz·6.25Hz는 목표·명목 주기이며, SmolVLA 요청 주기와 추론 중앙값은 최근 실물 로그 기준입니다. 처리 순서 재생은 블록의 진행 순서를 보여줍니다.</span></p>
 </div>
-</section></div></details><details class="research-disclosure story-details" id="video-records"><summary><span data-locale="en">All simulation and robot videos</span><span data-locale="ko">시뮬레이션·실로봇 전체 영상</span></summary><div class="disclosure-body"><section aria-labelledby="policy-videos-title" class="research-record-section" data-policy-gallery="" data-policy-manifest="../assets/media/policy-videos.json?v=20261107-real-tc-act" id="policy-videos">
+</section></div></details><details class="research-disclosure story-details" id="video-records"><summary><span data-locale="en">All simulation and robot videos</span><span data-locale="ko">시뮬레이션·실로봇 전체 영상</span></summary><div class="disclosure-body"><section aria-labelledby="policy-videos-title" class="research-record-section policy-video-gallery" data-policy-gallery="" data-policy-manifest="../assets/media/policy-videos.json?v=20261107-real-tc-act" id="policy-videos">
+<header class="policy-video-overview">
 <p class="eyebrow"><span data-locale="en">POLICY VIDEOS</span><span data-locale="ko">정책 영상</span></p>
 <h3 id="policy-videos-title"><span data-locale="en">Policy video gallery</span><span data-locale="ko">정책별 영상 갤러리</span></h3>
 <p class="policy-video-note"><span data-locale="en">Selected simulation rollouts and real-robot demonstrations. The real TC-ACT clips use the same model as in simulation, mapped to hardware.</span><span data-locale="ko">시뮬레이션 롤아웃과 실로봇 시연을 함께 정리했습니다. 실로봇 TC-ACT 영상은 시뮬레이션과 동일한 모델을 하드웨어에 매핑해 구동한 모습입니다.</span></p>
+</header>
+<div class="policy-video-toolbar">
 <div aria-label="Filter videos by environment" class="policy-video-filters" data-policy-filters="" hidden="" role="group">
 <button aria-pressed="true" data-policy-filter="all" type="button"><span data-locale="en">All</span><span data-locale="ko">전체</span></button>
 <button aria-pressed="false" data-policy-filter="sim" type="button"><span data-locale="en">Sim</span><span data-locale="ko">시뮬레이션</span></button>
@@ -383,6 +386,7 @@
 <div class="policy-video-display-options">
 <p aria-live="polite" class="policy-video-status" data-policy-filter-status=""><span data-locale="en">6 videos shown</span><span data-locale="ko">6개 영상 표시</span></p>
 <button aria-controls="policy-video-groups" aria-pressed="false" class="policy-video-empty-toggle" data-policy-empty-toggle="" hidden="" type="button"><span data-locale="en">Show unregistered slots</span><span data-locale="ko">미등록 슬롯 보기</span></button>
+</div>
 </div>
 <div id="policy-video-groups">
 <div aria-labelledby="policy-videos-sim-title" class="policy-video-group" data-policy-environment="sim">
