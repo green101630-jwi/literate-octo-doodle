@@ -78,3 +78,29 @@
 
 /* Component layout rules must not reveal the inactive language. */
 html:not([lang="ko"]) #main [data-locale="ko"],html[lang="ko"] #main [data-locale="en"]{display:none!important}
+
+/* Three studies: representative results first, supporting material in disclosures. */
+.research-threeparts .research-clean-hero{padding-bottom:30px}
+.research-threeparts .research-part{padding-top:46px;padding-bottom:46px}
+.research-threeparts .research-part>h2{margin-bottom:12px}
+.research-part-subtitle{font-size:1rem;line-height:1.8;color:var(--muted);margin:0 0 25px;max-width:1000px}
+.research-threeparts .research-part>.story-observation{margin:23px 0}
+.research-threeparts #results{margin-top:0}
+.research-threeparts #results>.research-intro{margin-top:0}
+.research-threeparts #e6000-main-comparison{max-width:980px;margin:0 auto 22px}
+.research-threeparts .research-part-detail{margin-top:13px}
+.research-threeparts .research-part-detail[open]>.disclosure-body{padding-top:24px}
+.research-part-scope .story-interpretation{margin:0}
+.research-part-detail .story-question{font-size:.92rem}
+.research-part-detail .story-work{margin-bottom:25px}
+.research-part-detail .story-architecture{margin-top:0}
+.research-part-detail .story-example{margin-top:0}
+.research-part-detail>.disclosure-body>.research-disclosure:first-child{margin-top:0}
+.research-common-records{margin:5px auto 50px;max-width:1180px;scroll-margin-top:95px}
+.research-common-records>summary{font-size:.9rem;padding:20px 24px}
+.research-common-records>.disclosure-body{padding:22px}
+.research-common-records .research-context{margin-top:0;margin-bottom:28px}
+.research-records-content>h3{font-size:1.3rem;margin-bottom:15px}
+.research-records-content>.story-question{font-size:.86rem}
+.research-records-content>.story-details{margin-top:13px}
+@media(max-width:700px){.research-threeparts .research-part{padding-top:35px;padding-bottom:35px}.research-part-subtitle{font-size:.9rem;margin-bottom:20px}.research-common-records{margin-bottom:35px}.research-common-records>summary{padding:17px}.research-common-records>.disclosure-body{padding:15px}.research-threeparts #e6000-main-comparison .figure-heading{gap:12px}}
